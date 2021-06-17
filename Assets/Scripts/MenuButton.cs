@@ -8,7 +8,7 @@ public class MenuButton : MonoBehaviour
     public void StartGame()
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene("LVL1 EX");
+        SceneManager.LoadScene("GameLevel");
     }
 
     public void quitGame()
