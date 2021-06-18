@@ -9,6 +9,11 @@ public class ScoreSystem : MonoBehaviour
     public Text scoring;
     public static int scoreNum = 0;
 
+    private void Start()
+    {
+        scoreNum = 0;
+    }
+
     void Update()
     {
         scoring.text = "Score: " + scoreNum;

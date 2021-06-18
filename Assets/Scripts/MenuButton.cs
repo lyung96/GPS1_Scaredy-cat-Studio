@@ -15,4 +15,12 @@ public class MenuButton : MonoBehaviour
     {
         Application.Quit();
     }
+
+    void Update()
+    {
+        if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
 }
