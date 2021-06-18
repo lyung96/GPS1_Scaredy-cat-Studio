@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,8 +8,6 @@ public class PlayerController : MonoBehaviour
     public float Speed = 3.0f;
     public float JumpForce = 10f;
     public bool isGrounded = true;
-    public Text scoring;
-    public static int scoreNum;
     //public Animator anim;
 
     // Start is called before the first frame update
@@ -64,22 +61,5 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Touch Ground ");
             isGrounded = true;
         }
-
     }
-    private void OnTriggerEnter2D(Collider2D trigger)
-    {
-        //there is a BUG!!! in here, cant find why is it detecting twice when it should detect only once. 
-        //player touch, items dies = 1 touch 
-        //system detects as - player touch, item still alive, player touch, item dies = 2 touch
-        if (trigger.gameObject.tag == "Items")
-        {
-            Debug.Log("Triggered White Mask");
-            scoreNum++;
-            scoring.text = "Score: " + scoreNum;
-            Destroy(trigger.gameObject);
-        }
-    }
-        
-
-
 }

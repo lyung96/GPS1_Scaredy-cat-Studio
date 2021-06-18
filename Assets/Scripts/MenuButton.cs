@@ -8,7 +8,7 @@ public class MenuButton : MonoBehaviour
     public void StartGame()
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene("GameLevel");
+        SceneManager.LoadScene("GameLevel1");
     }
 
     public void quitGame()

@@ -16,14 +16,12 @@ public class Grapple : MonoBehaviour
     private Rigidbody2D rig;
     private List<Vector2> points = new List<Vector2>();
 
-    // Start is called before the first frame update
     void Start()
     {
         rig = GetComponent<Rigidbody2D>();
         lr.positionCount = 0;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(Input.GetMouseButtonDown(0))
