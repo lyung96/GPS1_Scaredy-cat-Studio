@@ -16,6 +16,11 @@ public class MenuButton : MonoBehaviour
         Application.Quit();
     }
 
+    public void GoBackToMenu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
+
     void Update()
     {
         if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.R))
