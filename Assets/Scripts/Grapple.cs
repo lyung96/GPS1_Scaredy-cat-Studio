@@ -7,11 +7,11 @@ public class Grapple : MonoBehaviour
     public Camera cam;
     public LineRenderer lr;
 
-    public LayerMask grappleMask; //What you can grapple to
+    public LayerMask grappleMask; //What you can grapple to, later change it to tileset layer
     public float moveSpeed = 10;
     public float grappleLenght = 10;
 
-    public int maxPoints = 3;
+    public int maxPoints = 1;
 
     private Rigidbody2D rig;
     private List<Vector2> points = new List<Vector2>();
