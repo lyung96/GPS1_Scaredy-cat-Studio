@@ -5,23 +5,26 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int maxHealth = 3;
-    int currentHealth;
+    public int currEnemyHp;
 
+    public HealthBar enemyHpBar;
     public SpriteRenderer sprite;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
+        currEnemyHp = maxHealth;
+        enemyHpBar.SetMaxHealth(maxHealth);
     }
 
 
     public void CalculateHealth(int damage)
     {
-        currentHealth -= damage;
+        currEnemyHp -= damage;
+        enemyHpBar.SetHealth(currEnemyHp);
         StartCoroutine(FlashRed());
 
-        if (currentHealth <= 0)
+        if (currEnemyHp <= 0)
         {
             Die();
         }

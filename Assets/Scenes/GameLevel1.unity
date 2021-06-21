@@ -801,11 +801,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d69ae2cc4405914419717ee2c9f85ced, type: 3}
---- !u!212 &619292919 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 4182424400173092902, guid: a6ce59a21c6c8014482e0342d920927d, type: 3}
-  m_PrefabInstance: {fileID: 4182424399713401041}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &667827175 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8859126089744904692, guid: 53131a2ea2c6ed3468d87083346daa8c, type: 3}
@@ -2577,7 +2572,7 @@ GameObject:
   - component: {fileID: 1521893501}
   - component: {fileID: 1521893500}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Instruction
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3160,29 +3155,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2667631291371046244, guid: a6ce59a21c6c8014482e0342d920927d, type: 3}
-      propertyPath: sprite
-      value: 
-      objectReference: {fileID: 619292919}
+    - target: {fileID: 1925947479, guid: a6ce59a21c6c8014482e0342d920927d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925947479, guid: a6ce59a21c6c8014482e0342d920927d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4182424400173092901, guid: a6ce59a21c6c8014482e0342d920927d, type: 3}
       propertyPath: m_Name
       value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4182424400173092901, guid: a6ce59a21c6c8014482e0342d920927d, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 4182424400173092902, guid: a6ce59a21c6c8014482e0342d920927d, type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4182424400173092902, guid: a6ce59a21c6c8014482e0342d920927d, type: 3}
-      propertyPath: m_Color.g
-      value: 0.8878504
-      objectReference: {fileID: 0}
-    - target: {fileID: 4182424400173092902, guid: a6ce59a21c6c8014482e0342d920927d, type: 3}
-      propertyPath: m_Color.r
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4182424400173092905, guid: a6ce59a21c6c8014482e0342d920927d, type: 3}
       propertyPath: m_RootOrder

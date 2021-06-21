@@ -118,12 +118,22 @@ public class PlayerController : MonoBehaviour
         currHp -= dmg;
         hpBar.SetHealth(currHp);
         StartCoroutine(FlashRed());
+
+        if (currHp <= 0)
+        {
+            Die();
+        }
     }
 
     public void CalMp(int mana)
     {
         currMp -= mana;
         mpBar.SetMana(currMp);
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected()
