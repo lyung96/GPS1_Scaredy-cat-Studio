@@ -17,6 +17,25 @@ public class PlayerController : MonoBehaviour
 
     public float attackRange = 0.5f;
     public int atkDmg = 1;
+
+    //health
+    public int maxHp = 10;
+    public int currHp;
+    public HealthBar hpBar;
+
+    //mana
+    public int maxMp = 10;
+    public int currMp;
+    public ManaBar mpBar;
+
+    private void Start()
+    {
+        currHp = maxHp;
+        currMp = maxMp;
+        hpBar.SetMaxHealth(maxHp);
+        mpBar.SetMaxMana(maxMp);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -47,6 +66,17 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             Attack();
+        }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            CalHp(1);
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            CalMp(1);
         }
 
         if (isGrounded == true)
@@ -83,11 +113,35 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void CalHp(int dmg)
+    {
+        currHp -= dmg;
+        hpBar.SetHealth(currHp);
+        StartCoroutine(FlashRed());
+    }
+
+    public void CalMp(int mana)
+    {
+        currMp -= mana;
+        mpBar.SetMana(currMp);
+    }
+
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
             return;
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    public IEnumerator FlashRed()
+    {
+        //gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        //sprite.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        //gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        //sprite.color = Color.yellow;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
 }
