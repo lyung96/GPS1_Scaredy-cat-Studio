@@ -12,6 +12,16 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded = true;
     public Animator anim;
 
+    //Dash
+    float horizontal;
+    IEnumerator dashCoroutine;
+    bool isDashing;
+    bool canDash = true;
+    public float DashForce = 30f;
+    public float dashDuration = 0.1f;
+    public float dashCooldown = 1.0f;
+    private float dashDirection = 1;
+    float normalGravity; 
     //combat scripts
     public Transform atkPoint;
     public LayerMask enemyLayers;
@@ -40,35 +50,38 @@ public class PlayerController : MonoBehaviour
         currMp = maxMp;
         hpBar.SetMaxHealth(maxHp);
         mpBar.SetMaxMana(maxMp);
+        normalGravity = rb.gravityScale;
     }
 
-    // Update is called once per frame
     void Update()
     {
         PlayerControl();
     }
+
     public void PlayerControl()
     {
-        //if collide den cannot press
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.C) && (isBlock == false))
+        {
+            anim.SetBool("blocking", true);
+            isBlock = true;
+        }
+        else if (Input.GetKey(KeyCode.A) && (isBlock == false))
         {
             rb.velocity = new Vector2(-(Speed), rb.velocity.y);
             //gameObject.GetComponent<SpriteRenderer>().flipX = true;
 
             anim.SetBool("running", true);
             gameObject.transform.localScale =new Vector2(-1, 1);
-        } else if (Input.GetKey(KeyCode.D))
+            dashDirection = -1;
+        } 
+        else if (Input.GetKey(KeyCode.D) && (isBlock == false))
         {
             rb.velocity = new Vector2(Speed, rb.velocity.y);
             //gameObject.GetComponent<SpriteRenderer>().flipX = false;
 
             anim.SetBool("running", true);
             gameObject.transform.localScale = new Vector2(1, 1);
-        }
-        else if (Input.GetKey(KeyCode.C))
-        {
-            anim.SetBool("blocking", true);
-            isBlock = true;
+            dashDirection = 1;
         }
 
         else
@@ -78,27 +91,46 @@ public class PlayerController : MonoBehaviour
             isBlock = false;
         }
 
+        //check dashing direction
+        if(horizontal != 0)
+        {
+            dashDirection = horizontal;
+        }
+
+        //Dash
+        if(Input.GetKeyDown(KeyCode.LeftShift) && (canDash == true))
+        {        
+            //Stop Dash if running before calling another dash
+            if (dashCoroutine != null)
+            {
+                StopCoroutine(dashCoroutine);
+            }
+            dashCoroutine = Dash(dashDuration, dashCooldown);
+            StartCoroutine(dashCoroutine);
+        }
+
+        //Attack, current time greater than next available attack time
         if (Time.time >= nextAtkTime)
         {
             if (Input.GetKeyDown(KeyCode.Z) && (isBlock == false))
             {
                 Attack();
+                //calculate next available atk time
                 nextAtkTime = Time.time + 1f / atkRate;
             }
         }
 
+        //Testing -Hp
         if (Input.GetKeyDown(KeyCode.X))
         {
             CalHp(1);
         }
 
-
+        //Testing -Mp
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             CalMp(1);
         }
-
-       
 
         if (isGrounded == true)
         {
@@ -107,6 +139,14 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, JumpForce);
                 isGrounded = false;
             }
+        }
+    }
+
+    public void FixedUpdate()
+    {
+        if(isDashing == true)
+        {
+            rb.AddForce(new Vector2(dashDirection * DashForce, 0), ForceMode2D.Impulse);
         }
     }
 
@@ -121,7 +161,6 @@ public class PlayerController : MonoBehaviour
 
     void Attack()
     {
-        //Play animation
         anim.SetTrigger("attack");
         //Detect enemies in range of attack, store the hitted enemy in array
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(atkPoint.position, atkRange, enemyLayers);
@@ -142,7 +181,7 @@ public class PlayerController : MonoBehaviour
 
         if (currHp <= 0)
         {
-            Die();
+            Die();//Die or reload on checkpoint, come out losing screen
         }
     }
 
@@ -157,6 +196,7 @@ public class PlayerController : MonoBehaviour
         Destroy(gameObject);
     }
 
+    //Show the attack range in scene
     private void OnDrawGizmosSelected()
     {
         if (atkPoint == null)
@@ -166,13 +206,27 @@ public class PlayerController : MonoBehaviour
     }
 
     public IEnumerator FlashRed()
-    {
-        //gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+    {      
         gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-        //sprite.color = Color.red;
         yield return new WaitForSeconds(0.1f);
-        //gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-        //sprite.color = Color.yellow;
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+    }
+
+    IEnumerator Dash(float DashDuration, float dashCooldown)
+    {
+        Vector2 originalVelocity = rb.velocity;
+        isDashing = true;
+        canDash = false;
+        //making sure it doesn't affect by gravity and dash downward in air
+        rb.gravityScale = 0;
+        rb.velocity = Vector2.zero;
+        //wait seconds, how long is dash then start cooldown
+        yield return new WaitForSeconds(DashDuration);
+        isDashing = false;
+        //get back our velocity & gravity after dash duration
+        rb.gravityScale = normalGravity;
+        rb.velocity =new Vector2(originalVelocity.x,0);
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
 }
