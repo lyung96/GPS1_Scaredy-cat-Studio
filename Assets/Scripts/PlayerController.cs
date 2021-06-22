@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Z) && (isBlock == false))
             {
-                Attack();
+                StartCoroutine(Attack());
                 //calculate next available atk time
                 nextAtkTime = Time.time + 1f / atkRate;
             }
@@ -159,10 +159,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Attack()
+    IEnumerator Attack()
     {
         anim.SetTrigger("attack");
         //Detect enemies in range of attack, store the hitted enemy in array
+        yield return new WaitForSeconds(0.2f);
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(atkPoint.position, atkRange, enemyLayers);
         
         //Damage them all of the enemy in array
