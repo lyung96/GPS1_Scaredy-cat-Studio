@@ -3155,6 +3155,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 705393379, guid: a6ce59a21c6c8014482e0342d920927d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1925947479, guid: a6ce59a21c6c8014482e0342d920927d, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -3327,6 +3331,18 @@ PrefabInstance:
     - target: {fileID: 6883976000797708640, guid: 12656013cf8be0642b19f56a5c912ffb, type: 3}
       propertyPath: currMp
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6883976000797708640, guid: 12656013cf8be0642b19f56a5c912ffb, type: 3}
+      propertyPath: atkRate
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6883976000797708640, guid: 12656013cf8be0642b19f56a5c912ffb, type: 3}
+      propertyPath: atkPoint
+      value: 
+      objectReference: {fileID: 1372292337}
+    - target: {fileID: 6883976000797708640, guid: 12656013cf8be0642b19f56a5c912ffb, type: 3}
+      propertyPath: atkRange
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6883976000797708640, guid: 12656013cf8be0642b19f56a5c912ffb, type: 3}
       propertyPath: attackPoint

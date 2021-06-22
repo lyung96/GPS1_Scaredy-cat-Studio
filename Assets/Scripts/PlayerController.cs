@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Movement
     public Rigidbody2D rb;
     public float Speed = 3.0f;
     public float JumpForce = 10f;
@@ -12,11 +13,14 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
 
     //combat scripts
-    public Transform attackPoint;
+    public Transform atkPoint;
     public LayerMask enemyLayers;
 
-    public float attackRange = 0.5f;
+    public float atkRange = 0.5f;
     public int atkDmg = 1;
+    public float atkRate = 2f;
+    float nextAtkTime = 0f;
+
 
     //health
     public int maxHp = 10;
@@ -63,9 +67,13 @@ public class PlayerController : MonoBehaviour
             anim.SetBool("running", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Time.time >= nextAtkTime)
         {
-            Attack();
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                Attack();
+                nextAtkTime = Time.time + 1f / atkRate;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.X))
@@ -103,7 +111,7 @@ public class PlayerController : MonoBehaviour
         //Play animation
         anim.SetTrigger("attack");
         //Detect enemies in range of attack, store the hitted enemy in array
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(atkPoint.position, atkRange, enemyLayers);
         
         //Damage them all of the enemy in array
         foreach(Collider2D enemy in hitEnemies)
@@ -138,10 +146,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        if (attackPoint == null)
+        if (atkPoint == null)
             return;
 
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+        Gizmos.DrawWireSphere(atkPoint.position, atkRange);
     }
 
     public IEnumerator FlashRed()
