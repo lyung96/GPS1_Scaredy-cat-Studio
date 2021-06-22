@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     public float atkRate = 2f;
     float nextAtkTime = 0f;
 
+    private bool isBlock = false;
+
 
     //health
     public int maxHp = 10;
@@ -62,14 +64,23 @@ public class PlayerController : MonoBehaviour
 
             anim.SetBool("running", true);
             gameObject.transform.localScale = new Vector2(1, 1);
-        } else
+        }
+        else if (Input.GetKey(KeyCode.C))
+        {
+            anim.SetBool("blocking", true);
+            isBlock = true;
+        }
+
+        else
         {
             anim.SetBool("running", false);
+            anim.SetBool("blocking", false);
+            isBlock = false;
         }
 
         if (Time.time >= nextAtkTime)
         {
-            if (Input.GetKeyDown(KeyCode.Z))
+            if (Input.GetKeyDown(KeyCode.Z) && (isBlock == false))
             {
                 Attack();
                 nextAtkTime = Time.time + 1f / atkRate;
@@ -86,6 +97,8 @@ public class PlayerController : MonoBehaviour
         {
             CalMp(1);
         }
+
+       
 
         if (isGrounded == true)
         {
