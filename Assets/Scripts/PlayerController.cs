@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerControl()
     {
-        if (Input.GetKey(KeyCode.C) && (isBlock == false))
+        if (Input.GetKey(KeyCode.C))
         {
             anim.SetBool("blocking", true);
             isBlock = true;
@@ -175,7 +175,13 @@ public class PlayerController : MonoBehaviour
 
     public void CalHp(int dmg)
     {
-        currHp -= dmg;
+        int actualDmg = dmg;
+        if(isBlock == true)
+        {
+            //actualDmg = (dmg /5);
+            actualDmg = 0;
+        }
+        currHp -= actualDmg;
         hpBar.SetHealth(currHp);
         StartCoroutine(FlashRed());
 
