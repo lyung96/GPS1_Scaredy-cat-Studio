@@ -7,6 +7,7 @@ public class Fireball : MonoBehaviour
     public int damage = 5;
     public float speed = 30.0f;
     public Rigidbody2D rb;
+    public GameObject impactEffect;
 
     void Start()
     {
@@ -21,8 +22,10 @@ public class Fireball : MonoBehaviour
         {
             Debug.Log(collision.name);
             collision.gameObject.GetComponent<Enemy>().CalculateHealth(damage);
-            Destroy(this.gameObject);
+            Instantiate(impactEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
         }
+
     }
 }
 
