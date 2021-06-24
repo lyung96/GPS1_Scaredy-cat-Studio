@@ -1018,6 +1018,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grappling Point
       objectReference: {fileID: 0}
+    - target: {fileID: 601661738009313128, guid: d69ae2cc4405914419717ee2c9f85ced, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 601661738009313128, guid: d69ae2cc4405914419717ee2c9f85ced, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d69ae2cc4405914419717ee2c9f85ced, type: 3}
 --- !u!1 &831300388
@@ -2988,6 +2996,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grappling Point (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 601661738009313128, guid: d69ae2cc4405914419717ee2c9f85ced, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 601661738009313128, guid: d69ae2cc4405914419717ee2c9f85ced, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d69ae2cc4405914419717ee2c9f85ced, type: 3}
 --- !u!4 &1732614344 stripped
@@ -3448,6 +3464,10 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 946999089}
+    - target: {fileID: 6883976000797708442, guid: 12656013cf8be0642b19f56a5c912ffb, type: 3}
+      propertyPath: grappleMask.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 6883976000797708445, guid: 12656013cf8be0642b19f56a5c912ffb, type: 3}
       propertyPath: m_RootOrder
       value: 1
