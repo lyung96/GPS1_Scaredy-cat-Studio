@@ -21,7 +21,7 @@ public class Shuriken : MonoBehaviour
 
     private void Update()
     {
-        rotate += rotate;
+        rotate++;
         gameObject.transform.Rotate(0f, 0f, rotate);
     }
 
