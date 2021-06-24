@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float JumpForce = 10f;
     public bool isGrounded = true;
     public Animator anim;
+    private bool FacingRight = true;
 
     //Dash
     float horizontal;
@@ -20,7 +21,7 @@ public class PlayerController : MonoBehaviour
     public float DashForce = 30f;
     public float dashDuration = 0.1f;
     public float dashCooldown = 1.0f;
-    private float dashDirection = 1;
+    public float dashDirection = 1;
     float normalGravity; 
     //combat scripts
     public Transform atkPoint;
@@ -33,14 +34,17 @@ public class PlayerController : MonoBehaviour
 
     private bool isBlock = false;
 
+    public Transform firePoint;
+    public GameObject shurikenPrefab;
+    public GameObject fireball;
 
     //health
-    public int maxHp = 10;
+    public int maxHp = 6;
     public int currHp;
     public HealthBar hpBar;
 
     //mana
-    public int maxMp = 10;
+    public int maxMp = 4;
     public int currMp;
     public ManaBar mpBar;
 
@@ -60,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerControl()
     {
-        if (Input.GetKey(KeyCode.C))
+        if (Input.GetKey(KeyCode.F))
         {
             anim.SetBool("blocking", true);
             isBlock = true;
@@ -71,7 +75,11 @@ public class PlayerController : MonoBehaviour
             //gameObject.GetComponent<SpriteRenderer>().flipX = true;
 
             anim.SetBool("running", true);
-            gameObject.transform.localScale =new Vector2(-1, 1);
+            if(FacingRight == true)
+            {
+                Flip();               
+            }
+            //gameObject.transform.localScale =new Vector2(-1, 1);
             dashDirection = -1;
         } 
         else if (Input.GetKey(KeyCode.D) && (isBlock == false))
@@ -80,7 +88,11 @@ public class PlayerController : MonoBehaviour
             //gameObject.GetComponent<SpriteRenderer>().flipX = false;
 
             anim.SetBool("running", true);
-            gameObject.transform.localScale = new Vector2(1, 1);
+            if (FacingRight == false)
+            {
+                Flip();
+            }
+            //gameObject.transform.localScale = new Vector2(1, 1);
             dashDirection = 1;
         }
 
@@ -98,7 +110,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Dash
-        if(Input.GetKeyDown(KeyCode.LeftShift) && (canDash == true))
+        if(Input.GetKeyDown(KeyCode.LeftShift) && (canDash == true) && (isBlock == false))
         {        
             //Stop Dash if running before calling another dash
             if (dashCoroutine != null)
@@ -112,7 +124,7 @@ public class PlayerController : MonoBehaviour
         //Attack, current time greater than next available attack time
         if (Time.time >= nextAtkTime)
         {
-            if (Input.GetKeyDown(KeyCode.Z) && (isBlock == false))
+            if (Input.GetMouseButtonDown(0) && (isBlock == false))
             {
                 StartCoroutine(Attack());
                 //calculate next available atk time
@@ -123,14 +135,28 @@ public class PlayerController : MonoBehaviour
         //Testing -Hp
         if (Input.GetKeyDown(KeyCode.X))
         {
-            CalHp(1);
+            CalHp(2);
         }
 
         //Testing -Mp
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
+            CalMp(-1);
+        }
+
+        //Shuriken
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ShootShuriken();
+        }
+
+        //Fireball
+        if (Input.GetKeyDown(KeyCode.R) && (currMp > 0))
+        {
+            ShootFireball();
             CalMp(1);
         }
+
 
         if (isGrounded == true)
         {
@@ -179,8 +205,15 @@ public class PlayerController : MonoBehaviour
         int actualDmg = dmg;
         if(isBlock == true)
         {
-            //actualDmg = (dmg /5);
-            actualDmg = 0;
+            if(currMp > 0)
+            {
+                CalMp(1);
+                actualDmg = 0;
+            }
+            else
+            {
+                actualDmg = (dmg /2);
+            }
         }
         currHp -= actualDmg;
         hpBar.SetHealth(currHp);
@@ -235,5 +268,19 @@ public class PlayerController : MonoBehaviour
         rb.velocity =new Vector2(originalVelocity.x,0);
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+    void ShootShuriken()
+    {
+        Instantiate(shurikenPrefab, firePoint.position, firePoint.rotation);
+    }
+    void ShootFireball()
+    {
+        Instantiate(fireball, firePoint.position, firePoint.rotation);
+    }
+
+    private void Flip()
+    {
+        FacingRight = !FacingRight;
+        transform.Rotate(0f, 180f, 0f);
     }
 }

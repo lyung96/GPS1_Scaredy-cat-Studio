@@ -21,18 +21,6 @@ public class HealthBar : MonoBehaviour
     {
         hpSlider.value = health;
 
-        hpFill.color = hpGradient.Evaluate(hpSlider.normalizedValue);
-        
-        /*if(health <= 0)
-        {
-            PlayerDie();
-        }*/
+        hpFill.color = hpGradient.Evaluate(hpSlider.normalizedValue);        
     }    
-
-    /*public void PlayerDie()
-    {
-        Destroy(player);
-        Debug.Log("Player died");
-    }*/
-
 }
