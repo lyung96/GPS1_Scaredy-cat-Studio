@@ -11,8 +11,6 @@ public class PlayerDie : MonoBehaviour
 
     void Update()
     {
-
-
         if (player.transform.position.y < -7)
         {
             playerDied = true;

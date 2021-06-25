@@ -36,43 +36,45 @@ public class PlayerController : MonoBehaviour
     private bool isBlock = false;
 
     public Transform firePoint;
-    private ShurikenController ShurikenController;
-    public GameObject shurikenPrefab;
+    private ShurikenController shurikenController; //icon
+    public GameObject shurikenPrefab; 
     public GameObject fireball;
 
     //health
-    //public float maxHp = 6f;
-    //public float currHp;
-    //public HealthBar hpBar;
-    private float damage;
+    public float maxCurse = 6f; //bar
+    public float currCurse; //bar
+    public HealthBar curseBar; //bar
+    //private float damage; Icon
+    //private HealthController healthController; //icon
 
     //mana
-    public int maxMp = 4;
-    public int currMp;
-    public ManaBar mpBar;
+    //public int maxMp = 4; //bar
+   // public int currMp; //bar
+    //public ManaBar mpBar; //bar
+    private ManaController manaController; //Icon
 
-    private HealthController healthController;
     private void Start()
     {
-        healthController = GetComponent<HealthController>();
-        ShurikenController = GetComponent<ShurikenController>();
-        //currHp = maxHp;
-        //currHp = healthController.maxHealth;
-        currMp = maxMp;
-        //hpBar.SetMaxHealth(maxHp);
-        mpBar.SetMaxMana(maxMp);
+        //healthController = GetComponent<HealthController>(); //Icon
+        shurikenController = GetComponent<ShurikenController>(); //Icon
+        manaController = GetComponent<ManaController>(); //Icon
+        currCurse = 0; 
+        //currHp = healthController.maxHealth; //icon
+        manaController.maxMana = 4; //icon
+        curseBar.SetMaxHealth(maxCurse, currCurse); //bar
+        //mpBar.SetMaxMana(maxMp); //bar
         normalGravity = rb.gravityScale;
     }
 
     void Update()
     {
         PlayerControl();
-        if(currMp < maxMp)
+        if(manaController.currMana < manaController.maxMana)
         {
-        InvokeRepeating("RegenMana", 10f, 10f);
+             InvokeRepeating("RegenMana", 10f, 10f);
         }
 
-        if (ShurikenController.shuriken < ShurikenController.numOfShuriken)
+        if (shurikenController.shuriken < shurikenController.numOfShuriken)
         {
             InvokeRepeating("RegenShuriken", 2f, 2f);
         }
@@ -151,44 +153,50 @@ public class PlayerController : MonoBehaviour
         //Testing -Hp
         if (Input.GetKeyDown(KeyCode.X))
         {
-            damage = CalHp(1);
-            healthController.TakeDamage(damage);
+            CalHp(1.0f);
+            //damage = CalHp(1.0f);
+            //healthController.TakeDamage(damage);
         }
 
         if (Input.GetKeyDown(KeyCode.C))
         {
-            healthController.TakeDamage(0.5f);
+            CalHp(0.5f);
+            //damage = CalHp(0.5f);
+            //healthController.TakeDamage(0.5f);
         }
 
         //Testing +Mp
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            CalMp(1);
+            //CalMp(1);
+            manaController.ReplenishMana();
         }
 
         //+MaxMana
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            maxMp += 1;
-            mpBar.SetMaxMana(maxMp);
-            CalMp(0);
+            //maxMp += 1;
+            manaController.maxMana++;
+            //mpBar.SetMaxMana(maxMp);
+            //CalMp(0);
         }
 
         //Shuriken
         if (Input.GetKeyDown(KeyCode.E))
         {
-            if(ShurikenController.shuriken > 0)
+            if(shurikenController.shuriken > 0)
             {
                 ShootShuriken();
-                ShurikenController.UseShuriken();
+                shurikenController.UseShuriken();
             }
         }
 
         //Fireball
-        if (Input.GetKeyDown(KeyCode.R) && (currMp > 0))
+        if (Input.GetKeyDown(KeyCode.R) && (manaController.currMana > 0))
         {
             ShootFireball();
-            CalMp(-1);
+            manaController.UseMana();
+            //CalMp(-1);
         }
 
 
@@ -234,14 +242,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public float CalHp(float dmg)
+    public void CalHp(float dmg)
     {
         float actualDmg = dmg;
         if(isBlock == true)
         {
-            if(currMp > 0)
+            if(manaController.currMana > 0)
             {
-                CalMp(-1);
+                //CalMp(-1);
+                manaController.currMana--;
                 actualDmg = 0;
             }
             else
@@ -249,22 +258,21 @@ public class PlayerController : MonoBehaviour
                 actualDmg = (dmg /2);
             }
         }
-        //currHp -= actualDmg;
-        //hpBar.SetHealth(currHp);
-        StartCoroutine(FlashRed());
-        return actualDmg;
-    }
-
-    public void CalMp(int mana)
-    {
-        if(currMp >= maxMp)
+        currCurse += actualDmg;
+        curseBar.SetHealth(currCurse);
+        if(currCurse >= maxCurse)
         {
-            currMp = maxMp;
+            Die();
         }
-
-        currMp += mana;
-        mpBar.SetMana(currMp);
+        StartCoroutine(FlashRed());
+        //return actualDmg;
     }
+
+    /*public void CalMp(int mana)
+    {
+        currMp += mana;
+        //mpBar.SetMana(currMp);
+    }*/
 
     public void Die()
     {
@@ -282,19 +290,19 @@ public class PlayerController : MonoBehaviour
 
     public void RegenMana()
     {
-        if (currMp < maxMp)
+        if (manaController.currMana < manaController.maxMana)
         {
-            currMp += 1;
-            mpBar.SetMana(currMp);
+            manaController.currMana++;
+            //mpBar.SetMana(currMp);
             CancelInvoke("RegenMana");
         }
     }
 
     public void RegenShuriken()
     {
-        if (ShurikenController.shuriken < ShurikenController.numOfShuriken)
+        if (shurikenController.shuriken < shurikenController.numOfShuriken)
         {
-            ShurikenController.shuriken++;
+            shurikenController.shuriken++;
             CancelInvoke("RegenShuriken");
         }
     }

@@ -9,8 +9,6 @@ public class ShurikenController : MonoBehaviour
     public int shuriken;
     public int numOfShuriken;
 
-
-
     public Sprite readyshuriken;
     public Sprite emptyShuriken;
 
@@ -62,6 +60,4 @@ public class ShurikenController : MonoBehaviour
             }
         }
     }
-
-
 }

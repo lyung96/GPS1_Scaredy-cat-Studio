@@ -9,10 +9,10 @@ public class HealthBar : MonoBehaviour
     public Gradient hpGradient;
     public Image hpFill;
     public GameObject player;
-    public void SetMaxHealth(float health)
+    public void SetMaxHealth(float health, float startinghealth)
     {
         hpSlider.maxValue = health;
-        hpSlider.value = health;
+        hpSlider.value = startinghealth;
 
        hpFill.color = hpGradient.Evaluate(1f);
     }
@@ -22,5 +22,6 @@ public class HealthBar : MonoBehaviour
         hpSlider.value = health;
 
         hpFill.color = hpGradient.Evaluate(hpSlider.normalizedValue);        
-    }    
+    }
+
 }

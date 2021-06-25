@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         currEnemyHp = maxHealth;
-        enemyHpBar.SetMaxHealth(maxHealth);
+        enemyHpBar.SetMaxHealth(maxHealth, currEnemyHp);
     }
 
 
