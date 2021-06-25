@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     public float dashCooldown = 1.0f;
     public float dashDirection = 1;
     float normalGravity; 
+
     //combat scripts
     public Transform atkPoint;
     public LayerMask enemyLayers;
@@ -39,20 +40,24 @@ public class PlayerController : MonoBehaviour
     public GameObject fireball;
 
     //health
-    public int maxHp = 6;
-    public int currHp;
-    public HealthBar hpBar;
+    //public float maxHp = 6f;
+    //public float currHp;
+    //public HealthBar hpBar;
+    private float damage;
 
     //mana
     public int maxMp = 4;
     public int currMp;
     public ManaBar mpBar;
 
+    private HealthController healthController;
     private void Start()
     {
-        currHp = maxHp;
+        healthController = GetComponent<HealthController>();
+        //currHp = maxHp;
+        //currHp = healthController.maxHealth;
         currMp = maxMp;
-        hpBar.SetMaxHealth(maxHp);
+        //hpBar.SetMaxHealth(maxHp);
         mpBar.SetMaxMana(maxMp);
         normalGravity = rb.gravityScale;
     }
@@ -60,6 +65,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerControl();
+        if(currMp < maxMp)
+        {
+        InvokeRepeating("RegenMana", 10f, 10f);
+        }
     }
 
     public void PlayerControl()
@@ -135,13 +144,27 @@ public class PlayerController : MonoBehaviour
         //Testing -Hp
         if (Input.GetKeyDown(KeyCode.X))
         {
-            CalHp(2);
+            damage = CalHp(1);
+            healthController.TakeDamage(damage);
         }
 
-        //Testing -Mp
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            healthController.TakeDamage(0.5f);
+        }
+
+        //Testing +Mp
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            CalMp(-1);
+            CalMp(1);
+        }
+
+        //+MaxMana
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            maxMp += 1;
+            mpBar.SetMaxMana(maxMp);
+            CalMp(0);
         }
 
         //Shuriken
@@ -154,7 +177,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && (currMp > 0))
         {
             ShootFireball();
-            CalMp(1);
+            CalMp(-1);
         }
 
 
@@ -200,14 +223,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void CalHp(int dmg)
+    public float CalHp(float dmg)
     {
-        int actualDmg = dmg;
+        float actualDmg = dmg;
         if(isBlock == true)
         {
             if(currMp > 0)
             {
-                CalMp(1);
+                CalMp(-1);
                 actualDmg = 0;
             }
             else
@@ -215,19 +238,20 @@ public class PlayerController : MonoBehaviour
                 actualDmg = (dmg /2);
             }
         }
-        currHp -= actualDmg;
-        hpBar.SetHealth(currHp);
+        //currHp -= actualDmg;
+        //hpBar.SetHealth(currHp);
         StartCoroutine(FlashRed());
-
-        if (currHp <= 0)
-        {
-            Die();//Die or reload on checkpoint, come out losing screen
-        }
+        return actualDmg;
     }
 
     public void CalMp(int mana)
     {
-        currMp -= mana;
+        if(currMp >= maxMp)
+        {
+            currMp = maxMp;
+        }
+
+        currMp += mana;
         mpBar.SetMana(currMp);
     }
 
@@ -243,6 +267,16 @@ public class PlayerController : MonoBehaviour
             return;
 
         Gizmos.DrawWireSphere(atkPoint.position, atkRange);
+    }
+
+    public void RegenMana()
+    {
+        if (currMp < maxMp)
+        {
+            currMp += 1;
+            mpBar.SetMana(currMp);
+            CancelInvoke("RegenMana");
+        }
     }
 
     public IEnumerator FlashRed()

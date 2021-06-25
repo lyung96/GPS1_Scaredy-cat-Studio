@@ -16,12 +16,11 @@ public class ManaBar : MonoBehaviour
 
         mpFill.color = mpGradient.Evaluate(1f);
     }
-    // Start is called before the first frame update
+
     public void SetMana(int mana)
     {
         mpSlider.value = mana;
 
         mpFill.color = mpGradient.Evaluate(mpSlider.normalizedValue);
     }
-
 }
