@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     private bool isBlock = false;
 
     public Transform firePoint;
+    private ShurikenController ShurikenController;
     public GameObject shurikenPrefab;
     public GameObject fireball;
 
@@ -54,6 +55,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         healthController = GetComponent<HealthController>();
+        ShurikenController = GetComponent<ShurikenController>();
         //currHp = maxHp;
         //currHp = healthController.maxHealth;
         currMp = maxMp;
@@ -68,6 +70,11 @@ public class PlayerController : MonoBehaviour
         if(currMp < maxMp)
         {
         InvokeRepeating("RegenMana", 10f, 10f);
+        }
+
+        if (ShurikenController.shuriken < ShurikenController.numOfShuriken)
+        {
+            InvokeRepeating("RegenShuriken", 2f, 2f);
         }
     }
 
@@ -170,7 +177,11 @@ public class PlayerController : MonoBehaviour
         //Shuriken
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ShootShuriken();
+            if(ShurikenController.shuriken > 0)
+            {
+                ShootShuriken();
+                ShurikenController.UseShuriken();
+            }
         }
 
         //Fireball
@@ -276,6 +287,15 @@ public class PlayerController : MonoBehaviour
             currMp += 1;
             mpBar.SetMana(currMp);
             CancelInvoke("RegenMana");
+        }
+    }
+
+    public void RegenShuriken()
+    {
+        if (ShurikenController.shuriken < ShurikenController.numOfShuriken)
+        {
+            ShurikenController.shuriken++;
+            CancelInvoke("RegenShuriken");
         }
     }
 
