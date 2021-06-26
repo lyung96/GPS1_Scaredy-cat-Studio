@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
         if (currEnemyHp <= 0)
         {
             Die();
+            ScoreSystem.scoreNum += 1;
         }
     }
 

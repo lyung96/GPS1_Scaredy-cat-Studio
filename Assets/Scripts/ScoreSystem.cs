@@ -16,6 +16,6 @@ public class ScoreSystem : MonoBehaviour
 
     void Update()
     {
-        scoring.text = "Score: " + scoreNum;
+        scoring.text = "Exp: " + scoreNum;
     }
 }
