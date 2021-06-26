@@ -6,7 +6,7 @@ public class Shuriken : MonoBehaviour
 {
     //public GameObject player;
     //public float direction;
-    public int damage = 1;
+    public int damage = 0;
     public float speed = 30.0f;
     public Rigidbody2D rb;
     private float rotate = 10f;
