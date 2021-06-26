@@ -71,12 +71,12 @@ public class PlayerController : MonoBehaviour
         PlayerControl();
         if(manaController.currMana < manaController.maxMana)
         {
-             InvokeRepeating("RegenMana", 10f, 10f);
+             InvokeRepeating("RegenMana", 0f, 10f);
         }
 
         if (shurikenController.shuriken < shurikenController.numOfShuriken)
         {
-            InvokeRepeating("RegenShuriken", 2f, 2f);
+            InvokeRepeating("RegenShuriken", 0f, 5f);
         }
     }
 
