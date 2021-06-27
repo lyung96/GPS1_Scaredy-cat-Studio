@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     private ShurikenController shurikenController; //icon
     public GameObject shurikenPrefab; 
     public GameObject fireball;
+    private SwitchMask mask;
 
     //health
     public float maxCurse = 6f; //bar
@@ -64,6 +65,7 @@ public class PlayerController : MonoBehaviour
         curseBar.SetMaxHealth(maxCurse, currCurse); //bar
         //mpBar.SetMaxMana(maxMp); //bar
         normalGravity = rb.gravityScale;
+        mask = GetComponent<SwitchMask>();//Icon
     }
 
     void Update()
@@ -191,14 +193,19 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        //Fireball
-        if (Input.GetKeyDown(KeyCode.R) && (manaController.currMana > 0))
+        if (mask.mask1active == true)
         {
-            ShootFireball();
-            manaController.UseMana();
-            //CalMp(-1);
+            //Fireball
+            if (Input.GetKeyDown(KeyCode.R) && (manaController.currMana > 0))
+            {
+                ShootFireball();
+                Debug.Log("Mask 1 Skill activated");
+                manaController.UseMana();
+                //CalMp(-1);
+            }
         }
 
+   
 
         if (isGrounded == true)
         {
@@ -335,7 +342,7 @@ public class PlayerController : MonoBehaviour
     {
         Instantiate(shurikenPrefab, firePoint.position, firePoint.rotation);
     }
-    void ShootFireball()
+    public void ShootFireball()
     {
         Instantiate(fireball, firePoint.position, firePoint.rotation);
     }

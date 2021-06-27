@@ -4,21 +4,19 @@ using UnityEngine;
 
 public class SwitchMask : MonoBehaviour
 {
-    //private PlayerController MaskEffect;
-
     public GameObject mask1;
-    public static bool mask1active = false;
+    public  bool mask1active = false;
 
     public GameObject mask2;
-    public static bool mask2active = false;
+    public bool mask2active = false;
 
     public GameObject mask3;
-    public static bool mask3active = false;
+    public bool mask3active = false;
 
     // Start is called before the first frame update
     void Start()
     {
-
+      
     }
 
     // Update is called once per frame
@@ -28,12 +26,13 @@ public class SwitchMask : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             activatemask1();//set mask1 active, mask2 and mask 3 inactive
+            
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))//if 2 is pressed
         {
             activatemask2();//set mask2 active, mask1 and mask 3 inactive
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Alpha3))//if 3 is pressed
         {
             activatemask3();//set mask3 active, mask1 and mask 2 inactive
         }
