@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     public Transform atkPoint;
     public LayerMask enemyLayers;
 
+    public float firepillarRange = 0f;
     public float atkRange = 0.5f;
     public int atkDmg = 1;
     public float atkRate = 2f;
@@ -35,10 +36,12 @@ public class PlayerController : MonoBehaviour
 
     private bool isBlock = false;
 
+    public Transform firepillarPoint;
     public Transform firePoint;
     private ShurikenController shurikenController; //icon
     public GameObject shurikenPrefab; 
     public GameObject fireball;
+    public GameObject firepillar;
     private SwitchMask mask;
 
     //health
@@ -193,15 +196,26 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (mask.mask1active == true)
+        //Mask Skill
+        if (Input.GetKeyDown(KeyCode.R) && (manaController.currMana > 0))
         {
-            //Fireball
-            if (Input.GetKeyDown(KeyCode.R) && (manaController.currMana > 0))
+            if (mask.mask1active == true)
             {
                 ShootFireball();
                 Debug.Log("Mask 1 Skill activated");
                 manaController.UseMana();
                 //CalMp(-1);
+            }
+            else if (mask.mask2active == true)
+            {
+                FirePillar();
+                FirePillarAttack();
+                Debug.Log("Mask 2 Skill activated");
+                manaController.UseMana();
+            }
+            else if (mask.mask3active == true)
+            {
+
             }
         }
 
@@ -249,6 +263,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void FirePillarAttack()
+    {
+        //Detect enemies in range of attack, store the hitted enemy in array
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(firepillarPoint.position, firepillarRange, enemyLayers);
+
+        //Damage them all of the enemy in array
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            Debug.Log("We hit " + enemy.name);
+            enemy.GetComponent<Enemy>().CalculateHealth(10);
+        }
+    }
+
     public void CalHp(float dmg)
     {
         float actualDmg = dmg;
@@ -293,7 +320,9 @@ public class PlayerController : MonoBehaviour
             return;
 
         Gizmos.DrawWireSphere(atkPoint.position, atkRange);
+        Gizmos.DrawWireSphere(firepillarPoint.position, atkRange);
     }
+
 
     public void RegenMana()
     {
@@ -345,6 +374,10 @@ public class PlayerController : MonoBehaviour
     public void ShootFireball()
     {
         Instantiate(fireball, firePoint.position, firePoint.rotation);
+    }
+    public void FirePillar()
+    {
+        Instantiate(firepillar, firepillarPoint.position, firepillarPoint.transform.rotation);
     }
 
     private void Flip()
