@@ -8256,6 +8256,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1215190055}
     - target: {fileID: 6883976000797708640, guid: 12656013cf8be0642b19f56a5c912ffb, type: 3}
+      propertyPath: fireball2
+      value: 
+      objectReference: {fileID: 5098085870167350519, guid: 0859ca3d952d3de449069c90dacc407c, type: 3}
+    - target: {fileID: 6883976000797708640, guid: 12656013cf8be0642b19f56a5c912ffb, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}

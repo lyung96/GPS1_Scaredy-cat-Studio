@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
     private ShurikenController shurikenController; //icon
     public GameObject shurikenPrefab; 
     public GameObject fireball;
+    public GameObject fireball2;
     public GameObject firepillar;
     public float attackRangeX;
     public float attackRangeY;
@@ -67,7 +68,7 @@ public class PlayerController : MonoBehaviour
         manaController = GetComponent<ManaController>(); //Icon
         currCurse = 0; 
         //currHp = healthController.maxHealth; //icon
-        manaController.maxMana = 4; //icon
+        manaController.maxMana = 3; //icon
         curseBar.SetMaxHealth(maxCurse, currCurse); //bar
         //mpBar.SetMaxMana(maxMp); //bar
         normalGravity = rb.gravityScale;
@@ -84,7 +85,7 @@ public class PlayerController : MonoBehaviour
 
         if (shurikenController.shuriken < shurikenController.numOfShuriken)
         {
-            InvokeRepeating("RegenShuriken", 5f, 5f);
+            InvokeRepeating("RegenShuriken", 3f, 3f);
         }
     }
 
@@ -202,19 +203,20 @@ public class PlayerController : MonoBehaviour
         //Mask Skill
         if (Input.GetKeyDown(KeyCode.R) && (manaController.currMana > 0))
         {
-            if (mask.mask1active == true)
+            if ((mask.mask1active == true) && (manaController.currMana >0))
             {
                 ShootFireball();
                 Debug.Log("Mask 1 Skill activated");
-                manaController.UseMana();
+                manaController.UseMana(-1);
                 //CalMp(-1);
             }
-            else if (mask.mask2active == true)
+            else if (mask.mask2active == true && (manaController.currMana > 1))
             {
-                FirePillar();
-                FirePillarAttack();
+                //FirePillar();
+                //FirePillarAttack();
+                ShootFireball2();
                 Debug.Log("Mask 2 Skill activated");
-                manaController.UseMana();
+                manaController.UseMana(-2);
             }
             else if (mask.mask3active == true)
             {
@@ -377,6 +379,10 @@ public class PlayerController : MonoBehaviour
     public void ShootFireball()
     {
         Instantiate(fireball, firePoint.position, firePoint.rotation);
+    }
+    public void ShootFireball2()
+    {
+        Instantiate(fireball2, firePoint.position, firePoint.rotation);
     }
     public void FirePillar()
     {
