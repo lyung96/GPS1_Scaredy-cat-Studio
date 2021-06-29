@@ -224,7 +224,7 @@ public class PlayerController : MonoBehaviour
 
    
 
-        if (isGrounded == true)
+        if (isGrounded == true && !Input.GetKey(KeyCode.S))
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -244,7 +244,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Grappling")
         {
             Debug.Log("Touch Ground ");
             isGrounded = true;
