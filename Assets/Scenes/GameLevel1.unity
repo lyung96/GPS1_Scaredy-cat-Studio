@@ -8121,6 +8121,14 @@ PrefabInstance:
       propertyPath: curseBar
       value: 
       objectReference: {fileID: 1215190055}
+    - target: {fileID: 6883976000797708640, guid: 12656013cf8be0642b19f56a5c912ffb, type: 3}
+      propertyPath: attackRangeX
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6883976000797708640, guid: 12656013cf8be0642b19f56a5c912ffb, type: 3}
+      propertyPath: attackRangeY
+      value: 8.35
+      objectReference: {fileID: 0}
     - target: {fileID: 6883976000797708641, guid: 12656013cf8be0642b19f56a5c912ffb, type: 3}
       propertyPath: m_IsTrigger
       value: 0

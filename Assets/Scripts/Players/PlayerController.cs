@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask enemyLayers;
 
     public float firepillarRange = 0f;
+    public int firepillarDamage = 3;
     public float atkRange = 0.5f;
     public int atkDmg = 1;
     public float atkRate = 2f;
@@ -42,6 +43,8 @@ public class PlayerController : MonoBehaviour
     public GameObject shurikenPrefab; 
     public GameObject fireball;
     public GameObject firepillar;
+    public float attackRangeX;
+    public float attackRangeY;
     private SwitchMask mask;
 
     //health
@@ -266,13 +269,13 @@ public class PlayerController : MonoBehaviour
     public void FirePillarAttack()
     {
         //Detect enemies in range of attack, store the hitted enemy in array
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(firepillarPoint.position, firepillarRange, enemyLayers);
+        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(firepillarPoint.position, new Vector2(attackRangeX, attackRangeY),0, enemyLayers);
 
         //Damage them all of the enemy in array
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log("We hit " + enemy.name);
-            enemy.GetComponent<Enemy>().CalculateHealth(10);
+            enemy.GetComponent<Enemy>().CalculateHealth(firepillarDamage);
         }
     }
 
@@ -320,7 +323,7 @@ public class PlayerController : MonoBehaviour
             return;
 
         Gizmos.DrawWireSphere(atkPoint.position, atkRange);
-        Gizmos.DrawWireSphere(firepillarPoint.position, atkRange);
+        Gizmos.DrawWireCube(firepillarPoint.position, new Vector3(attackRangeX,attackRangeY, 1));
     }
 
 
