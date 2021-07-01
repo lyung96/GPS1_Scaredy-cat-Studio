@@ -8,7 +8,7 @@ public class GrapplePoint : MonoBehaviour
     //public float waitTime;
     private bool isFalling = false;
     public bool isGrap;
-    private bool onTop;
+    //private bool onTop;
     Grapple grappleScript;
     public GameObject player;
 
@@ -56,7 +56,7 @@ public class GrapplePoint : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Check1");
-        onTop = true;
+        //onTop = true;
         //if (collision.GetType() == typeof(BoxCollider2D))
         //{
         Debug.Log("Check2");
@@ -76,7 +76,7 @@ public class GrapplePoint : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            onTop = false;
+            //onTop = false;
         }
     }
 

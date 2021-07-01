@@ -7,15 +7,18 @@ using UnityEngine.UI;
 public class ScoreSystem : MonoBehaviour
 {
     public Text scoring;
-    public static int scoreNum = 0;
+    public static float scoreNum = 0;
+    PlayerController playerController;
+    public GameObject player;
 
     private void Start()
     {
-        scoreNum = 0;
+        playerController = player.GetComponent<PlayerController>();
     }
 
     void Update()
     {
+        scoreNum = playerController.Exp;
         scoring.text = "Exp: " + scoreNum;
     }
 }

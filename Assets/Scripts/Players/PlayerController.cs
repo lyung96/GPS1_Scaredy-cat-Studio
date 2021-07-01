@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
     public Transform firepillarPoint;
     public Transform firePoint;
-    private ShurikenController shurikenController; //icon
+    public ShurikenController shurikenController; //icon
     public GameObject shurikenPrefab; 
     public GameObject fireball;
     public GameObject fireball2;
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
     //health
     public float maxCurse = 6f; //bar
-    public float currCurse; //bar
+    public float currCurse ; //bar
     public HealthBar curseBar; //bar
     //private float damage; Icon
     //private HealthController healthController; //icon
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
     // public int currMp; //bar
     //public ManaBar mpBar; //bar
     public int maxMana = 3;
-    private ManaController manaController; //Icon
+    public ManaController manaController; //Icon
 
     //mask
     public int maskCollected = 0;
@@ -230,6 +230,11 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        /*if(Input.GetKeyDown(KeyCode.L))
+        {
+            Load();
+        }*/
+
    
 
         if (isGrounded == true && !Input.GetKey(KeyCode.S))
@@ -240,6 +245,8 @@ public class PlayerController : MonoBehaviour
                 isGrounded = false;
             }
         }
+
+        
     }
 
     public void FixedUpdate()
@@ -399,5 +406,15 @@ public class PlayerController : MonoBehaviour
     {
         FacingRight = !FacingRight;
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    public void Load()
+    {
+        manaController.numOfMana = maxMana;
+        manaController.maxMana = maxMana;
+        curseBar.SetMaxHealth(maxCurse, currCurse); //bar
+        currCurse = 0;
+        curseBar.SetHealth(0);
+        shurikenController.shuriken = 3;
     }
 }

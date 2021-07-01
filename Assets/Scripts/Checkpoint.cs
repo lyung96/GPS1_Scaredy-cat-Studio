@@ -19,17 +19,19 @@ public class Checkpoint : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.L))
         {
             LoadPlayer();//problem
+            playerController.Load();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Check1");
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Check2");
             SaveSystem.SavePlayer(playerController);
-            Debug.Log("Check3");
+            playerController.currCurse = 0;
+            playerController.curseBar.SetHealth(0);
+            playerController.manaController.currMana = playerController.manaController.maxMana;
+            playerController.shurikenController.shuriken = playerController.shurikenController.maxShuriken;
         }
     }
 

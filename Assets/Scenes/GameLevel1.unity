@@ -3279,6 +3279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoring: {fileID: 862087524}
+  player: {fileID: 354921212}
 --- !u!1001 &881345383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6616,7 +6617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 601661738009313127, guid: d69ae2cc4405914419717ee2c9f85ced, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.7373064
+      value: 2.4539452
       objectReference: {fileID: 0}
     - target: {fileID: 601661738009313127, guid: d69ae2cc4405914419717ee2c9f85ced, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7995,7 +7996,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3881976137069675002, guid: 61f7d07d78242ae47a5ceb9efc35d661, type: 3}
       propertyPath: m_Name
-      value: CheckPoint
+      value: Shrine
       objectReference: {fileID: 0}
     - target: {fileID: 7711163425853248384, guid: 61f7d07d78242ae47a5ceb9efc35d661, type: 3}
       propertyPath: player
@@ -8199,6 +8200,10 @@ PrefabInstance:
       propertyPath: shurikens.Array.data[2]
       value: 
       objectReference: {fileID: 710937863}
+    - target: {fileID: 354921215, guid: 12656013cf8be0642b19f56a5c912ffb, type: 3}
+      propertyPath: numOfMana
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 354921215, guid: 12656013cf8be0642b19f56a5c912ffb, type: 3}
       propertyPath: Manas.Array.data[0]
       value: 
