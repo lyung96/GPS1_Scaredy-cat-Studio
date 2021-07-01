@@ -93,6 +93,11 @@ public class PlayerController : MonoBehaviour
         {
             InvokeRepeating("RegenShuriken", 3f, 3f);
         }
+        if(anim.GetBool("running") == true)
+        {
+            FindObjectOfType<AudioManager>().Play("PlayerRun");
+        }
+
     }
 
     public void PlayerControl()
