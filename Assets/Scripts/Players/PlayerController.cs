@@ -114,6 +114,7 @@ public class PlayerController : MonoBehaviour
             }
             //gameObject.transform.localScale =new Vector2(-1, 1);
             dashDirection = -1;
+
         } 
         else if (Input.GetKey(KeyCode.D) && (isBlock == false))
         {
@@ -160,6 +161,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetMouseButtonDown(0) && (isBlock == false))
             {
                 StartCoroutine(Attack());
+                FindObjectOfType<AudioManager>().Play("Slash");
                 //calculate next available atk time
                 nextAtkTime = Time.time + 1f / atkRate;
             }
