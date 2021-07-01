@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
         //Attack, current time greater than next available attack time
         if (Time.time >= nextAtkTime)
         {
-            if (Input.GetMouseButtonDown(0) && (isBlock == false))
+            if (Input.GetMouseButtonDown(0) && (isBlock == false) && (PauseMenu.GamePause == false))
             {
                 StartCoroutine(Attack());
                 FindObjectOfType<AudioManager>().Play("Slash");
