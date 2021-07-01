@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     public Transform atkPoint;
     public LayerMask enemyLayers;
 
+    public float firepillarRange = 0f;
+    public int firepillarDamage = 3;
     public float atkRange = 0.5f;
     public int atkDmg = 1;
     public float atkRate = 2f;
@@ -35,24 +37,35 @@ public class PlayerController : MonoBehaviour
 
     private bool isBlock = false;
 
+    public Transform firepillarPoint;
     public Transform firePoint;
-    private ShurikenController shurikenController; //icon
+    public ShurikenController shurikenController; //icon
     public GameObject shurikenPrefab; 
     public GameObject fireball;
+    public GameObject fireball2;
+    public GameObject firepillar;
+    public float attackRangeX;
+    public float attackRangeY;
     private SwitchMask mask;
 
     //health
     public float maxCurse = 6f; //bar
-    public float currCurse; //bar
+    public float currCurse ; //bar
     public HealthBar curseBar; //bar
     //private float damage; Icon
     //private HealthController healthController; //icon
 
     //mana
     //public int maxMp = 4; //bar
-   // public int currMp; //bar
+    // public int currMp; //bar
     //public ManaBar mpBar; //bar
-    private ManaController manaController; //Icon
+    public int maxMana = 3;
+    public ManaController manaController; //Icon
+
+    //mask
+    public int maskCollected = 0;
+
+    public float Exp = 0;
 
     private void Start()
     {
@@ -61,7 +74,7 @@ public class PlayerController : MonoBehaviour
         manaController = GetComponent<ManaController>(); //Icon
         currCurse = 0; 
         //currHp = healthController.maxHealth; //icon
-        manaController.maxMana = 4; //icon
+        manaController.maxMana = maxMana; //icon
         curseBar.SetMaxHealth(maxCurse, currCurse); //bar
         //mpBar.SetMaxMana(maxMp); //bar
         normalGravity = rb.gravityScale;
@@ -78,8 +91,13 @@ public class PlayerController : MonoBehaviour
 
         if (shurikenController.shuriken < shurikenController.numOfShuriken)
         {
-            InvokeRepeating("RegenShuriken", 5f, 5f);
+            InvokeRepeating("RegenShuriken", 3f, 3f);
         }
+        if(anim.GetBool("running") == true)
+        {
+            FindObjectOfType<AudioManager>().Play("PlayerRun");
+        }
+
     }
 
     public void PlayerControl()
@@ -101,6 +119,7 @@ public class PlayerController : MonoBehaviour
             }
             //gameObject.transform.localScale =new Vector2(-1, 1);
             dashDirection = -1;
+
         } 
         else if (Input.GetKey(KeyCode.D) && (isBlock == false))
         {
@@ -144,9 +163,10 @@ public class PlayerController : MonoBehaviour
         //Attack, current time greater than next available attack time
         if (Time.time >= nextAtkTime)
         {
-            if (Input.GetMouseButtonDown(0) && (isBlock == false))
+            if (Input.GetMouseButtonDown(0) && (isBlock == false) && (PauseMenu.GamePause == false))
             {
                 StartCoroutine(Attack());
+                FindObjectOfType<AudioManager>().Play("Slash");
                 //calculate next available atk time
                 nextAtkTime = Time.time + 1f / atkRate;
             }
@@ -193,21 +213,38 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (mask.mask1active == true)
+        //Mask Skill
+        if (Input.GetKeyDown(KeyCode.R) && (manaController.currMana > 0))
         {
-            //Fireball
-            if (Input.GetKeyDown(KeyCode.R) && (manaController.currMana > 0))
+            if ((mask.mask1active == true) && (manaController.currMana >0)) //if maskcollected = 1
             {
                 ShootFireball();
                 Debug.Log("Mask 1 Skill activated");
-                manaController.UseMana();
+                manaController.UseMana(-1);
                 //CalMp(-1);
+            }
+            else if (mask.mask2active == true && (manaController.currMana > 1)) //else maskcollected = 2
+            {
+                //FirePillar();
+                //FirePillarAttack();
+                ShootFireball2();
+                Debug.Log("Mask 2 Skill activated");
+                manaController.UseMana(-2);
+            }
+            else if (mask.mask3active == true)
+            {
+
             }
         }
 
+        /*if(Input.GetKeyDown(KeyCode.L))
+        {
+            Load();
+        }*/
+
    
 
-        if (isGrounded == true)
+        if (isGrounded == true && !Input.GetKey(KeyCode.S))
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -215,6 +252,8 @@ public class PlayerController : MonoBehaviour
                 isGrounded = false;
             }
         }
+
+        
     }
 
     public void FixedUpdate()
@@ -227,7 +266,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Ground")
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Grappling")
         {
             Debug.Log("Touch Ground ");
             isGrounded = true;
@@ -246,6 +285,19 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("We hit " + enemy.name);
             enemy.GetComponent<Enemy>().CalculateHealth(atkDmg);
+        }
+    }
+
+    public void FirePillarAttack()
+    {
+        //Detect enemies in range of attack, store the hitted enemy in array
+        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(firepillarPoint.position, new Vector2(attackRangeX, attackRangeY),0, enemyLayers);
+
+        //Damage them all of the enemy in array
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            Debug.Log("We hit " + enemy.name);
+            enemy.GetComponent<Enemy>().CalculateHealth(firepillarDamage);
         }
     }
 
@@ -293,7 +345,9 @@ public class PlayerController : MonoBehaviour
             return;
 
         Gizmos.DrawWireSphere(atkPoint.position, atkRange);
+        Gizmos.DrawWireCube(firepillarPoint.position, new Vector3(attackRangeX,attackRangeY, 1));
     }
+
 
     public void RegenMana()
     {
@@ -346,10 +400,28 @@ public class PlayerController : MonoBehaviour
     {
         Instantiate(fireball, firePoint.position, firePoint.rotation);
     }
+    public void ShootFireball2()
+    {
+        Instantiate(fireball2, firePoint.position, firePoint.rotation);
+    }
+    public void FirePillar()
+    {
+        Instantiate(firepillar, firepillarPoint.position, firepillarPoint.transform.rotation);
+    }
 
     private void Flip()
     {
         FacingRight = !FacingRight;
         transform.Rotate(0f, 180f, 0f);
+    }
+
+    public void Load()
+    {
+        manaController.numOfMana = maxMana;
+        manaController.maxMana = maxMana;
+        curseBar.SetMaxHealth(maxCurse, currCurse); //bar
+        currCurse = 0;
+        curseBar.SetHealth(0);
+        shurikenController.shuriken = 3;
     }
 }

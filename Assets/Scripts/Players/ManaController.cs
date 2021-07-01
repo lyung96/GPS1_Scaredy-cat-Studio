@@ -50,11 +50,11 @@ public class ManaController : MonoBehaviour
             }
         }
     }
-    public void UseMana()
+    public void UseMana(int mana)
     {
         if (currMana > 0)
         {
-            currMana--;
+            currMana += mana;
 
             if (currMana <= 0)
             {

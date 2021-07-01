@@ -10,9 +10,13 @@ public class Enemy : MonoBehaviour
     public HealthBar enemyHpBar;
     public SpriteRenderer sprite;
 
+    public PlayerController playerController;
+    public GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
+        playerController = player.GetComponent<PlayerController>();
         currEnemyHp = maxHealth;
         enemyHpBar.SetMaxHealth(maxHealth, currEnemyHp);
     }
@@ -27,6 +31,7 @@ public class Enemy : MonoBehaviour
         if (currEnemyHp <= 0)
         {
             Die();
+            playerController.Exp++;
             ScoreSystem.scoreNum += 1;
         }
     }

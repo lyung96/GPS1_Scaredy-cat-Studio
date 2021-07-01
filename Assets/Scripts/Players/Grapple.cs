@@ -10,6 +10,7 @@ public class Grapple : MonoBehaviour
     public LayerMask grappleMask; //What you can grapple to, later change it to tileset layer
     public float moveSpeed = 10;
     public float grappleLenght = 10;
+    //public bool isGrappling = false;
 
     public int maxPoints = 1;
 
@@ -63,7 +64,7 @@ public class Grapple : MonoBehaviour
         }
     }
 
-    void Detatch()
+    public void Detatch()
     {
         lr.positionCount = 0;
         points.Clear();
