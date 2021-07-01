@@ -16,7 +16,7 @@ public class SwitchMask : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+        activatemask1();
     }
 
     // Update is called once per frame

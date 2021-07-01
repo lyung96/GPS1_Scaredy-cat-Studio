@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MenuButton : MonoBehaviour
 {
-    public GameObject pauseMenuUI;
     public void StartGame()
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -17,12 +16,10 @@ public class MenuButton : MonoBehaviour
         Application.Quit();
     }
 
-   
     public void GoBackToMenu()
     {
         SceneManager.LoadScene("Menu");
     }
-   
 
     void Update()
     {

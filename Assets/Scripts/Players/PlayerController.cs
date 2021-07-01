@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rb;
     public float Speed = 3.0f;
     public float JumpForce = 10f;
-    public bool isGrounded = true;
+    //public bool isGrounded = true;
     public Animator anim;
     private bool FacingRight = true;
 
@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
 
     public Transform firepillarPoint;
     public Transform firePoint;
+    [HideInInspector]
     public ShurikenController shurikenController; //icon
     public GameObject shurikenPrefab; 
     public GameObject fireball;
@@ -60,10 +61,11 @@ public class PlayerController : MonoBehaviour
     // public int currMp; //bar
     //public ManaBar mpBar; //bar
     public int maxMana = 3;
+    [HideInInspector]
     public ManaController manaController; //Icon
 
     //mask
-    public int maskCollected = 0;
+    public int maskCollected = 1;
 
     public float Exp = 0;
 
@@ -216,14 +218,14 @@ public class PlayerController : MonoBehaviour
         //Mask Skill
         if (Input.GetKeyDown(KeyCode.R) && (manaController.currMana > 0))
         {
-            if ((mask.mask1active == true) && (manaController.currMana >0)) //if maskcollected = 1
+            if ((maskCollected == 1) && (manaController.currMana >0)) //if maskcollected = 1
             {
                 ShootFireball();
                 Debug.Log("Mask 1 Skill activated");
                 manaController.UseMana(-1);
                 //CalMp(-1);
             }
-            else if (mask.mask2active == true && (manaController.currMana > 1)) //else maskcollected = 2
+            else if ((maskCollected == 2) && (manaController.currMana > 1)) //else maskcollected = 2
             {
                 //FirePillar();
                 //FirePillarAttack();
@@ -237,19 +239,33 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            maskCollected = 1;
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))//if 2 is pressed
+        {
+            maskCollected = 2;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))//if 3 is pressed
+        {
+            maskCollected = 3;
+        }
+
         /*if(Input.GetKeyDown(KeyCode.L))
         {
             Load();
         }*/
 
-   
 
-        if (isGrounded == true && !Input.GetKey(KeyCode.S))
+
+        if (Groundcheck.isGrounded == true && !Input.GetKey(KeyCode.S))
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 rb.velocity = new Vector2(rb.velocity.x, JumpForce);
-                isGrounded = false;
+                Groundcheck.isGrounded = false;
             }
         }
 
@@ -264,14 +280,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Grappling")
         {
             Debug.Log("Touch Ground ");
             isGrounded = true;
         }
-    }
+    }*/
 
     IEnumerator Attack()
     {
