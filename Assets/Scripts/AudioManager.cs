@@ -1,6 +1,7 @@
 using UnityEngine.Audio;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -29,12 +30,22 @@ public class AudioManager : MonoBehaviour
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
         }
-
+        PlayMusic();
     }
 
-    private void Start()
+    public void PlayMusic()
     {
-        Play("Theme");
+        string name = SceneManager.GetActiveScene().name;
+        if (name == "Menu")
+        {
+            StopPlaying("LevelMusic");
+            Play("Theme");
+        }
+        else if (name == "GameLevel1")
+        {
+            StopPlaying("Theme");
+            Play("LevelMusic");
+        }
     }
         
     public void Play(string name)

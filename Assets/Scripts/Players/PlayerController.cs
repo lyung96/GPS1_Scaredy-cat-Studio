@@ -87,7 +87,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        PlayerControl();
+        if ((PauseMenu.GamePause == false))
+        { 
+            PlayerControl(); 
+        }
         if(manaController.currMana < manaController.maxMana)
         {
              InvokeRepeating("RegenMana", 10f, 10f);
@@ -162,7 +165,7 @@ public class PlayerController : MonoBehaviour
         //Attack, current time greater than next available attack time
         if (Time.time >= nextAtkTime)
         {
-            if (Input.GetMouseButtonDown(0) && (isBlock == false) && (PauseMenu.GamePause == false))
+            if (Input.GetMouseButtonDown(0) && (isBlock == false))
             {
                 StartCoroutine(Attack());
                 FindObjectOfType<AudioManager>().Play("Slash");
