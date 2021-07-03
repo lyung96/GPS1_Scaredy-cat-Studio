@@ -28,6 +28,7 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GamePause = true;
+        FindObjectOfType<AudioManager>().setVolume("LevelMusic", 0.05f);
     }
 
     public void Resume()
@@ -35,5 +36,6 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GamePause = false;
+        FindObjectOfType<AudioManager>().setVolume("LevelMusic", 0.2f);
     }
 }

@@ -28,8 +28,9 @@ public class Checkpoint : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             SaveSystem.SavePlayer(playerController);
-            playerController.currCurse = 0;
-            playerController.curseBar.SetHealth(0);
+            playerController.currHealth = playerController.maxCurseBar;
+            playerController.curseBar.SetHealth(playerController.maxCurseBar);
+            playerController.curseBar.SetMaxHealth(playerController.maxCurseBar, playerController.maxCurseBar);
             playerController.manaController.currMana = playerController.manaController.maxMana;
             playerController.shurikenController.shuriken = playerController.shurikenController.maxShuriken;
         }
@@ -39,7 +40,7 @@ public class Checkpoint : MonoBehaviour
     {
         PlayerData data = SaveSystem.LoadPlayer();//problem
 
-        playerController.maxCurse = data.maxHp;
+        playerController.maxCurseBar = data.maxHp;
         playerController.maxMana = data.maxMp;
         playerController.maskCollected = data.maskPieces;
         playerController.Exp = data.Exp;

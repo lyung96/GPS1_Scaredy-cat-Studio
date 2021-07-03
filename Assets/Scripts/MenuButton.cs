@@ -9,6 +9,8 @@ public class MenuButton : MonoBehaviour
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         SceneManager.LoadScene("GameLevel1");
+        FindObjectOfType<AudioManager>().StopPlaying("Theme");
+        FindObjectOfType<AudioManager>().Play("LevelMusic");
     }
 
     public void quitGame()
@@ -26,6 +28,8 @@ public class MenuButton : MonoBehaviour
         if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            FindObjectOfType<AudioManager>().StopPlaying("Theme");
+            FindObjectOfType<AudioManager>().Play("LevelMusic");
         }
     }
 }

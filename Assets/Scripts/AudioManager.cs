@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
+        
         DontDestroyOnLoad(gameObject);
         foreach(Sound s in sounds)
         {
@@ -48,4 +48,36 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
+    public void StopPlaying(string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if(s == null)
+        {
+            Debug.LogWarning("Sound: " + name + "not found!");
+            return;
+        }
+        s.source.Stop();
+    }
+
+    public void setVolume(string name, float volume)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + "not found!");
+            return;
+        }
+        s.source.volume = volume;
+    }
+
+    public void setPitch(string name, float setPitch)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound: " + name + "not found!");
+            return;
+        }
+        s.source.pitch = setPitch;
+    }
 }
