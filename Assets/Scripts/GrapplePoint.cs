@@ -64,6 +64,7 @@ public class GrapplePoint : MonoBehaviour
         {
                 collision.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 3);
                 grappleScript.Detatch();
+                MovePopUpInstructions.grap = true;
                 isGrap = false;
 
                 Debug.Log("Triggered Grappling Point");

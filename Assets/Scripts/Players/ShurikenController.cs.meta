@@ -3,7 +3,9 @@ guid: 63dbf90b03c4b16419ae34e6b31d3d03
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - readyshuriken: {fileID: 21300000, guid: affda15e2bb9f8848a181fd3654db20f, type: 3}
+  - emptyShuriken: {fileID: 21300000, guid: 1cc23f5b94fed0644a4720fb907b26c9, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

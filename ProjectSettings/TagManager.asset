@@ -8,6 +8,7 @@ TagManager:
   - Mask
   - Items
   - Enemy
+  - PopUp Collider
   layers:
   - Default
   - TransparentFX

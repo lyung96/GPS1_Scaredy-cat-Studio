@@ -3,7 +3,9 @@ guid: 148c185e078c10c4699e6ff4ccf10775
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - fullMana: {fileID: 21300000, guid: fd066000b0fa81c4ea9942e0ad725e25, type: 3}
+  - emptyMana: {fileID: 21300000, guid: 2bc99382aeea2204d9c311caa6aa98ad, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -29,6 +29,7 @@ public class Grapple : MonoBehaviour
         {
             Vector2 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
             Vector2 direction = (mousePos - (Vector2)transform.position).normalized;
+ 
 
             RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, grappleLenght, grappleMask);
             if(hit.collider != null)

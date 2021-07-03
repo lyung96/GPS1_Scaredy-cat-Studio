@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
     public PlayerController playerController;
     public GameObject player;
 
+    public bool enemydie;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,7 @@ public class Enemy : MonoBehaviour
             Die();
             playerController.Exp++;
             ScoreSystem.scoreNum += 1;
+            chestopener.enemycount++;
         }
     }
 
@@ -41,6 +44,8 @@ public class Enemy : MonoBehaviour
         Debug.Log("Enemy died");
         //Play die animation and disable the enemy
         Destroy(gameObject);
+        enemydie = true;
+      
     }
 
     /*public void OnCollisionEnter2D(Collision2D collision)
