@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class chestopener : MonoBehaviour
 {
-    public GameObject chest, openinstructions, defeatenemyinstructions, Lock;
+    public GameObject chest, openinstructions, defeatenemyinstructions, obtainedkeyInstructions;
     public Enemy enemy;
-    public bool chestopen=false;
+    public static bool chestopen=false;
+    public static bool obtainedkey = false;
     public static int enemycount=0;
     // Start is called before the first frame update
     void Start()
@@ -49,12 +50,22 @@ public class chestopener : MonoBehaviour
                 Debug.Log("Open chest");
                 GetComponent<Animator>().SetTrigger("Open");
                 openinstructions.SetActive(false);
-                Destroy(Lock);
-
+                obtainedkey = true;
+                if (obtainedkey)
+                {
+                    obtainedkeyInstructions.SetActive(true);
+                    Invoke("keypopoff", 1f);
+                }
             }
           
 
         }
+    }
+
+    private void keypopoff()
+    {
+        Debug.Log("off");
+       obtainedkeyInstructions.SetActive(false);
     }
 
     private void OnTriggerExit2D(Collider2D collision)

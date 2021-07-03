@@ -4,12 +4,31 @@ using UnityEngine;
 
 public class LockMessage : MonoBehaviour
 {
-    public GameObject lockmessage;
+    public GameObject lockmessage, unlockmessage, Lock;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
             lockmessage.SetActive(true);
+            if(chestopener.obtainedkey== true)
+            {
+                unlockmessage.SetActive(true);
+                lockmessage.SetActive(false);
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            if (chestopener.obtainedkey == true)
+            {
+                if (Input.GetKey(KeyCode.V))
+                {
+                    Destroy(Lock);
+                }
+            }
         }
     }
 
@@ -18,6 +37,10 @@ public class LockMessage : MonoBehaviour
         if (collision.tag == "Player")
         {
             lockmessage.SetActive(false);
+            if (chestopener.obtainedkey)
+            {
+                unlockmessage.SetActive(false);
+            }
         }
     }
 }
