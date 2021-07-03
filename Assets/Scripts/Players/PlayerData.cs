@@ -14,7 +14,7 @@ public class PlayerData
 
     public PlayerData(PlayerController player)
     {
-        maxHp = player.maxCurse;
+        maxHp = player.maxCurseBar;
         maxMp = player.maxMana;
         maskPieces = player.maskCollected;
         Exp = player.Exp;

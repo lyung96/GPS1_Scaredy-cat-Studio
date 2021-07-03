@@ -50,8 +50,8 @@ public class PlayerController : MonoBehaviour
     private SwitchMask mask;
 
     //health
-    public float maxCurse = 6f; //bar
-    public float currCurse ; //bar
+    public float maxCurseBar = 6f; //bar
+    public float currHealth ; //bar
     public HealthBar curseBar; //bar
     //private float damage; Icon
     //private HealthController healthController; //icon
@@ -66,18 +66,20 @@ public class PlayerController : MonoBehaviour
 
     //mask
     public int maskCollected = 1;
-
     public float Exp = 0;
+
+    //Audio
+
 
     private void Start()
     {
         //healthController = GetComponent<HealthController>(); //Icon
         shurikenController = GetComponent<ShurikenController>(); //Icon
         manaController = GetComponent<ManaController>(); //Icon
-        currCurse = 0; 
+        currHealth = maxCurseBar; 
         //currHp = healthController.maxHealth; //icon
         manaController.maxMana = maxMana; //icon
-        curseBar.SetMaxHealth(maxCurse, currCurse); //bar
+        curseBar.SetMaxHealth(maxCurseBar, currHealth); //bar
         //mpBar.SetMaxMana(maxMp); //bar
         normalGravity = rb.gravityScale;
         mask = GetComponent<SwitchMask>();//Icon
@@ -85,7 +87,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        PlayerControl();
+        if ((PauseMenu.GamePause == false))
+        { 
+            PlayerControl(); 
+        }
         if(manaController.currMana < manaController.maxMana)
         {
              InvokeRepeating("RegenMana", 10f, 10f);
@@ -95,11 +100,6 @@ public class PlayerController : MonoBehaviour
         {
             InvokeRepeating("RegenShuriken", 3f, 3f);
         }
-        if(anim.GetBool("running") == true)
-        {
-            FindObjectOfType<AudioManager>().Play("PlayerRun");
-        }
-
     }
 
     public void PlayerControl()
@@ -165,7 +165,7 @@ public class PlayerController : MonoBehaviour
         //Attack, current time greater than next available attack time
         if (Time.time >= nextAtkTime)
         {
-            if (Input.GetMouseButtonDown(0) && (isBlock == false) && (PauseMenu.GamePause == false))
+            if (Input.GetMouseButtonDown(0) && (isBlock == false))
             {
                 StartCoroutine(Attack());
                 FindObjectOfType<AudioManager>().Play("Slash");
@@ -177,7 +177,7 @@ public class PlayerController : MonoBehaviour
         //Testing -Hp
         if (Input.GetKeyDown(KeyCode.X))
         {
-            CalHp(1.0f);
+            CalHp(-1.0f);
             //damage = CalHp(1.0f);
             //healthController.TakeDamage(damage);
         }
@@ -333,9 +333,9 @@ public class PlayerController : MonoBehaviour
                 actualDmg = (dmg /2);
             }
         }
-        currCurse += actualDmg;
-        curseBar.SetHealth(currCurse);
-        if(currCurse >= maxCurse)
+        currHealth += actualDmg;
+        curseBar.SetHealth(currHealth);
+        if(currHealth <= 0)//currCurse >= maxCurse
         {
             Die();
         }
@@ -431,13 +431,21 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);
     }
 
+    private void Footstep()
+    {
+        if(Groundcheck.isGrounded == true)
+        {
+            FindObjectOfType<AudioManager>().Play("PlayerRun");
+        }
+    }
+
     public void Load()
     {
         manaController.numOfMana = maxMana;
         manaController.maxMana = maxMana;
-        curseBar.SetMaxHealth(maxCurse, currCurse); //bar
-        currCurse = 0;
-        curseBar.SetHealth(0);
+        currHealth = maxCurseBar;
+        curseBar.SetHealth(maxCurseBar);
+        curseBar.SetMaxHealth(maxCurseBar, currHealth); //bar
         shurikenController.shuriken = 3;
     }
 }

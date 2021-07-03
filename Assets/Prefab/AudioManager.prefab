@@ -51,14 +51,20 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: Theme
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 52e7e6f0a18520a44bb6899fd9732ab3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: PlayerRun
+    clip: {fileID: 8300000, guid: 27d31265d8dff9342841a1135e6801fd, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: PlayerRun
-    clip: {fileID: 0}
-    volume: 1
+  - name: LevelMusic
+    clip: {fileID: 8300000, guid: 8c752ef4ef6c80a4688ab5f6393e9a94, type: 3}
+    volume: 0.3
     pitch: 1
     loop: 0
     source: {fileID: 0}
