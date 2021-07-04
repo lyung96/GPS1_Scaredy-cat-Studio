@@ -223,6 +223,7 @@ public class PlayerController : MonoBehaviour
                 ShootFireball();
                 Debug.Log("Mask 1 Skill activated");
                 manaController.UseMana(-1);
+                FindObjectOfType<AudioManager>().Play("Fireball");
                 //CalMp(-1);
             }
             else if ((maskCollected == 2) && (manaController.currMana > 1)) //else maskcollected = 2
@@ -232,6 +233,7 @@ public class PlayerController : MonoBehaviour
                 ShootFireball2();
                 Debug.Log("Mask 2 Skill activated");
                 manaController.UseMana(-2);
+                FindObjectOfType<AudioManager>().Play("Fireball");
             }
             else if (mask.mask3active == true)
             {
