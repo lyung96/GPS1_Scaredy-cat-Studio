@@ -3271,7 +3271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7113789927937466315, guid: 46f67561a8d956b44b58ba97551235e4, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7113789927937466315, guid: 46f67561a8d956b44b58ba97551235e4, type: 3}
       propertyPath: m_LocalScale.x
@@ -7297,7 +7297,7 @@ Transform:
   m_LocalScale: {x: 8.519676, y: 8.0906725, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1368520311
 Animator:
@@ -10197,7 +10197,7 @@ Transform:
   m_LocalScale: {x: 0.60001564, y: 0.60001564, z: 0.60001564}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1929508354
 MonoBehaviour:
@@ -10214,6 +10214,11 @@ MonoBehaviour:
   knifePos: {fileID: 0}
   movementSpeed: 1
   knifePrefab: {fileID: 0}
+  health: 0
+  SwordCollider: {fileID: 0}
+  damageSources: []
+  meleeRange: 0
+  throwRange: 0
 --- !u!61 &1929508355
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11425,63 +11430,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61f7d07d78242ae47a5ceb9efc35d661, type: 3}
---- !u!1001 &5268963443218510097
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5268963442687134931, guid: b55cb2f35aef7ef4e9bb8fbfa72bba29, type: 3}
-      propertyPath: m_Name
-      value: Kunai
-      objectReference: {fileID: 0}
-    - target: {fileID: 5268963442687134933, guid: b55cb2f35aef7ef4e9bb8fbfa72bba29, type: 3}
-      propertyPath: m_RootOrder
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 5268963442687134933, guid: b55cb2f35aef7ef4e9bb8fbfa72bba29, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5268963442687134933, guid: b55cb2f35aef7ef4e9bb8fbfa72bba29, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5268963442687134933, guid: b55cb2f35aef7ef4e9bb8fbfa72bba29, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5268963442687134933, guid: b55cb2f35aef7ef4e9bb8fbfa72bba29, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5268963442687134933, guid: b55cb2f35aef7ef4e9bb8fbfa72bba29, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5268963442687134933, guid: b55cb2f35aef7ef4e9bb8fbfa72bba29, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5268963442687134933, guid: b55cb2f35aef7ef4e9bb8fbfa72bba29, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5268963442687134933, guid: b55cb2f35aef7ef4e9bb8fbfa72bba29, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5268963442687134933, guid: b55cb2f35aef7ef4e9bb8fbfa72bba29, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5268963442687134933, guid: b55cb2f35aef7ef4e9bb8fbfa72bba29, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b55cb2f35aef7ef4e9bb8fbfa72bba29, type: 3}
 --- !u!1001 &6205489697070099312
 PrefabInstance:
   m_ObjectHideFlags: 0
