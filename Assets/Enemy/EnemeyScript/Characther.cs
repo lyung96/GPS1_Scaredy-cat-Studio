@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Characther : MonoBehaviour
 {
+    public PlayerController playerrr;
 
     [SerializeField]
     protected Transform knifePos;
@@ -36,7 +37,10 @@ public abstract class Characther : MonoBehaviour
     // Start is called before the first frame update
     public virtual void Start()
     {
-        facingRight = !facingRight;
+        //Debug.Log("im idling characther");
+        playerrr.GetComponent<PlayerController>();
+        facingRight = true;
+        //facingRight = !facingRight;
 
         MyAnimator = GetComponent<Animator>();
     }
@@ -71,9 +75,11 @@ public abstract class Characther : MonoBehaviour
         }
     }
 
-    public void MeleeAttack()
+    public virtual void MeleeAttack()
     {
         SwordCollider.enabled = true;
+        playerrr.CalHp(3f); //player call for hp.
+        
     }
     public virtual void OnTriggerEnter2D(Collider2D other)
     {

@@ -70,16 +70,17 @@ public class EnemyCat : Characther
     // Update is called once per frame
     void Update()
     {
-        if(!IsDead) //if enemy is alive
-        {               //and
-            if(!TakingDamage)//if the enemy is not taking any damage 
-            {
-                //execute the current state. this can make the enemy move or attack etc.
-                currentState.Execute();
-            }
-            //makes the enemy look at the target
-            LookAtTarget();
-        }
+        //if(!IsDead) //if enemy is alive
+        //{               //and
+        //    if(!TakingDamage)//if the enemy is not taking any damage 
+        //    {
+        //        //execute the current state. this can make the enemy move or attack etc.
+        currentState.Execute();
+        //    }
+        //    //makes the enemy look at the target
+        LookAtTarget();
+        //}
+
 
     }
     //removest the enemy target. so that it stops killing the dead player
@@ -152,4 +153,8 @@ public class EnemyCat : Characther
         }
 
     }
+
+    
+
+
 }
