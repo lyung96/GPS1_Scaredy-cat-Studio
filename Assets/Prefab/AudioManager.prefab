@@ -68,3 +68,9 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Fireball
+    clip: {fileID: 8300000, guid: 86e0b070eb0b3c64b9de6929226cb97b, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
