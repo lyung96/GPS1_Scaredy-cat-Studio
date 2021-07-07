@@ -70,7 +70,7 @@ public class AudioManager : MonoBehaviour
         s.source.Stop();
     }
 
-    public void setVolume(string name, float volume)
+    public void SetVolume(string name, float volume)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
@@ -81,7 +81,7 @@ public class AudioManager : MonoBehaviour
         s.source.volume = volume;
     }
 
-    public void setPitch(string name, float setPitch)
+    public void SetPitch(string name, float setPitch)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)

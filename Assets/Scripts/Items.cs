@@ -9,7 +9,7 @@ public class Items : MonoBehaviour
     {
         if (trigger.GetType() == typeof(BoxCollider2D))
         {
-            if (trigger.gameObject.tag == "Player")
+            if (trigger.gameObject.CompareTag("Player"))
             {
                 Debug.Log("Triggered White Mask");
                 ScoreSystem.scoreNum++;

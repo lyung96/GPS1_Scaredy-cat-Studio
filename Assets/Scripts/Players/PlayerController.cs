@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     private bool FacingRight = true;
 
     //Dash
-    float horizontal;
+    private float horizontal;
     IEnumerator dashCoroutine;
     bool isDashing;
     bool canDash = true;
@@ -36,6 +36,8 @@ public class PlayerController : MonoBehaviour
     float nextAtkTime = 0f;
 
     private bool isBlock = false;
+    private bool canHurt = true;
+
 
     public Transform firepillarPoint;
     public Transform firePoint;
@@ -45,9 +47,12 @@ public class PlayerController : MonoBehaviour
     public GameObject fireball;
     public GameObject fireball2;
     public GameObject firepillar;
+    public GameObject finalBlow;
     public float attackRangeX;
     public float attackRangeY;
     private SwitchMask mask;
+    public GameObject finalBlowUi;
+    private FinalBlowBar finalBlowBar;
 
     //health
     public float maxCurseBar = 6f; //bar
@@ -66,13 +71,17 @@ public class PlayerController : MonoBehaviour
 
     //mask
     public int maskCollected = 1;
+    public float maskGauge = 0;
     public float Exp = 0;
 
     //Audio
 
+    //Camera
+    public CameraController cameraController;
 
     private void Start()
     {
+        finalBlowBar = finalBlowUi.GetComponent<FinalBlowBar>();
         //healthController = GetComponent<HealthController>(); //Icon
         shurikenController = GetComponent<ShurikenController>(); //Icon
         manaController = GetComponent<ManaController>(); //Icon
@@ -160,6 +169,7 @@ public class PlayerController : MonoBehaviour
             }
             dashCoroutine = Dash(dashDuration, dashCooldown);
             StartCoroutine(dashCoroutine);
+            //cameraController.CameraShake();
         }
 
         //Attack, current time greater than next available attack time
@@ -182,6 +192,7 @@ public class PlayerController : MonoBehaviour
             //healthController.TakeDamage(damage);
         }
 
+        //Heal
         if (Input.GetKeyDown(KeyCode.C))
         {
             CalHp(0.5f);
@@ -235,23 +246,27 @@ public class PlayerController : MonoBehaviour
                 manaController.UseMana(-2);
                 FindObjectOfType<AudioManager>().Play("Fireball");
             }
-            else if (mask.mask3active == true)
+            else if ((maskCollected == 3) && (maskGauge >= 35))
             {
-
+                ShootFinalBlow();
+                Debug.Log("Mask 3 Skill activated");
             }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
+            finalBlowUi.SetActive(false);
             maskCollected = 1;
 
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))//if 2 is pressed
         {
+            finalBlowUi.SetActive(false);
             maskCollected = 2;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))//if 3 is pressed
         {
+            finalBlowUi.SetActive(true);
             maskCollected = 3;
         }
 
@@ -301,9 +316,15 @@ public class PlayerController : MonoBehaviour
         //Damage them all of the enemy in array
         foreach(Collider2D enemy in hitEnemies)
         {
+            if(enemy.CompareTag("Boss"))
+            {
+                maskGauge += 1;
+                finalBlowBar.SetBar(maskGauge);
+            }
             Debug.Log("We hit " + enemy.name);
             enemy.GetComponent<Enemy>().CalculateHealth(atkDmg);
         }
+
     }
 
     public void FirePillarAttack()
@@ -322,26 +343,34 @@ public class PlayerController : MonoBehaviour
     public void CalHp(float dmg)
     {
         float actualDmg = dmg;
-        if(isBlock == true)
+        if (canHurt == false)
         {
-            if(manaController.currMana > 0)
-            {
-                //CalMp(-1);
-                manaController.currMana--;
-                actualDmg = 0;
-            }
-            else
-            {
-                actualDmg = (dmg /2);
-            }
+            StartCoroutine(FlashMagenta());
         }
-        currHealth += actualDmg;
-        curseBar.SetHealth(currHealth);
+        if (canHurt == true)
+        {
+            if (isBlock == true)
+            {
+                if (manaController.currMana > 0)
+                {
+                    //CalMp(-1);
+                    manaController.currMana--;
+                    actualDmg = 0;
+                }
+                else
+                {
+                    actualDmg = (dmg / 2);
+                }
+            }
+            currHealth += actualDmg;
+            curseBar.SetHealth(currHealth);
+            StartCoroutine(FlashRed());
+        }
         if(currHealth <= 0)//currCurse >= maxCurse
         {
             Die();
         }
-        StartCoroutine(FlashRed());
+
         //return actualDmg;
     }
 
@@ -392,10 +421,17 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
+    public IEnumerator FlashMagenta()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = Color.magenta;
+        yield return new WaitForSeconds(0.1f);
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+    }
 
     IEnumerator Dash(float DashDuration, float dashCooldown)
     {
         Vector2 originalVelocity = rb.velocity;
+        canHurt = false;
         isDashing = true;
         canDash = false;
         //making sure it doesn't affect by gravity and dash downward in air
@@ -404,6 +440,7 @@ public class PlayerController : MonoBehaviour
         //wait seconds, how long is dash then start cooldown
         yield return new WaitForSeconds(DashDuration);
         isDashing = false;
+        canHurt = true;
         //get back our velocity & gravity after dash duration
         rb.gravityScale = normalGravity;
         rb.velocity =new Vector2(originalVelocity.x,0);
@@ -422,6 +459,12 @@ public class PlayerController : MonoBehaviour
     {
         Instantiate(fireball2, firePoint.position, firePoint.rotation);
     }
+
+    public void ShootFinalBlow()
+    {
+        Instantiate(finalBlow, firePoint.position, firePoint.rotation); //new Vector3 (firePoint.position.x + 15, firePoint.position.y, firePoint.position.z)
+    }
+
     public void FirePillar()
     {
         Instantiate(firepillar, firepillarPoint.position, firepillarPoint.transform.rotation);

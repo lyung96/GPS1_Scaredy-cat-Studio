@@ -56,27 +56,23 @@ public class GrapplePoint : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Check1");
-        //onTop = true;
-        //if (collision.GetType() == typeof(BoxCollider2D))
-        //{
-        Debug.Log("Check2");
-            if ((collision.gameObject.tag == "Player") && (isGrap == true))//&& (onTop == false)
-        {
-                collision.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 3);
-                grappleScript.Detatch();
-                MovePopUpInstructions.grap = true;
-                isGrap = false;
+            if (collision.gameObject.CompareTag("Player") && (isGrap == true))//&& (onTop == false)
+            {
+            collision.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 3);
+            grappleScript.Detatch();
+            MovePopUpInstructions.grap = true;
+            isGrap = false;
 
-                Debug.Log("Triggered Grappling Point");
+            Debug.Log("Triggered Grappling Point");
             }
-        //}
     }
 
 
     public void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
+            
             //onTop = false;
         }
     }

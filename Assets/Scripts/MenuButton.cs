@@ -16,7 +16,7 @@ public class MenuButton : MonoBehaviour
         FindObjectOfType<AudioManager>().StopPlaying("Theme");
     }
 
-    public void quitGame()
+    public void QuitGame()
     {
         Application.Quit();
     }

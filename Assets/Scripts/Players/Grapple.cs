@@ -46,7 +46,7 @@ public class Grapple : MonoBehaviour
 
         if(points.Count > 0)
         {
-            Vector2 moveTo = centroid(points.ToArray());
+            Vector2 moveTo = Centroid(points.ToArray());
 
             rig.MovePosition(Vector2.MoveTowards(transform.position, moveTo, Time.deltaTime * moveSpeed));
 
@@ -72,7 +72,7 @@ public class Grapple : MonoBehaviour
     }
 
     //Calculate the center, might not need
-    Vector2 centroid(Vector2[] points)
+    Vector2 Centroid(Vector2[] points)
     {
         Vector2 center = Vector2.zero;
         foreach(Vector2 point in points)

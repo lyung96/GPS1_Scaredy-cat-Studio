@@ -16,7 +16,7 @@ public class SwitchMask : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        activatemask1();
+        Activatemask1();
     }
 
     // Update is called once per frame
@@ -25,19 +25,19 @@ public class SwitchMask : MonoBehaviour
         //if 1 is pressed
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            activatemask1();//set mask1 active, mask2 and mask 3 inactive
+            Activatemask1();//set mask1 active, mask2 and mask 3 inactive
             
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))//if 2 is pressed
         {
-            activatemask2();//set mask2 active, mask1 and mask 3 inactive
+            Activatemask2();//set mask2 active, mask1 and mask 3 inactive
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))//if 3 is pressed
         {
-            activatemask3();//set mask3 active, mask1 and mask 2 inactive
+            Activatemask3();//set mask3 active, mask1 and mask 2 inactive
         }
     }
-    public void activatemask1()
+    public void Activatemask1()
     {
         mask1.SetActive(true);
         Debug.Log("Mask 1 Activated");
@@ -48,7 +48,7 @@ public class SwitchMask : MonoBehaviour
         mask3active = false;
     }
 
-    public void activatemask2()
+    public void Activatemask2()
     {
         mask2.SetActive(true);
         Debug.Log("Mask 2 Activated");
@@ -59,7 +59,7 @@ public class SwitchMask : MonoBehaviour
         mask3active = false;
     }
     
-    public void activatemask3()
+    public void Activatemask3()
     {
         mask3.SetActive(true);
         Debug.Log("Mask 3 Activated");
