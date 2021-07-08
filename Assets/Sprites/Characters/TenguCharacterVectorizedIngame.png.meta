@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: 6347171a385ccc6429569dcf87ac95c9
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -1931596928664637579
+    second: TenguCharacterVectorizedIngame_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,7 +104,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: TenguCharacterVectorizedIngame_0
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 302
+        width: 2589
+        height: 2080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57f65b1d3d69135e0800000000000000
+      internalID: -1931596928664637579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

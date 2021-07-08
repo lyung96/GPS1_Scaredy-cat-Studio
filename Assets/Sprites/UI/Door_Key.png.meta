@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: 79651dcb7fd40e949a1a196ebe9d10e3
+guid: 295009f5e9687b343a65201848ffd4d7
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -1079936909479420413
-    second: EnemySwordAnsSpearMiniBoss_0
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -104,32 +101,11 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: EnemySwordAnsSpearMiniBoss_0
-      rect:
-        serializedVersion: 2
-        x: 1455
-        y: 205
-        width: 749
-        height: 2085
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30e55a24a1b4301f0800000000000000
-      internalID: -1079936909479420413
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 

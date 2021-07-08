@@ -7,7 +7,8 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    public Slider slider;
+    public Slider bgSlider;
+    public Slider sfxSlider;
     public Sound[] sounds;
     public static AudioManager instance;
 
@@ -96,4 +97,19 @@ public class AudioManager : MonoBehaviour
         }
         s.source.pitch = setPitch;
     }
+
+    /*public void SetBGMusic()
+    {
+        SetVolume("LevelMusic", bgSlider.value);
+        SetVolume("Theme", bgSlider.value);
+        SetVolume("FinalBossMusic", bgSlider.value);
+        SetVolume("BossMusic", bgSlider.value);
+    }
+
+    public void SetSfx()
+    {
+        SetVolume("Fireball", sfxSlider.value);
+        SetVolume("PlayerRun", sfxSlider.value);
+        SetVolume("Slash", sfxSlider.value);
+    }*/
 }
