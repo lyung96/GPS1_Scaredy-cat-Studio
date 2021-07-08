@@ -8,7 +8,9 @@ using UnityEngine.UI;
 public class AudioManager : MonoBehaviour
 {
     public Slider bgSlider;
+    public float bgVolume;
     public Slider sfxSlider;
+    public float sfxVolume;
     public Sound[] sounds;
     public static AudioManager instance;
 
@@ -34,6 +36,14 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
         }
         PlayMusic();
+    }
+
+    private void Update()
+    {
+            bgVolume = bgSlider.value;
+            sfxVolume = sfxSlider.value;
+        SetSfx();
+        SetBGMusic();
     }
 
     public void PlayMusic()
@@ -98,18 +108,18 @@ public class AudioManager : MonoBehaviour
         s.source.pitch = setPitch;
     }
 
-    /*public void SetBGMusic()
+    public void SetBGMusic()
     {
-        SetVolume("LevelMusic", bgSlider.value);
-        SetVolume("Theme", bgSlider.value);
-        SetVolume("FinalBossMusic", bgSlider.value);
-        SetVolume("BossMusic", bgSlider.value);
+        SetVolume("LevelMusic", bgVolume);
+        SetVolume("Theme", bgVolume);
+        SetVolume("FinalBossMusic", bgVolume);
+        SetVolume("BossMusic", bgVolume);
     }
 
     public void SetSfx()
     {
-        SetVolume("Fireball", sfxSlider.value);
-        SetVolume("PlayerRun", sfxSlider.value);
-        SetVolume("Slash", sfxSlider.value);
-    }*/
+        SetVolume("Fireball", sfxVolume);
+        SetVolume("PlayerRun", sfxVolume);
+        SetVolume("Slash", sfxVolume);
+    }
 }
