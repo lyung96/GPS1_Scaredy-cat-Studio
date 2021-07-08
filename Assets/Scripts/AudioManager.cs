@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class AudioManager : MonoBehaviour
 {
     public Slider slider;
-    public AudioMixer mixer;
     public Sound[] sounds;
     public static AudioManager instance;
 
@@ -97,17 +96,4 @@ public class AudioManager : MonoBehaviour
         }
         s.source.pitch = setPitch;
     }
-
-    //public void ChangeVolume(string name)
-    //{
-    //    Sound s = Array.Find(sounds, sound => sound.name == name);
-    //    if (s == null)
-    //    {
-    //        Debug.LogWarning("Sound: " + name + "not found!");
-    //        return;
-    //    }
-    //    FindObjectOfType<AudioManager>().SetVolume(name,slider.value(name, SetVolume));
-    //    slider.value=SetVolume(name)
-    //}
-
 }
