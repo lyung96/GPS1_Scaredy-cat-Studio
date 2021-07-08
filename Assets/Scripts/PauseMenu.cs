@@ -20,21 +20,25 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (GamePause)
+            if (OptionMenu.Option==false)
             {
-                Resume();
+                if (GamePause)
+                {
+                    Resume();
+                }
+                else
+                {
+                    Pause();
+                }
             }
-            else
-            {
-                Pause();
-            }
+           
         }
     }
 
     void Pause()
     {
         PauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         GamePause = true;
         FindObjectOfType<AudioManager>().SetVolume("LevelMusic", 0.05f);
     }

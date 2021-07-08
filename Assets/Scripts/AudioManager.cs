@@ -2,11 +2,14 @@ using UnityEngine.Audio;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class AudioManager : MonoBehaviour
 {
+    public Slider slider;
+    public AudioMixer mixer;
     public Sound[] sounds;
-
     public static AudioManager instance;
 
     private void Awake()
@@ -70,15 +73,18 @@ public class AudioManager : MonoBehaviour
         s.source.Stop();
     }
 
-    public void SetVolume(string name, float volume)
+    public float SetVolume(string name, float volume)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
         {
             Debug.LogWarning("Sound: " + name + "not found!");
-            return;
+            return 0;
         }
         s.source.volume = volume;
+        return volume;
+
+        
     }
 
     public void SetPitch(string name, float setPitch)
@@ -91,4 +97,17 @@ public class AudioManager : MonoBehaviour
         }
         s.source.pitch = setPitch;
     }
+
+    //public void ChangeVolume(string name)
+    //{
+    //    Sound s = Array.Find(sounds, sound => sound.name == name);
+    //    if (s == null)
+    //    {
+    //        Debug.LogWarning("Sound: " + name + "not found!");
+    //        return;
+    //    }
+    //    FindObjectOfType<AudioManager>().SetVolume(name,slider.value(name, SetVolume));
+    //    slider.value=SetVolume(name)
+    //}
+
 }
