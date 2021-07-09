@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LockMessage : MonoBehaviour
 {
-    public GameObject lockmessage, unlockmessage, Lock;
+    public GameObject lockmessage, unlockmessage, Lock, lockedDoor, openDoor;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
@@ -27,6 +27,8 @@ public class LockMessage : MonoBehaviour
                 if (Input.GetKey(KeyCode.V))
                 {
                     Destroy(Lock);
+                    lockedDoor.SetActive(false);
+                    openDoor.SetActive(true);
                 }
             }
         }
