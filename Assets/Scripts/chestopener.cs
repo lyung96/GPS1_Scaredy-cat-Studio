@@ -31,7 +31,7 @@ public class chestopener : MonoBehaviour
                 defeatenemyinstructions.SetActive(true);
                 openinstructions.SetActive(false);
             }
-            if(enemycount==4 && chestopen== false)
+            if(enemycount >= 3 && chestopen== false)
             {
                 openinstructions.SetActive(true);
                 defeatenemyinstructions.SetActive(false);
@@ -45,7 +45,7 @@ public class chestopener : MonoBehaviour
         if (Input.GetKey(KeyCode.V))
         {
             chestopen = true;
-            if(chestopen && enemycount==4)
+            if(chestopen && enemycount >=4)
             {
                 Debug.Log("Open chest");
                 GetComponent<Animator>().SetTrigger("Open");
@@ -72,11 +72,11 @@ public class chestopener : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if (chestopen==false && enemycount==3)
+            if (chestopen==false && enemycount <=2)
             {
                 openinstructions.SetActive(false);
             }
-            if (chestopen == false && enemycount != 3)
+            if (chestopen == false && enemycount >= 3)
             {
                 defeatenemyinstructions.SetActive(false);
             }

@@ -1,9 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SwitchMask : MonoBehaviour
 {
+    public Sprite emptyMask;
+    public Sprite oneMask;
+    public Sprite twoMask;
+    public Sprite FullMask;
+
+    public Image[] masks;
+
     public GameObject mask1;
     public  bool mask1active = false;
 

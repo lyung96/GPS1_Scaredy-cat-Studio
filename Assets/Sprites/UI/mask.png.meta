@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 03e16d16ec6ff4d43a890ab884e28ec2
+guid: 2cbdae91355cd57439d0ad2faefd182b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -101,11 +101,116 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: mask_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 350
+        width: 232
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f95e567f26d2be0800000000000000
+      internalID: -1500434286138515679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mask_4
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 347
+        width: 233
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f10c203f42ce455f0800000000000000
+      internalID: -768729992933490657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mask_5
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 347
+        width: 234
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a01c8c166d76b58e0800000000000000
+      internalID: -1703653863568391926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mask_7
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 27
+        width: 234
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52711e7770f902bb0800000000000000
+      internalID: -4962791934937458907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mask_10
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 8
+        width: 233
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28be43291b46de540800000000000000
+      internalID: 5038794271922383746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 034225fa1f4661b408d7ea050029d2e1
     internalID: 0
     vertices: []
     indices: 
