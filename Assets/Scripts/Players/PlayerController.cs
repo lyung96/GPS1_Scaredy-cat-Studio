@@ -74,6 +74,7 @@ public class PlayerController : MonoBehaviour
     public float maskGauge = 0;
     public float Exp = 0;
 
+    public static bool left, right, jump, dash;
     //Audio
 
     //Camera
@@ -130,6 +131,7 @@ public class PlayerController : MonoBehaviour
             }
             //gameObject.transform.localScale =new Vector2(-1, 1);
             dashDirection = -1;
+            left = true;
 
         } 
         else if (Input.GetKey(KeyCode.D) && (isBlock == false))
@@ -144,6 +146,8 @@ public class PlayerController : MonoBehaviour
             }
             //gameObject.transform.localScale = new Vector2(1, 1);
             dashDirection = 1;
+            right = true;
+
         }
 
         else
@@ -170,6 +174,7 @@ public class PlayerController : MonoBehaviour
             dashCoroutine = Dash(dashDuration, dashCooldown);
             StartCoroutine(dashCoroutine);
             //cameraController.CameraShake();
+            dash = true;
         }
 
         //Attack, current time greater than next available attack time
@@ -282,7 +287,9 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 rb.velocity = new Vector2(rb.velocity.x, JumpForce);
+                rb.velocity = new Vector2(rb.velocity.x, JumpForce);
                 Groundcheck.isGrounded = false;
+                jump = true;
             }
         }
 
