@@ -15310,7 +15310,7 @@ PrefabInstance:
       objectReference: {fileID: 354921212}
     - target: {fileID: 2667631291371046244, guid: a6ce59a21c6c8014482e0342d920927d, type: 3}
       propertyPath: maxHealth
-      value: 50
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2667631291371046244, guid: a6ce59a21c6c8014482e0342d920927d, type: 3}
       propertyPath: playerController
