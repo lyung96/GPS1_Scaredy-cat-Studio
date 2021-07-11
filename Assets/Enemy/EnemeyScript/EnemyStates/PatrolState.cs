@@ -7,7 +7,7 @@ public class PatrolState : IEnemyState
     private EnemyCat enemy;
 
     private float patrolTimer;
-    private float patrolDuration = 10;
+    private float patrolDuration = 5;
     public void Enter(EnemyCat enemy)
     {
         this.enemy = enemy;
@@ -20,7 +20,7 @@ public class PatrolState : IEnemyState
 
         enemy.Move();
 
-        if (enemy.Target != null && enemy.InThrowRange)
+        if (enemy.Target != null )
         {
             enemy.ChangeState(new RangedState());
 

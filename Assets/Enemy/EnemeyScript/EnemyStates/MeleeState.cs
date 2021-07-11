@@ -18,7 +18,7 @@ public class MeleeState : IEnemyState
     public void Execute()
     {
         Attack();
-        if(enemy.InThrowRange && !enemy.InMeleeRange)
+        if( !enemy.InMeleeRange)
         {
             enemy.ChangeState(new RangedState());
         }

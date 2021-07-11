@@ -27,8 +27,7 @@ public class Attack : StateMachineBehaviour
     {
         animator.GetComponent<Characther>().Attack = false;
         animator.GetComponent<Characther>().MeleeAttack();
-        animator.ResetTrigger("Eattack");
-        animator.ResetTrigger("Ethrow");
+        //animator.ResetTrigger("Eattack");
 
 
     }

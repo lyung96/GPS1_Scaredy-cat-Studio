@@ -38,7 +38,8 @@ public abstract class Characther : MonoBehaviour
     public virtual void Start()
     {
         //Debug.Log("im idling characther");
-        playerrr.GetComponent<PlayerController>();
+        //playerrr.GetComponent<PlayerController>();
+
         facingRight = true;
         //facingRight = !facingRight;
 
@@ -61,32 +62,26 @@ public abstract class Characther : MonoBehaviour
         transform.localScale = new Vector3(transform.localScale.x * -1f, transform.localScale.y, transform.localScale.z);
     }
 
-    public virtual void ThrowKnife(int value)
-    {
-        if(facingRight)
-        {
-            GameObject tmp = (GameObject)Instantiate(knifePrefab, knifePos.position, Quaternion.Euler(new Vector3(0, 0, 0)));
-            tmp.GetComponent<Knife>().Initialize(Vector3.right); 
-        }
-        else
-        {
-            GameObject tmp = (GameObject)Instantiate(knifePrefab, knifePos.position, Quaternion.Euler(new Vector3(0, 0, 180)));
-            tmp.GetComponent<Knife>().Initialize(Vector3.left);
-        }
-    }
+
 
     public virtual void MeleeAttack()
     {
         SwordCollider.enabled = true;
-        playerrr.CalHp(3f); //player call for hp.
+        //playerrr.CalHp(3f); //player call for hp.
         
     }
     public virtual void OnTriggerEnter2D(Collider2D other)
     {
-        if (damageSources.Contains(other.tag)) 
+        if (damageSources.Contains(other.tag)) //if the damagesources contains this tag then call coroutine
         {
             StartCoroutine(TakeDamage());
         }
+
+        //other way to implement this is 
+        //if (other.tag == "knife")
+        //{
+        //    StartCoroutine(TakeDamage());
+        //}
     }
 
 

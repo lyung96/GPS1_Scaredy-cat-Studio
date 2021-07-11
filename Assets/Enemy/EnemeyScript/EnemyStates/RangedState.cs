@@ -6,9 +6,7 @@ public class RangedState : IEnemyState
 {
     private EnemyCat enemy;
 
-    private float throwTimer;
-    private float throwCooldown = 3;
-    private bool  canThrow = true;
+
     public void Enter(EnemyCat enemy)
     {
         this.enemy = enemy;
@@ -16,7 +14,7 @@ public class RangedState : IEnemyState
 
     public void Execute()
     {
-        ThrowKnife();
+       
         if(enemy.InMeleeRange)
         {
             enemy.ChangeState(new MeleeState());
@@ -44,23 +42,7 @@ public class RangedState : IEnemyState
 
     }
 
-    private void ThrowKnife()
-    {
-        throwTimer += Time.deltaTime;
-
-        if (throwTimer >= throwCooldown)
-        {
-            canThrow = true;
-            throwTimer = 0;
-        }
-
-        if (canThrow)
-        {
-            canThrow = false;
-            enemy.MyAnimator.SetTrigger("Ethrow");
-        }
-
-    }
+ 
 
     
 }
