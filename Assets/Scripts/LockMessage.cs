@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class LockMessage : MonoBehaviour
 {
-    public GameObject lockmessage, unlockmessage, Lock, lockedDoor, openDoor;
+    public GameObject lockmessage, unlockmessage, Lock, lockedDoor, openDoor, interacticon;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            lockmessage.SetActive(true);
-            if(chestopener.obtainedkey== true)
+            interacticon.SetActive(true);
+            //lockmessage.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.V))
             {
-                unlockmessage.SetActive(true);
-                lockmessage.SetActive(false);
+                if (chestopener.obtainedkey == true)
+                {
+                    unlockmessage.SetActive(true);
+                    lockmessage.SetActive(false);
+                }
             }
         }
     }
@@ -31,6 +35,14 @@ public class LockMessage : MonoBehaviour
                     openDoor.SetActive(true);
                 }
             }
+            else if (chestopener.obtainedkey== false)
+            {
+                if (Input.GetKey(KeyCode.V))
+                {
+                    lockmessage.SetActive(true);
+                    unlockmessage.SetActive(false);
+                }
+            }
         }
     }
 
@@ -38,6 +50,7 @@ public class LockMessage : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            interacticon.SetActive(false);
             lockmessage.SetActive(false);
             if (chestopener.obtainedkey)
             {

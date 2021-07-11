@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class chestopener : MonoBehaviour
 {
-    public GameObject chest, openinstructions, defeatenemyinstructions, obtainedkeyInstructions;
+    public GameObject chest, openinstructions, defeatenemyinstructions, obtainedkeyInstructions, interacticon;
     public Enemy enemy;
     public static bool chestopen=false;
     public static bool obtainedkey = false;
@@ -26,17 +26,15 @@ public class chestopener : MonoBehaviour
         if (collision.tag== "Player")
         {
             Debug.Log("Chest touched");
-            if (enemycount!=4 && chestopen==false)
-            {
-                defeatenemyinstructions.SetActive(true);
-                openinstructions.SetActive(false);
-            }
-            if(enemycount >= 3 && chestopen== false)
-            {
-                openinstructions.SetActive(true);
-                defeatenemyinstructions.SetActive(false);
-
-            }
+            interacticon.SetActive(true);
+            //if(enemycount == 4 && chestopen== true)
+            //{
+            //    interacticon.SetActive(true);
+            //    if (Input.GetKey(KeyCode.V))
+            //    {
+            //        defeatenemyinstructions.SetActive(false);
+            //    }
+            //}
         }
     }
 
@@ -44,12 +42,13 @@ public class chestopener : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.V))
         {
-            chestopen = true;
-            if(chestopen && enemycount >=4)
+           
+            if(enemycount ==4)
             {
+                chestopen = true;
                 Debug.Log("Open chest");
                 GetComponent<Animator>().SetTrigger("Open");
-                openinstructions.SetActive(false);
+                interacticon.SetActive(false);
                 obtainedkey = true;
                 if (obtainedkey)
                 {
@@ -57,8 +56,11 @@ public class chestopener : MonoBehaviour
                     Invoke("keypopoff", 1f);
                 }
             }
-          
-
+            else if (enemycount != 4 && chestopen == false)
+            {
+                chestopen = false;
+                defeatenemyinstructions.SetActive(true);
+            }
         }
     }
 
@@ -72,17 +74,19 @@ public class chestopener : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if (chestopen==false && enemycount <=2)
+            
+            //if (chestopen==true && enemycount ==4)
+            //{
+            //    interacticon.SetActive(false);
+            //}
+            if (chestopen == false && enemycount != 4)
             {
-                openinstructions.SetActive(false);
-            }
-            if (chestopen == false && enemycount >= 3)
-            {
+                interacticon.SetActive(false);
                 defeatenemyinstructions.SetActive(false);
             }
             if (chestopen)
             {
-                Destroy(openinstructions);
+                Destroy(interacticon);
                 Destroy(defeatenemyinstructions);
             }
 

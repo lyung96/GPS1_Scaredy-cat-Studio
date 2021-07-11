@@ -40,8 +40,8 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-            bgVolume = bgSlider.value;
-            sfxVolume = sfxSlider.value;
+        bgVolume = bgSlider.value;
+        sfxVolume = sfxSlider.value;
         SetSfx();
         SetBGMusic();
     }
