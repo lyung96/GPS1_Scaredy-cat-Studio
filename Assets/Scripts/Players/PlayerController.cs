@@ -234,7 +234,7 @@ public class PlayerController : MonoBehaviour
         //Mask Skill
         if (Input.GetKeyDown(KeyCode.R) && (manaController.currMana > 0))
         {
-            if ((maskCollected == 1) && (manaController.currMana >0)) //if maskcollected = 1
+            if ((maskCollected == 1) && (manaController.currMana > 0)) //if maskcollected = 1
             {
                 ShootFireball();
                 Debug.Log("Mask 1 Skill activated");
@@ -258,21 +258,31 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            finalBlowUi.SetActive(false);
+            maskCollected = 0;
+            gameObject.GetComponent<SwitchMask>().SetMask(maskCollected);
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             finalBlowUi.SetActive(false);
             maskCollected = 1;
+            gameObject.GetComponent<SwitchMask>().SetMask(maskCollected);
 
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))//if 2 is pressed
         {
             finalBlowUi.SetActive(false);
             maskCollected = 2;
+            gameObject.GetComponent<SwitchMask>().SetMask(maskCollected);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))//if 3 is pressed
         {
             finalBlowUi.SetActive(true);
             maskCollected = 3;
+            gameObject.GetComponent<SwitchMask>().SetMask(maskCollected);
         }
 
         /*if(Input.GetKeyDown(KeyCode.L))

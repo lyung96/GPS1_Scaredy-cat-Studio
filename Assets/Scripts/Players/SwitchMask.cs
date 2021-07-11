@@ -5,33 +5,36 @@ using UnityEngine.UI;
 
 public class SwitchMask : MonoBehaviour
 {
+    public GameObject maskUI;
+
     public Sprite emptyMask;
     public Sprite oneMask;
     public Sprite twoMask;
     public Sprite FullMask;
 
-    public Image[] masks;
 
-    public GameObject mask1;
+    /*public GameObject mask1;
     public  bool mask1active = false;
 
     public GameObject mask2;
     public bool mask2active = false;
 
     public GameObject mask3;
-    public bool mask3active = false;
+    public bool mask3active = false;*/
 
     // Start is called before the first frame update
     void Start()
     {
-        Activatemask1();
+        SetMask(gameObject.GetComponent<PlayerController>().maskCollected);
+
+        //Activatemask1();
     }
 
     // Update is called once per frame
     void Update()
     {
         //if 1 is pressed
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        /*if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             Activatemask1();//set mask1 active, mask2 and mask 3 inactive
             
@@ -43,9 +46,9 @@ public class SwitchMask : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha3))//if 3 is pressed
         {
             Activatemask3();//set mask3 active, mask1 and mask 2 inactive
-        }
+        }*/
     }
-    public void Activatemask1()
+    /*public void Activatemask1()
     {
         mask1.SetActive(true);
         Debug.Log("Mask 1 Activated");
@@ -76,5 +79,25 @@ public class SwitchMask : MonoBehaviour
         mask1.SetActive(false);
         mask1active = false;
         mask2active = false;
+    }*/
+
+    public void SetMask(int maskCollected)
+    {
+        if(maskCollected == 0)
+        {
+            maskUI.GetComponent<Image>().sprite = emptyMask;
+        }
+        if (maskCollected == 1)
+        {
+            maskUI.GetComponent<Image>().sprite = oneMask;
+        }
+        if (maskCollected == 2)
+        {
+            maskUI.GetComponent<Image>().sprite = twoMask;
+        }
+        if (maskCollected == 3)
+        {
+            maskUI.GetComponent<Image>().sprite = FullMask;
+        }
     }
 }
