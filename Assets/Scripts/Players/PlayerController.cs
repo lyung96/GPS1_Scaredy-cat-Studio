@@ -408,7 +408,8 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+
     }
 
     //Show the attack range in scene

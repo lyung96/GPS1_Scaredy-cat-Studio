@@ -4,8 +4,6 @@ using UnityEngine;
 
 public abstract class Characther : MonoBehaviour
 {
-    public PlayerController playerrr;
-
     [SerializeField]
     protected Transform knifePos;
 
@@ -67,10 +65,18 @@ public abstract class Characther : MonoBehaviour
     public virtual void MeleeAttack()
     {
         SwordCollider.enabled = true;
-        //playerrr.CalHp(3f); //player call for hp.
-        
     }
-    public virtual void OnTriggerEnter2D(Collider2D other)
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log(collision.name);
+            collision.gameObject.GetComponent<PlayerController>().CalHp(-1);
+        }
+    }
+
+    /*public virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (damageSources.Contains(other.tag)) //if the damagesources contains this tag then call coroutine
         {
@@ -82,7 +88,7 @@ public abstract class Characther : MonoBehaviour
         //{
         //    StartCoroutine(TakeDamage());
         //}
-    }
+    }*/
 
 
 
