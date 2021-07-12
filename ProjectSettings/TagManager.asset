@@ -21,7 +21,7 @@ TagManager:
   - Enemy
   - Grappling
   - Player
-  - 
+  - Ground
   - 
   - 
   - 
@@ -50,6 +50,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 13392869
+    locked: 0
+  - name: Ground
+    uniqueID: 3223766051
     locked: 0
   - name: Player
     uniqueID: 693638995

@@ -12,13 +12,16 @@ public class Enemy : MonoBehaviour
 
     public PlayerController playerController;
     public GameObject player;
+    private ParticleSystem bloodEffect;
 
     public bool enemydie;
+
 
     // Start is called before the first frame update
     void Start()
     {
         playerController = player.GetComponent<PlayerController>();
+        bloodEffect = gameObject.GetComponentInChildren<ParticleSystem>();
         currEnemyHp = maxHealth;
         enemyHpBar.SetMaxHealth(maxHealth, currEnemyHp);
     }
@@ -60,8 +63,10 @@ public class Enemy : MonoBehaviour
     {
         //gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         sprite.color = Color.red;
+        bloodEffect.Play();
         yield return new WaitForSeconds(0.1f);
         //gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         sprite.color = Color.yellow;
+
     }
 }

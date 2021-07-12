@@ -43,7 +43,7 @@ public class chestopener : MonoBehaviour
         if (Input.GetKey(KeyCode.V))
         {
            
-            if(enemycount==4)
+            if(enemycount == 4)
             {
                 chestopen = true;
                 Debug.Log("Open chest");
