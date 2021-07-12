@@ -15310,7 +15310,7 @@ PrefabInstance:
       objectReference: {fileID: 354921212}
     - target: {fileID: 2667631291371046244, guid: a6ce59a21c6c8014482e0342d920927d, type: 3}
       propertyPath: maxHealth
-      value: 3
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2667631291371046244, guid: a6ce59a21c6c8014482e0342d920927d, type: 3}
       propertyPath: playerController
@@ -18721,9 +18721,9 @@ GameObject:
   - component: {fileID: 1929508356}
   - component: {fileID: 1929508355}
   - component: {fileID: 1929508357}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: CatEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18830,7 +18830,7 @@ MonoBehaviour:
   knifePos: {fileID: 0}
   movementSpeed: 4
   knifePrefab: {fileID: 9105807888017027834, guid: 49770f79104e52d42b699229fa7a5d6b, type: 3}
-  health: 30
+  health: 10
   SwordCollider: {fileID: 0}
   damageSources: []
   meleeRange: 1.5
@@ -22272,15 +22272,15 @@ PrefabInstance:
       objectReference: {fileID: 880999415}
     - target: {fileID: 7675189067121819392, guid: de299e472925db84a8b190611c0eb6b4, type: 3}
       propertyPath: sounds.Array.size
-      value: 7
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7675189067121819392, guid: de299e472925db84a8b190611c0eb6b4, type: 3}
       propertyPath: sounds.Array.data[4].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 8c752ef4ef6c80a4688ab5f6393e9a94, type: 3}
+      objectReference: {fileID: 8300000, guid: 86e0b070eb0b3c64b9de6929226cb97b, type: 3}
     - target: {fileID: 7675189067121819392, guid: de299e472925db84a8b190611c0eb6b4, type: 3}
       propertyPath: sounds.Array.data[4].name
-      value: LevelMusic
+      value: Fireball
       objectReference: {fileID: 0}
     - target: {fileID: 7675189067121819392, guid: de299e472925db84a8b190611c0eb6b4, type: 3}
       propertyPath: sounds.Array.data[5].clip

@@ -43,6 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff1d9c494454b2646b1e3a826d3b9a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgSlider: {fileID: 0}
+  bgVolume: 0
+  sfxSlider: {fileID: 0}
+  sfxVolume: 0
   sounds:
   - name: Slash
     clip: {fileID: 8300000, guid: 21a6277825c606a4d9c4a694936112d4, type: 3}
@@ -64,7 +68,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: LevelMusic
     clip: {fileID: 8300000, guid: 8c752ef4ef6c80a4688ab5f6393e9a94, type: 3}
-    volume: 0.3
+    volume: 0.2
     pitch: 1
     loop: 0
     source: {fileID: 0}

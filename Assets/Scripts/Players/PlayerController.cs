@@ -337,9 +337,18 @@ public class PlayerController : MonoBehaviour
             {
                 maskGauge += 1;
                 finalBlowBar.SetBar(maskGauge);
+                enemy.GetComponent<Enemy>().CalculateHealth(atkDmg);
             }
             Debug.Log("We hit " + enemy.name);
-            enemy.GetComponent<Enemy>().CalculateHealth(atkDmg);
+            if (enemy.CompareTag("Enemy"))
+            {
+                enemy.GetComponent<Enemy>().CalculateHealth(atkDmg);
+            }
+            if (enemy.CompareTag("CatEnemy"))
+            {
+                StartCoroutine(enemy.GetComponent<EnemyCat>().EnemyTakeDamage(-atkDmg));
+            }
+
         }
 
     }

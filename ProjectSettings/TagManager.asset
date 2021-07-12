@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - PopUp Collider
   - Boss
+  - CatEnemy
   layers:
   - Default
   - TransparentFX

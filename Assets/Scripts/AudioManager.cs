@@ -112,8 +112,8 @@ public class AudioManager : MonoBehaviour
     {
         SetVolume("LevelMusic", bgVolume);
         SetVolume("Theme", bgVolume);
-        SetVolume("FinalBossMusic", bgVolume);
-        SetVolume("BossMusic", bgVolume);
+        //SetVolume("FinalBossMusic", bgVolume);
+        //SetVolume("BossMusic", bgVolume);
     }
 
     public void SetSfx()

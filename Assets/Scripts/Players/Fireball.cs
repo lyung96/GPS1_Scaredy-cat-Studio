@@ -26,6 +26,13 @@ public class Fireball : MonoBehaviour
             Destroy(gameObject);
             
         }
+        if (collision.gameObject.tag == "CatEnemy")
+        {
+            Debug.Log(collision.name);
+            StartCoroutine(collision.GetComponent<EnemyCat>().EnemyTakeDamage(-damage));
+            Instantiate(impactEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
     }
 }
 

@@ -25,5 +25,10 @@ public class FinalBlow : MonoBehaviour
             Debug.Log(collision.name);
             collision.gameObject.GetComponent<Enemy>().CalculateHealth(damage);
         }
+        if (collision.gameObject.tag == "CatEnemy")
+        {
+            Debug.Log(collision.name);
+            StartCoroutine(collision.GetComponent<EnemyCat>().EnemyTakeDamage(-damage));
+        }
     }
 }

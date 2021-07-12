@@ -79,7 +79,10 @@ public class EnemyCat : Characther
             //makes the enemy look at the target
             LookAtTarget();
         }
-
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            StartCoroutine(TakeDamage());
+        }
 
     }
 
@@ -134,11 +137,25 @@ public class EnemyCat : Characther
 
     }
 
-     public override void OnTriggerEnter2D(Collider2D other)
+    public IEnumerator EnemyTakeDamage(int dmg)
+    {
+        health += dmg;
+        if (!IsDead)
+        {
+            MyAnimator.SetTrigger("Edmg");
+        }
+        else
+        {
+            MyAnimator.SetTrigger("Edie");
+            yield return null;
+        }
+    }
+
+     /*public override void OnTriggerEnter2D(Collider2D other)
     {
         base.OnTriggerEnter2D(other);
         currentState.OnTriggerEnter(other);
-    }
+    }*/
 
 
 }
