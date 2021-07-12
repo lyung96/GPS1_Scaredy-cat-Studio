@@ -58,7 +58,8 @@ public class GrapplePoint : MonoBehaviour
         Debug.Log("Check1");
             if (collision.gameObject.CompareTag("Player") && (isGrap == true))//&& (onTop == false)
             {
-            collision.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 3);
+            collision.rigidbody.velocity = Vector2.zero;
+            collision.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 2);
             grappleScript.Detatch();
             MovePopUpInstructions.grap = true;
             isGrap = false;
