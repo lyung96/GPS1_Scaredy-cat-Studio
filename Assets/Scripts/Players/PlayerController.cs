@@ -22,7 +22,8 @@ public class PlayerController : MonoBehaviour
     public float dashDuration = 0.1f;
     public float dashCooldown = 1.0f;
     public float dashDirection = 1;
-    float normalGravity; 
+    float normalGravity;
+    //public CameraShake cameraShake;
 
     //combat scripts
     public Transform atkPoint;
