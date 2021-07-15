@@ -42,12 +42,12 @@ public class ParticleCollision : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             Instantiate(splatPrefab, collisionEvents[i].intersection, Quaternion.Euler(0.0f, 0.0f, Random.Range(0.0f, 360.0f)), splatHolder);
-            if (soundsPlayed < MaxSounds)
-            {
-                soundsPlayed += 1;
-                audioSource.pitch = Random.Range(0.9f, 1.1f);
-                audioSource.PlayOneShot(sounds[Random.Range(0, sounds.Length)], Random.Range(0.1f, 0.35f));
-            }
+        //    if (soundsPlayed < MaxSounds)
+        //    {
+        //        soundsPlayed += 1;
+        //        audioSource.pitch = Random.Range(0.9f, 1.1f);
+        //        audioSource.PlayOneShot(sounds[Random.Range(0, sounds.Length)], Random.Range(0.1f, 0.35f));
+        //    }
         }
     }
 }

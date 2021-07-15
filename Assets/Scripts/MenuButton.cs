@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MenuButton : MonoBehaviour
 {
     PauseMenu pauseMenu;
+    public GameObject MainMenu, optionsMenu;
 
     public void StartGame()
     {
@@ -26,7 +27,18 @@ public class MenuButton : MonoBehaviour
         SceneManager.LoadScene("Menu");
         FindObjectOfType<AudioManager>().Play("Theme");
         FindObjectOfType<AudioManager>().StopPlaying("LevelMusic");
+    }
 
+    public void optionMenu()
+    {
+        MainMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+    }
+
+    public void BackToMain()
+    {
+        MainMenu.SetActive(true);
+        optionsMenu.SetActive(false);
     }
 
     void Update()
