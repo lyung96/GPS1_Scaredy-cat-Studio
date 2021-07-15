@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GamePause = false;
-        FindObjectOfType<AudioManager>().SetVolume("LevelMusic", 0.2f);
+        //FindObjectOfType<AudioManager>().SetVolume("LevelMusic", 0.2f);
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GamePause = true;
-        FindObjectOfType<AudioManager>().SetVolume("LevelMusic", 0.05f);
+        FindObjectOfType<AudioManager>().SetVolume("LevelMusic", 0.3f);
     }
 
     public void Resume()
@@ -48,6 +48,6 @@ public class PauseMenu : MonoBehaviour
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GamePause = false;
-        FindObjectOfType<AudioManager>().SetVolume("LevelMusic", 0.2f);
+        FindObjectOfType<AudioManager>().SetVolume("LevelMusic", 1f);
     }
 }

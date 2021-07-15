@@ -10,11 +10,13 @@ public class OptionsMusic : MonoBehaviour
     [SerializeField]
     private float masterVolume = 1.0f;
     public Slider slider;
+    GameObject optionMenu;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        optionMenu = GameObject.Find("Options Menu");
+        slider = optionMenu.GetComponent<OptionMenu>().masterSlider;
     }
 
     // Update is called once per frame

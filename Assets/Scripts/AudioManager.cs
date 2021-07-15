@@ -13,6 +13,9 @@ public class AudioManager : MonoBehaviour
     public float sfxVolume;
     public Sound[] sounds;
     public static AudioManager instance;
+    private string lastScene;
+    private string currScene;
+    private GameObject optionMenu;
 
     private void Awake()
     {
@@ -36,13 +39,16 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
+        lastScene = SceneManager.GetActiveScene().name;
+        optionMenu = GameObject.Find("Options Menu");   
+        bgSlider = optionMenu.GetComponent<OptionMenu>().oBgSlider;
+        sfxSlider = optionMenu.GetComponent<OptionMenu>().oSfxSlider;
         PlayMusic();
     }
 
     private void Update()
     {
-        bgVolume = bgSlider.value;
-        sfxVolume = sfxSlider.value;
+        UpdateVolume();
         SetSfx();
         SetBGMusic();
     }
@@ -122,5 +128,53 @@ public class AudioManager : MonoBehaviour
         SetVolume("Fireball", sfxVolume);
         SetVolume("PlayerRun", sfxVolume);
         SetVolume("Slash", sfxVolume);
+    }
+    public void UpdateVolume()
+    {
+        bgVolume = bgSlider.value;
+        sfxVolume = sfxSlider.value;
+    }
+
+    /*public void setSlider()
+     {
+         if (currScene == "Menu")
+         {
+             Slider currS = FindObjectsOfTypeAll(typeof(UnityEngine.UI.Slider)) as 
+             currSfxSlider = mainSfxSlider;
+         }
+         else if (currScene == "Gamelevel1")
+         {
+             currBgSlider = inGameBgSlider;
+             currSfxSlider = inGameSfxSlider;
+         }
+     }*/
+
+    /*public void updateVolume()
+    {
+        if (currScene == "Menu")
+        {
+            currBgSlider.value = mainBgSlider.value;
+            currSfxSlider.value = mainSfxSlider.value;
+        }
+        else if (currScene == "Gamelevel1")
+        {
+            currBgSlider.value = inGameBgSlider.value;
+            currSfxSlider.value = inGameSfxSlider.value;
+        }
+
+        bgVolume = currBgSlider.value;
+        sfxVolume = currSfxSlider.value;
+    }*/
+
+
+    public void changeScene()
+    {
+        currScene = SceneManager.GetActiveScene().name;
+        if (lastScene != currScene)
+        {
+            bgSlider = optionMenu.GetComponent<OptionMenu>().oBgSlider;
+            sfxSlider = optionMenu.GetComponent<OptionMenu>().oSfxSlider;
+            lastScene = currScene;
+        } 
     }
 }

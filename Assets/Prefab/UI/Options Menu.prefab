@@ -419,7 +419,6 @@ GameObject:
   - component: {fileID: 8007634986858874000}
   - component: {fileID: 8007634986858874001}
   - component: {fileID: 8007634986858874002}
-  - component: {fileID: 8007634986858874003}
   - component: {fileID: 8007634986858874012}
   m_Layer: 5
   m_Name: Options Menu
@@ -467,7 +466,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &8007634986858874001
 MonoBehaviour:
@@ -509,18 +508,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &8007634986858874003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8007634986858874013}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1db86eb7fe3a3b6409a784a1e8326a9b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8007634986858874012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -535,6 +522,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OptionsMenuUI: {fileID: 8007634988145756453}
   PauseMenuUI: {fileID: 0}
+  oBgSlider: {fileID: 8007634986994722262}
+  oSfxSlider: {fileID: 8007634987491387772}
+  masterSlider: {fileID: 8007634987533681579}
 --- !u!1 &8007634986872111794
 GameObject:
   m_ObjectHideFlags: 0
@@ -2865,9 +2855,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8007634986858874012}
-        m_TargetAssemblyTypeName: OptionMenu, Assembly-CSharp
-        m_MethodName: GoBackToPause
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MenuButton, Assembly-CSharp
+        m_MethodName: optionBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
