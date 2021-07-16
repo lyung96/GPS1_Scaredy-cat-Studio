@@ -7,10 +7,23 @@ using UnityEngine.UI;
 public class MenuButton : MonoBehaviour
 {
     public GameObject  optionsPanel;
+    private string lastScene;
+    private string currScene;
 
     public void Awake()
     {
-        optionsPanel = FindObjectOfType<OptionMenu>().OptionsMenuUI;
+        lastScene = SceneManager.GetActiveScene().name;
+        optionsPanel = GameObject.Find("Options Menu").transform.GetChild(0).gameObject;
+    }
+
+    private void Update()
+    {
+        ChangeScene();
+
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     public void StartGame()
@@ -76,12 +89,14 @@ public class MenuButton : MonoBehaviour
         MainMenu.SetActive(true);
         optionsMenu.SetActive(false);
     }*/
-
-    void Update()
+    public void ChangeScene()
     {
-        if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.R))
+        currScene = SceneManager.GetActiveScene().name;
+        if (lastScene != currScene)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            optionsPanel = GameObject.Find("Options Menu").transform.GetChild(0).gameObject;
+            //optionsPanel = FindObjectOfType<OptionMenu>().OptionsMenuUI;
+            lastScene = currScene;
         }
     }
 }

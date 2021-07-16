@@ -7,6 +7,7 @@ public class MainOptionButton : MonoBehaviour
 {
     private Button optionButton;
     MenuButton menuButton;
+
     // Start is called before the first frame update
     void Start()
     {
