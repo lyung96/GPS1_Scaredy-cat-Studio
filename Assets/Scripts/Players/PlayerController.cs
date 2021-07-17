@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (PauseMenu.GamePause == false)
+        if (PauseMenu.GamePause == false || Dialog.StartDialogue)
         { 
             PlayerControl(); 
         }
@@ -181,7 +181,7 @@ public class PlayerController : MonoBehaviour
         //Attack, current time greater than next available attack time
         if (Time.time >= nextAtkTime)
         {
-            if (Input.GetMouseButtonDown(0) && (isBlock == false))
+            if (Input.GetMouseButtonDown(0) && (isBlock == false) &&  Dialog.StartDialogue)
             {
                 StartCoroutine(Attack());
                 FindObjectOfType<AudioManager>().Play("Slash");
@@ -320,31 +320,35 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Attack()
     {
-        anim.SetTrigger("attack");
-        //Detect enemies in range of attack, store the hitted enemy in array
-        yield return new WaitForSeconds(0.2f);
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(atkPoint.position, atkRange, enemyLayers);
-        
-        //Damage them all of the enemy in array
-        foreach(Collider2D enemy in hitEnemies)
+        if (Dialog.StartDialogue)
         {
-            if(enemy.CompareTag("Boss"))
-            {
-                maskGauge += 1;
-                finalBlowBar.SetBar(maskGauge);
-                enemy.GetComponent<Enemy>().CalculateHealth(atkDmg);
-            }
-            Debug.Log("We hit " + enemy.name);
-            if (enemy.CompareTag("Enemy"))
-            {
-                enemy.GetComponent<Enemy>().CalculateHealth(atkDmg);
-            }
-            if (enemy.CompareTag("CatEnemy"))
-            {
-                StartCoroutine(enemy.GetComponent<EnemyCat>().EnemyTakeDamage(-atkDmg));
-            }
+            anim.SetTrigger("attack");
+            //Detect enemies in range of attack, store the hitted enemy in array
+            yield return new WaitForSeconds(0.2f);
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(atkPoint.position, atkRange, enemyLayers);
 
+            //Damage them all of the enemy in array
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                if (enemy.CompareTag("Boss"))
+                {
+                    maskGauge += 1;
+                    finalBlowBar.SetBar(maskGauge);
+                    enemy.GetComponent<Enemy>().CalculateHealth(atkDmg);
+                }
+                Debug.Log("We hit " + enemy.name);
+                if (enemy.CompareTag("Enemy"))
+                {
+                    enemy.GetComponent<Enemy>().CalculateHealth(atkDmg);
+                }
+                if (enemy.CompareTag("CatEnemy"))
+                {
+                    StartCoroutine(enemy.GetComponent<EnemyCat>().EnemyTakeDamage(-atkDmg));
+                }
+
+            }
         }
+       
 
     }
 

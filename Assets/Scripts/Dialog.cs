@@ -1,7 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class Dialog : MonoBehaviour
 {
@@ -12,19 +11,19 @@ public class Dialog : MonoBehaviour
     private bool firstline=false;
     public GameObject dialog;
     public Animator DialogueAnimator;
-    public static bool StartDialogue = false;
+    public static bool StartDialogue = false, endDialogue = true;
 
 
     // Update is called once per frame
     void Update()
     {
-     
-            if(StartDialogue)
+            if(StartDialogue) 
             {
                 if(Input.GetKeyDown(KeyCode.V))
                 {
+                    endDialogue = false;
                     DialogueAnimator.SetTrigger("enter");
-                    StartDialogue = false;
+                    StartDialogue = true;
                     firstline = true;
                 }
             }  
@@ -33,7 +32,6 @@ public class Dialog : MonoBehaviour
                 if (Input.GetMouseButtonDown(0))
                 {
                     nextSentence();
-                    StartDialogue = false;
                 }
             }
     }
@@ -61,6 +59,7 @@ public class Dialog : MonoBehaviour
             DialogueAnimator.SetTrigger("exit");
             index = 0;
             StartDialogue = true;
+            endDialogue = true;
         }
     }
 }
