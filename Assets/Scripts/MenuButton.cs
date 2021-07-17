@@ -2,17 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MenuButton : MonoBehaviour
 {
-    PauseMenu pauseMenu;
-    public GameObject MainMenu, optionsMenu;
+    public GameObject  optionsPanel;
+    private string lastScene;
+    private string currScene;
+
+    public void Awake()
+    {
+        lastScene = SceneManager.GetActiveScene().name;
+        optionsPanel = GameObject.Find("Options Menu").transform.GetChild(0).gameObject;
+    }
+
+    private void Update()
+    {
+        ChangeScene();
+
+        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
 
     public void StartGame()
     {
-        pauseMenu = GetComponent<PauseMenu>();
+        //pauseMenu = FindObjectOfType<PauseMenu>().PauseMenuUI;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         SceneManager.LoadScene("GameLevel1");
+        FindObjectOfType<AudioManager>().changeScene();
         FindObjectOfType<AudioManager>().Play("LevelMusic");
         FindObjectOfType<AudioManager>().StopPlaying("Theme");
     }
@@ -25,29 +44,59 @@ public class MenuButton : MonoBehaviour
     public void GoBackToMenu()
     {
         SceneManager.LoadScene("Menu");
+        FindObjectOfType<AudioManager>().changeScene();
         FindObjectOfType<AudioManager>().Play("Theme");
         FindObjectOfType<AudioManager>().StopPlaying("LevelMusic");
     }
 
     public void optionMenu()
     {
-        MainMenu.SetActive(false);
-        optionsMenu.SetActive(true);
+        GameObject mainMenuUI = GameObject.Find("MainMenu");
+        mainMenuUI.transform.GetChild(0).gameObject.SetActive(false);
+        optionsPanel.SetActive(true);
+        //MainMenu.SetActive(false);
+        //optionsMenu.SetActive(true);
+    }
+   public void inGameOptionMenu()
+    {
+        PauseMenu pauseMenu = FindObjectOfType<PauseMenu>();
+        pauseMenu.PauseMenuUI.SetActive(false);
+        optionsPanel.SetActive(true);
     }
 
-    public void BackToMain()
+    public void optionBack()
     {
+        if(SceneManager.GetActiveScene().name != "Menu")
+        {
+            PauseMenu pauseMenu = FindObjectOfType<PauseMenu>();
+            pauseMenu.PauseMenuUI.SetActive(true);
+            optionsPanel.SetActive(false);
+        }
+        else
+        {
+            GameObject mainMenuUI = GameObject.Find("MainMenu");
+            mainMenuUI.transform.GetChild(0).gameObject.SetActive(false);
+            optionsPanel.SetActive(false);
+            //GameObject mainMenuUI = FindObjectOfType<MainMenuControl>().mainMenuUI;
+            //mainMenuUI.SetActive(true);
+            //optionsPanel.SetActive(false);
+        }
+    }
+
+    /*public void BackToMain()
+    {
+        FindObjectOfType<AudioManager>().changeScene();
         MainMenu.SetActive(true);
         optionsMenu.SetActive(false);
-    }
-
-    void Update()
+    }*/
+    public void ChangeScene()
     {
-        if(Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.R))
+        currScene = SceneManager.GetActiveScene().name;
+        if (lastScene != currScene)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            FindObjectOfType<AudioManager>().Play("LevelMusic");
-            FindObjectOfType<AudioManager>().StopPlaying("Theme");
+            optionsPanel = GameObject.Find("Options Menu").transform.GetChild(0).gameObject;
+            //optionsPanel = FindObjectOfType<OptionMenu>().OptionsMenuUI;
+            lastScene = currScene;
         }
     }
 }

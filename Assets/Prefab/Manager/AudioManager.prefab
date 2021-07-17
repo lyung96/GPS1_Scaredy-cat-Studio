@@ -50,7 +50,7 @@ MonoBehaviour:
   sounds:
   - name: Slash
     clip: {fileID: 8300000, guid: 21a6277825c606a4d9c4a694936112d4, type: 3}
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -70,7 +70,7 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 8c752ef4ef6c80a4688ab5f6393e9a94, type: 3}
     volume: 0.2
     pitch: 1
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: Fireball
     clip: {fileID: 8300000, guid: 86e0b070eb0b3c64b9de6929226cb97b, type: 3}

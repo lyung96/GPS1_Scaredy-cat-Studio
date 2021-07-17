@@ -13,7 +13,7 @@ public class ParticleCollision : MonoBehaviour
     public float SoundCapResetSpeed = 0.55f;
     public int MaxSounds = 3;
     float Timepassed;
-    int soundsPlayed;
+    //int soundsPlayed;
 
 
     void Start()
@@ -27,7 +27,7 @@ public class ParticleCollision : MonoBehaviour
         Timepassed += Time.deltaTime;
         if (Timepassed > SoundCapResetSpeed)
         {
-            soundsPlayed = 0;
+            //soundsPlayed = 0;
             Timepassed = 0;
         }
     }

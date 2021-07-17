@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 354921214}
   - component: {fileID: 354921215}
   - component: {fileID: 354921224}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -354,15 +354,19 @@ MonoBehaviour:
   fireball: {fileID: 5518214745789172819, guid: 4c08addc4e4281d4086048bd2608a3da, type: 3}
   fireball2: {fileID: 5098085870167350519, guid: 0859ca3d952d3de449069c90dacc407c, type: 3}
   firepillar: {fileID: 109790065652950188, guid: 0e32fed9d5fd73344bd59fb95435331d, type: 3}
+  finalBlow: {fileID: 661216920183684307, guid: 562317238ea744b4687ec221ca341e82, type: 3}
   attackRangeX: 1.4
   attackRangeY: 8.35
+  finalBlowUi: {fileID: 0}
   maxCurseBar: 6
   currHealth: 0
   curseBar: {fileID: 0}
   maxMana: 3
   manaController: {fileID: 0}
   maskCollected: 1
+  maskGauge: 0
   Exp: 0
+  cameraController: {fileID: 0}
 --- !u!95 &6883976000797708643
 Animator:
   serializedVersion: 3
@@ -399,7 +403,7 @@ MonoBehaviour:
   grappleMask:
     serializedVersion: 2
     m_Bits: 128
-  moveSpeed: 50
+  moveSpeed: 100
   grappleLenght: 10
   maxPoints: 1
 --- !u!114 &354921213
@@ -501,12 +505,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0196e591655a33546ad8f59432127e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mask1: {fileID: 0}
-  mask1active: 0
-  mask2: {fileID: 0}
-  mask2active: 0
-  mask3: {fileID: 0}
-  mask3active: 0
+  maskUI: {fileID: 0}
+  emptyMask: {fileID: 2713202255395975653, guid: e1ba3bdb850f3524eb4400a440bcad99, type: 3}
+  oneMask: {fileID: -2363303502268848809, guid: e1ba3bdb850f3524eb4400a440bcad99, type: 3}
+  twoMask: {fileID: -5901367661672369291, guid: e1ba3bdb850f3524eb4400a440bcad99, type: 3}
+  FullMask: {fileID: -4702544020559098553, guid: e1ba3bdb850f3524eb4400a440bcad99, type: 3}
 --- !u!1 &6883976000904982373
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,8 +605,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0, g: 0, b: 0, a: 1}
+      key1: {r: 0, g: 0, b: 0, a: 1}
       key2: {r: 1, g: 1, b: 1, a: 1}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}

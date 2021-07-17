@@ -286,12 +286,6 @@ public class PlayerController : MonoBehaviour
             gameObject.GetComponent<SwitchMask>().SetMask(maskCollected);
         }
 
-        /*if(Input.GetKeyDown(KeyCode.L))
-        {
-            Load();
-        }*/
-
-
 
         if (Groundcheck.isGrounded == true && !Input.GetKey(KeyCode.S))
         {
@@ -396,6 +390,10 @@ public class PlayerController : MonoBehaviour
         if(currHealth <= 0)//currCurse >= maxCurse
         {
             Die();
+        }
+        if(currHealth >= maxCurseBar)
+        {
+            currHealth = maxCurseBar;
         }
 
         //return actualDmg;
