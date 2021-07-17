@@ -51,9 +51,18 @@ public class MenuButton : MonoBehaviour
 
     public void optionMenu()
     {
-        GameObject mainMenuUI = GameObject.Find("MainMenu");
-        mainMenuUI.transform.GetChild(0).gameObject.SetActive(false);
-        optionsPanel.SetActive(true);
+        if (SceneManager.GetActiveScene().name != "Menu")
+        {
+            GameObject mainMenuUI = GameObject.Find("Pause Menu");
+            mainMenuUI.transform.GetChild(0).gameObject.SetActive(false);
+            optionsPanel.SetActive(true);
+        }
+        else if (SceneManager.GetActiveScene().name == "Menu")
+        {
+            GameObject mainMenuUI = GameObject.Find("MainMenu");
+            mainMenuUI.transform.GetChild(0).gameObject.SetActive(false);
+            optionsPanel.SetActive(true);
+        }
         //MainMenu.SetActive(false);
         //optionsMenu.SetActive(true);
     }
@@ -68,8 +77,8 @@ public class MenuButton : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name != "Menu")
         {
-            PauseMenu pauseMenu = FindObjectOfType<PauseMenu>();
-            pauseMenu.PauseMenuUI.SetActive(true);
+            GameObject mainMenuUI = GameObject.Find("Pause Menu");
+            mainMenuUI.transform.GetChild(0).gameObject.SetActive(true);
             optionsPanel.SetActive(false);
         }
         else
