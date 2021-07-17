@@ -23,7 +23,6 @@ public class Dialog : MonoBehaviour
                 {
                     endDialogue = false;
                     DialogueAnimator.SetTrigger("enter");
-                    StartDialogue = true;
                     firstline = true;
                 }
             }  

@@ -20,26 +20,30 @@ public class chestopener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.V) && playerinchestrange)
+        if (playerinchestrange)
         {
-            if (enemycount == 4)
+            if (Input.GetKey(KeyCode.V))
             {
-                chestopen = true;
-                Debug.Log("Open chest");
-                GetComponent<Animator>().SetTrigger("Open");
-                interacticon.SetActive(false);
-                obtainedkey = true;
-                if (obtainedkey)
+                if (enemycount == 4)
                 {
-                    obtainedkeyInstructions.SetActive(true);
-                    Invoke("keypopoff", 1f);
+                    chestopen = true;
+                    Debug.Log("Open chest");
+                    GetComponent<Animator>().SetTrigger("Open");
+                    interacticon.SetActive(false);
+                    obtainedkey = true;
+                    if (obtainedkey)
+                    {
+                        obtainedkeyInstructions.SetActive(true);
+                        Invoke("keypopoff", 1f);
+                    }
+                }
+                else if (enemycount != 4)
+                {
+                    chestopen = false;
+                    defeatenemyinstructions.SetActive(true);
                 }
             }
-            else if (enemycount != 4)
-            {
-                chestopen = false;
-                defeatenemyinstructions.SetActive(true);
-            }
+            
         }
     }
 
