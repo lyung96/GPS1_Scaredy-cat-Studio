@@ -11,28 +11,29 @@ public class Dialog : MonoBehaviour
     private bool firstline=false;
     public GameObject dialog;
     public Animator DialogueAnimator;
-    public static bool StartDialogue = false, endDialogue = true;
+    public static bool StartDialogue=true , endDialogue= true;
 
 
     // Update is called once per frame
     void Update()
     {
-            if(StartDialogue) 
+        if(LockMessage.dialoguetrigger)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                if(Input.GetKeyDown(KeyCode.V))
+                if (StartDialogue)
                 {
                     endDialogue = false;
+                    Debug.Log("Box animation");
                     DialogueAnimator.SetTrigger("enter");
-                    firstline = true;
+                    StartDialogue = false;
                 }
-            }  
-            if (firstline)
-            {
-                if (Input.GetMouseButtonDown(0))
+                else
                 {
                     nextSentence();
                 }
             }
+        }
     }
 
     public IEnumerator WriteSentence()
@@ -57,7 +58,7 @@ public class Dialog : MonoBehaviour
             DialogueText.text = string.Empty;
             DialogueAnimator.SetTrigger("exit");
             index = 0;
-            StartDialogue = true;
+            StartDialogue =true;
             endDialogue = true;
         }
     }
