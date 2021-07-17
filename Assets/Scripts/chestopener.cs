@@ -7,6 +7,7 @@ public class chestopener : MonoBehaviour
     public GameObject chest, openinstructions, defeatenemyinstructions, obtainedkeyInstructions, interacticon;
     public Enemy enemy;
     public static bool chestopen=false;
+    public static bool playerinchestrange = false;
     public static bool obtainedkey = false;
     public static int enemycount=0;
     // Start is called before the first frame update
@@ -19,31 +20,9 @@ public class chestopener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag== "Player")
+        if (Input.GetKey(KeyCode.V) && playerinchestrange)
         {
-            Debug.Log("Chest touched");
-            interacticon.SetActive(true);
-            //if(enemycount == 4 && chestopen== true)
-            //{
-            //    interacticon.SetActive(true);
-            //    if (Input.GetKey(KeyCode.V))
-            //    {
-            //        defeatenemyinstructions.SetActive(false);
-            //    }
-            //}
-        }
-    }
-
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (Input.GetKey(KeyCode.V))
-        {
-           
-            if(enemycount == 4)
+            if (enemycount == 4)
             {
                 chestopen = true;
                 Debug.Log("Open chest");
@@ -64,21 +43,36 @@ public class chestopener : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag== "Player")
+        {
+            playerinchestrange = true;
+            Debug.Log("Chest touched");
+            interacticon.SetActive(true);
+                
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            playerinchestrange = true;
+        } 
+    }
+
     private void keypopoff()
     {
         Debug.Log("off");
-       obtainedkeyInstructions.SetActive(false);
+        obtainedkeyInstructions.SetActive(false);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            
-            //if (chestopen==true && enemycount ==4)
-            //{
-            //    interacticon.SetActive(false);
-            //}
+            playerinchestrange = false;
             if (chestopen == false && enemycount != 4)
             {
                 interacticon.SetActive(false);

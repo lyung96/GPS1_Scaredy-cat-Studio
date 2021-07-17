@@ -22,7 +22,7 @@ TagManager:
   - Grappling
   - Player
   - Ground
-  - 
+  - Chest
   - 
   - 
   - 
@@ -53,6 +53,9 @@ TagManager:
     locked: 0
   - name: Ground
     uniqueID: 3223766051
+    locked: 0
+  - name: Chest
+    uniqueID: 1871520181
     locked: 0
   - name: Player
     uniqueID: 693638995

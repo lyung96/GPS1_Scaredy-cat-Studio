@@ -4,21 +4,40 @@ using UnityEngine;
 
 public class LockMessage : MonoBehaviour
 {
-    public GameObject lockmessage, unlockmessage, Lock, lockedDoor, openDoor, interacticon;
+    public GameObject lockmessage, Lock, lockedDoor, openDoor, interacticon, dialogbox;
+    public static bool doortrigger=false, playerinrange=false, dialogtrigger=false;
+    public Dialog dialog;
+
+    public void Start()
+    {
+        dialog=GetComponent<Dialog>();
+    } 
+
+    private void Update()
+    {
+        if (chestopener.obtainedkey == true && playerinrange)
+        {
+            if (Input.GetKey(KeyCode.V))
+            {
+                Destroy(Lock);
+                lockedDoor.SetActive(false);
+                openDoor.SetActive(true);
+            }
+        }
+        else if (chestopener.obtainedkey == false && playerinrange)
+        {
+            Dialog.StartDialogue = true;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
+            Debug.Log("Enter door range");
+            playerinrange = true;
             interacticon.SetActive(true);
-            //lockmessage.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.V))
-            {
-                if (chestopener.obtainedkey == true)
-                {
-                    unlockmessage.SetActive(true);
-                    lockmessage.SetActive(false);
-                }
-            }
+            doortrigger = true;
         }
     }
 
@@ -26,23 +45,8 @@ public class LockMessage : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if (chestopener.obtainedkey == true)
-            {
-                if (Input.GetKey(KeyCode.V))
-                {
-                    Destroy(Lock);
-                    lockedDoor.SetActive(false);
-                    openDoor.SetActive(true);
-                }
-            }
-            else if (chestopener.obtainedkey== false)
-            {
-                if (Input.GetKey(KeyCode.V))
-                {
-                    lockmessage.SetActive(true);
-                    unlockmessage.SetActive(false);
-                }
-            }
+            Debug.Log("Enter door range");
+            playerinrange = true;
         }
     }
 
@@ -50,12 +54,14 @@ public class LockMessage : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            Debug.Log("Exit door range");
+            playerinrange = false;
+            Dialog.StartDialogue = false;
             interacticon.SetActive(false);
             lockmessage.SetActive(false);
-            if (chestopener.obtainedkey)
-            {
-                unlockmessage.SetActive(false);
-            }
+            //if (chestopener.obtainedkey)
+            //{
+            //}
         }
     }
 }

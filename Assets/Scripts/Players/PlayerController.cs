@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if ((PauseMenu.GamePause == false))
+        if (PauseMenu.GamePause == false)
         { 
             PlayerControl(); 
         }
