@@ -115,7 +115,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerControl()
     {
-        if (Input.GetKey(KeyCode.F))
+        if (Input.GetKey(KeyCode.Tab))
         {
             anim.SetBool("blocking", true);
             isBlock = true;
@@ -223,7 +223,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Shuriken
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             if(shurikenController.shuriken > 0)
             {
@@ -233,7 +233,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Mask Skill
-        if (Input.GetKeyDown(KeyCode.R) && (manaController.currMana > 0))
+        if (Input.GetKeyDown(KeyCode.Q) && (manaController.currMana > 0))
         {
             if ((maskCollected == 1) && (manaController.currMana > 0)) //if maskcollected = 1
             {
