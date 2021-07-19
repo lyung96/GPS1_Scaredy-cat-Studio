@@ -13,6 +13,8 @@ TagManager:
   - CatEnemy
   - bgSlider
   - sfxSlider
+  - edge
+  - abc
   layers:
   - Default
   - TransparentFX

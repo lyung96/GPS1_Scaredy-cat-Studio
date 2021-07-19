@@ -4,92 +4,69 @@ using UnityEngine;
 
 public abstract class Characther : MonoBehaviour
 {
-    [SerializeField]
-    protected Transform knifePos;
-
-    [SerializeField]
-    protected float movementSpeed;
-
     protected bool facingRight;
-
     [SerializeField]
-    private GameObject knifePrefab;
-
+    protected float movementSpeed;    
     [SerializeField]
     protected int health;
-
+    public bool Attack { get; set; }
+    public abstract bool IsDead { get; }
+    public bool TakingDamage { get; set; }
+    public Animator MyAnimator { get; private set; }
     [SerializeField]
     private EdgeCollider2D SwordCollider;
-
     [SerializeField]
-    private List<string> damageSources;
-
-    public abstract bool IsDead { get; }
-
-    public bool Attack { get; set; }
-
-    public bool TakingDamage { get; set; }
-
-    public Animator MyAnimator { get; private set; }
-
-    // Start is called before the first frame update
     public virtual void Start()
     {
-        //Debug.Log("im idling characther");
-        //playerrr.GetComponent<PlayerController>();
-
-        facingRight = true;
-        //facingRight = !facingRight;
-
+        facingRight = !facingRight;
         MyAnimator = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
     void Update()
-    {
-        
+    {        
     }
-
-    public abstract IEnumerator TakeDamage();
-
+    //public abstract IEnumerator TakeDamage();
     public void ChangeDirection()
     {
+        Debug.Log("switching");
         facingRight = !facingRight;
-
         //transform.localScale = new Vector3(transform.localScale.x * -1, 1, 1);
         transform.localScale = new Vector3(transform.localScale.x * -1f, transform.localScale.y, transform.localScale.z);
     }
-
-
-
     public virtual void MeleeAttack()
     {
-        SwordCollider.enabled = true;
+        SwordCollider.enabled = !SwordCollider.enabled;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Player"))
+    //    {
+    //        if (SwordCollider.enabled)
+    //        {
+    //            Debug.Log(collision.name);
+    //            collision.gameObject.GetComponent<PlayerController>().CalHp(-1);
+    //        }
+    //    }
+    //}
+    public virtual void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Debug.Log(collision.name);
-            collision.gameObject.GetComponent<PlayerController>().CalHp(-1);
-        }
-    }
-
-    /*public virtual void OnTriggerEnter2D(Collider2D other)
-    {
-        if (damageSources.Contains(other.tag)) //if the damagesources contains this tag then call coroutine
-        {
-            StartCoroutine(TakeDamage());
-        }
-
-        //other way to implement this is 
+        //if (damageSources.Contains(other.tag)) //if the damagesources contains this tag then call coroutine
+        //{
+        //    StartCoroutine(TakeDamage());
+        //}
+        //other way to implement this is
         //if (other.tag == "knife")
         //{
         //    StartCoroutine(TakeDamage());
         //}
-    }*/
+        if (other.gameObject.CompareTag("Player"))
+        {
+            if (SwordCollider.enabled)
+            {
+                Debug.Log(other.name);
+                other.gameObject.GetComponent<PlayerController>().CalHp(-1);
+            }
+        }
 
-
-
+    }
 }
