@@ -20,9 +20,9 @@ public class chestopener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerinchestrange)
+        if (Input.GetKey(KeyCode.E))
         {
-            if (Input.GetKey(KeyCode.V))
+            if (playerinchestrange)
             {
                 if (enemycount == 4)
                 {
@@ -39,11 +39,11 @@ public class chestopener : MonoBehaviour
                 }
                 else if (enemycount != 4)
                 {
-                    chestopen = false;
                     defeatenemyinstructions.SetActive(true);
                 }
             }
-            
+
+               
         }
     }
 

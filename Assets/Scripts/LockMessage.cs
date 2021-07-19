@@ -5,19 +5,17 @@ using UnityEngine;
 public class LockMessage : MonoBehaviour
 {
     public GameObject lockmessage, Lock, lockedDoor, openDoor, interacticon, dialogbox;
-    public static bool doortrigger=false, playerinrange=false, dialogtrigger=false;
-    public Dialog dialog;
+    public static bool doortrigger=false, playerinrange=false, dialoguetrigger=false;
 
     public void Start()
     {
-        dialog=GetComponent<Dialog>();
     } 
 
     private void Update()
     {
         if (chestopener.obtainedkey == true && playerinrange)
         {
-            if (Input.GetKey(KeyCode.V))
+            if (Input.GetKey(KeyCode.E))
             {
                 Destroy(Lock);
                 lockedDoor.SetActive(false);
@@ -26,7 +24,7 @@ public class LockMessage : MonoBehaviour
         }
         else if (chestopener.obtainedkey == false && playerinrange)
         {
-            Dialog.StartDialogue = true;
+            dialoguetrigger = true;
         }
     }
 
@@ -56,12 +54,8 @@ public class LockMessage : MonoBehaviour
         {
             Debug.Log("Exit door range");
             playerinrange = false;
-            Dialog.StartDialogue = false;
             interacticon.SetActive(false);
-            lockmessage.SetActive(false);
-            //if (chestopener.obtainedkey)
-            //{
-            //}
+            dialoguetrigger = false;
         }
     }
 }
