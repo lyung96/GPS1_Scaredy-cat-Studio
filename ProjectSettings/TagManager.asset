@@ -11,10 +11,7 @@ TagManager:
   - PopUp Collider
   - Boss
   - CatEnemy
-  - bgSlider
-  - sfxSlider
   - edge
-  - abc
   layers:
   - Default
   - TransparentFX

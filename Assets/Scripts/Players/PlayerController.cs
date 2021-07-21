@@ -295,6 +295,7 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, JumpForce);
                 Groundcheck.isGrounded = false;
                 jump = true;
+                GrapplePoint.isGrap = false;
             }
         }
 

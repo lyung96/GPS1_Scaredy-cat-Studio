@@ -7,10 +7,12 @@ public class GrapplePoint : MonoBehaviour
     private PlatformEffector2D effector;
     //public float waitTime;
     private bool isFalling = false;
-    public bool isGrap;
-    //private bool onTop;
+    public static bool isGrap;
+    public static bool onTop;
     Grapple grappleScript;
     public GameObject player;
+    public float offSetX;
+    public float offSetY;
 
     private void Start()
     {
@@ -49,33 +51,24 @@ public class GrapplePoint : MonoBehaviour
         {
             isGrap = true;
         }
+        if(onTop == true)
+        {
+            grappleScript.Detatch();
+        }
     }
 
     
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Check1");
             if (collision.gameObject.CompareTag("Player") && (isGrap == true))//&& (onTop == false)
             {
+            isGrap = false;
             collision.rigidbody.velocity = Vector2.zero;
-            collision.transform.position = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 2);
+            collision.transform.position = new Vector2(collision.gameObject.transform.position.x, gameObject.transform.position.y + 2 + offSetY);
             grappleScript.Detatch();
             MovePopUpInstructions.grap = true;
-            isGrap = false;
-
             Debug.Log("Triggered Grappling Point");
             }
     }
-
-
-    public void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            
-            //onTop = false;
-        }
-    }
-
 }

@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
 
     public void CalculateHealth(int damage)
     {
+        FindObjectOfType<AudioManager>().Play("Hit");
         currEnemyHp -= damage;
         enemyHpBar.SetHealth(currEnemyHp);
         StartCoroutine(FlashRed());
@@ -46,7 +47,8 @@ public class Enemy : MonoBehaviour
     {
         Debug.Log("Enemy died");
         //Play die animation and disable the enemy
-        Destroy(gameObject);
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        Destroy(gameObject, 1f);
         enemydie = true;
       
     }
