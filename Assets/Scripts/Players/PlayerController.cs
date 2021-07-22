@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
     //mask
     public int maskCollected = 1;
     public float maskGauge = 0;
-    public static float playerLevel = 0;
+    public static float playerLevel = 1;
     public static float exp = 0;
 
     public static bool left, right, jump, dash;
@@ -218,9 +218,19 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             //maxMp += 1;
-            manaController.maxMana++;
+            //manaController.maxMana++;
+            manaController.numOfMana++;
             //mpBar.SetMaxMana(maxMp);
             //CalMp(0);
+        }
+        //+MaxMana
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            maxCurseBar += 1;
+            currHealth = maxCurseBar;
+            curseBar.SetMaxHealth(maxCurseBar, currHealth);            
+            curseBar.SetHealth(currHealth);
+
         }
 
         //Shuriken
@@ -236,6 +246,11 @@ public class PlayerController : MonoBehaviour
         //Mask Skill
         if (Input.GetKeyDown(KeyCode.Q) && (manaController.currMana > 0))
         {
+            if(maskCollected == 0)
+            {
+                //disable maskui
+                //disable manaui
+            }
             if ((maskCollected == 1) && (manaController.currMana > 0)) //if maskcollected = 1
             {
                 ShootFireball();
@@ -385,6 +400,7 @@ public class PlayerController : MonoBehaviour
                 }
             }
             currHealth += actualDmg;
+            curseBar.SetMaxHealth(maxCurseBar, currHealth);
             curseBar.SetHealth(currHealth);
             StartCoroutine(FlashRed());
         }
@@ -516,8 +532,8 @@ public class PlayerController : MonoBehaviour
         manaController.numOfMana = maxMana;
         manaController.maxMana = maxMana;
         currHealth = maxCurseBar;
+        curseBar.SetMaxHealth(maxCurseBar, currHealth);//bar
         curseBar.SetHealth(maxCurseBar);
-        curseBar.SetMaxHealth(maxCurseBar, currHealth); //bar
         shurikenController.shuriken = 3;
     }
 }

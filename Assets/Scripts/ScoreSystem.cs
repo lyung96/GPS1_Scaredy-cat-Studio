@@ -8,12 +8,12 @@ public class ScoreSystem : MonoBehaviour
 {
     public Text scoring;
     public static float scoreNum = 0;
-    PlayerController playerController;
+    //PlayerController playerController;
     public GameObject player;
 
     private void Start()
     {
-        playerController = player.GetComponent<PlayerController>();
+        //playerController = player.GetComponent<PlayerController>();
     }
 
     void Update()

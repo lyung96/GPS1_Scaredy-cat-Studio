@@ -78,4 +78,14 @@ public class Checkpoint : MonoBehaviour
             lastScene = currScene;
         }
     }
+
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(playerController);
+        playerController.currHealth = playerController.maxCurseBar;
+        playerController.curseBar.SetHealth(playerController.maxCurseBar);
+        playerController.curseBar.SetMaxHealth(playerController.maxCurseBar, playerController.maxCurseBar);
+        playerController.manaController.currMana = playerController.manaController.maxMana;
+        playerController.shurikenController.shuriken = playerController.shurikenController.maxShuriken;
+    }
 }

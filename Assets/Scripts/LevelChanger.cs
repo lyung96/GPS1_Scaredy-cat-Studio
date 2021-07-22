@@ -6,6 +6,8 @@ public class LevelChanger : MonoBehaviour
     public Animator animator;
     public static LevelChanger instance;
     private int levelToLoad;
+    private string lastScene;
+    private string currScene;
 
     private void Awake()
     {
@@ -19,6 +21,7 @@ public class LevelChanger : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
+        lastScene = SceneManager.GetActiveScene().name;
     }
 
         // Update is called once per frame
@@ -32,6 +35,7 @@ public class LevelChanger : MonoBehaviour
         {
             FadeToPreviousLevel();
         }
+        changeScene();
     }
 
     public void FadeToNextLevel()
@@ -54,5 +58,23 @@ public class LevelChanger : MonoBehaviour
     {
         SceneManager.LoadScene(levelToLoad);
         animator.SetTrigger("FadeIn");
+    }
+
+    public void changeScene()
+    {
+        currScene = SceneManager.GetActiveScene().name;
+        if (lastScene != currScene)
+        {
+            if (currScene != "Menu")
+            {
+                GameObject player = GameObject.Find("Player");
+
+                player.GetComponent<PlayerController>().curseBar.SetMaxHealth(player.GetComponent<PlayerController>().maxCurseBar, player.GetComponent<PlayerController>().maxCurseBar);
+                player.GetComponent<PlayerController>().curseBar.SetHealth(player.GetComponent<PlayerController>().maxCurseBar);
+                player.GetComponent<PlayerController>().manaController.numOfMana = player.GetComponent<PlayerController>().maxMana;
+                player.GetComponent<PlayerController>().manaController.maxMana = player.GetComponent<PlayerController>().maxMana;
+            }
+            lastScene = currScene;
+        }
     }
 }
