@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public int maxHealth = 3;
     public int currEnemyHp;
+    private bool enemyDied;
 
     public HealthBar enemyHpBar;
     public SpriteRenderer sprite;
@@ -24,23 +25,28 @@ public class Enemy : MonoBehaviour
         bloodEffect = gameObject.GetComponentInChildren<ParticleSystem>();
         currEnemyHp = maxHealth;
         enemyHpBar.SetMaxHealth(maxHealth, currEnemyHp);
-    }
+        enemyDied = false;
+}
 
 
     public void CalculateHealth(int damage)
     {
-        FindObjectOfType<AudioManager>().Play("Hit");
-        currEnemyHp -= damage;
-        enemyHpBar.SetHealth(currEnemyHp);
-        StartCoroutine(FlashRed());
-
-        if (currEnemyHp <= 0)
+        if (enemyDied == false)
         {
-            chestopener.enemycount++;
-            Debug.Log("enemy count: " + chestopener.enemycount);
-            Die();
-            playerController.Exp++;
-            ScoreSystem.scoreNum += 1;
+            FindObjectOfType<AudioManager>().Play("Hit");
+            currEnemyHp -= damage;
+            enemyHpBar.SetHealth(currEnemyHp);
+            StartCoroutine(FlashRed());
+
+            if (currEnemyHp <= 0)
+            {
+                enemyDied = true;
+                chestopener.enemycount++;
+                Debug.Log("enemy count: " + chestopener.enemycount);
+                Die();
+                PlayerController.exp += 1;
+                ScoreSystem.scoreNum += 1;
+            }
         }
     }
 

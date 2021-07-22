@@ -8,7 +8,8 @@ public class PlayerData
     public float maxHp;
     public int maxMp;
     public int maskPieces;
-    public float Exp;
+    public float exp;
+    public float playerLevel;
 
     public float[] position;
 
@@ -17,7 +18,8 @@ public class PlayerData
         maxHp = player.maxCurseBar;
         maxMp = player.maxMana;
         maskPieces = player.maskCollected;
-        Exp = player.Exp;
+        exp = PlayerController.exp;
+        playerLevel = PlayerController.playerLevel;
 
         position = new float[3];
         position[0] = player.transform.position.x;

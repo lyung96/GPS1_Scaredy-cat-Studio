@@ -40,7 +40,7 @@ public class Checkpoint : MonoBehaviour
                 playerController.curseBar.SetHealth(playerController.maxCurseBar);
                 playerController.curseBar.SetMaxHealth(playerController.maxCurseBar, playerController.maxCurseBar);
                 playerController.manaController.currMana = playerController.manaController.maxMana;
-                playerController.shurikenController.shuriken = playerController.shurikenController.maxShuriken;
+                playerController.shurikenController.shuriken = playerController.shurikenController.maxShuriken;                
             }
         }
     }
@@ -52,7 +52,8 @@ public class Checkpoint : MonoBehaviour
         playerController.maxCurseBar = data.maxHp;
         playerController.maxMana = data.maxMp;
         playerController.maskCollected = data.maskPieces;
-        playerController.Exp = data.Exp;
+        PlayerController.exp = data.exp;
+        PlayerController.playerLevel = data.playerLevel;
 
         Vector3 position;
         position.x = data.position[0];

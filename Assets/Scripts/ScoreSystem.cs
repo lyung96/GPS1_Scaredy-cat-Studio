@@ -18,7 +18,7 @@ public class ScoreSystem : MonoBehaviour
 
     void Update()
     {
-        scoreNum = playerController.Exp;
+        scoreNum = PlayerController.exp;
         scoring.text = "Exp: " + scoreNum;
     }
 }

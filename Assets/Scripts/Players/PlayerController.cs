@@ -73,7 +73,8 @@ public class PlayerController : MonoBehaviour
     //mask
     public int maskCollected = 1;
     public float maskGauge = 0;
-    public float Exp = 0;
+    public static float playerLevel = 0;
+    public static float exp = 0;
 
     public static bool left, right, jump, dash;
     //Audio
