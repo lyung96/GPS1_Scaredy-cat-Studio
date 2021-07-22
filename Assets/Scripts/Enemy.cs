@@ -36,10 +36,11 @@ public class Enemy : MonoBehaviour
 
         if (currEnemyHp <= 0)
         {
+            chestopener.enemycount++;
+            Debug.Log("enemy count: " + chestopener.enemycount);
             Die();
             playerController.Exp++;
             ScoreSystem.scoreNum += 1;
-            chestopener.enemycount++;
         }
     }
 
@@ -50,7 +51,6 @@ public class Enemy : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         Destroy(gameObject, 1f);
         enemydie = true;
-      
     }
 
     /*public void OnCollisionEnter2D(Collision2D collision)
