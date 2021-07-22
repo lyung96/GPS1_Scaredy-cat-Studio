@@ -6379,7 +6379,6 @@ MonoBehaviour:
   openDoor: {fileID: 1076190431}
   interacticon: {fileID: 693505133}
   dialogbox: {fileID: 21315311}
-  dialog: {fileID: 21315313}
 --- !u!61 &1313422692
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9760,14 +9759,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abf458724fd9acb4faa62dffb861241d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knifePos: {fileID: 0}
   movementSpeed: 4
-  knifePrefab: {fileID: 9105807888017027834, guid: 49770f79104e52d42b699229fa7a5d6b, type: 3}
   health: 10
   SwordCollider: {fileID: 0}
-  damageSources: []
   meleeRange: 1.5
-  throwRange: 5
 --- !u!61 &1929508355
 BoxCollider2D:
   m_ObjectHideFlags: 0
