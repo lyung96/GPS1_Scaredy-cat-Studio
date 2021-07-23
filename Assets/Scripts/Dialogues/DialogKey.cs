@@ -2,7 +2,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-public class Dialog : MonoBehaviour
+public class DialogKey : MonoBehaviour
 {
     public TextMeshProUGUI DialogueText;
     public string[] Sentences;
@@ -24,6 +24,7 @@ public class Dialog : MonoBehaviour
                 if (StartDialogue)
                 {
                     endDialogue = false;
+
                     Debug.Log("Box animation");
                     DialogueAnimator.SetTrigger("enter");
                     StartDialogue = false;
@@ -34,6 +35,8 @@ public class Dialog : MonoBehaviour
                 }
             }
         }
+
+      
     }
 
     public IEnumerator WriteSentence()
@@ -42,8 +45,8 @@ public class Dialog : MonoBehaviour
         {
             DialogueText.text += Character;
             yield return new WaitForSeconds(Dialoguespeed);
-            index++;
         }
+        index++;
     }
 
     public void nextSentence()

@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
     public static float playerLevel = 0;
     public static float exp = 0;
 
-    public static bool left, right, jump, dash;
+    public static bool left, right, jump, dash, enddialogue;
     //Audio
 
     //Camera
@@ -99,7 +99,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (PauseMenu.GamePause == false && Dialog.endDialogue==true)
+        //if ()
+        //{
+        //    enddialogue = true;
+        //}
+
+        if (PauseMenu.GamePause == false && DialogKey.endDialogue == true && DialogBegining.endDialogue == true)
         { 
             PlayerControl(); 
         }
@@ -113,6 +118,11 @@ public class PlayerController : MonoBehaviour
             InvokeRepeating("RegenShuriken", 3f, 3f);
         }
     }
+
+    //public void dialogueset()
+    //{
+
+    //}
 
     public void PlayerControl()
     {

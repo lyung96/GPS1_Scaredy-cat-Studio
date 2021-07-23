@@ -9,13 +9,16 @@ public class MovePopUpInstructions: MonoBehaviour
     public GameObject DashInstructions;
     public GameObject JumpInstructions;
     public GameObject AttackInstructions;
+    public GameObject ShurikenInstructions;
     public GameObject GrappleInstructions;
     public static bool left = false;
     public static bool right = false;
     public static bool dash = false;
     public static bool jump = false;
     public static bool attack = false;
+    public static bool shuriken = false;
     public static bool grap = false;
+    public static bool entertutorialarea = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +29,7 @@ public class MovePopUpInstructions: MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            entertutorialarea = true;
             Debug.Log("Collision");
             MovementInstructions.SetActive(true);
             if (left && right)
@@ -40,18 +44,19 @@ public class MovePopUpInstructions: MonoBehaviour
                         if (attack)
                         {
                             AttackInstructions.SetActive(false);
-                            if (grap)
+                            if (shuriken)
                             {
-                                GrappleInstructions.SetActive(false);
+                                ShurikenInstructions.SetActive(false);
+                                if (grap)
+                                {
+                                    GrappleInstructions.SetActive(false);
+                                }
                             }
                         }
                     }
 
                 }
             }
-            
-            
-
         }
     }
 
@@ -59,6 +64,7 @@ public class MovePopUpInstructions: MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            entertutorialarea = true;
             if (Input.GetKey(KeyCode.A))
             {
                 left = true;
@@ -98,17 +104,21 @@ public class MovePopUpInstructions: MonoBehaviour
                         {
                             //Debug.Log("Attack Fullfilled");
                             Invoke("AttackPopoff", 0.5f);
-                            Invoke("GrapplePopup", 0.5f);
-                            //if (Input.GetMouseButtonDown(1) || Input.GetMouseButton(1))
-                            //{
-                            //    grap = true;
-
-                            //}
-                            if (grap)
+                            Invoke("ShurikenPopup", 0.5f);
+                            if (Input.GetKey(KeyCode.R))
                             {
-                                //Debug.Log("Grap Fullfilled");
-                                Invoke("GrapPopoff", 0.5f);
+                                shuriken = true;
+                            }
+                            if (shuriken)
+                            {
+                                Invoke("ShurikenPopoff", 0.5f);
+                                Invoke("GrapplePopup", 0.5f);
+                                if (grap)
+                                {
+                                    //Debug.Log("Grap Fullfilled");
+                                    Invoke("GrapPopoff", 0.5f);
 
+                                }
                             }
                         }
                     }
@@ -121,6 +131,7 @@ public class MovePopUpInstructions: MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            entertutorialarea = false;
             Debug.Log("Exit Collision");
             if (left && right && dash && jump && attack && grap)
             {
@@ -129,10 +140,21 @@ public class MovePopUpInstructions: MonoBehaviour
                 dash = false;
                 jump = false;
                 attack = false;
+                shuriken = false;
                 grap = false;
                 Destroy(Collider);
             }
         }      
+    }
+
+    private void ShurikenPopup()
+    {
+        ShurikenInstructions.SetActive(true);
+    }
+
+    private void ShurikenPopoff()
+    {
+        ShurikenInstructions.SetActive(false);
     }
 
     private void MovePopoff()
