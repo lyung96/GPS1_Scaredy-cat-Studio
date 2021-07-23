@@ -14,4 +14,13 @@ public class Groundcheck : MonoBehaviour
             isGrounded = true;
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Grappling")
+        {
+            Debug.Log("Falling");
+            isGrounded = false;
+        }
+    }
 }

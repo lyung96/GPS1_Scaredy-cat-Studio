@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
     public float dashCooldown = 1.0f;
     public float dashDirection = 1;
     float normalGravity;
-    //public CameraShake cameraShake;
 
     //combat scripts
     public Transform atkPoint;
@@ -35,6 +34,7 @@ public class PlayerController : MonoBehaviour
     public int atkDmg = 1;
     public float atkRate = 2f;
     float nextAtkTime = 0f;
+    private bool jumpAttack;
 
     private bool isBlock = false;
     private bool canHurt = true;
@@ -159,18 +159,22 @@ public class PlayerController : MonoBehaviour
             //gameObject.transform.localScale = new Vector2(1, 1);
             dashDirection = 1;
             right = true;
-
         }
-
         else
         {
             anim.SetBool("running", false);
             anim.SetBool("blocking", false);
-            isBlock = false;
+            isBlock = false;          
+        }
+        if (Groundcheck.isGrounded == true)
+        {
+            anim.SetBool("onGround", true);
+            jump = false;
+            jumpAttack = false;
         }
 
         //check dashing direction
-        if(horizontal != 0)
+        if (horizontal != 0)
         {
             dashDirection = horizontal;
         }
@@ -185,7 +189,6 @@ public class PlayerController : MonoBehaviour
             }
             dashCoroutine = Dash(dashDuration, dashCooldown);
             StartCoroutine(dashCoroutine);
-            //cameraController.CameraShake();
             dash = true;
         }
 
@@ -194,55 +197,15 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0) && (isBlock == false))
             {
-                StartCoroutine(Attack());
-                FindObjectOfType<AudioManager>().Play("Slash");
-                //calculate next available atk time
-                nextAtkTime = Time.time + 1f / atkRate;
+                if(jumpAttack != true)
+                {
+                    StartCoroutine(Attack());
+                    //calculate next available atk time
+                    nextAtkTime = Time.time + 1f / atkRate;
+                }                
             }
         }
-
-        //Testing -Hp
-        if (Input.GetKeyDown(KeyCode.X))
-        {
-            CalHp(-1.0f);
-            //damage = CalHp(1.0f);
-            //healthController.TakeDamage(damage);
-        }
-
-        //Heal
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            CalHp(0.5f);
-            //damage = CalHp(0.5f);
-            //healthController.TakeDamage(0.5f);
-        }
-
-        //Testing +Mp
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            //CalMp(1);
-            manaController.ReplenishMana();
-        }
-
-        //+MaxMana
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            //maxMp += 1;
-            //manaController.maxMana++;
-            manaController.numOfMana++;
-            //mpBar.SetMaxMana(maxMp);
-            //CalMp(0);
-        }
-        //+MaxMana
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            maxCurseBar += 1;
-            currHealth = maxCurseBar;
-            curseBar.SetMaxHealth(maxCurseBar, currHealth);            
-            curseBar.SetHealth(currHealth);
-
-        }
-
+       
         //Shuriken
         if (Input.GetKeyDown(KeyCode.R))
         {
@@ -285,38 +248,12 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            finalBlowUi.SetActive(false);
-            maskCollected = 0;
-            gameObject.GetComponent<SwitchMask>().SetMask(maskCollected);
-
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            finalBlowUi.SetActive(false);
-            maskCollected = 1;
-            gameObject.GetComponent<SwitchMask>().SetMask(maskCollected);
-
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))//if 2 is pressed
-        {
-            finalBlowUi.SetActive(false);
-            maskCollected = 2;
-            gameObject.GetComponent<SwitchMask>().SetMask(maskCollected);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))//if 3 is pressed
-        {
-            finalBlowUi.SetActive(true);
-            maskCollected = 3;
-            gameObject.GetComponent<SwitchMask>().SetMask(maskCollected);
-        }
-
-
         if (Groundcheck.isGrounded == true && !Input.GetKey(KeyCode.S))
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                anim.SetBool("onGround", false);
+                anim.SetBool("jump", true);
                 rb.velocity = new Vector2(rb.velocity.x, JumpForce);
                 rb.velocity = new Vector2(rb.velocity.x, JumpForce);
                 Groundcheck.isGrounded = false;
@@ -324,8 +261,9 @@ public class PlayerController : MonoBehaviour
                 GrapplePoint.isGrap = false;
             }
         }
+        TestingControl();
 
-        
+
     }
 
     public void FixedUpdate()
@@ -347,7 +285,18 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Attack()
     {
-        anim.SetTrigger("attack");
+        if (jump == true)
+        {
+            jumpAttack = true;
+            anim.SetTrigger("jumpAttack");
+            FindObjectOfType<AudioManager>().Play("Slash");
+        }
+        else
+        {
+            anim.SetTrigger("attack");
+            FindObjectOfType<AudioManager>().Play("Slash");
+        }
+
         //Detect enemies in range of attack, store the hitted enemy in array
         yield return new WaitForSeconds(0.2f);
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(atkPoint.position, atkRange, enemyLayers);
@@ -374,7 +323,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void FirePillarAttack()
+    /*public void FirePillarAttack()
     {
         //Detect enemies in range of attack, store the hitted enemy in array
         Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(firepillarPoint.position, new Vector2(attackRangeX, attackRangeY),0, enemyLayers);
@@ -385,7 +334,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("We hit " + enemy.name);
             enemy.GetComponent<Enemy>().CalculateHealth(firepillarDamage);
         }
-    }
+    }*/
 
     public void CalHp(float dmg)
     {
@@ -483,6 +432,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Dash(float DashDuration, float dashCooldown)
     {
+        anim.SetBool("dash", true);
         Vector2 originalVelocity = rb.velocity;
         canHurt = false;
         isDashing = true;
@@ -492,6 +442,7 @@ public class PlayerController : MonoBehaviour
         rb.velocity = Vector2.zero;
         //wait seconds, how long is dash then start cooldown
         yield return new WaitForSeconds(DashDuration);
+        anim.SetBool("dash", false);
         isDashing = false;
         canHurt = true;
         //get back our velocity & gravity after dash duration
@@ -518,10 +469,10 @@ public class PlayerController : MonoBehaviour
         Instantiate(finalBlow, firePoint.position, firePoint.rotation); //new Vector3 (firePoint.position.x + 15, firePoint.position.y, firePoint.position.z)
     }
 
-    public void FirePillar()
+    /*public void FirePillar()
     {
         Instantiate(firepillar, firepillarPoint.position, firepillarPoint.transform.rotation);
-    }
+    }*/
 
     private void Flip()
     {
@@ -546,4 +497,77 @@ public class PlayerController : MonoBehaviour
         curseBar.SetHealth(maxCurseBar);
         shurikenController.shuriken = 3;
     }
+
+    #region
+    public void TestingControl()
+    {
+        //Testing -Hp
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            CalHp(-1.0f);
+            //damage = CalHp(1.0f);
+            //healthController.TakeDamage(damage);
+        }
+
+        //Heal
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            CalHp(0.5f);
+            //damage = CalHp(0.5f);
+            //healthController.TakeDamage(0.5f);
+        }
+
+        //Testing +Mp
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            //CalMp(1);
+            manaController.ReplenishMana();
+        }
+
+        //+MaxMana
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            //maxMp += 1;
+            //manaController.maxMana++;
+            manaController.numOfMana++;
+            //mpBar.SetMaxMana(maxMp);
+            //CalMp(0);
+        }
+        //+MaxMana
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            maxCurseBar += 1;
+            currHealth = maxCurseBar;
+            curseBar.SetMaxHealth(maxCurseBar, currHealth);
+            curseBar.SetHealth(currHealth);
+
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            finalBlowUi.SetActive(false);
+            maskCollected = 0;
+            gameObject.GetComponent<SwitchMask>().SetMask(maskCollected);
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            finalBlowUi.SetActive(false);
+            maskCollected = 1;
+            gameObject.GetComponent<SwitchMask>().SetMask(maskCollected);
+
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))//if 2 is pressed
+        {
+            finalBlowUi.SetActive(false);
+            maskCollected = 2;
+            gameObject.GetComponent<SwitchMask>().SetMask(maskCollected);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))//if 3 is pressed
+        {
+            finalBlowUi.SetActive(true);
+            maskCollected = 3;
+            gameObject.GetComponent<SwitchMask>().SetMask(maskCollected);
+        }
+    }
+#endregion
 }

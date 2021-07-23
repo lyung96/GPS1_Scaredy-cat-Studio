@@ -15,6 +15,8 @@ public class Checkpoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player");
+        playerController = player.GetComponent<PlayerController>();
         saveCounter = 0;
         playerController = player.GetComponent<PlayerController>();
     }

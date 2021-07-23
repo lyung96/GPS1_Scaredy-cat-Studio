@@ -16,6 +16,7 @@ public class GrapplePoint : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.Find("Player");
         grappleScript = player.GetComponent<Grapple>(); 
         effector = GetComponent<PlatformEffector2D>();
     }
