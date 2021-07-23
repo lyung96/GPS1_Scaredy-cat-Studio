@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1704247353024135110}
   - component: {fileID: 1704247353024135111}
   - component: {fileID: 1704247353024135105}
+  - component: {fileID: -6785521318041524301}
   m_Layer: 9
   m_Name: level_2_tile_5
   m_TagString: Ground
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704247353024135108}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -16.58, y: -17.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_Sprite: {fileID: 8377741300150514271, guid: 31aa345fc27bc6d4f97e064d7921c6a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -121,9 +122,9 @@ PolygonCollider2D:
       - {x: 10.0375, y: 2.4625}
       - {x: 10.0375, y: 2.9625}
       - {x: 10.0125, y: 3.0125}
-      - {x: 9.0375, y: 4.0625}
-      - {x: 8.9125, y: 4.1625}
-      - {x: 2.4625, y: 4.1625}
+      - {x: 9.408527, y: 3.5430622}
+      - {x: 8.76409, y: 3.531754}
+      - {x: 2.8149743, y: 3.5503068}
       - {x: 2.1875, y: 3.8125}
       - {x: 2.1125, y: 3.6875}
       - {x: 2.3375, y: 3.5125}
@@ -132,8 +133,8 @@ PolygonCollider2D:
       - {x: 2.5125, y: 2.7625}
       - {x: 2.6875, y: 3.2375}
       - {x: 2.8625, y: 2.7125}
-      - {x: 2.9875, y: 2.4625}
-      - {x: -3.6875, y: 2.4625}
+      - {x: 3.3956287, y: 1.980166}
+      - {x: -3.316473, y: 1.980165}
       - {x: -4.1125, y: 2.0125}
       - {x: -3.9125001, y: 1.7625}
       - {x: -3.8625, y: 1.0875}
@@ -141,8 +142,8 @@ PolygonCollider2D:
       - {x: -3.6875, y: 1.0375}
       - {x: -3.4625, y: 1.6875}
       - {x: -3.6375, y: 1.0125}
-      - {x: -3.6875, y: 0.6625}
-      - {x: -9.6875, y: 0.6625}
+      - {x: -2.6486244, y: 0.124509454}
+      - {x: -9.230141, y: 0.098718286}
       - {x: -9.7875, y: 0.58750004}
       - {x: -10.0375, y: 0.26250002}
       - {x: -10.0375, y: 0.0875}
@@ -169,3 +170,54 @@ PolygonCollider2D:
       - {x: -9.5125, y: 0.0125}
       - {x: -9.6125, y: -0.16250001}
       - {x: -9.587501, y: -0.16250001}
+--- !u!331 &-6785521318041524301
+SpriteMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704247353024135108}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10758, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 8377741300150514271, guid: 31aa345fc27bc6d4f97e064d7921c6a2, type: 3}
+  m_MaskAlphaCutoff: 0.2
+  m_FrontSortingLayerID: 0
+  m_BackSortingLayerID: 0
+  m_FrontSortingLayer: 0
+  m_BackSortingLayer: 0
+  m_FrontSortingOrder: 0
+  m_BackSortingOrder: 0
+  m_IsCustomRangeActive: 0
+  m_SpriteSortPoint: 0
