@@ -14,6 +14,8 @@ public class UpgradeMenu : MonoBehaviour
     public GameObject playerMana;
     private float expCost;
     private GameObject player;
+    [HideInInspector]
+    public static bool uiActive;
 
 
     public static UpgradeMenu instance_UpgradeMenu;
@@ -33,6 +35,7 @@ public class UpgradeMenu : MonoBehaviour
     private void Start()
     {
         UpgradeMenuUI.SetActive(false);
+        uiActive = false;
         player = GameObject.Find("Player");
     }
 
@@ -104,7 +107,14 @@ public class UpgradeMenu : MonoBehaviour
         playerHealth.GetComponent<TMPro.TextMeshProUGUI>().text = "Player Health : " + player.GetComponent<PlayerController>().maxCurseBar;
         playerMana.GetComponent<TMPro.TextMeshProUGUI>().text = "Player Mana : " + player.GetComponent<PlayerController>().maxMana;
 
-
+        if(UpgradeMenuUI.activeInHierarchy)
+        {
+            uiActive = true;
+        }
+        else
+        {
+            uiActive = false;
+        }
 
         if (Input.GetKeyDown(KeyCode.H))
         {

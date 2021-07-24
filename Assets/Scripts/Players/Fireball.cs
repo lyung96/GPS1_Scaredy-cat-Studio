@@ -33,6 +33,11 @@ public class Fireball : MonoBehaviour
             Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
+        if (collision.gameObject.CompareTag("Barrier"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
 

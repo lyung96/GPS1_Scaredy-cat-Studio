@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
         //    enddialogue = true;
         //}
 
-        if (PauseMenu.GamePause == false && DialogKey.endDialogue == true && DialogBegining.endDialogue == true)
+        if (PauseMenu.GamePause == false && DialogKey.endDialogue == true && DialogBegining.endDialogue == true && UpgradeMenu.uiActive == false)
         { 
             PlayerControl(); 
         }
