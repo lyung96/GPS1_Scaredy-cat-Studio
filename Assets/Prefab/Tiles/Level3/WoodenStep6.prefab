@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4659362821045475160}
   - component: {fileID: 4659362821045475167}
   m_Layer: 9
-  m_Name: WoodenStep5 1
+  m_Name: WoodenStep6
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
