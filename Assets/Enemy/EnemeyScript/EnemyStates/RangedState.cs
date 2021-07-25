@@ -9,7 +9,7 @@ public class RangedState : IEnemyState
         this.enemy = enemy;
     }
     public void Execute()
-    {       
+    {
         if(enemy.InMeleeRange)
         {
             enemy.ChangeState(new MeleeState());

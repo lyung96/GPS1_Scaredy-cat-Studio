@@ -3,28 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Ground
-  - Mask
-  - Items
-  - Enemy
-  - PopUp Collider
-  - Boss
-  - CatEnemy
-  - edge
-  - Barrier
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Background
+  - 
   - Water
   - UI
-  - Enemy
-  - Grappling
-  - Player
-  - Ground
-  - Chest
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -49,19 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 13392869
-    locked: 0
-  - name: Ground
-    uniqueID: 3223766051
-    locked: 0
-  - name: Chest
-    uniqueID: 1871520181
-    locked: 0
-  - name: Player
-    uniqueID: 693638995
-    locked: 0
-  - name: Foreground
-    uniqueID: 223946367
     locked: 0

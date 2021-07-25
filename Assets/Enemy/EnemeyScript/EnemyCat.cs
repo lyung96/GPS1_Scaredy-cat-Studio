@@ -10,6 +10,10 @@ public class EnemyCat : Characther
     private float cd = 5;
     private float cdTimer;
 
+    public GameObject expPrefab;
+    public GameObject expTarget;
+
+
     public bool InMeleeRange
     {
         get
@@ -32,6 +36,9 @@ public class EnemyCat : Characther
     {
         base.Start();
         ChangeState(new IdleState());
+
+        expTarget = GameObject.FindGameObjectWithTag("ExpTag");
+
     }
     private void LookAtTarget()
     {
@@ -111,6 +118,10 @@ public class EnemyCat : Characther
         else
         {
             MyAnimator.SetTrigger("dead");
+
+            var go = Instantiate(expPrefab, transform.position + new Vector3(1,5), Quaternion.identity);
+            go.GetComponent<FollowPlyr>().Target = expTarget.transform ;
+            
             yield return null;
         }
     }
