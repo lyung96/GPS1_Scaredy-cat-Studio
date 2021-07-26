@@ -11,7 +11,7 @@ public class ParticleCollision : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip sounds;
     public float SoundCapResetSpeed = 0.55f;
-    public int MaxSounds = 3;
+    public int MaxSounds = 1;
     float Timepassed;
     int soundsPlayed;
 
@@ -45,13 +45,17 @@ public class ParticleCollision : MonoBehaviour
             if (soundsPlayed < MaxSounds)
             {
                 soundsPlayed += 1;
+                FindObjectOfType<AudioManager>().PlayOneShot("Blood");
+                FindObjectOfType<AudioManager>().PlayOneShot("Blood2");
                 //audioSource.pitch = Random.Range(0.9f, 1.1f);
                 //audioSource.PlayOneShot(sounds[Random.Range(0, sounds.Length)], Random.Range(0.1f, 0.35f));
                 //audioSource.PlayOneShot(sounds, Random.Range(0.1f, 0.35f));
                 //FindObjectOfType<AudioManager>().Play("Blood");
-                FindObjectOfType<AudioManager>().PlayOneShot("Blood");
+                //FindObjectOfType<AudioManager>().PlayOneShot("Blood");
+                //FindObjectOfType<AudioManager>().PlayOneShot("Blood2");
 
             }
         }
     }
+
 }

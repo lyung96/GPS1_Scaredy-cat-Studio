@@ -1056,6 +1056,7 @@ MonoBehaviour:
   costText: {fileID: 9015307489883733833}
   playerHealth: {fileID: 2907079094435734099}
   playerMana: {fileID: 1869674617273394919}
+  levelChanger: {fileID: 0}
 --- !u!1 &9015307490020201161
 GameObject:
   m_ObjectHideFlags: 0

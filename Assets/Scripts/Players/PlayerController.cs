@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -82,6 +82,9 @@ public class PlayerController : MonoBehaviour
     //Camera
     public CameraController cameraController;
 
+    //Scene
+    public string currScene;
+
     private void Start()
     {
         finalBlowBar = finalBlowUi.GetComponent<FinalBlowBar>();
@@ -95,6 +98,7 @@ public class PlayerController : MonoBehaviour
         //mpBar.SetMaxMana(maxMp); //bar
         normalGravity = rb.gravityScale;
         mask = GetComponent<SwitchMask>();//Icon
+        currScene = SceneManager.GetActiveScene().name;
     }
 
     void Update()
@@ -217,7 +221,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Mask Skill
-        if (Input.GetKeyDown(KeyCode.Q) && (manaController.currMana > 0))
+        if (Input.GetKeyDown(KeyCode.Q) && (manaController.currMana > 0) && currScene != "GameLevel1")
         {
             if(maskCollected == 0)
             {

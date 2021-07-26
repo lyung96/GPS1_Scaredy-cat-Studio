@@ -16,7 +16,7 @@ public class UpgradeMenu : MonoBehaviour
     private GameObject player;
     [HideInInspector]
     public static bool uiActive;
-
+    public LevelChanger levelChanger;
 
     public static UpgradeMenu instance_UpgradeMenu;
     private void Awake()
@@ -37,6 +37,7 @@ public class UpgradeMenu : MonoBehaviour
         UpgradeMenuUI.SetActive(false);
         uiActive = false;
         player = GameObject.Find("Player");
+        levelChanger = FindObjectOfType<LevelChanger>().GetComponent<LevelChanger>();
     }
 
     private void Update()
@@ -167,7 +168,8 @@ public class UpgradeMenu : MonoBehaviour
     public IEnumerator NextLevel()
     {
         FindObjectOfType<Checkpoint>().Invoke("SavePlayer",0f);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        levelChanger.FadeToNextLevel();
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         yield return new WaitForSeconds(0.1f);
         UpdateComponent();
         FindObjectOfType<Checkpoint>().Invoke("LoadandUpdate", 0f);

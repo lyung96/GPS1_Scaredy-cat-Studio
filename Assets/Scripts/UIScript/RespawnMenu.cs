@@ -85,11 +85,12 @@ public class RespawnMenu : MonoBehaviour
     public void changeScene()
     {
         currScene = SceneManager.GetActiveScene().name;
-        if (lastScene != currScene)
+        if (currScene != lastScene)
         {
             if (currScene != "Menu")
             {
                 UpdateRef();
+                Debug.Log("ChangeScene");
             }
             lastScene = currScene;
         }

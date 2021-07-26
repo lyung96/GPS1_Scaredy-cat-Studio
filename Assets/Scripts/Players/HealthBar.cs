@@ -9,6 +9,24 @@ public class HealthBar : MonoBehaviour
     public Gradient hpGradient;
     public Image hpFill;
     public GameObject player;
+    private float currHealth;
+    private float lastHealth;
+
+    private void Start()
+    {
+        player = GameObject.Find("Player");
+        currHealth = player.GetComponent<PlayerController>().currHealth;
+        lastHealth = player.GetComponent<PlayerController>().maxCurseBar;
+        SetMaxHealth(lastHealth, lastHealth);
+        SetHealth(lastHealth);
+    }
+
+    private void Update()
+    {
+        currHealth = player.GetComponent<PlayerController>().currHealth;
+        SetHealth(currHealth);
+    }
+
     public void SetMaxHealth(float health, float startinghealth)
     {
         hpSlider.maxValue = health;

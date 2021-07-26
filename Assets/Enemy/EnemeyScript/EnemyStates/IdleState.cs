@@ -13,7 +13,7 @@ public class IdleState : IEnemyState
     }
     public void Execute()
     {
-        Debug.Log("im idling");
+        //Debug.Log("im idling");
         Idle();
         if (enemy.Target != null)
         {

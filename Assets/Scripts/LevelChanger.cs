@@ -74,6 +74,7 @@ public class LevelChanger : MonoBehaviour
                 player.GetComponent<PlayerController>().manaController.numOfMana = player.GetComponent<PlayerController>().maxMana;
                 player.GetComponent<PlayerController>().manaController.maxMana = player.GetComponent<PlayerController>().maxMana;
             }
+            //OnFadeComplete();
             lastScene = currScene;
         }
     }
