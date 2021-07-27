@@ -10,6 +10,9 @@ TagManager:
   - CatEnemy
   - Boss
   - Barrier
+  - bgSlider
+  - sfxSlider
+  - Enemy
   layers:
   - Default
   - TransparentFX

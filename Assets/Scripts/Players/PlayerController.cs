@@ -108,7 +108,7 @@ public class PlayerController : MonoBehaviour
         //    enddialogue = true;
         //}
 
-        if (PauseMenu.GamePause == false && DialogKey.endDialogue == true && DialogBegining.endDialogue == true && UpgradeMenu.uiActive == false)
+        if (PauseMenu.GamePause == false && DialogKey.endDialogue == true && DialogBegining.endDialogue == true && UpgradeMenu.uiActive == false && keyobtained.endDialogue)
         { 
             PlayerControl(); 
         }
@@ -314,15 +314,16 @@ public class PlayerController : MonoBehaviour
                 finalBlowBar.SetBar(maskGauge);
                 enemy.GetComponent<Enemy>().CalculateHealth(atkDmg);
             }
-            Debug.Log("We hit " + enemy.name);
-            if (enemy.CompareTag("Enemy"))
-            {
-                enemy.GetComponent<Enemy>().CalculateHealth(atkDmg);
-            }
-            if (enemy.CompareTag("CatEnemy"))
+            
+            //else if (enemy.CompareTag("Enemy"))
+            //{
+            //    enemy.GetComponent<Enemy>().CalculateHealth(atkDmg);
+            //}
+            else if (enemy.CompareTag("CatEnemy"))
             {
                 StartCoroutine(enemy.GetComponent<EnemyCat>().EnemyTakeDamage(-atkDmg));
             }
+            Debug.Log("We hit " + enemy.name);
 
         }
     }
