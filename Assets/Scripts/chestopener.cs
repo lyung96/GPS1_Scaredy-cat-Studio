@@ -31,16 +31,16 @@ public class chestopener : MonoBehaviour
                     GetComponent<Animator>().SetTrigger("Open");
                     interacticon.SetActive(false);
                     obtainedkey = true;
-                    if (obtainedkey)
-                    {
-                        obtainedkeyInstructions.SetActive(true);
-                        Invoke("keypopoff", 1f);
-                    }
+                    //if (obtainedkey)
+                    //{
+                    //    obtainedkeyInstructions.SetActive(true);
+                    //    Invoke("keypopoff", 1f);
+                    //}
                 }
-                else if (enemycount != 4)
-                {
-                    defeatenemyinstructions.SetActive(true);
-                }
+                //else if (enemycount != 4)
+                //{
+                //    defeatenemyinstructions.SetActive(true);
+                //}
             }
 
                

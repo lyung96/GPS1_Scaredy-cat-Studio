@@ -10,6 +10,7 @@ TagManager:
   - CatEnemy
   - Boss
   - Barrier
+  - Enemy
   layers:
   - Default
   - TransparentFX
