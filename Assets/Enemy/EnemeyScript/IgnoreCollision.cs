@@ -14,10 +14,10 @@ public class IgnoreCollision : MonoBehaviour
 
     private void Awake()
     {
-        //GameObject player = GameObject.FindGameObjectWithTag("Player");
-        //Physics2D.IgnoreCollision(GetComponent<Collider2D>(), box, true);
-        //Physics2D.IgnoreCollision(GetComponent<Collider2D>(), circle.GetComponent<CircleCollider2D>(), true);
-        ////Physics2D.IgnoreCollision(GetComponent<Collider2D>(), edge.GetComponent<EdgeCollider2D>() , true);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), box, true);
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), circle.GetComponent<CircleCollider2D>(), true);
+        Physics2D.IgnoreCollision(GetComponent<Collider2D>(), edge.GetComponent<EdgeCollider2D>() , true);
 
     }
 
