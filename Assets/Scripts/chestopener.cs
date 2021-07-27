@@ -51,9 +51,13 @@ public class chestopener : MonoBehaviour
     {
         if (collision.tag== "Player")
         {
-            playerinchestrange = true;
-            Debug.Log("Chest touched");
-            interacticon.SetActive(true);
+            if (obtainedkey==false)
+            {
+                playerinchestrange = true;
+                Debug.Log("Chest touched");
+                interacticon.SetActive(true);
+            }
+            
                 
         }
     }
