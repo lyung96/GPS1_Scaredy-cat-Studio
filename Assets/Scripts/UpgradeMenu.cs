@@ -102,11 +102,14 @@ public class UpgradeMenu : MonoBehaviour
                 }
         }
         UpdateComponent();
-        totalExpText.GetComponent<TMPro.TextMeshProUGUI>().text = "Experience : " + PlayerController.exp;
-        costText.GetComponent<TMPro.TextMeshProUGUI>().text = "Upgrade cost : " + expCost;
-        playerLevelText.GetComponent<TMPro.TextMeshProUGUI>().text = "Player level :" + PlayerController.playerLevel;
-        playerHealth.GetComponent<TMPro.TextMeshProUGUI>().text = "Player Health : " + player.GetComponent<PlayerController>().maxCurseBar;
-        playerMana.GetComponent<TMPro.TextMeshProUGUI>().text = "Player Mana : " + player.GetComponent<PlayerController>().maxMana;
+        if (player != null)
+        {
+            totalExpText.GetComponent<TMPro.TextMeshProUGUI>().text = "Experience : " + PlayerController.exp;
+            costText.GetComponent<TMPro.TextMeshProUGUI>().text = "Upgrade cost : " + expCost;
+            playerLevelText.GetComponent<TMPro.TextMeshProUGUI>().text = "Player level :" + PlayerController.playerLevel;
+            playerHealth.GetComponent<TMPro.TextMeshProUGUI>().text = "Player Health : " + player.GetComponent<PlayerController>().maxCurseBar;
+            playerMana.GetComponent<TMPro.TextMeshProUGUI>().text = "Player Mana : " + player.GetComponent<PlayerController>().maxMana;
+        }
 
         if(UpgradeMenuUI.activeInHierarchy)
         {
