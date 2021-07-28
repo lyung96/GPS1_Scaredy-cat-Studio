@@ -1,82 +1,88 @@
 fileFormatVersion: 2
-guid: 04a25aef271f66843b57ae952ca3dcb1
+guid: 5e4082c9136a9e04ea7f817a016947a9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3128428798856727031
-    second: level_4_tile_resUpdate_0
+      213: 5252445250852538093
+    second: level1_resUpdate_chest 1_0
   - first:
-      213: 4122186514275462926
-    second: level_4_tile_resUpdate_1
+      213: 185782258703318557
+    second: level1_resUpdate_chest 1_1
   - first:
-      213: -1418464356995588040
-    second: level_4_tile_resUpdate_2
+      213: -6919706198611103633
+    second: level1_resUpdate_chest 1_2
   - first:
-      213: 2239966715534296958
-    second: level_4_tile_resUpdate_3
+      213: 20120408882309799
+    second: level1_resUpdate_chest 1_3
   - first:
-      213: 677185354418343148
-    second: level_4_tile_resUpdate_4
+      213: 6418745709395432243
+    second: level1_resUpdate_chest 1_4
   - first:
-      213: -7678169509459410130
-    second: level_4_tile_resUpdate_5
+      213: 16297110013983691
+    second: level1_resUpdate_chest 1_5
   - first:
-      213: 7939879610345617220
-    second: level_4_tile_resUpdate_6
+      213: -1039098313474319655
+    second: level1_resUpdate_chest 1_6
   - first:
-      213: 8400559509343399277
-    second: level_4_tile_resUpdate_7
+      213: 8103014638304574623
+    second: level1_resUpdate_chest 1_7
   - first:
-      213: -5648119076120380172
-    second: level_4_tile_resUpdate_8
+      213: -148046863363380263
+    second: level1_resUpdate_chest 1_8
   - first:
-      213: 8494827413250302666
-    second: level_4_tile_resUpdate_9
+      213: -6637434005598793050
+    second: level1_resUpdate_chest 1_9
   - first:
-      213: 8193784434040698621
-    second: level_4_tile_resUpdate_10
+      213: 1371282142889454584
+    second: level1_resUpdate_chest 1_10
   - first:
-      213: 7765304910286218070
-    second: level_4_tile_resUpdate_11
+      213: 2382078831776474291
+    second: level1_resUpdate_chest 1_11
   - first:
-      213: -8843236186473567669
-    second: level_4_tile_resUpdate_12
+      213: 6917459264238268607
+    second: level1_resUpdate_chest 1_12
   - first:
-      213: -5522726953216036142
-    second: level_4_tile_resUpdate_13
+      213: -3514793627751001406
+    second: level1_resUpdate_chest 1_13
   - first:
-      213: -3268727388129025510
-    second: level_4_tile_resUpdate_14
+      213: -6173263174109584019
+    second: level1_resUpdate_chest 1_14
   - first:
-      213: -7373893939376260219
-    second: level_4_tile_resUpdate_15
+      213: -315635499706635062
+    second: level1_resUpdate_chest 1_15
   - first:
-      213: 1103905437871151817
-    second: level_4_tile_resUpdate_16
+      213: 8586195286822377988
+    second: level1_resUpdate_chest 1_16
   - first:
-      213: 2280477669168549609
-    second: level_4_tile_resUpdate_17
+      213: 8645292921655056785
+    second: level1_resUpdate_chest 1_17
   - first:
-      213: -8907058574321025186
-    second: level_4_tile_resUpdate_18
+      213: 8945132294251616959
+    second: level1_resUpdate_chest 1_18
   - first:
-      213: 8588040369117680696
-    second: level_4_tile_resUpdate_19
+      213: -3492242205422481732
+    second: level1_resUpdate_chest 1_19
   - first:
-      213: -4480351782978876424
-    second: level_4_tile_resUpdate_20
+      213: 7841827882282466774
+    second: level1_resUpdate_chest 1_20
   - first:
-      213: 7285113181564329672
-    second: level_4_tile_resUpdate_21
+      213: -1185260448068152698
+    second: level1_resUpdate_chest 1_21
   - first:
-      213: -2016315190045259851
-    second: level_4_tile_resUpdate_22
+      213: -4268727555660124206
+    second: level1_resUpdate_chest 1_22
   - first:
-      213: -1669295379994931136
-    second: level_4_tile_resUpdate_23
+      213: 5456773755460060464
+    second: level1_resUpdate_chest 1_23
   - first:
-      213: -921957506511340243
-    second: level_4_tile_resUpdate_24
+      213: 3415543367590329499
+    second: level1_resUpdate_chest 1_24
+  - first:
+      213: 6162430873222330941
+    second: level1_resUpdate_chest 1_25
+  - first:
+      213: 4470209594918987869
+    second: level1_resUpdate_chest 1_26
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -107,7 +113,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -121,7 +127,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 133.5
+  spritePixelsToUnits: 130
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -178,13 +184,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: level_4_tile_resUpdate_0
+      name: level1_resUpdate_chest 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 5527
-        width: 4980
-        height: 1312
+        y: 740
+        width: 301
+        height: 4364
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +198,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f905fcda696a6b20800000000000000
-      internalID: 3128428798856727031
+      spriteID: de6c043802f64e840800000000000000
+      internalID: 5252445250852538093
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_4_tile_resUpdate_1
+      name: level1_resUpdate_chest 1_1
       rect:
         serializedVersion: 2
-        x: 5082
-        y: 6029
-        width: 367
-        height: 893
+        x: 416
+        y: 3899
+        width: 785
+        height: 1064
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -213,20 +219,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0f6b416bc2f43930800000000000000
-      internalID: 4122186514275462926
+      spriteID: d1eb49fdaf7049200800000000000000
+      internalID: 185782258703318557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_4_tile_resUpdate_2
+      name: level1_resUpdate_chest 1_2
       rect:
         serializedVersion: 2
-        x: 5584
-        y: 5994
-        width: 268
-        height: 858
+        x: 1325
+        y: 4548
+        width: 638
+        height: 422
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -234,20 +240,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 830a9b2ce2a905ce0800000000000000
-      internalID: -1418464356995588040
+      spriteID: f6077b1efd348ff90800000000000000
+      internalID: -6919706198611103633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_4_tile_resUpdate_3
+      name: level1_resUpdate_chest 1_3
       rect:
         serializedVersion: 2
-        x: 6191
-        y: 5912
-        width: 531
-        height: 985
+        x: 2183
+        y: 4585
+        width: 2257
+        height: 264
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -255,20 +261,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e77ce142cd5f51f10800000000000000
-      internalID: 2239966715534296958
+      spriteID: 7aa6a20c76b774000800000000000000
+      internalID: 20120408882309799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_4_tile_resUpdate_4
+      name: level1_resUpdate_chest 1_4
       rect:
         serializedVersion: 2
-        x: 6947
-        y: 5826
-        width: 531
-        height: 1096
+        x: 4604
+        y: 2629
+        width: 528
+        height: 2223
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -276,20 +282,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cecc331fd78d56900800000000000000
-      internalID: 677185354418343148
+      spriteID: 333d318f637f31950800000000000000
+      internalID: 6418745709395432243
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_4_tile_resUpdate_5
+      name: level1_resUpdate_chest 1_5
       rect:
         serializedVersion: 2
-        x: 7687
-        y: 6222
-        width: 531
-        height: 699
+        x: 1335
+        y: 4300
+        width: 618
+        height: 151
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -297,20 +303,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e23cf670389a17590800000000000000
-      internalID: -7678169509459410130
+      spriteID: bcbbf3d9226e93000800000000000000
+      internalID: 16297110013983691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_4_tile_resUpdate_6
+      name: level1_resUpdate_chest 1_6
       rect:
         serializedVersion: 2
-        x: 0
-        y: 4878
-        width: 740
-        height: 257
+        x: 2457
+        y: 4115
+        width: 787
+        height: 262
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -318,20 +324,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4477406307e103e60800000000000000
-      internalID: 7939879610345617220
+      spriteID: 9dad7aad6916491f0800000000000000
+      internalID: -1039098313474319655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_4_tile_resUpdate_7
+      name: level1_resUpdate_chest 1_7
       rect:
         serializedVersion: 2
-        x: 966
-        y: 4889
-        width: 622
-        height: 257
+        x: 1258
+        y: 4087
+        width: 1053
+        height: 94
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -339,20 +345,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6d61fc9d58c49470800000000000000
-      internalID: 8400559509343399277
+      spriteID: f9c3fe5c1e0b37070800000000000000
+      internalID: 8103014638304574623
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_4_tile_resUpdate_8
+      name: level1_resUpdate_chest 1_8
       rect:
         serializedVersion: 2
-        x: 1838
-        y: 4881
-        width: 588
-        height: 256
+        x: 3694
+        y: 3878
+        width: 617
+        height: 296
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -360,20 +366,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fcbcb210a9dd91b0800000000000000
-      internalID: -5648119076120380172
+      spriteID: 9db6d13892802fdf0800000000000000
+      internalID: -148046863363380263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_4_tile_resUpdate_9
+      name: level1_resUpdate_chest 1_9
       rect:
         serializedVersion: 2
-        x: 2734
-        y: 4949
-        width: 811
-        height: 255
+        x: 1362
+        y: 3734
+        width: 371
+        height: 225
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -381,20 +387,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac2e80b5680b3e570800000000000000
-      internalID: 8494827413250302666
+      spriteID: 6a29f2440f813e3a0800000000000000
+      internalID: -6637434005598793050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_4_tile_resUpdate_10
+      name: level1_resUpdate_chest 1_10
       rect:
         serializedVersion: 2
-        x: 4128
-        y: 4774
-        width: 620
-        height: 421
+        x: 1667
+        y: 3734
+        width: 370
+        height: 225
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -402,20 +408,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df6fe1db78b26b170800000000000000
-      internalID: 8193784434040698621
+      spriteID: 8fb23c5f7d5c70310800000000000000
+      internalID: 1371282142889454584
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_4_tile_resUpdate_11
+      name: level1_resUpdate_chest 1_11
       rect:
         serializedVersion: 2
-        x: 4857
-        y: 4768
-        width: 590
-        height: 425
+        x: 1955
+        y: 3734
+        width: 372
+        height: 225
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -423,20 +429,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 653e43e6ca7e3cb60800000000000000
-      internalID: 7765304910286218070
+      spriteID: 3b4a303a318de0120800000000000000
+      internalID: 2382078831776474291
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_4_tile_resUpdate_12
+      name: level1_resUpdate_chest 1_12
       rect:
         serializedVersion: 2
-        x: 5591
-        y: 4710
-        width: 600
-        height: 423
+        x: 628
+        y: 2884
+        width: 242
+        height: 803
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -444,20 +450,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4aec58ba83864580800000000000000
-      internalID: -8843236186473567669
+      spriteID: fb03821fc80cfff50800000000000000
+      internalID: 6917459264238268607
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_4_tile_resUpdate_13
+      name: level1_resUpdate_chest 1_13
       rect:
         serializedVersion: 2
-        x: 6518
-        y: 3922
-        width: 1239
-        height: 1439
+        x: 1024
+        y: 2884
+        width: 244
+        height: 769
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -465,20 +471,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d23512c8155b53b0800000000000000
-      internalID: -5522726953216036142
+      spriteID: 2c2581751d1f83fc0800000000000000
+      internalID: -3514793627751001406
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_4_tile_resUpdate_14
+      name: level1_resUpdate_chest 1_14
       rect:
         serializedVersion: 2
-        x: 7826
-        y: 3916
-        width: 1238
-        height: 2246
+        x: 2186
+        y: 1341
+        width: 222
+        height: 2190
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -486,20 +492,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a12aafa42c523a2d0800000000000000
-      internalID: -3268727388129025510
+      spriteID: d65a23ab9d9245aa0800000000000000
+      internalID: -6173263174109584019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_4_tile_resUpdate_15
+      name: level1_resUpdate_chest 1_15
       rect:
         serializedVersion: 2
-        x: 22
-        y: 3885
-        width: 3683
-        height: 668
+        x: 2766
+        y: 3430
+        width: 626
+        height: 150
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -507,188 +513,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58b721cd78aaaa990800000000000000
-      internalID: -7373893939376260219
+      spriteID: accab717f23ae9bf0800000000000000
+      internalID: -315635499706635062
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: level_4_tile_resUpdate_16
+      name: level1_resUpdate_chest 1_16
       rect:
         serializedVersion: 2
-        x: 4324
-        y: 3865
-        width: 623
-        height: 349
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ca9ee1a52cd15f00800000000000000
-      internalID: 1103905437871151817
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: level_4_tile_resUpdate_17
-      rect:
-        serializedVersion: 2
-        x: 5392
-        y: 3841
-        width: 623
-        height: 349
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ee800d8b52e5af10800000000000000
-      internalID: 2280477669168549609
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: level_4_tile_resUpdate_18
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 1955
-        width: 3629
-        height: 1469
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5f7ff31b65c36480800000000000000
-      internalID: -8907058574321025186
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: level_4_tile_resUpdate_19
-      rect:
-        serializedVersion: 2
-        x: 7503
-        y: 3356
-        width: 155
-        height: 129
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 83459fdd639de2770800000000000000
-      internalID: 8588040369117680696
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: level_4_tile_resUpdate_20
-      rect:
-        serializedVersion: 2
-        x: 7722
-        y: 3356
-        width: 157
-        height: 129
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8fb81c29ac792d1c0800000000000000
-      internalID: -4480351782978876424
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: level_4_tile_resUpdate_21
-      rect:
-        serializedVersion: 2
-        x: 4069
-        y: 2033
-        width: 2801
-        height: 1168
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8ce58a727dbe91560800000000000000
-      internalID: 7285113181564329672
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: level_4_tile_resUpdate_22
-      rect:
-        serializedVersion: 2
-        x: 7405
-        y: 2303
-        width: 392
-        height: 473
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5b7c02e740c9404e0800000000000000
-      internalID: -2016315190045259851
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: level_4_tile_resUpdate_23
-      rect:
-        serializedVersion: 2
-        x: 165
-        y: 211
-        width: 4917
-        height: 1352
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 040933a32b875d8e0800000000000000
-      internalID: -1669295379994931136
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: level_4_tile_resUpdate_24
-      rect:
-        serializedVersion: 2
-        x: 5263
+        x: 3763
         y: 0
-        width: 3056
-        height: 1585
+        width: 3115
+        height: 3553
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -696,8 +534,218 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2df266588c8433f0800000000000000
-      internalID: -921957506511340243
+      spriteID: 40a5e2b2f1b482770800000000000000
+      internalID: 8586195286822377988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level1_resUpdate_chest 1_17
+      rect:
+        serializedVersion: 2
+        x: 3928
+        y: 3346
+        width: 419
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 199d2768b104af770800000000000000
+      internalID: 8645292921655056785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level1_resUpdate_chest 1_18
+      rect:
+        serializedVersion: 2
+        x: 1412
+        y: 2864
+        width: 613
+        height: 373
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fba1eb3ad6e732c70800000000000000
+      internalID: 8945132294251616959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level1_resUpdate_chest 1_19
+      rect:
+        serializedVersion: 2
+        x: 2876
+        y: 1447
+        width: 370
+        height: 1605
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbe8a248730198fc0800000000000000
+      internalID: -3492242205422481732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level1_resUpdate_chest 1_20
+      rect:
+        serializedVersion: 2
+        x: 3679
+        y: 821
+        width: 759
+        height: 2351
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dd333149e4c3dc60800000000000000
+      internalID: 7841827882282466774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level1_resUpdate_chest 1_21
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 1833
+        width: 265
+        height: 853
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 682d39af6eb1d8fe0800000000000000
+      internalID: -1185260448068152698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level1_resUpdate_chest 1_22
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1833
+        width: 266
+        height: 853
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dfe4f1a7ee62c4c0800000000000000
+      internalID: -4268727555660124206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level1_resUpdate_chest 1_23
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 1850
+        width: 526
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0350fd1c1da5abb40800000000000000
+      internalID: 5456773755460060464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level1_resUpdate_chest 1_24
+      rect:
+        serializedVersion: 2
+        x: 774
+        y: 1432
+        width: 1189
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9cb924b892766f20800000000000000
+      internalID: 3415543367590329499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level1_resUpdate_chest 1_25
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 902
+        width: 3215
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a315faa3a558550800000000000000
+      internalID: 6162430873222330941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level1_resUpdate_chest 1_26
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 136
+        width: 3210
+        height: 541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5860b041ff590e30800000000000000
+      internalID: 4470209594918987869
       vertices: []
       indices: 
       edges: []
@@ -705,7 +753,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 062e6e3fd87a16c4a94383d611e9f5fd
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
