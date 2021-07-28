@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5141898187851572833}
   - component: {fileID: 5141898187851572834}
   - component: {fileID: 5141898187851572832}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SpikeTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,8 +72,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: -2436131080587399163, guid: bbd44b0c3278b1c45a10e573398620df, type: 3}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: -1141663328291124022, guid: e0ff34196f2cb8540bddba6063e5d21c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.782734, y: 6.09375}
+    oldSize: {x: 8.659177, y: 6.0085135}
     newSize: {x: 8.782734, y: 6.09375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

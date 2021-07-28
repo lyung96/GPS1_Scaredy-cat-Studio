@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2550864946072106557}
   - component: {fileID: 2550864946072106554}
   - component: {fileID: 2550864946072106559}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: WoodenFloor1
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2550864946072106555}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.0534015, y: -17.621857, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -2
-  m_Sprite: {fileID: -5709594121818940645, guid: bbd44b0c3278b1c45a10e573398620df, type: 3}
+  m_Sprite: {fileID: -4285402772022356385, guid: e0ff34196f2cb8540bddba6063e5d21c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,7 +102,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.0942726, y: 2.5}
+    oldSize: {x: 2.988764, y: 2.4123957}
     newSize: {x: 3.0942726, y: 2.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -152,7 +152,7 @@ SpriteMask:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5709594121818940645, guid: bbd44b0c3278b1c45a10e573398620df, type: 3}
+  m_Sprite: {fileID: -4285402772022356385, guid: e0ff34196f2cb8540bddba6063e5d21c, type: 3}
   m_MaskAlphaCutoff: 0.2
   m_FrontSortingLayerID: 0
   m_BackSortingLayerID: 0

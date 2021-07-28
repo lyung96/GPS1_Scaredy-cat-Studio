@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3928085437599518166}
   - component: {fileID: 3928085437599518165}
   - component: {fileID: 3928085437599518164}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: WoodenFloor8
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -8183812922504111624, guid: 9d624b31ad6aca34abb2b676a133cebd, type: 3}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 7944579318359863186, guid: e0ff34196f2cb8540bddba6063e5d21c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,18 +98,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.3927412}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.40625, y: 2.375}
+    oldSize: {x: 4.4044943, y: 2.382428}
     newSize: {x: 4.40625, y: 2.375}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.40625, y: 2.375}
+  m_Size: {x: 4.40625, y: 1.5895176}
   m_EdgeRadius: 0
 --- !u!331 &3928085437599518164
 SpriteMask:
@@ -152,7 +152,7 @@ SpriteMask:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8183812922504111624, guid: 9d624b31ad6aca34abb2b676a133cebd, type: 3}
+  m_Sprite: {fileID: 7944579318359863186, guid: e0ff34196f2cb8540bddba6063e5d21c, type: 3}
   m_MaskAlphaCutoff: 0.2
   m_FrontSortingLayerID: 0
   m_BackSortingLayerID: 0

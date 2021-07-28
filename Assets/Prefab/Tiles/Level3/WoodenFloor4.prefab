@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3846820343493262764}
   - component: {fileID: 3846820343493262765}
   - component: {fileID: 158124019899943077}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: WoodenFloor4
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -6
-  m_Sprite: {fileID: 1611656422550434277, guid: bbd44b0c3278b1c45a10e573398620df, type: 3}
+  m_Sprite: {fileID: 7170944295303081589, guid: e0ff34196f2cb8540bddba6063e5d21c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -104,7 +104,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8.063862, y: 1.75}
+    oldSize: {x: 7.932585, y: 1.6407287}
     newSize: {x: 8.063862, y: 1.75}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -185,7 +185,7 @@ SpriteMask:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1611656422550434277, guid: bbd44b0c3278b1c45a10e573398620df, type: 3}
+  m_Sprite: {fileID: 7170944295303081589, guid: e0ff34196f2cb8540bddba6063e5d21c, type: 3}
   m_MaskAlphaCutoff: 0.2
   m_FrontSortingLayerID: 0
   m_BackSortingLayerID: 0
