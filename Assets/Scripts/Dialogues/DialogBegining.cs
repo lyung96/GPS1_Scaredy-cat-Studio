@@ -8,16 +8,17 @@ public class DialogBegining : MonoBehaviour
     public string[] Sentences;
     public float Dialoguespeed;
     private int index=0;
-    private bool firstline=false;
+    private bool finishedtext;
     public GameObject dialog;
     public Animator DialogueAnimator;
     public static bool StartDialogue=true , endDialogue= true;
+    private float texttimer;
+    private float textCounter= 0.007f;
 
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("sentence index: " + index);
         //if (MovePopUpInstructions.entertutorialarea)
         //{
             if (StartDialogue)
@@ -27,16 +28,25 @@ public class DialogBegining : MonoBehaviour
                 Debug.Log("Start Dialogue");
                 DialogueAnimator.SetTrigger("enter");
                 StartDialogue = false;
+                nextSentence();
+                
             }
             else
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    nextSentence();
+                    if(finishedtext)
+                    {
+                        nextSentence();
+                    }
                     Debug.Log("sentence index: " + index);
                 }
                
             }
+        if (Input.GetKeyDown(KeyCode.P))//use when u fk up
+        {
+            finishedtext = true;
+        }
         //}
     }
 
@@ -46,8 +56,22 @@ public class DialogBegining : MonoBehaviour
         {
             DialogueText.text += Character;
             yield return new WaitForSeconds(Dialoguespeed);
+            Debug.Log("detect char: "+ Character);
+            finishedtext = false;
+            
+            
         }
-        index++;
+        texttimer += Time.deltaTime;
+        Debug.Log("time: " + texttimer);
+
+        if (texttimer >= textCounter)
+        {
+            texttimer = 0f;
+            index++;
+            finishedtext = true;
+        }
+       
+
     }
 
     public void nextSentence()
@@ -56,6 +80,7 @@ public class DialogBegining : MonoBehaviour
         {
             DialogueText.text = string.Empty;
             StartCoroutine(WriteSentence());
+            //WriteSentence();
            
         }
         else

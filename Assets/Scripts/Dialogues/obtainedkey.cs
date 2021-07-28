@@ -9,37 +9,46 @@ public class obtainedkey : MonoBehaviour
     public string[] Sentences;
     public float Dialoguespeed;
     private int index = 0;
-    private bool firstline = false;
+    private bool finishedtext;
     public GameObject dialog;
     public Animator DialogueAnimator;
     public static bool StartDialogue = true, endDialogue = true;
+    private float texttimer;
+    private float textCounter = 0.007f;
 
-
-    // Update is called once per frame
     void Update()
     {
-        Debug.Log("sentence index: " + index);
-        if (chestopener.obtainedkey && chestopener.playerinchestrange)
-        {
-            if (StartDialogue)
-        {
-            endDialogue = false;
+       if (chestopener.obtainedkey && chestopener.playerinchestrange)
 
-            Debug.Log("Start Dialogue");
-            DialogueAnimator.SetTrigger("enter");
-            StartDialogue = false;
-        }
-        else
-        {
-            if (Input.GetKeyDown(KeyCode.E))
             {
-                nextSentence();
-                Debug.Log("sentence index: " + index);
-            }
+                if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (StartDialogue)
+                {
+                    endDialogue = false;
 
+                    Debug.Log("Start Dialogue");
+                    DialogueAnimator.SetTrigger("enter");
+                    StartDialogue = false;
+                    nextSentence();
+                }
+                else
+                {
+                    if (finishedtext)
+                    {
+                        nextSentence();
+                    }
+                }
+                Debug.Log("sentence index: " + index);
+
+            }
         }
+        if (Input.GetKeyDown(KeyCode.P))//use when u fk up
+        {
+            finishedtext = true;
         }
     }
+
 
     public IEnumerator WriteSentence()
     {
@@ -47,8 +56,22 @@ public class obtainedkey : MonoBehaviour
         {
             DialogueText.text += Character;
             yield return new WaitForSeconds(Dialoguespeed);
+            Debug.Log("detect char: " + Character);
+            finishedtext = false;
+
+
         }
-        index++;
+        texttimer += Time.deltaTime;
+        Debug.Log("time: " + texttimer);
+
+        if (texttimer >= textCounter)
+        {
+            texttimer = 0f;
+            index++;
+            finishedtext = true;
+        }
+
+
     }
 
     public void nextSentence()
@@ -57,6 +80,7 @@ public class obtainedkey : MonoBehaviour
         {
             DialogueText.text = string.Empty;
             StartCoroutine(WriteSentence());
+            //WriteSentence();
 
         }
         else
@@ -64,8 +88,8 @@ public class obtainedkey : MonoBehaviour
             DialogueText.text = string.Empty;
             DialogueAnimator.SetTrigger("exit");
             index = 0;
+            StartDialogue = true;
             endDialogue = true;
-            Destroy(dialog);
         }
     }
 }
