@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8862933102445379623}
   - component: {fileID: 6839333862135955891}
   - component: {fileID: 4383274234330826841}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: StoneFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: -6614373457484812694, guid: 2b9d18cc524d52047bb8b2af8bc74e60, type: 3}
+  m_Sprite: {fileID: -5839608684508879462, guid: 8b23fa1984beba34981537b5dfcba4db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 4.75, y: 3.15625}
+  m_Size: {x: 4.915385, y: 3.2465286}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -125,7 +125,7 @@ SpriteMask:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6614373457484812694, guid: 2b9d18cc524d52047bb8b2af8bc74e60, type: 3}
+  m_Sprite: {fileID: -5839608684508879462, guid: 8b23fa1984beba34981537b5dfcba4db, type: 3}
   m_MaskAlphaCutoff: 0.2
   m_FrontSortingLayerID: 0
   m_BackSortingLayerID: 0

@@ -1,0 +1,1278 @@
+fileFormatVersion: 2
+guid: e0ff34196f2cb8540bddba6063e5d21c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4285402772022356385
+    second: level_3_tile_resupdate_0
+  - first:
+      213: 7332453285660962612
+    second: level_3_tile_resupdate_1
+  - first:
+      213: -6878521389699927353
+    second: level_3_tile_resupdate_2
+  - first:
+      213: 1243565873944305458
+    second: level_3_tile_resupdate_3
+  - first:
+      213: 2253400375184525630
+    second: level_3_tile_resupdate_4
+  - first:
+      213: -1141663328291124022
+    second: level_3_tile_resupdate_5
+  - first:
+      213: 8964978721540825994
+    second: level_3_tile_resupdate_6
+  - first:
+      213: -3835677158895835250
+    second: level_3_tile_resupdate_7
+  - first:
+      213: -6665940838310371004
+    second: level_3_tile_resupdate_8
+  - first:
+      213: 4578837029340036940
+    second: level_3_tile_resupdate_9
+  - first:
+      213: -5278857935469700636
+    second: level_3_tile_resupdate_10
+  - first:
+      213: 5112838958458421382
+    second: level_3_tile_resupdate_11
+  - first:
+      213: 5796357273257572424
+    second: level_3_tile_resupdate_12
+  - first:
+      213: -1351324957179186305
+    second: level_3_tile_resupdate_13
+  - first:
+      213: -1390882625498920285
+    second: level_3_tile_resupdate_14
+  - first:
+      213: 1976443490959038043
+    second: level_3_tile_resupdate_15
+  - first:
+      213: 2460292663930713309
+    second: level_3_tile_resupdate_16
+  - first:
+      213: 2012781498173005100
+    second: level_3_tile_resupdate_17
+  - first:
+      213: 2707925265994727003
+    second: level_3_tile_resupdate_18
+  - first:
+      213: -991468533307010701
+    second: level_3_tile_resupdate_19
+  - first:
+      213: 2195412058943509617
+    second: level_3_tile_resupdate_20
+  - first:
+      213: -2241999378508731434
+    second: level_3_tile_resupdate_21
+  - first:
+      213: 7364797060801371753
+    second: level_3_tile_resupdate_22
+  - first:
+      213: 5102629981863656093
+    second: level_3_tile_resupdate_23
+  - first:
+      213: 6771216323977606872
+    second: level_3_tile_resupdate_24
+  - first:
+      213: 217720671952940955
+    second: level_3_tile_resupdate_25
+  - first:
+      213: -2740530296020272800
+    second: level_3_tile_resupdate_26
+  - first:
+      213: -7002149274445206022
+    second: level_3_tile_resupdate_27
+  - first:
+      213: -4862113454367145177
+    second: level_3_tile_resupdate_28
+  - first:
+      213: 3340314703197231273
+    second: level_3_tile_resupdate_29
+  - first:
+      213: -1901170002538904972
+    second: level_3_tile_resupdate_30
+  - first:
+      213: -8593332289465848359
+    second: level_3_tile_resupdate_31
+  - first:
+      213: 7170944295303081589
+    second: level_3_tile_resupdate_32
+  - first:
+      213: 4793605117929463805
+    second: level_3_tile_resupdate_33
+  - first:
+      213: 1449170515081254487
+    second: level_3_tile_resupdate_34
+  - first:
+      213: 3420252989047579114
+    second: level_3_tile_resupdate_35
+  - first:
+      213: 7944579318359863186
+    second: level_3_tile_resupdate_36
+  - first:
+      213: -8787206953594238100
+    second: level_3_tile_resupdate_37
+  - first:
+      213: -8127017344083223129
+    second: level_3_tile_resupdate_38
+  - first:
+      213: 7017603010043665397
+    second: level_3_tile_resupdate_39
+  - first:
+      213: -3737360166490389272
+    second: level_3_tile_resupdate_40
+  - first:
+      213: -6912451205561509476
+    second: level_3_tile_resupdate_41
+  - first:
+      213: 5571335345559230445
+    second: level_3_tile_resupdate_42
+  - first:
+      213: -7446671650795160261
+    second: level_3_tile_resupdate_43
+  - first:
+      213: 7727793603105896642
+    second: level_3_tile_resupdate_44
+  - first:
+      213: 656180054766909354
+    second: level_3_tile_resupdate_45
+  - first:
+      213: 1778685680577373092
+    second: level_3_tile_resupdate_46
+  - first:
+      213: -4027810686860860241
+    second: level_3_tile_resupdate_47
+  - first:
+      213: -7760538868243420699
+    second: level_3_tile_resupdate_48
+  - first:
+      213: -6225244149963054180
+    second: level_3_tile_resupdate_49
+  - first:
+      213: -899755828601699250
+    second: level_3_tile_resupdate_50
+  - first:
+      213: -3087768093611593325
+    second: level_3_tile_resupdate_51
+  - first:
+      213: -3618567811447194135
+    second: level_3_tile_resupdate_52
+  - first:
+      213: -4392698721075683568
+    second: level_3_tile_resupdate_53
+  - first:
+      213: 4450078039674391085
+    second: level_3_tile_resupdate_54
+  - first:
+      213: 3172144319886043099
+    second: level_3_tile_resupdate_55
+  - first:
+      213: 2568593642645819823
+    second: level_3_tile_resupdate_56
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_0
+      rect:
+        serializedVersion: 2
+        x: 3282
+        y: 5058
+        width: 399
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f56122642e03784c0800000000000000
+      internalID: -4285402772022356385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_1
+      rect:
+        serializedVersion: 2
+        x: 3835
+        y: 5058
+        width: 625
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43fa7ff0a6b12c560800000000000000
+      internalID: 7332453285660962612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_2
+      rect:
+        serializedVersion: 2
+        x: 4683
+        y: 5058
+        width: 499
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c272037d359a80a0800000000000000
+      internalID: -6878521389699927353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_3
+      rect:
+        serializedVersion: 2
+        x: 5439
+        y: 5073
+        width: 810
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23f9f3bd298024110800000000000000
+      internalID: 1243565873944305458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_4
+      rect:
+        serializedVersion: 2
+        x: 6429
+        y: 5050
+        width: 1179
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e390b93c3bfa54f10800000000000000
+      internalID: 2253400375184525630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_5
+      rect:
+        serializedVersion: 2
+        x: 7638
+        y: 4732
+        width: 1156
+        height: 802
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acc0e10704ff720f0800000000000000
+      internalID: -1141663328291124022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_6
+      rect:
+        serializedVersion: 2
+        x: 8878
+        y: 5050
+        width: 1194
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a83606416a00a6c70800000000000000
+      internalID: 8964978721540825994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_7
+      rect:
+        serializedVersion: 2
+        x: 10210
+        y: 5058
+        width: 1194
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e872fee32ffe4cac0800000000000000
+      internalID: -3835677158895835250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_8
+      rect:
+        serializedVersion: 2
+        x: 11807
+        y: 2978
+        width: 2050
+        height: 2253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 441adbe0022dd73a0800000000000000
+      internalID: -6665940838310371004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_9
+      rect:
+        serializedVersion: 2
+        x: 3297
+        y: 4206
+        width: 1512
+        height: 672
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4fb73ab40c4b8f30800000000000000
+      internalID: 4578837029340036940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_10
+      rect:
+        serializedVersion: 2
+        x: 5028
+        y: 4179
+        width: 1858
+        height: 799
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e993902daabdb6b0800000000000000
+      internalID: -5278857935469700636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_11
+      rect:
+        serializedVersion: 2
+        x: 9074
+        y: 4590
+        width: 2330
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68041b891f374f640800000000000000
+      internalID: 5112838958458421382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_12
+      rect:
+        serializedVersion: 2
+        x: 2829
+        y: 2452
+        width: 261
+        height: 1961
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 848f4c7ca3cc07050800000000000000
+      internalID: 5796357273257572424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_13
+      rect:
+        serializedVersion: 2
+        x: 7239
+        y: 4298
+        width: 591
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f73f63f6c112f3de0800000000000000
+      internalID: -1351324957179186305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_14
+      rect:
+        serializedVersion: 2
+        x: 3574
+        y: 3611
+        width: 809
+        height: 426
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aacfde0f9792bce0800000000000000
+      internalID: -1390882625498920285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_15
+      rect:
+        serializedVersion: 2
+        x: 7178
+        y: 3876
+        width: 599
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b561f3522ecbd6b10800000000000000
+      internalID: 1976443490959038043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_16
+      rect:
+        serializedVersion: 2
+        x: 9297
+        y: 3953
+        width: 966
+        height: 278
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd4f6158427b42220800000000000000
+      internalID: 2460292663930713309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_19
+      rect:
+        serializedVersion: 2
+        x: 10467
+        y: 3984
+        width: 964
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 371124a3f989d32f0800000000000000
+      internalID: -991468533307010701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_22
+      rect:
+        serializedVersion: 2
+        x: 4595
+        y: 3565
+        width: 671
+        height: 323
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e18eb08e3053660800000000000000
+      internalID: 7364797060801371753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_23
+      rect:
+        serializedVersion: 2
+        x: 5320
+        y: 2759
+        width: 1704
+        height: 1217
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9abd310fee20d640800000000000000
+      internalID: 5102629981863656093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_24
+      rect:
+        serializedVersion: 2
+        x: 8141
+        y: 2172
+        width: 929
+        height: 1685
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d6f2080f5138fd50800000000000000
+      internalID: 6771216323977606872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_26
+      rect:
+        serializedVersion: 2
+        x: 9707
+        y: 3431
+        width: 645
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 069f389373ea7f9d0800000000000000
+      internalID: -2740530296020272800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_27
+      rect:
+        serializedVersion: 2
+        x: 10559
+        y: 3427
+        width: 961
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afd2f68755e53de90800000000000000
+      internalID: -7002149274445206022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_30
+      rect:
+        serializedVersion: 2
+        x: 3439
+        y: 2660
+        width: 269
+        height: 859
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4724a0d94ffad95e0800000000000000
+      internalID: -1901170002538904972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_31
+      rect:
+        serializedVersion: 2
+        x: 3819
+        y: 2694
+        width: 326
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dd6e79efc95eb880800000000000000
+      internalID: -8593332289465848359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_32
+      rect:
+        serializedVersion: 2
+        x: 4261
+        y: 2744
+        width: 1059
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57e67a1e7df448360800000000000000
+      internalID: 7170944295303081589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_33
+      rect:
+        serializedVersion: 2
+        x: 10486
+        y: 2890
+        width: 964
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff1ea7057e468240800000000000000
+      internalID: 4793605117929463805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_36
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 2345
+        width: 588
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29f21c04cc0d04e60800000000000000
+      internalID: 7944579318359863186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_37
+      rect:
+        serializedVersion: 2
+        x: 3366
+        y: 1785
+        width: 810
+        height: 690
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b4c2315d19d0680800000000000000
+      internalID: -8787206953594238100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_38
+      rect:
+        serializedVersion: 2
+        x: 4318
+        y: 1689
+        width: 1850
+        height: 898
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad1b7ac8c8073f80800000000000000
+      internalID: -8127017344083223129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_39
+      rect:
+        serializedVersion: 2
+        x: 10751
+        y: 2303
+        width: 663
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fb5d5cb1c8836160800000000000000
+      internalID: 7017603010043665397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_41
+      rect:
+        serializedVersion: 2
+        x: 11734
+        y: 357
+        width: 2276
+        height: 2533
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c991945904a0210a0800000000000000
+      internalID: -6912451205561509476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 579
+        width: 2572
+        height: 1336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de7d2a48afb515d40800000000000000
+      internalID: 5571335345559230445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_43
+      rect:
+        serializedVersion: 2
+        x: 2760
+        y: 468
+        width: 522
+        height: 1616
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3df167769b18a890800000000000000
+      internalID: -7446671650795160261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_44
+      rect:
+        serializedVersion: 2
+        x: 6291
+        y: 1562
+        width: 1516
+        height: 672
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c8b9a2a653ae3b60800000000000000
+      internalID: 7727793603105896642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_45
+      rect:
+        serializedVersion: 2
+        x: 8744
+        y: 119
+        width: 929
+        height: 1681
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa7f31188483b1900800000000000000
+      internalID: 656180054766909354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_46
+      rect:
+        serializedVersion: 2
+        x: 10525
+        y: 115
+        width: 844
+        height: 1643
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a363edd3392fa810800000000000000
+      internalID: 1778685680577373092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_47
+      rect:
+        serializedVersion: 2
+        x: 3362
+        y: 994
+        width: 396
+        height: 476
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa4e22345875a18c0800000000000000
+      internalID: -4027810686860860241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_48
+      rect:
+        serializedVersion: 2
+        x: 4168
+        y: 1397
+        width: 369
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e92db434070d4490800000000000000
+      internalID: -7760538868243420699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_49
+      rect:
+        serializedVersion: 2
+        x: 4583
+        y: 1408
+        width: 246
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c93af59ad6d7b99a0800000000000000
+      internalID: -6225244149963054180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_50
+      rect:
+        serializedVersion: 2
+        x: 4890
+        y: 4
+        width: 2591
+        height: 1447
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e44cb9b47dc6383f0800000000000000
+      internalID: -899755828601699250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_51
+      rect:
+        serializedVersion: 2
+        x: 3942
+        y: 756
+        width: 146
+        height: 641
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 391fe7f474b0625d0800000000000000
+      internalID: -3087768093611593325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_52
+      rect:
+        serializedVersion: 2
+        x: 4176
+        y: 1144
+        width: 649
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9edf60b5fb348cdc0800000000000000
+      internalID: -3618567811447194135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_53
+      rect:
+        serializedVersion: 2
+        x: 7719
+        y: 161
+        width: 710
+        height: 1082
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01f98f469cff903c0800000000000000
+      internalID: -4392698721075683568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_54
+      rect:
+        serializedVersion: 2
+        x: 10010
+        y: 215
+        width: 131
+        height: 971
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2a0f89466ad1cd30800000000000000
+      internalID: 4450078039674391085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_55
+      rect:
+        serializedVersion: 2
+        x: 4165
+        y: 975
+        width: 245
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd7a413c378b50c20800000000000000
+      internalID: 3172144319886043099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_3_tile_resupdate_56
+      rect:
+        serializedVersion: 2
+        x: 4456
+        y: 967
+        width: 369
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa11b3a1f4a75a320800000000000000
+      internalID: 2568593642645819823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
