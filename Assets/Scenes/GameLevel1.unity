@@ -1261,6 +1261,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d69ae2cc4405914419717ee2c9f85ced, type: 3}
+--- !u!68 &189982126 stripped
+EdgeCollider2D:
+  m_CorrespondingSourceObject: {fileID: 4562963299503369659, guid: fe983db19acdf654e8ae121a180d1ced, type: 3}
+  m_PrefabInstance: {fileID: 666683347}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &194863312
 GameObject:
   m_ObjectHideFlags: 0
@@ -3952,7 +3957,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4562963297882338263, guid: fe983db19acdf654e8ae121a180d1ced, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe983db19acdf654e8ae121a180d1ced, type: 3}
@@ -4017,7 +4022,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4562963297882338263, guid: fe983db19acdf654e8ae121a180d1ced, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe983db19acdf654e8ae121a180d1ced, type: 3}
@@ -4839,7 +4844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueText: {fileID: 1672179620}
   Sentences:
-  - Please kill all enemy in area first
+  - Please kill all enemy in area(yellow box) first
   Dialoguespeed: 0.05
   dialog: {fileID: 764481621}
   DialogueAnimator: {fileID: 764481624}
@@ -6671,7 +6676,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4562963297882338263, guid: fe983db19acdf654e8ae121a180d1ced, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe983db19acdf654e8ae121a180d1ced, type: 3}
@@ -6811,7 +6816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4562963297882338263, guid: fe983db19acdf654e8ae121a180d1ced, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe983db19acdf654e8ae121a180d1ced, type: 3}
@@ -10930,7 +10935,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4562963297882338263, guid: fe983db19acdf654e8ae121a180d1ced, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe983db19acdf654e8ae121a180d1ced, type: 3}
@@ -11773,7 +11778,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1929508351
 Animator:
   serializedVersion: 3
@@ -11874,7 +11879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 4
   health: 10
-  SwordCollider: {fileID: 0}
+  SwordCollider: {fileID: 189982126}
   meleeRange: 1.5
   expPrefab: {fileID: 0}
   expTarget: {fileID: 0}
@@ -12187,7 +12192,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4562963297882338263, guid: fe983db19acdf654e8ae121a180d1ced, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe983db19acdf654e8ae121a180d1ced, type: 3}
@@ -12606,7 +12611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4562963297882338263, guid: fe983db19acdf654e8ae121a180d1ced, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe983db19acdf654e8ae121a180d1ced, type: 3}
