@@ -121,6 +121,7 @@ public class EnemyCat : Characther
 
             var go = Instantiate(expPrefab, transform.position + new Vector3(1,5), Quaternion.identity);
             go.GetComponent<FollowPlyr>().Target = expTarget.transform ;
+            //create bool for exp spawn here
             
             yield return null;
         }
