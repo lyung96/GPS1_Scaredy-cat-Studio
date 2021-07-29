@@ -6866,6 +6866,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 831300389}
     m_Modifications:
+    - target: {fileID: 90240255, guid: d69ae2cc4405914419717ee2c9f85ced, type: 3}
+      propertyPath: DashInstructions
+      value: 
+      objectReference: {fileID: 3998736720750839000}
+    - target: {fileID: 90240255, guid: d69ae2cc4405914419717ee2c9f85ced, type: 3}
+      propertyPath: JumpInstructions
+      value: 
+      objectReference: {fileID: 3998736720403076726}
+    - target: {fileID: 90240255, guid: d69ae2cc4405914419717ee2c9f85ced, type: 3}
+      propertyPath: AttackInstructions
+      value: 
+      objectReference: {fileID: 3998736718921249733}
+    - target: {fileID: 90240255, guid: d69ae2cc4405914419717ee2c9f85ced, type: 3}
+      propertyPath: GrappleInstructions
+      value: 
+      objectReference: {fileID: 3998736720293395697}
+    - target: {fileID: 90240255, guid: d69ae2cc4405914419717ee2c9f85ced, type: 3}
+      propertyPath: MovementInstructions
+      value: 
+      objectReference: {fileID: 3998736720478912510}
+    - target: {fileID: 90240255, guid: d69ae2cc4405914419717ee2c9f85ced, type: 3}
+      propertyPath: ShurikenInstructions
+      value: 
+      objectReference: {fileID: 117608686}
     - target: {fileID: 601661738009313126, guid: d69ae2cc4405914419717ee2c9f85ced, type: 3}
       propertyPath: m_Color.b
       value: 0.4431373
@@ -21052,7 +21076,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6205489695894562806, guid: 651110d87ade1864cb8e1cb16747c42d, type: 3}
       propertyPath: m_Size.y
-      value: 0.8441492
+      value: 0.8496038
       objectReference: {fileID: 0}
     - target: {fileID: 6205489695894562806, guid: 651110d87ade1864cb8e1cb16747c42d, type: 3}
       propertyPath: m_Material
@@ -21060,7 +21084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6205489695894562806, guid: 651110d87ade1864cb8e1cb16747c42d, type: 3}
       propertyPath: m_Offset.y
-      value: -0.077925414
+      value: -0.07519813
       objectReference: {fileID: 0}
     - target: {fileID: 6205489695894562806, guid: 651110d87ade1864cb8e1cb16747c42d, type: 3}
       propertyPath: m_IsTrigger

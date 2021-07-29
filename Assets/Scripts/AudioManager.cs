@@ -61,7 +61,7 @@ public class AudioManager : MonoBehaviour
             StopPlaying("LevelMusic");
             Play("Theme");
         }
-        else if (name == "GameLevel1" || name == "GameLevel1 (CAT)" || name == "GameLevel1 (LZJ)" || name == "GameLevel1 (Yung)" || name == "GameLevel2" || name == "GameLevel3")
+        else if (name == "GameLevel1" || name == "GameLevel1 (CAT)" || name == "GameLevel1 (LZJ)" || name == "GameLevel1 (Yung)" || name == "GameLevel2" || name == "GameLevel3" || name == "GameLevel4")
         {
             StopPlaying("Theme");
             Play("LevelMusic");
