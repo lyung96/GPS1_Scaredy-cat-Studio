@@ -1781,10 +1781,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player's UI
       objectReference: {fileID: 0}
-    - target: {fileID: 3974929151280211580, guid: 373177579964dc04994d4be948aad422, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 373177579964dc04994d4be948aad422, type: 3}
 --- !u!1 &820624290 stripped
@@ -6235,6 +6231,7 @@ MonoBehaviour:
   maskCollected: 1
   maskGauge: 0
   cameraController: {fileID: 1750614667}
+  currScene: 
 --- !u!95 &6883976000452646470
 Animator:
   serializedVersion: 3

@@ -20,7 +20,7 @@ GameObject:
   - component: {fileID: 8670641693334651672}
   - component: {fileID: 8670641693334651673}
   - component: {fileID: 8670641693334651630}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ MonoBehaviour:
   atkPoint: {fileID: 8670641692313611543}
   enemyLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 256
   firepillarRange: 0
   firepillarDamage: 3
   atkRange: 2.1
@@ -194,10 +194,10 @@ MonoBehaviour:
   firePoint: {fileID: 8670641693323269026}
   shurikenController: {fileID: 0}
   shurikenPrefab: {fileID: 3313628466517507943, guid: e6db199f5ebd6c34ea70aac594b63e55, type: 3}
-  fireball: {fileID: 5518214745789172819, guid: 4c08addc4e4281d4086048bd2608a3da, type: 3}
-  fireball2: {fileID: 5098085870167350519, guid: 0859ca3d952d3de449069c90dacc407c, type: 3}
+  fireball: {fileID: 6886580990555992956, guid: d2e52a1ef4817f041a40fdcf016a12b5, type: 3}
+  fireball2: {fileID: 6886580990555992956, guid: f62eac1f39236c447bd0d6519bfa0588, type: 3}
   firepillar: {fileID: 109790065652950188, guid: 0e32fed9d5fd73344bd59fb95435331d, type: 3}
-  finalBlow: {fileID: 661216920183684307, guid: 562317238ea744b4687ec221ca341e82, type: 3}
+  finalBlow: {fileID: 2272584011595064775, guid: 3c9120da8fabd9042a88849033431356, type: 3}
   attackRangeX: 1.4
   attackRangeY: 8.35
   finalBlowUi: {fileID: 0}
@@ -209,6 +209,7 @@ MonoBehaviour:
   maskCollected: 1
   maskGauge: 0
   cameraController: {fileID: 0}
+  currScene: 
 --- !u!95 &2872317023652444293
 Animator:
   serializedVersion: 3

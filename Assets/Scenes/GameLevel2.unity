@@ -1015,10 +1015,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1508904874}
     - target: {fileID: 8670641693334651672, guid: 302cbdd961109b9428b9953082fce1d3, type: 3}
-      propertyPath: shurikens.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8670641693334651672, guid: 302cbdd961109b9428b9953082fce1d3, type: 3}
       propertyPath: shurikens.Array.data[0]
       value: 
       objectReference: {fileID: 820624308}
@@ -1030,10 +1026,6 @@ PrefabInstance:
       propertyPath: shurikens.Array.data[2]
       value: 
       objectReference: {fileID: 820624306}
-    - target: {fileID: 8670641693334651673, guid: 302cbdd961109b9428b9953082fce1d3, type: 3}
-      propertyPath: Manas.Array.size
-      value: 14
-      objectReference: {fileID: 0}
     - target: {fileID: 8670641693334651673, guid: 302cbdd961109b9428b9953082fce1d3, type: 3}
       propertyPath: Manas.Array.data[0]
       value: 
@@ -5267,6 +5259,7 @@ MonoBehaviour:
   maskCollected: 1
   maskGauge: 0
   cameraController: {fileID: 0}
+  currScene: 
 --- !u!1 &3731831891567047498
 GameObject:
   m_ObjectHideFlags: 0

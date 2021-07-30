@@ -5,11 +5,12 @@ using UnityEngine;
 public class FinalBlow : MonoBehaviour
 {
     public int damage = 100;
+    public float destory = 1f;
 
     // Start is called before the first frame update
     void Start()
     {
-        Destroy(gameObject, 0.7f);
+        Destroy(gameObject, destory);
     }
 
     // Update is called once per frame
