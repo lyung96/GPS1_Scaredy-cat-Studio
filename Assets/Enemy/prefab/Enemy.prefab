@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4562963297882337325}
   - component: {fileID: 4562963297882337322}
   - component: {fileID: 4562963297882337324}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: CatEnemy
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4562963297882338263}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -44.74, y: 2.52, z: 0}
   m_LocalScale: {x: 0.60001564, y: 0.60001564, z: 0.60001564}
   m_Children:
@@ -125,6 +125,8 @@ MonoBehaviour:
   health: 10
   SwordCollider: {fileID: 4562963299503369659}
   meleeRange: 2.5
+  expPrefab: {fileID: 7970534462782080966, guid: 511edd8d315a0a2448fd417f4513c6a3, type: 3}
+  expTarget: {fileID: 0}
 --- !u!50 &4562963297882337325
 Rigidbody2D:
   serializedVersion: 4
@@ -198,7 +200,7 @@ GameObject:
   - component: {fileID: 4562963299417752462}
   - component: {fileID: 4562963299417752448}
   - component: {fileID: 4562963299417752449}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: eye
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -268,7 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4562963299503369656}
   - component: {fileID: 4562963299503369659}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}

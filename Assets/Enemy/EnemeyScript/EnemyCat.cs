@@ -13,6 +13,8 @@ public class EnemyCat : Characther
     public GameObject expPrefab;
     public GameObject expTarget;
 
+    public static bool hitshuriken;
+
 
     public bool InMeleeRange
     {
@@ -118,6 +120,7 @@ public class EnemyCat : Characther
         else
         {
             MyAnimator.SetTrigger("dead");
+            shuriken.enemydefeated = true;
 
             var go = Instantiate(expPrefab, transform.position + new Vector3(1,5), Quaternion.identity);
             go.GetComponent<FollowPlyr>().Target = expTarget.transform ;
@@ -130,5 +133,26 @@ public class EnemyCat : Characther
     {
         base.OnTriggerEnter2D(other);
         currentState.OnTriggerEnter(other);
+
+        if (other.gameObject.CompareTag("shuriken"))
+        {
+            shuriken.shurikenshoot = true;
+            Debug.Log("enemyhit shuriken");
+            //if (hitshuriken == true)
+            //{
+            //    Invoke("setshurikenfalse", 0.2f);
+            //    if (hitshuriken==false)
+            //    {
+                    
+            //    }
+            //}
+            
+        }
     }
+
+    void setshurikenfalse()
+    {
+        hitshuriken = false;
+    }
+
 }
