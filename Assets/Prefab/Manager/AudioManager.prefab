@@ -90,3 +90,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Boss
+    clip: {fileID: 8300000, guid: 4e9130b731776414284fc690c905c137, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: FinalBoss
+    clip: {fileID: 8300000, guid: 2442ef9648675094cb02f1f857a43833, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

@@ -30,7 +30,7 @@ public class MenuButton : MonoBehaviour
     {
         //pauseMenu = FindObjectOfType<PauseMenu>().PauseMenuUI;
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene("GameLevel1 LZJ");
+        SceneManager.LoadScene("GameLevel1");
         FindObjectOfType<AudioManager>().changeScene();
         FindObjectOfType<AudioManager>().Play("LevelMusic");
         FindObjectOfType<AudioManager>().StopPlaying("Theme");
