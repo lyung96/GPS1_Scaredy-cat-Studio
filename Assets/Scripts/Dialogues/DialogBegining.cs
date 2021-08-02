@@ -11,43 +11,65 @@ public class DialogBegining : MonoBehaviour
     private bool finishedtext;
     public GameObject dialog;
     public Animator DialogueAnimator;
-    public static bool StartDialogue=true , endDialogue= true;
+    public static bool StartDialogue = true, endDialogue = true, firstlineup=false;
     private float texttimer;
-    private float textCounter= 0.007f;
+    private float textCounter= 0.005f;
+    public Animator cameraanim;
+    public static bool iscutscene, quitcutscene = false;
 
+    private void Start()
+    {
+        StartDialogue = true;
+    }
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.tag == "Player")
+    //    {
+    //        StartDialogue = true;
+    //        if (endDialogue==false)
+    //        {
+    //            StartDialogue = false;
+    //        }
+    //    }
+    //}
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+       
+    }
 
     // Update is called once per frame
     void Update()
     {
-        //if (MovePopUpInstructions.entertutorialarea)
-        //{
             if (StartDialogue)
             {
                 endDialogue = false;
-
-                Debug.Log("Start Dialogue");
+                //DialogueText.text = string.Empty;
                 DialogueAnimator.SetTrigger("enter");
+                startdialogue();
                 StartDialogue = false;
-                nextSentence();
-                
+
             }
             else
             {
+                Debug.Log("next line");
+                DialogueAnimator.SetTrigger("enter");
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if(finishedtext)
+                    if (finishedtext)
                     {
+                        Debug.Log("sentence: " + index);
                         nextSentence();
                     }
                     Debug.Log("sentence index: " + index);
                 }
-               
             }
-        if (Input.GetKeyDown(KeyCode.P))//use when u fk up
-        {
-            finishedtext = true;
-        }
-        //}
+
+            if (Input.GetKeyDown(KeyCode.P))//use when u fk up
+            {
+                finishedtext = true;
+            }
     }
 
     public IEnumerator WriteSentence()
@@ -56,7 +78,6 @@ public class DialogBegining : MonoBehaviour
         {
             DialogueText.text += Character;
             yield return new WaitForSeconds(Dialoguespeed);
-            Debug.Log("detect char: "+ Character);
             finishedtext = false;
             
             
@@ -80,8 +101,6 @@ public class DialogBegining : MonoBehaviour
         {
             DialogueText.text = string.Empty;
             StartCoroutine(WriteSentence());
-            //WriteSentence();
-           
         }
         else
         {
@@ -91,5 +110,49 @@ public class DialogBegining : MonoBehaviour
             endDialogue = true;
             Destroy(dialog);
         }
+    }
+
+    public void startdialogue()
+    {
+        DialogueText.text = string.Empty;
+        StartCoroutine(WriteSentence());
+        firstlineup = true;
+        if (firstlineup)
+        {
+            //if (Input.GetKeyDown(KeyCode.E))
+            //{
+
+            Invoke("startcutscene", 3.0f);
+            //}
+            
+        }
+       
+        //WriteSentence();
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            StartDialogue = false;
+            quitcutscene = true;
+        }
+
+    }
+
+    void stopcutscene()
+    {
+        iscutscene = false;
+        cameraanim.SetBool("Cutscene1", false);
+    }
+
+    void startcutscene()
+    {
+        
+        DialogueText.text = string.Empty;
+        DialogueAnimator.SetTrigger("exit");
+        iscutscene = true;
+        cameraanim.SetBool("Cutscene1", true);
+        Invoke("stopcutscene", 1.5f);
     }
 }

@@ -15,6 +15,7 @@ public class shuriken : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MovePopUpInstructions.grap = false;
         shurikenshoot = false;
     }
 
@@ -23,7 +24,6 @@ public class shuriken : MonoBehaviour
     {
         if (playertriggerrange)//enter
         {
-
             if (MovePopUpInstructions.grap == false)
             {
                 Debug.Log("shuriken popoon");

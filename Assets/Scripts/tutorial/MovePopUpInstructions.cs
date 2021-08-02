@@ -97,14 +97,14 @@ public class MovePopUpInstructions: MonoBehaviour
         {
             entertutorialarea = false;
             Debug.Log("Exit Collision");
-            if (left && right && dash && jump)
-            {
+            //if (left && right && dash && jump)
+            //{
                 left = false;
                 right = false;
                 dash = false;
                 jump = false;
                 Destroy(Collider);
-            }
+            //}
             MovementInstructions.SetActive(false);
 
             DashInstructions.SetActive(false);

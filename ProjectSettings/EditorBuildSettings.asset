@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameLevel4.unity
     guid: 97cce606e14ed784facbf3bca29f65fe
+  - enabled: 1
+    path: Assets/Scenes/GameLevel1 LZJ.unity
+    guid: 3a84f218285ff6d4a82d2a0e3dc3701c
   m_configObjects: {}

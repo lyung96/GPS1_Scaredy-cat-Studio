@@ -24,7 +24,7 @@ public class chestopener : MonoBehaviour
         {
             if (playerinchestrange)
             {
-                if (enemycount == 4)
+                if (enemycount == 2)
                 {
                     chestopen = true;
                     Debug.Log("Open chest");
@@ -81,7 +81,7 @@ public class chestopener : MonoBehaviour
         if (collision.tag == "Player")
         {
             playerinchestrange = false;
-            if (chestopen == false && enemycount != 4)
+            if (chestopen == false && enemycount != 2)
             {
                 interacticon.SetActive(false);
                 defeatenemyinstructions.SetActive(false);

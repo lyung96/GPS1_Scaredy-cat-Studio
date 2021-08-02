@@ -19,7 +19,7 @@ public class defeatenemy : MonoBehaviour
 
     void Update()
     {
-        if (chestopener.enemycount != 4 && chestopener.playerinchestrange)
+        if (chestopener.enemycount != 2 && chestopener.playerinchestrange)
 
         {
             if (Input.GetKeyDown(KeyCode.E))

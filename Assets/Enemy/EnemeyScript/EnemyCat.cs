@@ -14,8 +14,9 @@ public class EnemyCat : Characther
     public GameObject expTarget;
 
     public static bool hitshuriken;
+    private bool enemyDied;
 
-
+   
     public bool InMeleeRange
     {
         get
@@ -38,7 +39,7 @@ public class EnemyCat : Characther
     {
         base.Start();
         ChangeState(new IdleState());
-
+        enemyDied = false;
         expTarget = GameObject.FindGameObjectWithTag("ExpTag");
 
     }
@@ -61,6 +62,7 @@ public class EnemyCat : Characther
             {
                 currentState.Execute();
             }
+            enemyDied = true;
             LookAtTarget();
         }
         else
@@ -120,7 +122,10 @@ public class EnemyCat : Characther
         else
         {
             MyAnimator.SetTrigger("dead");
+            enemyDied = true;
             shuriken.enemydefeated = true;
+            chestopener.enemycount += 1;
+            Debug.Log("enemy counter: " + chestopener.enemycount);
 
             var go = Instantiate(expPrefab, transform.position + new Vector3(1,5), Quaternion.identity);
             go.GetComponent<FollowPlyr>().Target = expTarget.transform ;
@@ -136,6 +141,7 @@ public class EnemyCat : Characther
 
         if (other.gameObject.CompareTag("shuriken"))
         {
+            enemyDied = true;
             shuriken.shurikenshoot = true;
             Debug.Log("enemyhit shuriken");
             //if (hitshuriken == true)
