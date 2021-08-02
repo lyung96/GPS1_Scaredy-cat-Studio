@@ -7,9 +7,10 @@ public class chestopener : MonoBehaviour
     public GameObject chest, openinstructions, defeatenemyinstructions, obtainedkeyInstructions, interacticon;
     public Enemy enemy;
     public static bool chestopen=false;
-    public static bool playerinchestrange = false;
-    public static bool obtainedkey = false;
+    public static bool playerinchestrange = false, playertriggerchest=false;
+    public static bool obtainedkey = false, dialoguestart=false, enemydialoguestart=false;
     public static int enemycount=0;
+    public obtainedkey key;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,34 +32,56 @@ public class chestopener : MonoBehaviour
                     GetComponent<Animator>().SetTrigger("Open");
                     interacticon.SetActive(false);
                     obtainedkey = true;
-                    //if (obtainedkey)
-                    //{
-                    //    obtainedkeyInstructions.SetActive(true);
-                    //    Invoke("keypopoff", 1f);
-                    //}
+                    if (chestopen && playerinchestrange)
+                    {
+                        dialoguestart = true;
+                    }
                 }
-                //else if (enemycount != 4)
-                //{
-                //    defeatenemyinstructions.SetActive(true);
-                //}
-            }
-
-               
+                else if (enemycount!=2)
+                {
+                    if (chestopen==false && playerinchestrange)
+                    {
+                        enemydialoguestart = true;
+                        Debug.Log("enemystartdialogue");
+                    }
+                }
+            }    
         }
+
+      
+
+
+        if (playertriggerchest)
+        {
+            if (obtainedkey==false)
+            {
+                interacticon.SetActive(true);
+            }
+            else if(obtainedkey && chestopen)
+            {
+                interacticon.SetActive(false);
+            }
+        }
+
+        if (playerinchestrange==false && playertriggerchest==false)
+        {
+            if (obtainedkey==false)
+            {
+                interacticon.SetActive(false);
+            }
+            else if (obtainedkey)
+            {
+                interacticon.SetActive(false);
+            }
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag== "Player")
         {
-            if (obtainedkey==false)
-            {
-                playerinchestrange = true;
-                Debug.Log("Chest touched");
-                interacticon.SetActive(true);
-            }
-            
-                
+            playertriggerchest = true;
         }
     }
 
@@ -70,28 +93,12 @@ public class chestopener : MonoBehaviour
         } 
     }
 
-    private void keypopoff()
-    {
-        Debug.Log("off");
-        obtainedkeyInstructions.SetActive(false);
-    }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            playerinchestrange = false;
-            if (chestopen == false && enemycount != 2)
-            {
-                interacticon.SetActive(false);
-                defeatenemyinstructions.SetActive(false);
-            }
-            if (chestopen)
-            {
-                Destroy(interacticon);
-                Destroy(defeatenemyinstructions);
-            }
-
+            playertriggerchest = false;
+            playerinchestrange = false; 
         }
     }
 }

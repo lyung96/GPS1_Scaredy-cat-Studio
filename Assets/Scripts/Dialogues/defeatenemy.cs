@@ -17,33 +17,39 @@ public class defeatenemy : MonoBehaviour
     private float texttimer;
     private float textCounter = 0.007f;
 
+    private void Start()
+    {
+      
+    }
+
     void Update()
     {
-        if (chestopener.enemycount != 2 && chestopener.playerinchestrange)
-
+        if (chestopener.enemydialoguestart)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (StartDialogue)
             {
-                if (StartDialogue)
-                {
-                    endDialogue = false;
+                endDialogue = false;
 
-                    Debug.Log("Start Dialogue");
-                    DialogueAnimator.SetTrigger("enter");
-                    StartDialogue = false;
-                    nextSentence();
-                }
-                else
+                DialogueAnimator.SetTrigger("enter");
+                DialogueText.text = string.Empty;
+                StartCoroutine(WriteSentence());
+                StartDialogue = false;
+                chestopener.enemydialoguestart = false;
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     if (finishedtext)
                     {
                         nextSentence();
                     }
                 }
-                Debug.Log("sentence index: " + index);
-
             }
+            //Debug.Log("sentence index: " + index);
         }
+        
+
         if (Input.GetKeyDown(KeyCode.P))//use when u fk up
         {
             finishedtext = true;
@@ -89,8 +95,11 @@ public class defeatenemy : MonoBehaviour
             DialogueText.text = string.Empty;
             DialogueAnimator.SetTrigger("exit");
             index = 0;
-            StartDialogue = true;
             endDialogue = true;
+            //if (chestopener.enemydialoguestart)
+            //{
+            //    StartDialogue = true;
+            //}
         }
     }
 }

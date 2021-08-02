@@ -45,7 +45,6 @@ public class DialogBegining : MonoBehaviour
             if (StartDialogue)
             {
                 endDialogue = false;
-                //DialogueText.text = string.Empty;
                 DialogueAnimator.SetTrigger("enter");
                 startdialogue();
                 StartDialogue = false;
@@ -53,7 +52,7 @@ public class DialogBegining : MonoBehaviour
             }
             else
             {
-                Debug.Log("next line");
+                //Debug.Log("next line");
                 DialogueAnimator.SetTrigger("enter");
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -130,15 +129,15 @@ public class DialogBegining : MonoBehaviour
         //WriteSentence();
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            StartDialogue = false;
-            quitcutscene = true;
-        }
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    if (collision.tag == "Player")
+    //    {
+    //        StartDialogue = false;
+    //        quitcutscene = true;
+    //    }
 
-    }
+    //}
 
     void stopcutscene()
     {

@@ -32,7 +32,9 @@ public class EnemyCat : Characther
     {
         get
         {
+            
             return health <= 0;
+            
         }
     }
     public override void Start()
@@ -122,10 +124,13 @@ public class EnemyCat : Characther
         else
         {
             MyAnimator.SetTrigger("dead");
-            enemyDied = true;
             shuriken.enemydefeated = true;
+            enemyDied = true;
             chestopener.enemycount += 1;
             Debug.Log("enemy counter: " + chestopener.enemycount);
+            //gameObject.GetComponent<BoxCollider2D>().enabled = false;
+            //gameObject.GetComponentInChildren<EdgeCollider2D>().enabled = false;
+            gameObject.layer = 9;
 
             var go = Instantiate(expPrefab, transform.position + new Vector3(1,5), Quaternion.identity);
             go.GetComponent<FollowPlyr>().Target = expTarget.transform ;

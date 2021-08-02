@@ -26,7 +26,7 @@ public class shuriken : MonoBehaviour
         {
             if (MovePopUpInstructions.grap == false)
             {
-                Debug.Log("shuriken popoon");
+                //Debug.Log("shuriken popoon");
                 ShurikenPopup();
             }
             if (shurikenshoot)

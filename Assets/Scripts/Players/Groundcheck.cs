@@ -10,7 +10,7 @@ public class Groundcheck : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Grappling")
         {
-            Debug.Log("Touch Ground ");
+            //Debug.Log("Touch Ground ");
             isGrounded = true;
         }
     }
@@ -19,7 +19,7 @@ public class Groundcheck : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Grappling")
         {
-            Debug.Log("Falling");
+            //Debug.Log("Falling");
             isGrounded = false;
         }
     }

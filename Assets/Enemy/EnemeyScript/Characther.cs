@@ -27,7 +27,7 @@ public abstract class Characther : MonoBehaviour
     //public abstract IEnumerator TakeDamage();
     public void ChangeDirection()
     {
-        Debug.Log("switching");
+        //Debug.Log("switching");
         facingRight = !facingRight;
         //transform.localScale = new Vector3(transform.localScale.x * -1, 1, 1);
         transform.localScale = new Vector3(transform.localScale.x * -1f, transform.localScale.y, transform.localScale.z);

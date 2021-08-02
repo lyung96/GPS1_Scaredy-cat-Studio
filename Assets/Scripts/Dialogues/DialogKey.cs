@@ -24,9 +24,7 @@ public class DialogKey : MonoBehaviour
             {
                 if (StartDialogue)
                 {
-                    endDialogue = false;
-
-                    Debug.Log("Start Dialogue");
+                    //endDialogue = false;
                     DialogueAnimator.SetTrigger("enter");
                     StartDialogue = false;
                     nextSentence();

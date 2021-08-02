@@ -69,6 +69,7 @@ public class PlayerController : MonoBehaviour
     public int maxMana = 3;
     [HideInInspector]
     public ManaController manaController; //Icon
+    public obtainedkey key;
 
     //mask
     public int maskCollected = 1;
@@ -108,7 +109,7 @@ public class PlayerController : MonoBehaviour
         //    enddialogue = true;
         //}
 
-        if (PauseMenu.GamePause == false && DialogKey.endDialogue == true && DialogBegining.endDialogue == true && UpgradeMenu.uiActive == false && obtainedkey.endDialogue)
+        if (PauseMenu.GamePause == false && DialogKey.endDialogue == true && DialogBegining.endDialogue == true && UpgradeMenu.uiActive == false && obtainedkey.endDialogue )
         { 
             PlayerControl(); 
         }
@@ -314,7 +315,7 @@ public class PlayerController : MonoBehaviour
                 finalBlowBar.SetBar(maskGauge);
                 enemy.GetComponent<Enemy>().CalculateHealth(atkDmg);
             }
-            Debug.Log("We hit " + enemy.name);
+            //Debug.Log("We hit " + enemy.name);
             if (enemy.CompareTag("Enemy"))
             {
                 enemy.GetComponent<Enemy>().CalculateHealth(atkDmg);

@@ -43,7 +43,7 @@ public class LockMessage : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Enter door range");
+            //Debug.Log("Enter door range");
             playerinrange = true;
         }
     }
@@ -52,7 +52,7 @@ public class LockMessage : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Exit door range");
+            //Debug.Log("Exit door range");
             playerinrange = false;
             interacticon.SetActive(false);
             dialoguetrigger = false;
