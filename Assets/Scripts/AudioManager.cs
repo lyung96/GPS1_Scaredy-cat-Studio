@@ -51,6 +51,7 @@ public class AudioManager : MonoBehaviour
         UpdateVolume();
         SetSfx();
         SetBGMusic();
+        changeScene();
     }
 
     public void PlayMusic()
@@ -59,12 +60,20 @@ public class AudioManager : MonoBehaviour
         if (name == "Menu")
         {
             StopPlaying("LevelMusic");
+            StopPlaying("FinalBoss");
             Play("Theme");
         }
         else if (name == "GameLevel1" || name == "GameLevel1 (CAT)" || name == "GameLevel1 (LZJ)" || name == "GameLevel1 (Yung)" || name == "GameLevel2" || name == "GameLevel3" || name == "GameLevel4")
         {
             StopPlaying("Theme");
+            StopPlaying("FinalBoss");
             Play("LevelMusic");
+        }
+        else if (name == "GameLevel5")
+        {
+            StopPlaying("Theme");
+            StopPlaying("LevelMusic");
+            Play("FinalBoss");
         }
     }
         
@@ -130,8 +139,8 @@ public class AudioManager : MonoBehaviour
     {
         SetVolume("LevelMusic", bgVolume);
         SetVolume("Theme", bgVolume);
-        //SetVolume("FinalBossMusic", bgVolume);
-        //SetVolume("BossMusic", bgVolume);
+        SetVolume("FinalBoss", bgVolume);
+        SetVolume("Boss", bgVolume);
     }
 
     public void SetSfx()
@@ -187,6 +196,7 @@ public class AudioManager : MonoBehaviour
         {
             bgSlider = optionMenu.GetComponent<OptionMenu>().oBgSlider;
             sfxSlider = optionMenu.GetComponent<OptionMenu>().oSfxSlider;
+            PlayMusic();
             lastScene = currScene;
         } 
     }
