@@ -12,6 +12,8 @@ public class EnemyCat : Characther
 
     public GameObject expPrefab;
     public GameObject expTarget;
+    public SpriteRenderer sprite;
+    private ParticleSystem bloodEffect;
 
     public static bool hitshuriken;
     private bool enemyDied;
@@ -43,7 +45,8 @@ public class EnemyCat : Characther
         ChangeState(new IdleState());
         enemyDied = false;
         expTarget = GameObject.FindGameObjectWithTag("ExpTag");
-
+        bloodEffect = gameObject.GetComponentInChildren<ParticleSystem>();
+        sprite = gameObject.GetComponent<SpriteRenderer>();
     }
     private void LookAtTarget()
     {
@@ -117,6 +120,7 @@ public class EnemyCat : Characther
     public IEnumerator EnemyTakeDamage(int dmg)
     {
         health += dmg;
+        StartCoroutine(FlashRed());
         if (!IsDead)
         {
             MyAnimator.SetTrigger("dmg");
@@ -158,4 +162,12 @@ public class EnemyCat : Characther
     //    hitshuriken = false;
     //}
 
+    public IEnumerator FlashRed()
+    {
+        FindObjectOfType<AudioManager>().Play("Hit");
+        sprite.color = Color.red;
+        bloodEffect.Play();
+        yield return new WaitForSeconds(0.1f);
+        sprite.color = Color.white;
+    }
 }

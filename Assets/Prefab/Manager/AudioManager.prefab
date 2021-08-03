@@ -90,6 +90,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Blood2
+    clip: {fileID: 8300000, guid: 46fae8fd5bd1aad44a51de267450e584, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   - name: Boss
     clip: {fileID: 8300000, guid: 4e9130b731776414284fc690c905c137, type: 3}
     volume: 0.3
