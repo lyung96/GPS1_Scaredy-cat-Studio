@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     //public bool isGrounded = true;
     public Animator anim;
     private bool FacingRight = true;
+    private bool isDead;
+    private bool isBlocking;
 
     //Dash
     private float horizontal;
@@ -109,7 +111,7 @@ public class PlayerController : MonoBehaviour
         //    enddialogue = true;
         //}
 
-        if (PauseMenu.GamePause == false && DialogKey.endDialogue == true && DialogBegining.endDialogue == true && UpgradeMenu.uiActive == false && obtainedkey.endDialogue )
+        if (PauseMenu.GamePause == false && DialogKey.endDialogue == true && DialogBegining.endDialogue == true && UpgradeMenu.uiActive == false && obtainedkey.endDialogue && isDead == false)
         { 
             PlayerControl(); 
         }
@@ -133,7 +135,12 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Tab))
         {
-            anim.SetBool("blocking", true);
+            if (isBlocking == false)
+            {
+                anim.SetTrigger("blocking");
+                anim.SetBool("isBlocking", true);
+                isBlocking = true;
+            }
             isBlock = true;
         }
         else if (Input.GetKey(KeyCode.A) && (isBlock == false))
@@ -168,8 +175,10 @@ public class PlayerController : MonoBehaviour
         else
         {
             anim.SetBool("running", false);
-            anim.SetBool("blocking", false);
-            isBlock = false;          
+            anim.SetBool("isBlocking", false);
+            anim.ResetTrigger("blocking");
+            isBlock = false;
+            isBlocking = false;
         }
         if (Groundcheck.isGrounded == true)
         {
@@ -216,6 +225,7 @@ public class PlayerController : MonoBehaviour
         {
             if(shurikenController.shuriken > 0)
             {
+                anim.SetTrigger("skill");
                 ShootShuriken();
                 shurikenController.UseShuriken();
             }
@@ -231,6 +241,7 @@ public class PlayerController : MonoBehaviour
             }
             if ((maskCollected == 1) && (manaController.currMana > 0)) //if maskcollected = 1
             {
+                anim.SetTrigger("skill");
                 ShootFireball();
                 Debug.Log("Mask 1 Skill activated");
                 manaController.UseMana(-1);
@@ -239,6 +250,7 @@ public class PlayerController : MonoBehaviour
             }
             else if ((maskCollected == 2) && (manaController.currMana > 1)) //else maskcollected = 2
             {
+                anim.SetTrigger("skill");
                 //FirePillar();
                 //FirePillarAttack();
                 ShootFireball2();
@@ -248,6 +260,7 @@ public class PlayerController : MonoBehaviour
             }
             else if ((maskCollected == 3) && (maskGauge >= 35))
             {
+                anim.SetTrigger("skill");
                 ShootFinalBlow();
                 Debug.Log("Mask 3 Skill activated");
             }
@@ -372,7 +385,12 @@ public class PlayerController : MonoBehaviour
         {
             Die();
         }
-        if(currHealth >= maxCurseBar)
+        else if (currHealth > 0)
+        {
+            anim.ResetTrigger("isDead");
+            isDead = false;
+        }
+        if (currHealth >= maxCurseBar)
         {
             currHealth = maxCurseBar;
         }
@@ -388,7 +406,12 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        if (isDead == false)
+        {
+            anim.SetTrigger("isDead");
+            isDead = true;
+        }
 
     }
 

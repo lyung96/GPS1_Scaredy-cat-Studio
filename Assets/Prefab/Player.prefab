@@ -35,8 +35,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2872317023652444292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -43.57, y: -15.53, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -43.567, y: -15.53, z: 0}
+  m_LocalScale: {x: 1.3986441, y: 1.3986441, z: 1.3986441}
   m_Children:
   - {fileID: 2872317024044942981}
   - {fileID: 8670641692313611543}
@@ -206,6 +206,7 @@ MonoBehaviour:
   curseBar: {fileID: 0}
   maxMana: 3
   manaController: {fileID: 0}
+  key: {fileID: 0}
   maskCollected: 1
   maskGauge: 0
   cameraController: {fileID: 0}
@@ -535,7 +536,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8670641692313611542}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.08, y: 1, z: 0}
+  m_LocalPosition: {x: 1.23, y: 0.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2872317023652444539}
