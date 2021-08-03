@@ -36,7 +36,7 @@ public class DialogBegining : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-       
+        
     }
 
     // Update is called once per frame
@@ -56,11 +56,9 @@ public class DialogBegining : MonoBehaviour
                 DialogueAnimator.SetTrigger("enter");
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    if (finishedtext)
-                    {
-                        Debug.Log("sentence: " + index);
-                        nextSentence();
-                    }
+                   
+                    Debug.Log("sentence: " + index);
+                    nextSentence();
                     Debug.Log("sentence index: " + index);
                 }
             }
@@ -70,26 +68,42 @@ public class DialogBegining : MonoBehaviour
                 finishedtext = true;
             }
     }
-
+    private bool iswriting = false;
+    public char[] currentsentence;
     public IEnumerator WriteSentence()
     {
-        foreach(char Character in Sentences[index].ToCharArray())
+       if (iswriting)
         {
-            DialogueText.text += Character;
-            yield return new WaitForSeconds(Dialoguespeed);
-            finishedtext = false;
-            
-            
+            Debug.Log("iswriting");
+            yield return null;
+      
         }
-        texttimer += Time.deltaTime;
-        Debug.Log("time: " + texttimer);
-
-        if (texttimer >= textCounter)
+        else 
         {
-            texttimer = 0f;
+            int counter = 0;
+            DialogueText.text = string.Empty;
+            iswriting = true;
+            currentsentence = Sentences[index].ToCharArray();
+            foreach (char Character in currentsentence)
+            {
+                counter++;
+                DialogueText.text += Character;
+                yield return new WaitForSeconds(Dialoguespeed);
+                //finishedtext = false;
+            }
             index++;
-            finishedtext = true;
+            yield return new WaitUntil(() => currentsentence.Length == counter);
+            iswriting = false;
         }
+       
+        
+
+        //if (texttimer >= textCounter)
+        //{
+        //    texttimer = 0f;
+        //    
+        //    finishedtext = true;
+        //}
        
 
     }
@@ -98,7 +112,7 @@ public class DialogBegining : MonoBehaviour
     {
         if (index <= Sentences.Length - 1)
         {
-            DialogueText.text = string.Empty;
+          
             StartCoroutine(WriteSentence());
         }
         else
@@ -113,7 +127,6 @@ public class DialogBegining : MonoBehaviour
 
     public void startdialogue()
     {
-        DialogueText.text = string.Empty;
         StartCoroutine(WriteSentence());
         firstlineup = true;
         if (firstlineup)
