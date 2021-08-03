@@ -9229,6 +9229,7 @@ MonoBehaviour:
   meleeRange: 1.5
   expPrefab: {fileID: 0}
   expTarget: {fileID: 0}
+  sprite: {fileID: 0}
 --- !u!61 &1929508355
 BoxCollider2D:
   m_ObjectHideFlags: 0
