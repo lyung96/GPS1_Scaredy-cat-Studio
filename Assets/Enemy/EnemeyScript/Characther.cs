@@ -61,11 +61,11 @@ public abstract class Characther : MonoBehaviour
         //}
         if (other.gameObject.CompareTag("Player"))
         {
-            //if (SwordCollider.enabled)
-            //{
-            //    Debug.Log(other.name);
-            //    other.gameObject.GetComponent<PlayerController>().CalHp(-1);
-            //}
+            if (SwordCollider.enabled)
+            {
+                Debug.Log(other.name);
+                other.gameObject.GetComponent<PlayerController>().CalHp(-1);
+            }
         }
 
     }
