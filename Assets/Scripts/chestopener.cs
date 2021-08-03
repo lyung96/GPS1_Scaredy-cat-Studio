@@ -25,7 +25,7 @@ public class chestopener : MonoBehaviour
         {
             if (playerinchestrange)
             {
-                if (enemycount == 2)
+                if (enemycount >= 2)
                 {
                     chestopen = true;
                     Debug.Log("Open chest");
@@ -37,7 +37,7 @@ public class chestopener : MonoBehaviour
                         dialoguestart = true;
                     }
                 }
-                else if (enemycount!=2)
+                else if (enemycount <2)
                 {
                     if (chestopen==false && playerinchestrange)
                     {

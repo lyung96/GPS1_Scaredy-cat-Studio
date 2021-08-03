@@ -45,6 +45,7 @@ public class LockMessage : MonoBehaviour
         {
             //Debug.Log("Enter door range");
             playerinrange = true;
+            interacticon.SetActive(true);
         }
     }
 
