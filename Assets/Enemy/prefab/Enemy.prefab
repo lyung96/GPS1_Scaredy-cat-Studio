@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4562963297882337325}
   - component: {fileID: 4562963297882337322}
   - component: {fileID: 4562963297882337324}
+  - component: {fileID: 1636099775272781610}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: CatEnemy
@@ -35,6 +36,7 @@ Transform:
   m_Children:
   - {fileID: 4562963299417752462}
   - {fileID: 4562963299503369656}
+  - {fileID: 5115546047998319019}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -122,7 +124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 4
-  health: 10
+  health: 3
   SwordCollider: {fileID: 4562963299503369659}
   meleeRange: 2.5
   expPrefab: {fileID: 7970534462782080966, guid: 511edd8d315a0a2448fd417f4513c6a3, type: 3}
@@ -189,6 +191,20 @@ MonoBehaviour:
   box: {fileID: 0}
   circle: {fileID: 0}
   edge: {fileID: 0}
+--- !u!114 &1636099775272781610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4562963297882338263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0fda8c4c2653249b7419ffd0c70cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stunenemy: {fileID: 4562963297882337323}
+  timer: 5
 --- !u!1 &4562963299417752463
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,3 +337,48 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!1 &4934224235413880582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5115546047998319019}
+  - component: {fileID: 4373424825040758290}
+  m_Layer: 8
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5115546047998319019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4934224235413880582}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4562963297882337320}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4373424825040758290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4934224235413880582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc0fda8c4c2653249b7419ffd0c70cb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stunenemy: {fileID: 4562963297882337323}
+  timer: 5

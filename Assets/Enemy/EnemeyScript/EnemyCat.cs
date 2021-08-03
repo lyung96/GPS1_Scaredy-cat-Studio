@@ -139,31 +139,23 @@ public class EnemyCat : Characther
             yield return null;
         }
     }
+
     public override void OnTriggerEnter2D(Collider2D other)
     {
         base.OnTriggerEnter2D(other);
         currentState.OnTriggerEnter(other);
 
-        if (other.gameObject.CompareTag("shuriken"))
-        {
-            enemyDied = true;
-            shuriken.shurikenshoot = true;
-            Debug.Log("enemyhit shuriken");
-            //if (hitshuriken == true)
-            //{
-            //    Invoke("setshurikenfalse", 0.2f);
-            //    if (hitshuriken==false)
-            //    {
-                    
-            //    }
-            //}
-            
-        }
+        //if (other.gameObject.CompareTag("shuriken"))
+        //{
+        //    enemyDied = true;
+        //    shuriken.shurikenshoot = true;
+        //    Debug.Log("enemyhit shuriken");
+        //}
     }
 
-    void setshurikenfalse()
-    {
-        hitshuriken = false;
-    }
+    //void setshurikenfalse()
+    //{
+    //    hitshuriken = false;
+    //}
 
 }
