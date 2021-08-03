@@ -65,8 +65,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 0}
-  MinModifier: 50
-  MaxModifier: 100
+  MinModifier: 20
+  MaxModifier: 50
 --- !u!1001 &5448677818090604435
 PrefabInstance:
   m_ObjectHideFlags: 0

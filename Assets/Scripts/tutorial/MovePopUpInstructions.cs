@@ -122,20 +122,24 @@ public class MovePopUpInstructions: MonoBehaviour
                     if (Input.GetKey(KeyCode.LeftShift))
                     {
                         dash = true;
+                        Debug.Log("my jump is: " + jump);
                     }
-                    if (dash && jump ==false)
+                    if (dash==true && jump ==false)
                     {
-                        Debug.Log("Dash Fullfilled");
+                        
                         Invoke("DashPopoff", 0.5f);
+                        //Debug.Log(DashInstructions);
                         Invoke("JumpPopup", 0.5f);
                         if (Input.GetKey(KeyCode.Space))
                         {
                             jump = true;
+            
+                            Debug.Log("jump Fullfilled");
                         }
-                        if (jump && dash == false && left == false && right == false)
+                        if (jump)
                         {
                             Invoke("JumpPopoff", 0.5f);
-                            
+                            Debug.Log("jump popoff");
                         }
                     }
                 }
