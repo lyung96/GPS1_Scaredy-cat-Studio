@@ -120,7 +120,10 @@ public class EnemyCat : Characther
     public IEnumerator EnemyTakeDamage(int dmg)
     {
         health += dmg;
-        StartCoroutine(FlashRed());
+        if (dmg < 0)
+        {
+            StartCoroutine(FlashRed());
+        }
         if (!IsDead)
         {
             MyAnimator.SetTrigger("dmg");

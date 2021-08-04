@@ -133,7 +133,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerControl()
     {
-        if (Input.GetKey(KeyCode.Tab))
+        if (Input.GetKey(KeyCode.Tab) && currScene != "GameLevel1")
         {
             if (isBlocking == false)
             {

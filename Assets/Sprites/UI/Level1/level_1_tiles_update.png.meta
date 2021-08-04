@@ -100,7 +100,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 130
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -160,10 +160,10 @@ TextureImporter:
       name: level_1_tiles_update_0
       rect:
         serializedVersion: 2
-        x: 56
-        y: 882
-        width: 183
-        height: 38
+        x: 232
+        y: 3674
+        width: 761
+        height: 156
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,10 +181,10 @@ TextureImporter:
       name: level_1_tiles_update_1
       rect:
         serializedVersion: 2
-        x: 274
-        y: 877
-        width: 493
-        height: 247
+        x: 1141
+        y: 3652
+        width: 2049
+        height: 1028
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,10 +202,10 @@ TextureImporter:
       name: level_1_tiles_update_2
       rect:
         serializedVersion: 2
-        x: 1165
-        y: 66
-        width: 154
-        height: 1053
+        x: 3543
+        y: 272
+        width: 641
+        height: 4388
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,10 +223,10 @@ TextureImporter:
       name: level_1_tiles_update_3
       rect:
         serializedVersion: 2
-        x: 1391
-        y: 661
-        width: 122
-        height: 487
+        x: 4485
+        y: 2750
+        width: 506
+        height: 2029
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,10 +244,10 @@ TextureImporter:
       name: level_1_tiles_update_4
       rect:
         serializedVersion: 2
-        x: 239
-        y: 674
-        width: 587
-        height: 130
+        x: 992
+        y: 2807
+        width: 2444
+        height: 538
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,9 +266,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 108
-        width: 356
-        height: 443
+        y: 447
+        width: 1478
+        height: 1847
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,10 +286,10 @@ TextureImporter:
       name: level_1_tiles_update_6
       rect:
         serializedVersion: 2
-        x: 579
-        y: 405
-        width: 492
-        height: 181
+        x: 1356
+        y: 1686
+        width: 2050
+        height: 751
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,10 +307,10 @@ TextureImporter:
       name: level_1_tiles_update_7
       rect:
         serializedVersion: 2
-        x: 1363
+        x: 4367
         y: 0
-        width: 148
-        height: 593
+        width: 615
+        height: 2466
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,10 +328,10 @@ TextureImporter:
       name: level_1_tiles_update_8
       rect:
         serializedVersion: 2
-        x: 485
-        y: 21
-        width: 88
-        height: 361
+        x: 2019
+        y: 87
+        width: 363
+        height: 1498
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

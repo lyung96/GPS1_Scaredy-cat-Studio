@@ -36,7 +36,7 @@ public class Checkpoint : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                saveCounter++;
+                //saveCounter++;
                 SaveSystem.SavePlayer(playerController);
                 playerController.currHealth = playerController.maxCurseBar;
                 playerController.curseBar.SetHealth(playerController.maxCurseBar);

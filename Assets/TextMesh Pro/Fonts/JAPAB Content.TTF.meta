@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: afa444863175d3640b493b38c89a5011
+guid: ba6f0d29b293a0749a72456adb8611cd
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - JAPANESE BRUSHIDO
+  - Japanese Brush
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

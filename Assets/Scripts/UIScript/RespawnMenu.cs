@@ -58,6 +58,10 @@ public class RespawnMenu : MonoBehaviour
                 panelActive = false;
             }
         }
+        else
+        {
+            UpdateRef();
+        }
     }
 
     public void ReturnTitle()
