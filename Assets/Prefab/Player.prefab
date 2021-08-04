@@ -279,7 +279,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   moveSpeed: 100
-  grappleLenght: 10
+  grappleLenght: 15
   maxPoints: 1
 --- !u!114 &8670641693334651675
 MonoBehaviour:

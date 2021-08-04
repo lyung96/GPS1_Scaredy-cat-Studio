@@ -8,7 +8,7 @@ public class OptionsMusic : MonoBehaviour
 {
     [Range(0.0f, 1f)]
     [SerializeField]
-    private float masterVolume = 1.0f;
+    private float masterVolume = 1f;
     public Slider slider;
     GameObject optionMenu;
 
@@ -17,6 +17,7 @@ public class OptionsMusic : MonoBehaviour
     {
         optionMenu = GameObject.Find("Options Menu");
         slider = optionMenu.GetComponent<OptionMenu>().masterSlider;
+        slider.value = 0.5f;
     }
 
     // Update is called once per frame

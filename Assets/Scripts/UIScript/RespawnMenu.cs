@@ -58,7 +58,7 @@ public class RespawnMenu : MonoBehaviour
                 panelActive = false;
             }
         }
-        else
+        else if(SceneManager.GetActiveScene().name != "Menu")
         {
             UpdateRef();
         }

@@ -16,6 +16,8 @@ public class AudioManager : MonoBehaviour
     private string lastScene;
     private string currScene;
     private GameObject optionMenu;
+    public bool startVol;
+
 
     private void Awake()
     {
@@ -44,6 +46,11 @@ public class AudioManager : MonoBehaviour
         bgSlider = optionMenu.GetComponent<OptionMenu>().oBgSlider;
         sfxSlider = optionMenu.GetComponent<OptionMenu>().oSfxSlider;
         PlayMusic();
+    }
+
+    private void Start()
+    {
+        startVol = true;
     }
 
     private void Update()
@@ -155,6 +162,12 @@ public class AudioManager : MonoBehaviour
     {
         bgVolume = bgSlider.value;
         sfxVolume = sfxSlider.value;
+        if(startVol == true)
+        {
+            bgSlider.value = 0.5f;
+            sfxSlider.value = 0.5f;
+            startVol = false;
+        }
     }
 
     /*public void setSlider()
