@@ -7,7 +7,7 @@ public class DialogBegining : MonoBehaviour
     public TextMeshProUGUI DialogueText;
     public string[] Sentences;
     public float Dialoguespeed;
-    private int index=0;
+    public int index=0;
     private bool finishedtext;
     public GameObject dialog;
     public Animator DialogueAnimator;
@@ -15,11 +15,12 @@ public class DialogBegining : MonoBehaviour
     private float texttimer;
     private float textCounter= 0.005f;
     public Animator cameraanim;
-    public static bool iscutscene, quitcutscene = false;
+    public static bool iscutscene, quitcutscene = false, skip=false;
 
     private void Start()
     {
         StartDialogue = true;
+        skip = false;
     }
 
     //private void OnTriggerEnter2D(Collider2D collision)
@@ -81,19 +82,23 @@ public class DialogBegining : MonoBehaviour
         else 
         {
             int counter = 0;
-            DialogueText.text = string.Empty;
-            iswriting = true;
-            currentsentence = Sentences[index].ToCharArray();
-            foreach (char Character in currentsentence)
+            if (skip==false)
             {
-                counter++;
-                DialogueText.text += Character;
-                yield return new WaitForSeconds(Dialoguespeed);
-                //finishedtext = false;
+                DialogueText.text = string.Empty;
+                iswriting = true;
+                currentsentence = Sentences[index].ToCharArray();
+                foreach (char Character in currentsentence)
+                {
+                    counter++;
+                    DialogueText.text += Character;
+                    yield return new WaitForSeconds(Dialoguespeed);
+                    //finishedtext = false;
+                }
+                index++;
+                yield return new WaitUntil(() => currentsentence.Length == counter);
+                iswriting = false;
             }
-            index++;
-            yield return new WaitUntil(() => currentsentence.Length == counter);
-            iswriting = false;
+          
         }
        
         
@@ -125,32 +130,34 @@ public class DialogBegining : MonoBehaviour
         }
     }
 
+    public void stopsentence()
+    {
+        skip = true;
+        Debug.Log("skip");
+        if (skip)
+        {
+            index++;
+            if (index > Sentences.Length - 1)
+            {
+                DialogueText.text = string.Empty;
+                DialogueAnimator.SetTrigger("exit");
+                index = 0;
+                endDialogue = true;
+                Destroy(dialog);
+                //skip = false;
+            }
+        }  
+    }
+
     public void startdialogue()
     {
         StartCoroutine(WriteSentence());
         firstlineup = true;
         if (firstlineup)
         {
-            //if (Input.GetKeyDown(KeyCode.E))
-            //{
-
             Invoke("startcutscene", 3.0f);
-            //}
-            
         }
-       
-        //WriteSentence();
     }
-
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    if (collision.tag == "Player")
-    //    {
-    //        StartDialogue = false;
-    //        quitcutscene = true;
-    //    }
-
-    //}
 
     void stopcutscene()
     {
