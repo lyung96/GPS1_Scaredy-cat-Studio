@@ -130,6 +130,7 @@ MonoBehaviour:
   meleeRange: 2.5
   expPrefab: {fileID: 7970534462782080966, guid: 511edd8d315a0a2448fd417f4513c6a3, type: 3}
   expTarget: {fileID: 0}
+  sprite: {fileID: 0}
 --- !u!50 &4562963297882337325
 Rigidbody2D:
   serializedVersion: 4

@@ -2,19 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Attack : StateMachineBehaviour
+public class BossDamage : StateMachineBehaviour
 {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<Characther>().Attack = true;
-        animator.SetFloat("Espeed", 0);
+        animator.GetComponent<Boss>().PlayerAttacking = true;
 
-
-        //if(player.Instance.OnGround)
-        //{
-        //    player.Instance.MyRigidBody.velocity = Vector2.zero;
-        //}
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -26,9 +20,8 @@ public class Attack : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.GetComponent<Characther>().Attack = false;
-        animator.GetComponent<Characther>().MeleeAttackF();
-        //animator.ResetTrigger("Eattack");
+        animator.GetComponent<Boss>().PlayerAttacking = false;
+
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

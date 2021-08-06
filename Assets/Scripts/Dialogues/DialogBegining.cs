@@ -57,9 +57,9 @@ public class DialogBegining : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                    
-                    Debug.Log("sentence: " + index);
+                    //Debug.Log("sentence: " + index);
                     nextSentence();
-                    Debug.Log("sentence index: " + index);
+                    //Debug.Log("sentence index: " + index);
                 }
             }
 
@@ -74,7 +74,7 @@ public class DialogBegining : MonoBehaviour
     {
        if (iswriting)
         {
-            Debug.Log("iswriting");
+            //Debug.Log("iswriting");
             yield return null;
       
         }

@@ -18,7 +18,7 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)//set your collider box to istrigger (for the target enemy)
     {
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Boss")
+        if (collision.gameObject.tag == "Enemy" /*|| collision.gameObject.tag == "Boss"*/)
         {
             Debug.Log(collision.name);
             collision.gameObject.GetComponent<Enemy>().CalculateHealth(damage);
@@ -36,6 +36,12 @@ public class Fireball : MonoBehaviour
         if (collision.gameObject.CompareTag("Barrier"))
         {
             Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
+        if (collision.CompareTag("Boss"))
+        {
+            StartCoroutine(collision.GetComponent<Boss>().BossTakeDamage(-damage));
+            Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
     }

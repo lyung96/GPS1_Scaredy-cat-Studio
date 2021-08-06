@@ -32,9 +32,13 @@ public abstract class Characther : MonoBehaviour
         //transform.localScale = new Vector3(transform.localScale.x * -1, 1, 1);
         transform.localScale = new Vector3(transform.localScale.x * -1f, transform.localScale.y, transform.localScale.z);
     }
-    public virtual void MeleeAttack()
+    public virtual void MeleeAttackT()
     {
-        SwordCollider.enabled = !SwordCollider.enabled;
+        SwordCollider.enabled = true;
+    }
+    public virtual void MeleeAttackF()
+    {
+        SwordCollider.enabled = false;
     }
 
     //private void OnTriggerEnter2D(Collider2D collision)

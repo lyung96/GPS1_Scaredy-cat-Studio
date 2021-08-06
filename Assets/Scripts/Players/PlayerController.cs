@@ -322,12 +322,12 @@ public class PlayerController : MonoBehaviour
         //Damage them all of the enemy in array
         foreach (Collider2D enemy in hitEnemies)
         {
-            if (enemy.CompareTag("Boss"))
-            {
-                maskGauge += 1;
-                finalBlowBar.SetBar(maskGauge);
-                enemy.GetComponent<Enemy>().CalculateHealth(atkDmg);
-            }
+            //if (enemy.CompareTag("Boss"))
+            //{
+            //    maskGauge += 1;
+            //    finalBlowBar.SetBar(maskGauge);
+            //    enemy.GetComponent<Enemy>().CalculateHealth(atkDmg);
+            //}
             //Debug.Log("We hit " + enemy.name);
             if (enemy.CompareTag("Enemy"))
             {
@@ -337,6 +337,11 @@ public class PlayerController : MonoBehaviour
             {
                 StartCoroutine(enemy.GetComponent<EnemyCat>().EnemyTakeDamage(-atkDmg));
             }
+            if (enemy.CompareTag("Boss"))
+            {
+                StartCoroutine(enemy.GetComponent<Boss>().BossTakeDamage(-atkDmg));
+            }
+
 
         }
     }

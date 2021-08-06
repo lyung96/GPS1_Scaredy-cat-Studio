@@ -27,7 +27,7 @@ public class Shuriken : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)//set your collider box to istrigger (for the target enemy)
     {
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss"))
+        if (collision.gameObject.CompareTag("Enemy") /*|| collision.gameObject.CompareTag("Boss")*/)
         {
             Debug.Log(collision.name);
             collision.gameObject.GetComponent<Enemy>().CalculateHealth(damage);
@@ -38,6 +38,12 @@ public class Shuriken : MonoBehaviour
         {
             Debug.Log(collision.name);
             StartCoroutine(collision.GetComponent<EnemyCat>().EnemyTakeDamage(-damage));
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "Boss")
+        {
+            StartCoroutine(collision.GetComponent<Boss>().BossTakeDamage(-damage));
             Destroy(gameObject);
         }
     }

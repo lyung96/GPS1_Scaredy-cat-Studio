@@ -12,6 +12,8 @@ TagManager:
   - Barrier
   - Enemy
   - shuriken
+  - Items
+  - bossTarget
   layers:
   - Default
   - TransparentFX

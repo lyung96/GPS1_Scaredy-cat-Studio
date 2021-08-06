@@ -21,7 +21,7 @@ public class FinalBlow : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)//set your collider box to istrigger (for the target enemy)
     {
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Boss")
+        if (collision.gameObject.tag == "Enemy" /*|| collision.gameObject.tag == "Boss"*/)
         {
             Debug.Log(collision.name);
             collision.gameObject.GetComponent<Enemy>().CalculateHealth(damage);
@@ -30,6 +30,10 @@ public class FinalBlow : MonoBehaviour
         {
             Debug.Log(collision.name);
             StartCoroutine(collision.GetComponent<EnemyCat>().EnemyTakeDamage(-damage));
+        }
+        if (collision.gameObject.tag == "Boss")
+        {
+            StartCoroutine(collision.GetComponent<Boss>().BossTakeDamage(-damage));
         }
     }
 }

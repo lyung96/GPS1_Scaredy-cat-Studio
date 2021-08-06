@@ -130,11 +130,12 @@ public class EnemyCat : Characther
         }
         else
         {
+            Debug.Log("im dead bruh");
             MyAnimator.SetTrigger("dead");
             shuriken.enemydefeated = true;
             enemyDied = true;
             chestopener.enemycount += 1;
-            Debug.Log("enemy counter: " + chestopener.enemycount);
+            //Debug.Log("enemy counter: " + chestopener.enemycount);
             //gameObject.GetComponent<BoxCollider2D>().enabled = false;
             //gameObject.GetComponentInChildren<EdgeCollider2D>().enabled = false;
             gameObject.layer = 9;
@@ -142,7 +143,8 @@ public class EnemyCat : Characther
             var go = Instantiate(expPrefab, transform.position + new Vector3(1,5), Quaternion.identity);
             go.GetComponent<FollowPlyr>().Target = expTarget.transform ;
             //create bool for exp spawn here
-            
+
+
             yield return null;
         }
     }
