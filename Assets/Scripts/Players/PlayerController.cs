@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
         //    enddialogue = true;
         //}
 
-        if (PauseMenu.GamePause == false && DialogKey.endDialogue == true && DialogBegining.endDialogue == true && UpgradeMenu.uiActive == false && obtainedkey.endDialogue && isDead == false)
+        if (PauseMenu.GamePause == false && DialogKey.endDialogue == true && DialogBegining.endDialogue == true && UpgradeMenu.uiActive == false && obtainedkey.endDialogue && isDead == false && Level2beginingdialogue.endDialogue==true && goddessmessage.endDialogue==true)
         { 
             PlayerControl(); 
         }
@@ -239,7 +239,7 @@ public class PlayerController : MonoBehaviour
                 //disable maskui
                 //disable manaui
             }
-            if ((maskCollected == 1) && (manaController.currMana > 0)) //if maskcollected = 1
+            if ((maskCollected == 1) && (manaController.currMana > 0) && chestopener1.obtainedkey) //if maskcollected = 1
             {
                 anim.SetTrigger("skill");
                 ShootFireball();

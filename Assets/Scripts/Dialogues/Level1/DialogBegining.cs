@@ -23,41 +23,28 @@ public class DialogBegining : MonoBehaviour
         skip = false;
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.tag == "Player")
-    //    {
-    //        StartDialogue = true;
-    //        if (endDialogue==false)
-    //        {
-    //            StartDialogue = false;
-    //        }
-    //    }
-    //}
 
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
+        if(level1start.enterdialogue)
+        {
             if (StartDialogue)
             {
-                endDialogue = false;
-                DialogueAnimator.SetTrigger("enter");
-                startdialogue();
-                StartDialogue = false;
-
+                if (skip == false)
+                {
+                    endDialogue = false;
+                    DialogueAnimator.SetTrigger("enter");
+                    startdialogue();
+                    StartDialogue = false;
+                }
             }
             else
             {
-                //Debug.Log("next line");
-                DialogueAnimator.SetTrigger("enter");
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                   
+
                     //Debug.Log("sentence: " + index);
                     nextSentence();
                     //Debug.Log("sentence index: " + index);
@@ -68,6 +55,8 @@ public class DialogBegining : MonoBehaviour
             {
                 finishedtext = true;
             }
+        }
+           
     }
     private bool iswriting = false;
     public char[] currentsentence;
@@ -132,12 +121,11 @@ public class DialogBegining : MonoBehaviour
 
     public void stopsentence()
     {
-        skip = true;
-        Debug.Log("skip");
-        if (skip)
+        if (iscutscene==false)
         {
-            index++;
-            if (index > Sentences.Length - 1)
+            skip = true;
+            Debug.Log("skip");
+            if (skip)
             {
                 DialogueText.text = string.Empty;
                 DialogueAnimator.SetTrigger("exit");
@@ -145,8 +133,25 @@ public class DialogBegining : MonoBehaviour
                 endDialogue = true;
                 Destroy(dialog);
                 //skip = false;
+
             }
-        }  
+            //skip = true;
+            //Debug.Log("skip");
+            //if (skip)
+            //{
+            //    index++;
+            //    if (index > Sentences.Length - 1)
+            //    {
+            //        DialogueText.text = string.Empty;
+            //        DialogueAnimator.SetTrigger("exit");
+            //        index = 0;
+            //        endDialogue = true;
+            //        Destroy(dialog);
+            //        //skip = false;
+            //    }
+            //}
+        }
+        
     }
 
     public void startdialogue()
@@ -156,6 +161,7 @@ public class DialogBegining : MonoBehaviour
         if (firstlineup)
         {
             Invoke("startcutscene", 3.0f);
+           
         }
     }
 
@@ -173,5 +179,6 @@ public class DialogBegining : MonoBehaviour
         iscutscene = true;
         cameraanim.SetBool("Cutscene1", true);
         Invoke("stopcutscene", 1.5f);
+        DialogueAnimator.SetTrigger("enter");
     }
 }

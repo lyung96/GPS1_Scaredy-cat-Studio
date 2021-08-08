@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class obtainedkey : MonoBehaviour
+public class obtainedkey1 : MonoBehaviour
 {
     public TextMeshProUGUI DialogueText;
     public string[] Sentences;
@@ -13,13 +13,17 @@ public class obtainedkey : MonoBehaviour
     public GameObject dialog;
     public Animator DialogueAnimator;
     public static bool StartDialogue = true, firstlineup = false;
-    public static  bool endDialogue = true;
+    public static  bool endDialogue = true, skip=false;
     private float texttimer;
     private float textCounter = 0.005f;
 
+    private void Start()
+    {
+        //StartDialogue = false;
+    }
     void Update()
     {
-        if (chestopener.dialoguestart)
+        if (chestopener1.dialoguestart)
         {
             if (StartDialogue)
             {
@@ -28,7 +32,6 @@ public class obtainedkey : MonoBehaviour
                 DialogueText.text = string.Empty;
                 StartCoroutine(WriteSentence());
                 Debug.Log("start dialogue");
-                firstlineup = true;
                 chestopener.dialoguestart = false;
                 StartDialogue = false;
             }
@@ -53,25 +56,26 @@ public class obtainedkey : MonoBehaviour
 
     public IEnumerator WriteSentence()
     {
-        foreach (char Character in Sentences[index].ToCharArray())
-        {
-            DialogueText.text += Character;
-            yield return new WaitForSeconds(Dialoguespeed);
-            finishedtext = false;
+        //if (skip==false)
+        //{
+            foreach (char Character in Sentences[index].ToCharArray())
+            {
+                DialogueText.text += Character;
+                yield return new WaitForSeconds(Dialoguespeed);
+                finishedtext = false;
 
 
-        }
-        yield return new WaitForSeconds(0.2f);
-        texttimer += Time.deltaTime;
+            }
+            yield return new WaitForSeconds(0.2f);
+            texttimer += Time.deltaTime;
 
-        if (texttimer >= textCounter)
-        {
-            texttimer = 0f;
-            index++;
-            finishedtext = true;
-        }
-
-
+            if (texttimer >= textCounter)
+            {
+                texttimer = 0f;
+                index++;
+                finishedtext = true;
+            }
+        //}
     }
 
     public void nextSentence()
@@ -89,8 +93,9 @@ public class obtainedkey : MonoBehaviour
             DialogueAnimator.SetTrigger("exit");
             index = 0;
             endDialogue = true;
-            Destroy(dialog);
+            //dialog.SetActive(false);
 
         }
     }
+   
 }

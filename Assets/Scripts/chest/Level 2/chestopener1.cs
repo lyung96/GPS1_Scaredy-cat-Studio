@@ -2,47 +2,52 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class chestopener : MonoBehaviour
+public class chestopener1 : MonoBehaviour
 {
-    public GameObject chest, openinstructions, defeatenemyinstructions, obtainedkeyInstructions, interacticon;
-    public Enemy enemy;
+    public GameObject chest, interacticon;
+    //public Enemy enemy;
     public static bool chestopen=false;
     public static bool playerinchestrange = false, playertriggerchest=false;
     public static bool obtainedkey = false, dialoguestart=false, enemydialoguestart=false;
     public static int enemycount=0;
+    public int maxcounter=2;
     public obtainedkey key;
     // Start is called before the first frame update
     void Start()
     {
         chest.SetActive(true);
-        enemy = GetComponent<Enemy>();
+        obtainedkey = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.E))
+      
+        if (Input.GetKeyDown(KeyCode.E))
         {
+           
             if (playerinchestrange)
             {
-                if (enemycount >= 2)
+                if (enemycount >= maxcounter)
                 {
                     chestopen = true;
                     Debug.Log("Open chest");
                     GetComponent<Animator>().SetTrigger("Open");
                     interacticon.SetActive(false);
                     obtainedkey = true;
-                    if (chestopen && playerinchestrange)
+                    if (chestopen)
                     {
+                        Debug.Log("cheststartdialogue: " + dialoguestart);
                         dialoguestart = true;
+                        
                     }
                 }
-                else if (enemycount <2)
+                else if (enemycount < maxcounter)
                 {
                     if (chestopen==false && playerinchestrange)
                     {
                         enemydialoguestart = true;
-                        Debug.Log("enemystartdialogue");
+                        
                     }
                 }
             }    

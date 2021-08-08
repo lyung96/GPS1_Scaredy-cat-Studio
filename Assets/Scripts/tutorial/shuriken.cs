@@ -100,6 +100,9 @@ public class shuriken : MonoBehaviour
             enemydefeated = false;
             MovePopUpInstructions.grap = false;
         }
+        ShurikenPopoff();
+        AttackPopoff();
+        GrapPopoff();
     }
 
 

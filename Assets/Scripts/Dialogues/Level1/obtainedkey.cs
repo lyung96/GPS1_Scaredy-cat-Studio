@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-
-public class defeatenemy : MonoBehaviour
+public class obtainedkey : MonoBehaviour
 {
     public TextMeshProUGUI DialogueText;
     public string[] Sentences;
@@ -13,28 +12,24 @@ public class defeatenemy : MonoBehaviour
     private bool finishedtext;
     public GameObject dialog;
     public Animator DialogueAnimator;
-    public static bool StartDialogue = true, endDialogue = true;
+    public static bool StartDialogue = true, firstlineup = false;
+    public static  bool endDialogue = true, skip=false;
     private float texttimer;
-    private float textCounter = 0.007f;
-
-    private void Start()
-    {
-      
-    }
+    private float textCounter = 0.005f;
 
     void Update()
     {
-        if (chestopener.enemydialoguestart)
+        if (chestopener.dialoguestart)
         {
             if (StartDialogue)
             {
                 endDialogue = false;
-
                 DialogueAnimator.SetTrigger("enter");
                 DialogueText.text = string.Empty;
                 StartCoroutine(WriteSentence());
+                Debug.Log("start dialogue");
+                chestopener.dialoguestart = false;
                 StartDialogue = false;
-                chestopener.enemydialoguestart = false;
             }
             else
             {
@@ -45,40 +40,38 @@ public class defeatenemy : MonoBehaviour
                         nextSentence();
                     }
                 }
-            }
-            //Debug.Log("sentence index: " + index);
-        }
-        
 
-        if (Input.GetKeyDown(KeyCode.P))//use when u fk up
-        {
-            finishedtext = true;
+            }
         }
+       if (Input.GetKeyDown(KeyCode.P))//use when u fk up
+       {
+           finishedtext = true;
+       }
     }
 
 
     public IEnumerator WriteSentence()
     {
-        foreach (char Character in Sentences[index].ToCharArray())
-        {
-            DialogueText.text += Character;
-            yield return new WaitForSeconds(Dialoguespeed);
-            Debug.Log("detect char: " + Character);
-            finishedtext = false;
+        //if (skip==false)
+        //{
+            foreach (char Character in Sentences[index].ToCharArray())
+            {
+                DialogueText.text += Character;
+                yield return new WaitForSeconds(Dialoguespeed);
+                finishedtext = false;
 
 
-        }
-        texttimer += Time.deltaTime;
-        Debug.Log("time: " + texttimer);
+            }
+            yield return new WaitForSeconds(0.2f);
+            texttimer += Time.deltaTime;
 
-        if (texttimer >= textCounter)
-        {
-            texttimer = 0f;
-            index++;
-            finishedtext = true;
-        }
-
-
+            if (texttimer >= textCounter)
+            {
+                texttimer = 0f;
+                index++;
+                finishedtext = true;
+            }
+        //}
     }
 
     public void nextSentence()
@@ -96,10 +89,9 @@ public class defeatenemy : MonoBehaviour
             DialogueAnimator.SetTrigger("exit");
             index = 0;
             endDialogue = true;
-            //if (chestopener.enemydialoguestart)
-            //{
-            //    StartDialogue = true;
-            //}
+            Destroy(dialog);
+
         }
     }
+   
 }

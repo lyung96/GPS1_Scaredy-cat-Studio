@@ -11,7 +11,7 @@ public class DialogKey : MonoBehaviour
     private bool finishedtext;
     public GameObject dialog;
     public Animator DialogueAnimator;
-    public static bool StartDialogue = true, endDialogue = true;
+    public static bool StartDialogue = true, endDialogue = true, skip=false;
     private float texttimer;
     private float textCounter = 0.007f;
 
@@ -49,24 +49,28 @@ public class DialogKey : MonoBehaviour
 
     public IEnumerator WriteSentence()
     {
-        foreach (char Character in Sentences[index].ToCharArray())
+        if (skip == false)
         {
-            DialogueText.text += Character;
-            yield return new WaitForSeconds(Dialoguespeed);
-            Debug.Log("detect char: " + Character);
-            finishedtext = false;
+            foreach (char Character in Sentences[index].ToCharArray())
+            {
+                DialogueText.text += Character;
+                yield return new WaitForSeconds(Dialoguespeed);
+                Debug.Log("detect char: " + Character);
+                finishedtext = false;
 
 
+            }
+            texttimer += Time.deltaTime;
+            Debug.Log("time: " + texttimer);
+
+            if (texttimer >= textCounter)
+            {
+                texttimer = 0f;
+                index++;
+                finishedtext = true;
+            }
         }
-        texttimer += Time.deltaTime;
-        Debug.Log("time: " + texttimer);
-
-        if (texttimer >= textCounter)
-        {
-            texttimer = 0f;
-            index++;
-            finishedtext = true;
-        }
+           
 
 
     }
@@ -89,4 +93,24 @@ public class DialogKey : MonoBehaviour
             endDialogue = true;
         }
     }
-}
+
+    public void stopsentence()
+    {
+       
+            skip = true;
+            Debug.Log("skip");
+            if (skip)
+            {
+                index++;
+                if (index > Sentences.Length - 1)
+                {
+                    DialogueText.text = string.Empty;
+                    DialogueAnimator.SetTrigger("exit");
+                    index = 0;
+                    endDialogue = true;
+                    Destroy(dialog);
+                    //skip = false;
+                }
+            }
+    }
+    }
