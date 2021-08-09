@@ -258,11 +258,23 @@ public class PlayerController : MonoBehaviour
                 manaController.UseMana(-2);
                 FindObjectOfType<AudioManager>().Play("Fireball");
             }
-            else if ((maskCollected == 3) && (maskGauge >= 35))
+            else if ((maskCollected == 3) && (manaController.currMana > 1))
             {
-                anim.SetTrigger("skill");
-                ShootFinalBlow();
-                Debug.Log("Mask 3 Skill activated");
+                if(maskGauge < 35)
+                {
+                    anim.SetTrigger("skill");
+                    ShootFireball2();
+                    manaController.UseMana(-2);
+                    FindObjectOfType<AudioManager>().Play("Fireball");
+                }
+                else if(maskGauge >= 35)
+                {
+                    anim.SetTrigger("skill");
+                    ShootFinalBlow();
+                    Debug.Log("Mask 3 Skill activated");
+                    FindObjectOfType<AudioManager>().Play("Fireball");
+                }
+
             }
         }
 
