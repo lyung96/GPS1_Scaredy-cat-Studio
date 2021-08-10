@@ -49,6 +49,7 @@ public class Boss : MonoBehaviour
     {
         ChangeState(new BossIdle());
         anim = gameObject.GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
     }
     
     void Update()
@@ -136,10 +137,10 @@ public class Boss : MonoBehaviour
     public IEnumerator FlashRed()
     {
         FindObjectOfType<AudioManager>().Play("Hit");
-        sprite.color = Color.red;
-        bloodEffect.Play();
+        //sprite.color = Color.red;
+        //bloodEffect.Play();
         yield return new WaitForSeconds(0.1f);
-        sprite.color = Color.white;
+        //sprite.color = Color.white;
     }
 
     //Tengu

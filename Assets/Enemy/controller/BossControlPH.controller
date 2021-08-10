@@ -108,7 +108,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1422d78471c70b94381588445e0de192, type: 2}
+  m_Motion: {fileID: 7400000, guid: 06828afb6a87d1e468dc986e7728c62b, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -170,7 +170,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 86ba5bf91c69a9a40ad3749da22dfa3c, type: 2}
+  m_Motion: {fileID: 7400000, guid: e2e98493152183a40adb7569a2c4a7cc, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -320,7 +320,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 86ba5bf91c69a9a40ad3749da22dfa3c, type: 2}
+  m_Motion: {fileID: 7400000, guid: 112f5dc26211fdf4aabed3ef7f79acbd, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -394,7 +394,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BossControl
+  m_Name: BossControlPH
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Espeed
@@ -456,7 +456,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 580344e962b5b6b4aa80d26150f7348e, type: 2}
+  m_Motion: {fileID: 7400000, guid: a2535f8035d0a894f8856cf9cd0c3a54, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -484,7 +484,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 86ba5bf91c69a9a40ad3749da22dfa3c, type: 2}
+  m_Motion: {fileID: 7400000, guid: 5b60b3c2b86d7da4aabf5722e77634c3, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
