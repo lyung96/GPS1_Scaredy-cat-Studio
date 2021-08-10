@@ -1,0 +1,728 @@
+fileFormatVersion: 2
+guid: 77505a77d468ba246a81f2706f5cbee5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8576285861982329889
+    second: level 2 tile ResUpdate_0
+  - first:
+      213: 5675501728289601452
+    second: level 2 tile ResUpdate_1
+  - first:
+      213: -1977992222418528171
+    second: level 2 tile ResUpdate_2
+  - first:
+      213: 753190854660768328
+    second: level 2 tile ResUpdate_3
+  - first:
+      213: -6549896368376111630
+    second: level 2 tile ResUpdate_4
+  - first:
+      213: -815477098744903345
+    second: level 2 tile ResUpdate_5
+  - first:
+      213: 385240729328086751
+    second: level 2 tile ResUpdate_6
+  - first:
+      213: 4301737670397653029
+    second: level 2 tile ResUpdate_7
+  - first:
+      213: 3878039124782684456
+    second: level 2 tile ResUpdate_8
+  - first:
+      213: 345295863811666808
+    second: level 2 tile ResUpdate_9
+  - first:
+      213: -723653946756210810
+    second: level 2 tile ResUpdate_10
+  - first:
+      213: -5569689295387868890
+    second: level 2 tile ResUpdate_11
+  - first:
+      213: -6587939780480848663
+    second: level 2 tile ResUpdate_12
+  - first:
+      213: 4145793668531125521
+    second: level 2 tile ResUpdate_13
+  - first:
+      213: -5988604306645161540
+    second: level 2 tile ResUpdate_14
+  - first:
+      213: -6674423822808805895
+    second: level 2 tile ResUpdate_15
+  - first:
+      213: 1496233318078669842
+    second: level 2 tile ResUpdate_16
+  - first:
+      213: -1258008286076035842
+    second: level 2 tile ResUpdate_17
+  - first:
+      213: -6370186446478455126
+    second: level 2 tile ResUpdate_18
+  - first:
+      213: 3068742314079416817
+    second: level 2 tile ResUpdate_19
+  - first:
+      213: 6961239747593507139
+    second: level 2 tile ResUpdate_20
+  - first:
+      213: 1194269474282661279
+    second: level 2 tile ResUpdate_21
+  - first:
+      213: 7963358023232183713
+    second: level 2 tile ResUpdate_22
+  - first:
+      213: -3477956270589151761
+    second: level 2 tile ResUpdate_23
+  - first:
+      213: 4969638441118578453
+    second: level 2 tile ResUpdate_24
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 250
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_0
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 6065
+        width: 1903
+        height: 1508
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12c59a76d86150770800000000000000
+      internalID: 8576285861982329889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_1
+      rect:
+        serializedVersion: 2
+        x: 2584
+        y: 6402
+        width: 4602
+        height: 1202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca731d470ce63ce40800000000000000
+      internalID: 5675501728289601452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_2
+      rect:
+        serializedVersion: 2
+        x: 7369
+        y: 6357
+        width: 1136
+        height: 1339
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5581246bd82cc84e0800000000000000
+      internalID: -1977992222418528171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_3
+      rect:
+        serializedVersion: 2
+        x: 8643
+        y: 7046
+        width: 518
+        height: 413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 842c02c771fd37a00800000000000000
+      internalID: 753190854660768328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_4
+      rect:
+        serializedVersion: 2
+        x: 9424
+        y: 7023
+        width: 515
+        height: 415
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd125fa4f71a15a0800000000000000
+      internalID: -6549896368376111630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_5
+      rect:
+        serializedVersion: 2
+        x: 10360
+        y: 0
+        width: 1362
+        height: 8486
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4908d636e7dea4f0800000000000000
+      internalID: -815477098744903345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_6
+      rect:
+        serializedVersion: 2
+        x: 2144
+        y: 5850
+        width: 326
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdeec98f666a85500800000000000000
+      internalID: 385240729328086751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_7
+      rect:
+        serializedVersion: 2
+        x: 2733
+        y: 5816
+        width: 218
+        height: 326
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 520f7f0ae97d2bb30800000000000000
+      internalID: 4301737670397653029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_8
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 5816
+        width: 217
+        height: 326
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8291db9890091d530800000000000000
+      internalID: 3878039124782684456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_9
+      rect:
+        serializedVersion: 2
+        x: 3821
+        y: 5804
+        width: 123
+        height: 327
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 873f7e832ccbac400800000000000000
+      internalID: 345295863811666808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_10
+      rect:
+        serializedVersion: 2
+        x: 4273
+        y: 5839
+        width: 435
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f594bc19015f5f0800000000000000
+      internalID: -723653946756210810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_11
+      rect:
+        serializedVersion: 2
+        x: 4819
+        y: 5864
+        width: 813
+        height: 181
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6214c17681d74b2b0800000000000000
+      internalID: -5569689295387868890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_12
+      rect:
+        serializedVersion: 2
+        x: 5798
+        y: 5707
+        width: 695
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ec26ce8cafe294a0800000000000000
+      internalID: -6587939780480848663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_13
+      rect:
+        serializedVersion: 2
+        x: 6665
+        y: 5753
+        width: 429
+        height: 595
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d7cdc4061d88930800000000000000
+      internalID: 4145793668531125521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_14
+      rect:
+        serializedVersion: 2
+        x: 7441
+        y: 4823
+        width: 1213
+        height: 1393
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb96a02bc1434eca0800000000000000
+      internalID: -5988604306645161540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_15
+      rect:
+        serializedVersion: 2
+        x: 8714
+        y: 4868
+        width: 1451
+        height: 1861
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fd831155eeaf53a0800000000000000
+      internalID: -6674423822808805895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_16
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 4843
+        width: 1989
+        height: 890
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 214ee218640b3c410800000000000000
+      internalID: 1496233318078669842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_17
+      rect:
+        serializedVersion: 2
+        x: 2330
+        y: 4957
+        width: 978
+        height: 564
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc90f70128aa8ee0800000000000000
+      internalID: -1258008286076035842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_18
+      rect:
+        serializedVersion: 2
+        x: 3477
+        y: 4900
+        width: 930
+        height: 644
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaec4a87d2d8897a0800000000000000
+      internalID: -6370186446478455126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_19
+      rect:
+        serializedVersion: 2
+        x: 4602
+        y: 4920
+        width: 956
+        height: 601
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f1f9e130ec569a20800000000000000
+      internalID: 3068742314079416817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_20
+      rect:
+        serializedVersion: 2
+        x: 5738
+        y: 5020
+        width: 698
+        height: 447
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34114af0baa4b9060800000000000000
+      internalID: 6961239747593507139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_21
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 3749
+        width: 6425
+        height: 873
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95e5b462c5e29010800000000000000
+      internalID: 1194269474282661279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_22
+      rect:
+        serializedVersion: 2
+        x: 6659
+        y: 1354
+        width: 3320
+        height: 3245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -1658.8699, y: 1622.5}
+        - {x: -1055.0265, y: -1622.5}
+        - {x: 1660, y: -1622.5}
+        - {x: 1660, y: 1602.999}
+      physicsShape:
+      - - {x: -1650.2844, y: 1622.5}
+        - {x: -1017, y: -1608.5}
+        - {x: 1660, y: -1622.5}
+        - {x: 1660, y: 1611.5852}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1add2023ee7838e60800000000000000
+      internalID: 7963358023232183713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1368
+        width: 5017
+        height: 2084
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe5f03be231dbbfc0800000000000000
+      internalID: -3477956270589151761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level 2 tile ResUpdate_24
+      rect:
+        serializedVersion: 2
+        x: 5297
+        y: 1345
+        width: 1454
+        height: 2293
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 517bff8f4d3b7f440800000000000000
+      internalID: 4969638441118578453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
