@@ -49,7 +49,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 350
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,9 +109,9 @@ TextureImporter:
       name: EnemySwordAnsSpearMiniBoss_0
       rect:
         serializedVersion: 2
-        x: 1455
+        x: 1304
         y: 205
-        width: 749
+        width: 748
         height: 2085
       alignment: 0
       pivot: {x: 0, y: 0}
