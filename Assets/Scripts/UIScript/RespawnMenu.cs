@@ -80,7 +80,10 @@ public class RespawnMenu : MonoBehaviour
 
     public IEnumerator Respawn()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Animator animator = player.GetComponent<Animator>();
+        animator.SetTrigger("respawn");
+        PlayerController.isDead = false;
         yield return new WaitForSeconds(0.1f); 
         UpdateRef();
         checkpoint.LoadandUpdate();

@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     //public bool isGrounded = true;
     public Animator anim;
     private bool FacingRight = true;
-    private bool isDead;
+    public static bool isDead;
     private bool isBlocking;
 
     //Dash

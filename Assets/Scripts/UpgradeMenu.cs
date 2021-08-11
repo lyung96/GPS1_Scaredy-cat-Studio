@@ -171,11 +171,13 @@ public class UpgradeMenu : MonoBehaviour
     public IEnumerator NextLevel()
     {
         FindObjectOfType<Checkpoint>().Invoke("SavePlayer",0f);
+        Debug.Log("Next Level Save");
         levelChanger.FadeToNextLevel();
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(1.2f);
         UpdateComponent();
         FindObjectOfType<Checkpoint>().Invoke("LoadandUpdate", 0f);
+        Debug.Log("Next Level Load");
         yield return new WaitForSeconds(0.1f);
         if (SceneManager.GetActiveScene().name == "GameLevel1")
         {
@@ -187,15 +189,15 @@ public class UpgradeMenu : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "GameLevel3")
         {
-
+            player.transform.position = new Vector3(-44.31f, -14.59f, 0);
         }
         else if (SceneManager.GetActiveScene().name == "GameLevel4")
         {
-
+            player.transform.position = new Vector3(-43.57f, -14.09f, 0);
         }
         else if (SceneManager.GetActiveScene().name == "GameLevel5")
         {
-
+            player.transform.position = new Vector3(-43.57f, -13.02f, 0);
         }
     }
 
