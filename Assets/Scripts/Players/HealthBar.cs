@@ -12,14 +12,12 @@ public class HealthBar : MonoBehaviour
     public GameObject player;
     private float currHealth;
     private float lastHealth;
-    private float maxHealth;
 
     private void Start()
     {
         player = GameObject.Find("Player");
         currHealth = player.GetComponent<PlayerController>().currHealth;
         lastHealth = player.GetComponent<PlayerController>().maxCurseBar;
-        maxHealth = player.GetComponent<PlayerController>().maxCurseBar;
         SetMaxHealth(lastHealth, lastHealth);
         SetHealth(lastHealth);
     }
@@ -40,15 +38,14 @@ public class HealthBar : MonoBehaviour
 
     public void SetHealth(float health)
     {
-        //if(SceneManager.GetActiveScene().name == "GameLevel1")
-        //{
-        maxHealth = player.GetComponent<PlayerController>().maxCurseBar;
-        hpSlider.value = maxHealth - health;
-        //}
-        //else
-        //{
-        //    hpSlider.value = health;
-        //}
+        if(SceneManager.GetActiveScene().name == "GameLevel1")
+        {
+            hpSlider.value = 6 - health;
+        }
+        else
+        {
+            hpSlider.value = health;
+        }
 
         hpFill.color = hpGradient.Evaluate(hpSlider.normalizedValue);        
     }
