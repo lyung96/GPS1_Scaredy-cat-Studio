@@ -7,15 +7,17 @@ public class DialogBegining : MonoBehaviour
     public TextMeshProUGUI DialogueText;
     public string[] Sentences;
     public float Dialoguespeed;
-    public int index=0;
+    public int index = 0;
+    public static int timecounter = 0;
     private bool finishedtext;
-    public GameObject dialog;
+    public GameObject dialog, skipbutton, objectiveins;
     public Animator DialogueAnimator;
-    public static bool StartDialogue = true, endDialogue = true, firstlineup=false;
+    public static bool StartDialogue = true, endDialogue = true, firstlineup=false, firsttime;
     private float texttimer;
     private float textCounter= 0.005f;
     public Animator cameraanim;
     public static bool iscutscene, quitcutscene = false, skip=false;
+    public float startcutscenetime;
 
     private void Start()
     {
@@ -28,10 +30,24 @@ public class DialogBegining : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(level1start.enterdialogue)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
+            objectiveins.SetActive(false);
+            Debug.Log("setobjfalse");
+        }
+
+
+        if (level1start.enterdialogue)
+        {
+            Debug.Log("timecounter: " + timecounter);
+            
             if (StartDialogue)
             {
+                if (timecounter >= 1)
+                {
+                    skipbutton.SetActive(true);
+                }
+
                 if (skip == false)
                 {
                     endDialogue = false;
@@ -42,14 +58,28 @@ public class DialogBegining : MonoBehaviour
             }
             else
             {
+                if (iscutscene==false)
+                {
+                    DialogueAnimator.SetTrigger("enter");
+                }
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    if (iscutscene==false)
+                    {
+                        
+                        //Debug.Log("sentence: " + index);
+                        nextSentence();
+                       
 
-                    //Debug.Log("sentence: " + index);
-                    nextSentence();
-                    //Debug.Log("sentence index: " + index);
+                        //Debug.Log("sentence index: " + index);
+                    }
+
                 }
+                
             }
+          
+
+
 
             if (Input.GetKeyDown(KeyCode.P))//use when u fk up
             {
@@ -115,7 +145,10 @@ public class DialogBegining : MonoBehaviour
             DialogueAnimator.SetTrigger("exit");
             index = 0;
             endDialogue = true;
-            Destroy(dialog);
+            timecounter++;
+            dialog.SetActive(false);
+            objectiveins.SetActive(true);
+           
         }
     }
 
@@ -135,21 +168,6 @@ public class DialogBegining : MonoBehaviour
                 //skip = false;
 
             }
-            //skip = true;
-            //Debug.Log("skip");
-            //if (skip)
-            //{
-            //    index++;
-            //    if (index > Sentences.Length - 1)
-            //    {
-            //        DialogueText.text = string.Empty;
-            //        DialogueAnimator.SetTrigger("exit");
-            //        index = 0;
-            //        endDialogue = true;
-            //        Destroy(dialog);
-            //        //skip = false;
-            //    }
-            //}
         }
         
     }
@@ -160,7 +178,7 @@ public class DialogBegining : MonoBehaviour
         firstlineup = true;
         if (firstlineup)
         {
-            Invoke("startcutscene", 3.0f);
+            Invoke("startcutscene", startcutscenetime);
            
         }
     }
@@ -179,6 +197,6 @@ public class DialogBegining : MonoBehaviour
         iscutscene = true;
         cameraanim.SetBool("Cutscene1", true);
         Invoke("stopcutscene", 1.5f);
-        DialogueAnimator.SetTrigger("enter");
+        //DialogueAnimator.SetTrigger("enter");
     }
 }
