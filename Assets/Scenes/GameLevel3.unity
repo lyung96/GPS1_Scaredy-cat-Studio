@@ -8107,6 +8107,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3974929151170148383, guid: 373177579964dc04994d4be948aad422, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3974929151280211576, guid: 373177579964dc04994d4be948aad422, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -12262,6 +12266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WoodenFLoorFlat3
       objectReference: {fileID: 0}
+    - target: {fileID: 933643886300908264, guid: d9991f932e469b849b71a318bc784663, type: 3}
+      propertyPath: offSetY
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 933643886300908265, guid: d9991f932e469b849b71a318bc784663, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -13751,6 +13759,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2034573490}
     m_Modifications:
+    - target: {fileID: 5141898187851572832, guid: b3e0825f416733d46a35a14172be37dd, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5141898187851572833, guid: b3e0825f416733d46a35a14172be37dd, type: 3}
       propertyPath: m_RootOrder
       value: 6
