@@ -67,7 +67,7 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: LevelMusic
-    clip: {fileID: 8300000, guid: 8c752ef4ef6c80a4688ab5f6393e9a94, type: 3}
+    clip: {fileID: 8300000, guid: eb2dc47f69431b04684a88239d4b2b08, type: 3}
     volume: 0.2
     pitch: 1
     loop: 1
@@ -108,3 +108,4 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  startVol: 0
