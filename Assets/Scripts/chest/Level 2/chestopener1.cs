@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class chestopener1 : MonoBehaviour
 {
-    public GameObject chest, interacticon;
+    public GameObject chest, interacticon, mask1fragment;
     //public Enemy enemy;
     public static bool chestopen=false;
     public static bool playerinchestrange = false, playertriggerchest=false;
     public static bool obtainedkey = false, dialoguestart=false, enemydialoguestart=false;
     public static int enemycount=0;
     public int maxcounter=2;
+    
     public obtainedkey key;
     // Start is called before the first frame update
     void Start()
     {
         chest.SetActive(true);
         obtainedkey = false;
+       
     }
 
     // Update is called once per frame
@@ -30,11 +32,14 @@ public class chestopener1 : MonoBehaviour
             {
                 if (enemycount >= maxcounter)
                 {
+                    
                     chestopen = true;
                     Debug.Log("Open chest");
                     GetComponent<Animator>().SetTrigger("Open");
                     interacticon.SetActive(false);
                     obtainedkey = true;
+                   
+                   
                     if (chestopen)
                     {
                         Debug.Log("cheststartdialogue: " + dialoguestart);
@@ -106,4 +111,6 @@ public class chestopener1 : MonoBehaviour
             playerinchestrange = false; 
         }
     }
+
+   
 }

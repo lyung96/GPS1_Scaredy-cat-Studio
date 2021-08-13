@@ -1,9 +1,9 @@
 using System.Collections;
-using TMPro;
+using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-
-public class Level2beginingdialogue : MonoBehaviour
+public class Level3beging : MonoBehaviour
 {
     public TextMeshProUGUI DialogueText;
     public TextMeshProUGUI NameText;
@@ -14,7 +14,7 @@ public class Level2beginingdialogue : MonoBehaviour
     public Animator DialogueAnimator;
     public static bool StartDialogue = true, endDialogue = true, firstlineup = false, iscutscene = true, quitcutscene = false, skip = false, startsequence = false;
     public Animator cameraanim;
-    bool mctrue=true, goddesstrue=false;
+    bool mctrue = true, goddesstrue = false;
 
     private void Start()
     {
@@ -30,13 +30,10 @@ public class Level2beginingdialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (startsequence==false)
+        if (startsequence == false)
         {
             if (level1start.enterdialogue && skip == false)
             {
-                startcutscene();
-                if (iscutscene == false)
-                {
                     if (StartDialogue)
                     {
                         if (skip == false)
@@ -59,36 +56,35 @@ public class Level2beginingdialogue : MonoBehaviour
                         }
                     }
 
-                }
 
 
 
 
 
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    if (index % 2 == 0)
-                    {
-                        Debug.Log("Index246");
-                        mctrue = true;
-                        goddesstrue = false;
-                        setmcactive();
-                        NameText.text = "Yuji";
-                    }
-                    else
-                    {
-                        Debug.Log("Index135");
-                        mctrue = false;
-                        goddesstrue = true;
-                        setgoddessactive();
-                        NameText.text = "Mysterious Voice";
-                    }
+                //if (Input.GetKeyDown(KeyCode.E))
+                //{
+                //    if (index % 2 == 0)
+                //    {
+                //        Debug.Log("Index246");
+                //        mctrue = true;
+                //        goddesstrue = false;
+                //        setmcactive();
+                //        NameText.text = "Yuji";
+                //    }
+                //    else
+                //    {
+                //        Debug.Log("Index135");
+                //        mctrue = false;
+                //        goddesstrue = true;
+                //        setgoddessactive();
+                //        NameText.text = "Mysterious Voice";
+                //    }
 
-                }
+                //}
 
             }
         }
-        
+
     }
 
     public void setmcactive()
@@ -134,7 +130,7 @@ public class Level2beginingdialogue : MonoBehaviour
                 yield return new WaitUntil(() => currentsentence.Length == counter);
                 iswriting = false;
             }
-           
+
 
         }
     }
@@ -159,29 +155,29 @@ public class Level2beginingdialogue : MonoBehaviour
 
     public void stopsentence()
     {
-            skip = true;
-            Debug.Log("skip");
-            if (skip)
-            {
-                    DialogueText.text = string.Empty;
-                    DialogueAnimator.SetTrigger("exit");
-                    index = 0;
-                    endDialogue = true;
-                    Destroy(dialog);
-                    Destroy(goddess);
-                    //skip = false;
+        skip = true;
+        Debug.Log("skip");
+        if (skip)
+        {
+            DialogueText.text = string.Empty;
+            DialogueAnimator.SetTrigger("exit");
+            index = 0;
+            endDialogue = true;
+            Destroy(dialog);
+            Destroy(goddess);
+            //skip = false;
 
-            }
+        }
     }
 
     public void startdialogue()
     {
-        
+
         firstlineup = true;
         if (firstlineup)
         {
             Invoke("startcutscene", 0.0f);
-         
+
         }
     }
 
@@ -193,11 +189,11 @@ public class Level2beginingdialogue : MonoBehaviour
 
     void startcutscene()
     {
-        if(iscutscene == true)
+        if (iscutscene == true)
         {
             cameraanim.SetBool("Cutscene1", true);
             Invoke("stopcutscene", 1.0f);
         }
-        
+
     }
 }

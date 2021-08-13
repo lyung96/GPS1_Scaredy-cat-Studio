@@ -1,8 +1,9 @@
 using System.Collections;
-using TMPro;
+using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class DialogKey : MonoBehaviour
+public class barrierlvl2 : MonoBehaviour
 {
     public TextMeshProUGUI DialogueText;
     public string[] Sentences;
@@ -11,14 +12,18 @@ public class DialogKey : MonoBehaviour
     private bool finishedtext;
     public GameObject dialog;
     public Animator DialogueAnimator;
-    public static bool StartDialogue = true, endDialogue = true, skip=false;
+    public static bool StartDialogue = true, endDialogue = true, skip = false, startsequence=false;
     private float texttimer;
     private float textCounter = 0.007f;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        startsequence = false;
+    }
+
     void Update()
     {
-        if (LockMessage.dialoguetrigger)
+        if (level2barrier.startdialogue)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -35,15 +40,19 @@ public class DialogKey : MonoBehaviour
                     {
                         nextSentence();
                     }
-                }
-                Debug.Log("sentence index: " + index);
 
+                }
+                //Debug.Log("sentence index: " + index);
             }
+
+
+            if (Input.GetKeyDown(KeyCode.P))//use when u fk up
+            {
+                finishedtext = true;
+            }
+
         }
-        if (Input.GetKeyDown(KeyCode.P))//use when u fk up
-        {
-            finishedtext = true;
-        }
+               
     }
 
 
@@ -70,7 +79,7 @@ public class DialogKey : MonoBehaviour
                 finishedtext = true;
             }
         }
-           
+
 
 
     }
@@ -96,21 +105,21 @@ public class DialogKey : MonoBehaviour
 
     public void stopsentence()
     {
-       
-            skip = true;
-            Debug.Log("skip");
-            if (skip)
+
+        skip = true;
+        Debug.Log("skip");
+        if (skip)
+        {
+            index++;
+            if (index > Sentences.Length - 1)
             {
-                index++;
-                if (index > Sentences.Length - 1)
-                {
-                    DialogueText.text = string.Empty;
-                    DialogueAnimator.SetTrigger("exit");
-                    index = 0;
-                    endDialogue = true;
-                    Destroy(dialog);
-                    //skip = false;
-                }
+                DialogueText.text = string.Empty;
+                DialogueAnimator.SetTrigger("exit");
+                index = 0;
+                endDialogue = true;
+                Destroy(dialog);
+                //skip = false;
             }
+        }
     }
-    }
+}

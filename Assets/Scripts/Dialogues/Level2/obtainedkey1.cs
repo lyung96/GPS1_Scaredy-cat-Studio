@@ -10,15 +10,16 @@ public class obtainedkey1 : MonoBehaviour
     public float Dialoguespeed;
     private int index = 0;
     private bool finishedtext;
-    public GameObject dialog;
+    public GameObject dialog, maskpopup;
     public Animator DialogueAnimator;
     public static bool StartDialogue = true, firstlineup = false;
-    public static  bool endDialogue = true, skip=false;
+    public static  bool endDialogue = true, skip=false, maskpop=false;
     private float texttimer;
     private float textCounter = 0.005f;
 
     private void Start()
     {
+        maskpop = false;
         //StartDialogue = false;
     }
     void Update()
@@ -37,13 +38,13 @@ public class obtainedkey1 : MonoBehaviour
             }
             else
             {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
+                //if (Input.GetKeyDown(KeyCode.E))
+                //{
                     if (finishedtext)
                     {
-                        nextSentence();
+                        Invoke("closedialogue", 0.05f);
                     }
-                }
+                //}
 
             }
         }
@@ -51,9 +52,17 @@ public class obtainedkey1 : MonoBehaviour
        {
            finishedtext = true;
        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            maskpopup.SetActive(false);
+        }
     }
 
-
+    void closedialogue()
+    {
+        nextSentence();
+    }
     public IEnumerator WriteSentence()
     {
         //if (skip==false)
@@ -91,9 +100,13 @@ public class obtainedkey1 : MonoBehaviour
         {
             DialogueText.text = string.Empty;
             DialogueAnimator.SetTrigger("exit");
-            index = 0;
             endDialogue = true;
-            //dialog.SetActive(false);
+            if (maskpop==false)
+            {
+                maskpop = true;
+                maskpopup.SetActive(true);
+            }
+           
 
         }
     }
