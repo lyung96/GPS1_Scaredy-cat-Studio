@@ -20,6 +20,7 @@ public class MovePopUpInstructions: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        grap = false;
         MovementInstructions.SetActive(false);
     }
  
@@ -105,7 +106,7 @@ public class MovePopUpInstructions: MonoBehaviour
 
         if (entertutorialarea)//stay
         {
-            if (grap == false)
+            if (left==false || right==false)
             {
                 if (Input.GetKey(KeyCode.A))
                 {
@@ -115,36 +116,41 @@ public class MovePopUpInstructions: MonoBehaviour
                 {
                     right = true;
                 }
-                if (left && right && jump==false && dash==false)
+                if (left && right)
                 {
                     Invoke("MovePopoff", 0.5f);
                     Invoke("DashPopup", 0.5f);
-                    if (Input.GetKey(KeyCode.LeftShift))
-                    {
-                        dash = true;
-                        Debug.Log("my jump is: " + jump);
-                    }
-                    if (dash==true && jump ==false)
-                    {
-                        
-                        Invoke("DashPopoff", 0.5f);
-                        //Debug.Log(DashInstructions);
-                        Invoke("JumpPopup", 0.5f);
-                        if (Input.GetKey(KeyCode.Space))
-                        {
-                            jump = true;
+                }
+            }
             
-                            Debug.Log("jump Fullfilled");
-                        }
-                        if (jump)
-                        {
-                            Invoke("JumpPopoff", 0.5f);
-                            Debug.Log("jump popoff");
-                        }
+
+            if (dash == false)
+            {
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    dash = true;
+                    if (dash)
+                    {
+                        Invoke("DashPopoff", 0.5f);
+                        Invoke("JumpPopup", 0.5f);
                     }
                 }
             }
                 
+            if (jump==false)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    jump = true;
+                    Debug.Log("jump fullfilled");
+                    if (jump)
+                    {
+                        Invoke("JumpPopoff", 0.5f);
+
+                    }
+                }
+            }
+          
         }
 
         if (entertutorialarea == false && triggertutorial == false)//exit

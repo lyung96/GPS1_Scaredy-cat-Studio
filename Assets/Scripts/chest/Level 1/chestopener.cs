@@ -15,6 +15,8 @@ public class chestopener : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        enemycount = 0;
+        obtainedkey = false;
         chest.SetActive(true);
         enemy = GetComponent<Enemy>();
     }

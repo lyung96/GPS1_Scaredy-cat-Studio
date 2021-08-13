@@ -12,11 +12,12 @@ public class InteriorDoor : MonoBehaviour
 
     private void Start()
     {
+        isOpen = false;
         eIconPromt.SetActive(false);
         parentDoor = gameObject.transform.parent.gameObject;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {

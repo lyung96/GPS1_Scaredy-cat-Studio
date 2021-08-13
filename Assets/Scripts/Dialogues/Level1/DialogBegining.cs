@@ -9,18 +9,21 @@ public class DialogBegining : MonoBehaviour
     public float Dialoguespeed;
     public int index=0;
     private bool finishedtext;
-    public GameObject dialog;
+    public GameObject dialog, objectivepopup;
     public Animator DialogueAnimator;
-    public static bool StartDialogue = true, endDialogue = true, firstlineup=false;
+    public static bool StartDialogue = true, endDialogue = true, firstlineup = true;
     private float texttimer;
     private float textCounter= 0.005f;
     public Animator cameraanim;
-    public static bool iscutscene, quitcutscene = false, skip=false;
+    public static bool iscutscene, quitcutscene = false, skip=false, popup=false;
+    public float cutscenetime;
 
     private void Start()
     {
         StartDialogue = true;
         skip = false;
+        firstlineup = true;
+        popup = false;
     }
 
 
@@ -28,6 +31,10 @@ public class DialogBegining : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            objectivepopup.SetActive(false);
+        }
         if(level1start.enterdialogue)
         {
             if (StartDialogue)
@@ -37,18 +44,33 @@ public class DialogBegining : MonoBehaviour
                     endDialogue = false;
                     DialogueAnimator.SetTrigger("enter");
                     startdialogue();
-                    StartDialogue = false;
+                    Debug.Log("Index: " + index);
+                    
                 }
             }
             else
             {
-                if (Input.GetKeyDown(KeyCode.E))
+                if (firstlineup)
                 {
-
-                    //Debug.Log("sentence: " + index);
-                    nextSentence();
-                    //Debug.Log("sentence index: " + index);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        Invoke("startcutscene", cutscenetime);
+                    }
                 }
+                else if (firstlineup==false)
+                {
+                    DialogueAnimator.SetTrigger("enter");
+                    //nextSentence();
+                    //Debug.Log("Index: " + index);
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        //Debug.Log("sentence: " + index);
+                        nextSentence();
+                        //Debug.Log("Index: " + index);
+                        //Debug.Log("sentence index: " + index);
+                    }
+                }
+                
             }
 
             if (Input.GetKeyDown(KeyCode.P))//use when u fk up
@@ -89,17 +111,6 @@ public class DialogBegining : MonoBehaviour
             }
           
         }
-       
-        
-
-        //if (texttimer >= textCounter)
-        //{
-        //    texttimer = 0f;
-        //    
-        //    finishedtext = true;
-        //}
-       
-
     }
 
     public void nextSentence()
@@ -115,7 +126,13 @@ public class DialogBegining : MonoBehaviour
             DialogueAnimator.SetTrigger("exit");
             index = 0;
             endDialogue = true;
-            Destroy(dialog);
+            dialog.SetActive(false);
+            if (popup==false)
+            {
+                popup = true;
+                objectivepopup.SetActive(true);
+            }
+           
         }
     }
 
@@ -131,25 +148,8 @@ public class DialogBegining : MonoBehaviour
                 DialogueAnimator.SetTrigger("exit");
                 index = 0;
                 endDialogue = true;
-                Destroy(dialog);
-                //skip = false;
-
+                dialog.SetActive(false);
             }
-            //skip = true;
-            //Debug.Log("skip");
-            //if (skip)
-            //{
-            //    index++;
-            //    if (index > Sentences.Length - 1)
-            //    {
-            //        DialogueText.text = string.Empty;
-            //        DialogueAnimator.SetTrigger("exit");
-            //        index = 0;
-            //        endDialogue = true;
-            //        Destroy(dialog);
-            //        //skip = false;
-            //    }
-            //}
         }
         
     }
@@ -157,12 +157,12 @@ public class DialogBegining : MonoBehaviour
     public void startdialogue()
     {
         StartCoroutine(WriteSentence());
-        firstlineup = true;
-        if (firstlineup)
+        if (index>0)
         {
-            Invoke("startcutscene", 3.0f);
-           
+            StartDialogue = false;
         }
+     
+
     }
 
     void stopcutscene()
@@ -179,6 +179,6 @@ public class DialogBegining : MonoBehaviour
         iscutscene = true;
         cameraanim.SetBool("Cutscene1", true);
         Invoke("stopcutscene", 1.5f);
-        DialogueAnimator.SetTrigger("enter");
+        firstlineup = false;
     }
 }

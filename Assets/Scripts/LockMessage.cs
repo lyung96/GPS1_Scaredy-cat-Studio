@@ -5,10 +5,11 @@ using UnityEngine;
 public class LockMessage : MonoBehaviour
 {
     public GameObject lockmessage, Lock, lockedDoor, openDoor, interacticon, dialogbox;
-    public static bool doortrigger=false, playerinrange=false, dialoguetrigger=false;
+    public static bool doortrigger=false, playerinrange=false, dialoguetrigger=false, dooropen=false;
 
     public void Start()
     {
+        dooropen = false;
     } 
 
     private void Update()
@@ -20,6 +21,7 @@ public class LockMessage : MonoBehaviour
                 Destroy(Lock);
                 lockedDoor.SetActive(false);
                 openDoor.SetActive(true);
+                dooropen = true;
             }
         }
         else if (chestopener.obtainedkey == false && playerinrange)

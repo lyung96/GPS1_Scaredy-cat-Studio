@@ -61,7 +61,7 @@ public class DialogKey : MonoBehaviour
 
             }
             texttimer += Time.deltaTime;
-            Debug.Log("time: " + texttimer);
+            //Debug.Log("time: " + texttimer);
 
             if (texttimer >= textCounter)
             {
