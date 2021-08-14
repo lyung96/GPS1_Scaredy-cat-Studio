@@ -108,4 +108,10 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: EndScene
+    clip: {fileID: 8300000, guid: 8c752ef4ef6c80a4688ab5f6393e9a94, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   startVol: 0

@@ -193,8 +193,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  offSetX: 3
-  offSetY: 0
+  offSetX: 0
+  offSetY: 2
 --- !u!251 &-2071808763650045258
 PlatformEffector2D:
   m_ObjectHideFlags: 0

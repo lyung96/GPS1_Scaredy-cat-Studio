@@ -3092,6 +3092,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UpgradeScreen
       objectReference: {fileID: 0}
+    - target: {fileID: 9015307490020201161, guid: cd9d2579568471a4bbdedf3b0b3c3c6f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd9d2579568471a4bbdedf3b0b3c3c6f, type: 3}
 --- !u!4 &776336379 stripped
@@ -4001,6 +4005,10 @@ PrefabInstance:
     - target: {fileID: 368076075511334637, guid: 956d3334b2cbc954fa61a7a184a76b53, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 368076075597041703, guid: 956d3334b2cbc954fa61a7a184a76b53, type: 3}
+      propertyPath: m_Name
+      value: Pause Menu (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 956d3334b2cbc954fa61a7a184a76b53, type: 3}

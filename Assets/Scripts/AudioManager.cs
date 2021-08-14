@@ -68,19 +68,29 @@ public class AudioManager : MonoBehaviour
         {
             StopPlaying("LevelMusic");
             StopPlaying("FinalBoss");
+            StopPlaying("EndScene");
             Play("Theme");
         }
         else if (name == "GameLevel1" || name == "GameLevel1 (CAT)" || name == "GameLevel1 (LZJ)" || name == "GameLevel1 (Yung)" || name == "GameLevel2" || name == "GameLevel3" || name == "GameLevel4")
         {
             StopPlaying("Theme");
             StopPlaying("FinalBoss");
+            StopPlaying("EndScene");
             Play("LevelMusic");
         }
         else if (name == "GameLevel5")
         {
             StopPlaying("Theme");
             StopPlaying("LevelMusic");
+            StopPlaying("EndScene");
             Play("FinalBoss");
+        }
+        else if(name == "GameLevel6")
+        {
+            StopPlaying("Theme");
+            StopPlaying("LevelMusic");
+            StopPlaying("FinalBoss");
+            Play("EndScene"); 
         }
     }
         

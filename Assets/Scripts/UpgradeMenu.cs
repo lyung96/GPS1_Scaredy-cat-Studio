@@ -199,6 +199,10 @@ public class UpgradeMenu : MonoBehaviour
         {
             player.transform.position = new Vector3(-43.57f, -13.02f, 0);
         }
+        else if (SceneManager.GetActiveScene().name == "GameLevel6")
+        {
+            player.transform.position = new Vector3(5.1f, -16.26f, 0);
+        }
     }
 
 
