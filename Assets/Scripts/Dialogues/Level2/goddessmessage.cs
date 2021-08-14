@@ -9,7 +9,7 @@ public class goddessmessage : MonoBehaviour
     public string[] Sentences;
     public float Dialoguespeed;
     public int index = 0;
-    public GameObject dialog, goddessicon, mc;
+    public GameObject dialog, goddessicon, mc, upgrade;
     public Animator DialogueAnimator;
     public static bool StartDialogue = true, endDialogue = true, firstlineup = false, iscutscene = true, quitcutscene = false, skip = false;
     bool mctrue = true, goddesstrue = false;
@@ -124,9 +124,14 @@ public class goddessmessage : MonoBehaviour
             index = 0;
             endDialogue = true;
             Destroy(dialog);
+            Invoke("setupgrade", 1f);
         }
     }
 
+    void setupgrade()
+    {
+        upgrade.SetActive(true);
+    }
     public void stopsentence()
     {
         skip = true;

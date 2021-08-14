@@ -23,72 +23,77 @@ public class barrierlvl2 : MonoBehaviour
 
     void Update()
     {
-        if (level2barrier.startdialogue)
+       
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (level2barrier.startdialogue)
             {
                 if (StartDialogue)
                 {
-                    endDialogue = false;
-                    DialogueAnimator.SetTrigger("enter");
-                    StartDialogue = false;
-                    nextSentence();
+                    if (skip == false)
+                    {
+                        endDialogue = false;
+                        DialogueText.text = string.Empty;
+                        DialogueAnimator.SetTrigger("enter");
+                        StartCoroutine(WriteSentence());
+                        StartDialogue = false;
+                    }
                 }
                 else
                 {
-                    if (finishedtext)
-                    {
-                        nextSentence();
-                    }
-
+                    nextSentence();
                 }
+
                 //Debug.Log("sentence index: " + index);
             }
 
 
-            if (Input.GetKeyDown(KeyCode.P))//use when u fk up
-            {
-                finishedtext = true;
-            }
-
         }
-               
+
+
     }
 
 
+    private bool iswriting = false;
+    public char[] currentsentence;
     public IEnumerator WriteSentence()
     {
-        if (skip == false)
+        if (iswriting)
         {
-            foreach (char Character in Sentences[index].ToCharArray())
+            //Debug.Log("iswriting");
+            yield return null;
+
+        }
+        else
+        {
+            int counter = 0;
+            if (skip == false)
             {
-                DialogueText.text += Character;
-                yield return new WaitForSeconds(Dialoguespeed);
-                Debug.Log("detect char: " + Character);
-                finishedtext = false;
-
-
-            }
-            texttimer += Time.deltaTime;
-            //Debug.Log("time: " + texttimer);
-
-            if (texttimer >= textCounter)
-            {
-                texttimer = 0f;
+                DialogueText.text = string.Empty;
+                iswriting = true;
+                currentsentence = Sentences[index].ToCharArray();
+                foreach (char Character in currentsentence)
+                {
+                    counter++;
+                    DialogueText.text += Character;
+                    yield return new WaitForSeconds(Dialoguespeed);
+                    //finishedtext = false;
+                }
                 index++;
-                finishedtext = true;
+                yield return new WaitUntil(() => currentsentence.Length == counter);
+                iswriting = false;
             }
+
         }
 
-
-
     }
+
 
     public void nextSentence()
     {
         if (index <= Sentences.Length - 1)
         {
-            DialogueText.text = string.Empty;
+       
             StartCoroutine(WriteSentence());
             //WriteSentence();
 
@@ -103,23 +108,5 @@ public class barrierlvl2 : MonoBehaviour
         }
     }
 
-    public void stopsentence()
-    {
-
-        skip = true;
-        Debug.Log("skip");
-        if (skip)
-        {
-            index++;
-            if (index > Sentences.Length - 1)
-            {
-                DialogueText.text = string.Empty;
-                DialogueAnimator.SetTrigger("exit");
-                index = 0;
-                endDialogue = true;
-                Destroy(dialog);
-                //skip = false;
-            }
-        }
-    }
+  
 }

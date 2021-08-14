@@ -9,7 +9,7 @@ public class DialogBegining : MonoBehaviour
     public float Dialoguespeed;
     public int index=0;
     private bool finishedtext;
-    public GameObject dialog, objectivepopup;
+    public GameObject dialog, objectivepopup, skipbutton;
     public Animator DialogueAnimator;
     public static bool StartDialogue = true, endDialogue = true, firstlineup = true;
     private float texttimer;
@@ -17,9 +17,11 @@ public class DialogBegining : MonoBehaviour
     public Animator cameraanim;
     public static bool iscutscene, quitcutscene = false, skip=false, popup=false;
     public float cutscenetime;
+    public static float dialogcounter;
 
     private void Start()
     {
+        dialogcounter = 0;
         StartDialogue = true;
         skip = false;
         firstlineup = true;
@@ -31,6 +33,10 @@ public class DialogBegining : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (dialogcounter>0)
+        {
+            skipbutton.SetActive(true);
+        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             objectivepopup.SetActive(false);

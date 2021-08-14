@@ -76,6 +76,7 @@ public class RespawnMenu : MonoBehaviour
     {
         StartCoroutine("Respawn");
         respawnPanel.SetActive(false);
+        DialogBegining.dialogcounter +=1;
     }
 
     public IEnumerator Respawn()

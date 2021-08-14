@@ -104,6 +104,7 @@ public class Level2beginingdialogue : MonoBehaviour
     }
 
 
+
     private bool iswriting = false;
     public char[] currentsentence;
     public IEnumerator WriteSentence()
@@ -130,13 +131,12 @@ public class Level2beginingdialogue : MonoBehaviour
                     //finishedtext = false;
                 }
                 index++;
-                //Debug.Log(counter);
                 yield return new WaitUntil(() => currentsentence.Length == counter);
                 iswriting = false;
             }
-           
 
         }
+
     }
 
     public void nextSentence()
