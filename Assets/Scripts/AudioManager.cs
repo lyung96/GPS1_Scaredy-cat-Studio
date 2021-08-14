@@ -166,6 +166,7 @@ public class AudioManager : MonoBehaviour
         {
             bgSlider.value = 0.5f;
             sfxSlider.value = 0.5f;
+            OptionsMusic.slider.value = 0.5f;
             startVol = false;
         }
     }

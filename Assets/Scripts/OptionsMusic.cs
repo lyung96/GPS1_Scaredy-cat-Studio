@@ -3,21 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class OptionsMusic : MonoBehaviour
 {
     [Range(0.0f, 1f)]
     [SerializeField]
-    private float masterVolume = 1f;
-    public Slider slider;
+    public static float masterVolume;
+    public static Slider slider;
     GameObject optionMenu;
+    private string lastScene, currScene;
+    public bool startVol = true;
+
 
     // Start is called before the first frame update
     void Start()
     {
+        lastScene = SceneManager.GetActiveScene().name;
         optionMenu = GameObject.Find("Options Menu");
         slider = optionMenu.GetComponent<OptionMenu>().masterSlider;
-        slider.value = 0.5f;
+        changeScene();
     }
 
     // Update is called once per frame
@@ -25,7 +30,17 @@ public class OptionsMusic : MonoBehaviour
     {
         masterVolume = slider.value;
         AudioListener.volume = masterVolume;
-        
+    }
+
+    void changeScene()
+    {
+        float currMasVol = masterVolume;
+        currScene = SceneManager.GetActiveScene().name;
+        if (lastScene != currScene)
+        {
+            slider.value = currMasVol;
+            lastScene = currScene;
+        }
     }
 
     /*public void changeVolume(float level)
