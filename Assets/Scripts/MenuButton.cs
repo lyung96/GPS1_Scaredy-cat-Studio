@@ -85,7 +85,7 @@ public class MenuButton : MonoBehaviour
         if (SceneManager.GetActiveScene().name != "Menu")
         {
             GameObject mainMenuUI = GameObject.Find("Pause Menu (1)");
-            mainMenuUI.transform.GetChild(0).gameObject.SetActive(true);
+            //mainMenuUI.transform.GetChild(0).gameObject.SetActive(true);
             controlpanel.SetActive(false);
         }
         else
