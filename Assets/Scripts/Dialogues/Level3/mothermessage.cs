@@ -14,6 +14,7 @@ public class mothermessage : MonoBehaviour
     public Animator DialogueAnimator;
     public static bool StartDialogue = true, endDialogue = true, firstlineup = false, iscutscene = true, quitcutscene = false, skip = false;
     bool mctrue = true, goddesstrue = false;
+    UpgradeMenu upgradepanel;
 
 
     private void Update()
@@ -139,7 +140,8 @@ public class mothermessage : MonoBehaviour
 
     void setupgrade()
     {
-        upgrade.SetActive(true);
+        upgradepanel = FindObjectOfType<UpgradeMenu>().GetComponent<UpgradeMenu>();
+        upgradepanel.Setupgradepaneltrue();
     }
 
     public void stopsentence()

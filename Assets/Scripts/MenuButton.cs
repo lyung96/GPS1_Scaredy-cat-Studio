@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class MenuButton : MonoBehaviour
 {
-    public GameObject  optionsPanel;
+    public GameObject  optionsPanel, controlpanel;
     private string lastScene;
     private string currScene;
 
@@ -73,6 +73,31 @@ public class MenuButton : MonoBehaviour
         optionsPanel.SetActive(true);
     }
 
+    public void controls()
+    {
+        PauseMenu pauseMenu = FindObjectOfType<PauseMenu>();
+        pauseMenu.PauseMenuUI.SetActive(false);
+        controlpanel.SetActive(true);
+
+    }
+    public void controlBack()
+    {
+        if (SceneManager.GetActiveScene().name != "Menu")
+        {
+            GameObject mainMenuUI = GameObject.Find("Pause Menu (1)");
+            //mainMenuUI.transform.GetChild(0).gameObject.SetActive(true);
+            controlpanel.SetActive(false);
+        }
+        else
+        {
+            GameObject mainMenuUI = GameObject.Find("MainMenu");
+            mainMenuUI.transform.GetChild(0).gameObject.SetActive(false);
+            controlpanel.SetActive(false);
+            //GameObject mainMenuUI = FindObjectOfType<MainMenuControl>().mainMenuUI;
+            //mainMenuUI.SetActive(true);
+            //optionsPanel.SetActive(false);
+        }
+    }
     public void optionBack()
     {
         if(SceneManager.GetActiveScene().name != "Menu")
