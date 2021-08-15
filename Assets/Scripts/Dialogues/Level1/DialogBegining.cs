@@ -50,7 +50,7 @@ public class DialogBegining : MonoBehaviour
                     endDialogue = false;
                     DialogueAnimator.SetTrigger("enter");
                     startdialogue();
-                    Debug.Log("Index: " + index);
+                    //Debug.Log("Index: " + index);
                     
                 }
             }

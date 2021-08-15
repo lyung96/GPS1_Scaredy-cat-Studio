@@ -6,7 +6,7 @@ public class BossIdle : IBoss
 {
     private Boss Bboss;
     private float BossIdleTimer;
-    private float BossIdleCd = 5;
+    private float BossIdleCd = 3;
 
     public void Enter(Boss Bboss)
     {

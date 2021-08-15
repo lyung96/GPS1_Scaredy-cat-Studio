@@ -27,7 +27,7 @@ public class obtainedkey : MonoBehaviour
                 DialogueAnimator.SetTrigger("enter");
                 DialogueText.text = string.Empty;
                 StartCoroutine(WriteSentence());
-                Debug.Log("start dialogue");
+                //Debug.Log("start dialogue");
                 chestopener.dialoguestart = false;
                 StartDialogue = false;
             }

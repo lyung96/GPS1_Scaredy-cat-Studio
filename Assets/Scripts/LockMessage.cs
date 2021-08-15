@@ -34,7 +34,7 @@ public class LockMessage : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Enter door range");
+            //Debug.Log("Enter door range");
             playerinrange = true;
             interacticon.SetActive(true);
             doortrigger = true;

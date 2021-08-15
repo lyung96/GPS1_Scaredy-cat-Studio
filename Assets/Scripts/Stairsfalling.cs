@@ -29,12 +29,12 @@ public class Stairsfalling : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Stairs touched"); 
+            //Debug.Log("Stairs touched"); 
       
             Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
             if (PlayerController.left || PlayerController.right || PlayerController.dash)
             {
-                Debug.Log("This is the constraint: " + Player.GetComponent<Rigidbody2D>().constraints);
+                //Debug.Log("This is the constraint: " + Player.GetComponent<Rigidbody2D>().constraints);
                 Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
                 Player.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
                 //Player.GetComponent<Rigidbody2D>().gravityScale = 0;
@@ -54,7 +54,7 @@ public class Stairsfalling : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Log("Stairs untouched");
+            //Debug.Log("Stairs untouched");
             //Player.GetComponent<Rigidbody2D>().gravityScale = 10;
             //Player.GetComponent<PlayerController>().Speed = 3.0f;
 

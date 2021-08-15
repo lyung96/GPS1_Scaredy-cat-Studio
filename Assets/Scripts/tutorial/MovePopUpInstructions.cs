@@ -86,7 +86,7 @@ public class MovePopUpInstructions: MonoBehaviour
         {
             if (grap==false && left==false && right==false && jump==false && dash==false)
             {
-                Debug.Log("triggertutorial");
+                //Debug.Log("triggertutorial");
                 MovementInstructions.SetActive(true);
             }
             if (left && right)
@@ -142,7 +142,7 @@ public class MovePopUpInstructions: MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     jump = true;
-                    Debug.Log("jump fullfilled");
+                    //Debug.Log("jump fullfilled");
                     if (jump)
                     {
                         Invoke("JumpPopoff", 0.5f);

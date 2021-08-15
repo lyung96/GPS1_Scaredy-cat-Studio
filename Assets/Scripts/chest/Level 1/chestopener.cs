@@ -31,7 +31,7 @@ public class chestopener : MonoBehaviour
                 if (enemycount >= maxcounter)
                 {
                     chestopen = true;
-                    Debug.Log("Open chest");
+                    //Debug.Log("Open chest");
                     GetComponent<Animator>().SetTrigger("Open");
                     interacticon.SetActive(false);
                     obtainedkey = true;

@@ -22,10 +22,10 @@ public class Stun : MonoBehaviour
             triggerstun = true;
             stunenemy.GetComponent<EnemyCat>().enabled = false;
             anim.Play("EnemyIdle");
-            Debug.Log(anim);
+            //Debug.Log(anim);
             Invoke("setstunfalse", timer);
             shuriken.shurikenshoot = true;
-            Debug.Log("enemyhit shuriken");
+            //Debug.Log("enemyhit shuriken");
         }
     }
     //private void Update()

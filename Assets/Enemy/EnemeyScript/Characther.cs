@@ -69,7 +69,7 @@ public abstract class Characther : MonoBehaviour
             {
                 if (SwordCollider.enabled)
                 {
-                    Debug.Log(other.name);
+                    //Debug.Log(other.name);
                     other.gameObject.GetComponent<PlayerController>().CalHp(-1);
                 }
             }

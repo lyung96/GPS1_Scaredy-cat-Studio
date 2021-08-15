@@ -36,7 +36,7 @@ public class Shuriken : MonoBehaviour
         }
         if (collision.gameObject.tag == "CatEnemy")
         {
-            Debug.Log(collision.name);
+            //Debug.Log(collision.name);
             StartCoroutine(collision.GetComponent<EnemyCat>().EnemyTakeDamage(-damage));
             Destroy(gameObject);
         }

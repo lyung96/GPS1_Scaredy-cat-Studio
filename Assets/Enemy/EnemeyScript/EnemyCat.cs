@@ -130,13 +130,13 @@ public class EnemyCat : Characther
         }
         else
         {
-            Debug.Log("im dead bruh");
+            //Debug.Log("im dead bruh");
             MyAnimator.SetTrigger("dead");
             shuriken.enemydefeated = true;
             enemyDied = true;
             chestopener.enemycount += 1;
             chestopener1.enemycount += 1;
-            Debug.Log(chestopener1.enemycount);
+            //Debug.Log(chestopener1.enemycount);
             //Debug.Log("enemy counter: " + chestopener.enemycount);
             //gameObject.GetComponent<BoxCollider2D>().enabled = false;
             //gameObject.GetComponentInChildren<EdgeCollider2D>().enabled = false;

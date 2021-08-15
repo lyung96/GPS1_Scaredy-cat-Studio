@@ -11,6 +11,7 @@ public class BossCharge : IBoss
     public void Enter(Boss Bboss)
     {
         this.Bboss = Bboss;
+        Debug.Log("charge atk");
     }
 
     public void Execute()
@@ -34,7 +35,7 @@ public class BossCharge : IBoss
         ChargeTimer += Time.deltaTime;
         if (ChargeTimer >= ChargeCd)
         {
-            //Bboss.anim.SetTrigger("ChrgAtk"); // we dont have this animation yet.
+            Bboss.anim.SetTrigger("Charge");
             Debug.Log("charged attack deployed");
             Bboss.ChangeState(new BossIdle());
         }

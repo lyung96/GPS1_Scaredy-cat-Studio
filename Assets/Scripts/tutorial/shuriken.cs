@@ -62,7 +62,7 @@ public class shuriken : MonoBehaviour
                         MovePopUpInstructions.dash = false;
                         MovePopUpInstructions.right = false;
                         MovePopUpInstructions.left = false;
-                        Debug.Log("grap off");
+                        //Debug.Log("grap off");
                         Invoke("GrapPopoff", 0.5f);
                     }
 

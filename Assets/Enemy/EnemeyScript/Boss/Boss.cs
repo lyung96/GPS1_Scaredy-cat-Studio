@@ -16,10 +16,15 @@ public class Boss : MonoBehaviour
     public int health;
     public SpriteRenderer sprite;
     private ParticleSystem bloodEffect;
-    [SerializeField]
-    private EdgeCollider2D SwordCollider;
+    [SerializeField] private BoxCollider2D JurouNormalAtk;
+    [SerializeField] private BoxCollider2D JurouChargedAtk;
+    [SerializeField] private EdgeCollider2D TenguNormalAtk;
+    [SerializeField] private BoxCollider2D TenguChargedAtk;
+    [SerializeField]private PlayerController player;
+
+    public int ChargePoints;
+
     public bool PlayerAttacking;
-    
     private float DeathTimer;
     [SerializeField]
     private float DeathCd;
@@ -40,16 +45,18 @@ public class Boss : MonoBehaviour
     {
         get
         {
-            return health <= 15;
+            return health <= 1;
         }
     }
 
-
+    public bool JurouPH;
+    public bool TenguPH;
     void Start()
     {
         ChangeState(new BossIdle());
         anim = gameObject.GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        
     }
     
     void Update()
@@ -85,6 +92,7 @@ public class Boss : MonoBehaviour
     //move the boss to the player direction
     public void BossMove()
     {
+
         if (!Attacking)
         {
             transform.position = Vector3.SmoothDamp(transform.position, Target.position, ref Velocity, Speed * Time.deltaTime  );
@@ -100,38 +108,91 @@ public class Boss : MonoBehaviour
         //plus velocity does not act like speed, velocity builds up from speed. conclusion is , its my physics error.
         //Debug.Log("velocity x is :" + rb.velocity.x);
         distance = transform.position.x - Target.position.x;
-        if (distance >= 0.01f)
+        if (JurouPH)
         {
-            transform.localScale = new Vector3(-0.3f, 0.3f, 0f);
+            if (distance >= 0.01f)
+            {
+                transform.localScale = new Vector3(-5f, 5f, 0f);
+            }
+            else if (distance <= 0.01f)
+            {
+                transform.localScale = new Vector3(5f, 5f, 0f);
+            }
         }
-        else if (distance <= 0.01f)
+        else
         {
-            transform.localScale = new Vector3(0.3f, 0.3f, 0f);
+            if (distance >= 0.01f)
+            {
+                transform.localScale = new Vector3(-0.3f, 0.3f, 0f);
+            }
+            else if (distance <= 0.01f)
+            {
+                transform.localScale = new Vector3(0.3f, 0.3f, 0f);
+            }
         }
+
+
     }
     //recieve damage from player
     public IEnumerator BossTakeDamage(int dmg)
     {
         health += dmg;
-        if (dmg < 0)
+        if (JurouLvlOne) //are u jurou in lvl 1?
         {
-            StartCoroutine(FlashRed());
-        }
-        if (!IsDead)
-        {
-            anim.SetTrigger("dmg");
+            //yes i am
+            if (JurouLvlOneHp) //is ur hp 15 and below?
+            {
+                //yes
+                //give the most damage here
+                anim.SetTrigger("Charge");
+                player.gameObject.GetComponent<PlayerController>().CalHp(-100); //kill him
+            }
+            else
+            {
+                if (dmg < 0)
+                {
+                    StartCoroutine(FlashRed());
+                }
+                if (!IsDead)
+                {
+                    anim.SetTrigger("dmg");
+                }
+                else
+                {
+                    anim.SetTrigger("dead"); //if it doesnt play, check ur update. there should be a check to see if the boss is dead
+                    shuriken.enemydefeated = true;
+
+                    //var go = Instantiate(expPrefab, transform.position + new Vector3(1, 5), Quaternion.identity);
+                    //go.GetComponent<FollowPlyr>().Target = expTarget.transform;
+                    //needs to instantiate the mask i believe, so im leaving this here once its confirm
+
+                    yield return null;
+                }
+            }
         }
         else
         {
-            anim.SetTrigger("dead"); //if it doesnt play, check ur update. there should be a check to see if the boss is dead
-            shuriken.enemydefeated = true;
+            if (dmg < 0)
+            {
+                StartCoroutine(FlashRed());
+            }
+            if (!IsDead)
+            {
+                anim.SetTrigger("dmg");
+            }
+            else
+            {
+                anim.SetTrigger("dead"); //if it doesnt play, check ur update. there should be a check to see if the boss is dead
+                shuriken.enemydefeated = true;
 
-            //var go = Instantiate(expPrefab, transform.position + new Vector3(1, 5), Quaternion.identity);
-            //go.GetComponent<FollowPlyr>().Target = expTarget.transform;
-            //needs to instantiate the mask i believe, so im leaving this here once its confirm
+                //var go = Instantiate(expPrefab, transform.position + new Vector3(1, 5), Quaternion.identity);
+                //go.GetComponent<FollowPlyr>().Target = expTarget.transform;
+                //needs to instantiate the mask i believe, so im leaving this here once its confirm
 
-            yield return null;
+                yield return null;
+            }
         }
+
     }
     //flash red when receive damage
     public IEnumerator FlashRed()
@@ -149,24 +210,30 @@ public class Boss : MonoBehaviour
     public void TNormalAtkT()
     {
         //enable the spear collider here, then put it in the animation event
+        TenguNormalAtk.enabled = true;
     }
     //normal atk collider 
     //false
     public void TNormalAtkF()
     {
         //enable the spear collider here, then put it in the animation event
+        TenguNormalAtk.enabled = false;
+
     }
     //charge atk collider
     //true
     public void TChargeAtkT()
     {
         //enable the spear collider here, then put it in the animation event
+        TenguChargedAtk.enabled = true;
     }
     //charge atk collider
     //false
     public void TChargeAtkF()
     {
         //enable the spear collider here, then put it in the animation event
+        TenguChargedAtk.enabled = false;
+
     }
 
     //Yurei
@@ -201,26 +268,33 @@ public class Boss : MonoBehaviour
     public void JNormalAtkT()
     {
         //enable the Claw collider here, then put it in the animation event
+        JurouNormalAtk.enabled = true;
     }
     //normal atk collider 
     //false
     public void JNormalAtkF()
     {
         //enable the Claw collider here, then put it in the animation event
+        JurouNormalAtk.enabled = false;
+
     }
     //charge atk collider
     //true
     public void JChargeAtkT()
     {
         //enable the Claw collider here, then put it in the animation event
+        JurouChargedAtk.enabled = true;
+
     }
     //charge atk collider
     //false
     public void JChargeAtkF()
     {
         //enable the Claw collider here, then put it in the animation event
+        JurouChargedAtk.enabled = false;
+
     }
-    
+
 
 
     //reduce player hp
@@ -229,80 +303,106 @@ public class Boss : MonoBehaviour
         //for now the player cant receive damage cuz we got no swordcollider aka the weapon collider in the animation. waiting for artist
         if (other.gameObject.CompareTag("Player"))
         {
-            //Tengu
-            //normal damage
-            //if (normal attack collider)
+            ////Tengu
+            if (TenguPH)
+            {
+                if (other is BoxCollider2D)
+                {
+
+                    //normal damage
+                    if (TenguNormalAtk.enabled)
+                    {
+                        //damage the player by small hp (-1)
+                        other.gameObject.GetComponent<PlayerController>().CalHp(-1);
+                        Debug.Log("normal 1");
+                    }
+                    //charge damage
+                    if (TenguChargedAtk.enabled)
+                    {
+                        //damage the player by big hp (-10)
+                        other.gameObject.GetComponent<PlayerController>().CalHp(-2);
+                    }
+                }
+            }
+
+
+
+
+            ////Yurei
+            //if (other is BoxCollider2D)
             //{
-            //    //damage the player by small hp (-1)
-            //    other.gameObject.GetComponent<PlayerController>().CalHp(-1);
-            //}
-            ////charge damage
-            //if (charge attack collider)
-            //{
-            //    //damage the player by big hp (-10)
-            //    other.gameObject.GetComponent<PlayerController>().CalHp(-10);
+            //    ////normal damage
+            //    //if (normal attack collider)
+            //    //{
+            //    //    //damage the player by small hp (-1)
+            //    //    other.gameObject.GetComponent<PlayerController>().CalHp(-1);
+            //    //}
+            //    ////charge damage
+            //    //if (charge attack collider)
+            //    //{
+            //    //    //damage the player by big hp (-10)
+            //    //    other.gameObject.GetComponent<PlayerController>().CalHp(-10);
+            //    //}
             //}
 
-            //Yurei
-            //normal damage
-            //if (normal attack collider)
-            //{
-            //    //damage the player by small hp (-1)
-            //    other.gameObject.GetComponent<PlayerController>().CalHp(-1);
-            //}
-            ////charge damage
-            //if (charge attack collider)
-            //{
-            //    //damage the player by big hp (-10)
-            //    other.gameObject.GetComponent<PlayerController>().CalHp(-10);
-            //}
+
 
             //Jurou
-            //normal damage
-            if (SwordCollider.enabled) 
+            if (JurouPH)
             {
-                if (JurouLvlOne) //are u jurou in lvl 1?
-                {//yes i am
-                    if (JurouLvlOneHp) //is ur hp 15 and below?
-                    {//yes
-                        //give the most damage here
-                        other.gameObject.GetComponent<PlayerController>().CalHp(-100); //kill him
+                if (other is BoxCollider2D)
+                {
+                    //normal damage
+                    if (JurouNormalAtk.enabled) //change to swordcollider later
+                    {
+                        if (JurouLvlOne) //are u jurou in lvl 1?
+                        {//yes i am
+                            if (JurouLvlOneHp) //is ur hp 15 and below?
+                            {//yes
+                             //give the most damage here
+                                other.gameObject.GetComponent<PlayerController>().CalHp(-100); //kill him
+                            }
+                            else
+                            {//no
+                             //normal damage here
+                                other.gameObject.GetComponent<PlayerController>().CalHp(-1); //damage him
+                            }
+                        }
+                        else
+                        {//no im not 
+                         //normal damage here
+                            other.gameObject.GetComponent<PlayerController>().CalHp(-1); //damage him
+                        }
                     }
-                    else
-                    {//no
-                        //normal damage here
-                        other.gameObject.GetComponent<PlayerController>().CalHp(-1); //damage him
+                    //charge damage
+                    if (JurouChargedAtk.enabled)//of course this cant be the same swordcollider, later change it like in the manual below
+                    {
+                        if (JurouLvlOne) //are u jurou in lvl 1?
+                        {//yes i am
+                            if (JurouLvlOneHp) //is ur hp 15 and below?
+                            {//yes
+                             //give the most damage here
+                                other.gameObject.GetComponent<PlayerController>().CalHp(-100); //kill him
+                            }
+                            else
+                            {//no
+                             //normal damage here
+                                other.gameObject.GetComponent<PlayerController>().CalHp(-2); //damage him
+                            }
+                        }
+                        else
+                        {//no im not 
+                         //normal damage here
+                            other.gameObject.GetComponent<PlayerController>().CalHp(-2); //damage him
+                        }
                     }
-                }
-                else
-                {//no im not 
-                    //normal damage here
-                    other.gameObject.GetComponent<PlayerController>().CalHp(-1); //damage him
+
                 }
             }
-            //charge damage
-            if (SwordCollider.enabled)//of course this cant be the same swordcollider, later change it like in the manual below
-            {
-                if (JurouLvlOne) //are u jurou in lvl 1?
-                {//yes i am
-                    if (JurouLvlOneHp) //is ur hp 15 and below?
-                    {//yes
-                        //give the most damage here
-                        other.gameObject.GetComponent<PlayerController>().CalHp(-100); //kill him
-                    }
-                    else
-                    {//no
-                        //normal damage here
-                        other.gameObject.GetComponent<PlayerController>().CalHp(-1); //damage him
-                    }
-                }
-                else
-                {//no im not 
-                    //normal damage here
-                    other.gameObject.GetComponent<PlayerController>().CalHp(-1); //damage him
-                }
-            }
-            
+
+
+
+
             //if claw enable (yurei)
             //do something
             //dmg player

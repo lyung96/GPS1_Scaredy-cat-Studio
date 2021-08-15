@@ -6,7 +6,7 @@ public class BossNormAtk : IBoss
 {
     private Boss Bboss;
     private float AttackTimer;
-    private float AttackCd = 5;
+    private float AttackCd = 2;
     private bool Attacked = true;
     private int ChargePoints;
     private int ChargePts = 5;
@@ -40,10 +40,11 @@ public class BossNormAtk : IBoss
         {
             Bboss.anim.SetTrigger("Eattack");
             AttackTimer = 0;
-            ChargePoints++;
-            if (ChargePoints >= ChargePts)
+            Bboss.ChargePoints++;
+            Debug.Log("points :" + Bboss.ChargePoints);
+            if (Bboss.ChargePoints >= 3)
             {
-                ChargePoints = 0;
+                Bboss.ChargePoints = 0;
                 Bboss.ChangeState(new BossCharge());
             }
             else
