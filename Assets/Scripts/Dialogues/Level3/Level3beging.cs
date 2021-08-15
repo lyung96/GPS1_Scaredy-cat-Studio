@@ -18,6 +18,7 @@ public class Level3beging : MonoBehaviour
 
     private void Start()
     {
+        chestopener1.obtainedkey = true;
         startsequence = false;
         StartDialogue = true;
         skip = false;

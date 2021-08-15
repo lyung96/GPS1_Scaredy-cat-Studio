@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -787,6 +787,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &174600944 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5407131999820560789, guid: a0be6aedf6739c148a7b295872fa0d1d, type: 3}
+  m_PrefabInstance: {fileID: 1933441298}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &182012244 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6526232270112082244, guid: 2393a7abd6a50694a85538ededd6ec7a, type: 3}
@@ -1820,7 +1825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8007634986858874007, guid: 81679ef65932bbe438bff364b74ab278, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8007634986858874007, guid: 81679ef65932bbe438bff364b74ab278, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2732,7 +2737,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2890085270688256727}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: goddessmessage, Assembly-CSharp
         m_MethodName: stopsentence
         m_Mode: 1
@@ -3951,11 +3956,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c38e879727feded43af817d161d2a75e, type: 3}
---- !u!1 &949144438 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9015307490020201161, guid: cd9d2579568471a4bbdedf3b0b3c3c6f, type: 3}
-  m_PrefabInstance: {fileID: 1876615459}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &989773325
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6163,6 +6163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1432453439}
+  - component: {fileID: 1432453440}
   m_Layer: 5
   m_Name: goddess
   m_TagString: Untagged
@@ -6190,6 +6191,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1432453440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432453438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81dc45d6dcbf5d745ad90bb179fa9665, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DialogueText: {fileID: 306812377}
+  NameText: {fileID: 1419770985}
+  Sentences:
+  - "I\u2019m here to return the mask and serve my time in Yomi"
+  - 'You have proven yourself a worthy ally and a big help, in return I grant you
+    a second chance in life. '
+  - "Thank you for this honor, I won\u2019t let my second chance of life go to waste. "
+  - 'Go back and serve your true purpose.  '
+  Dialoguespeed: 0.03
+  index: 0
+  dialog: {fileID: 756236015}
+  goddessicon: {fileID: 153111272}
+  mc: {fileID: 543672541}
+  upgrade: {fileID: 0}
+  DialogueAnimator: {fileID: 756236016}
+  currentsentence: 
 --- !u!4 &1447417585 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5253479372554876375, guid: 79ca33bb6655a0944a674beb2da5c782, type: 3}
@@ -6621,7 +6650,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1497153813
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8411,6 +8440,63 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c38e879727feded43af817d161d2a75e, type: 3}
+--- !u!1001 &1933441298
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 3974929150485897201}
+    m_Modifications:
+    - target: {fileID: 5407131999820560789, guid: a0be6aedf6739c148a7b295872fa0d1d, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407131999820560789, guid: a0be6aedf6739c148a7b295872fa0d1d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -657.3848
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407131999820560789, guid: a0be6aedf6739c148a7b295872fa0d1d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -374.0251
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407131999820560789, guid: a0be6aedf6739c148a7b295872fa0d1d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.768539
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407131999820560789, guid: a0be6aedf6739c148a7b295872fa0d1d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407131999820560789, guid: a0be6aedf6739c148a7b295872fa0d1d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407131999820560789, guid: a0be6aedf6739c148a7b295872fa0d1d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407131999820560789, guid: a0be6aedf6739c148a7b295872fa0d1d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407131999820560789, guid: a0be6aedf6739c148a7b295872fa0d1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407131999820560789, guid: a0be6aedf6739c148a7b295872fa0d1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407131999820560789, guid: a0be6aedf6739c148a7b295872fa0d1d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5407131999820560790, guid: a0be6aedf6739c148a7b295872fa0d1d, type: 3}
+      propertyPath: m_Name
+      value: DialogueLevel3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a0be6aedf6739c148a7b295872fa0d1d, type: 3}
 --- !u!1001 &1950762872
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9810,7 +9896,7 @@ Transform:
   - {fileID: 8055879223439833956}
   - {fileID: 368076075736900748}
   m_Father: {fileID: 3974929150485897201}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &368076075927499331
 GameObject:
@@ -12072,8 +12158,6 @@ GameObject:
   - component: {fileID: 2890085270688256723}
   - component: {fileID: 2890085270688256720}
   - component: {fileID: 2890085270688256721}
-  - component: {fileID: 2890085270688256727}
-  - component: {fileID: 2890085270688256728}
   m_Layer: 5
   m_Name: DialogManager
   m_TagString: Untagged
@@ -12081,72 +12165,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2890085270688256727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2890085270688256726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce520925874c39e4ba0f67256ea1957a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DialogueText: {fileID: 306812377}
-  NameText: {fileID: 1419770985}
-  Sentences:
-  - "I\u2019m here, tell me why I\u2019m in Yomi? "
-  - "I\u2019m Izanami no Mikoto, the goddess of death. You\u2019re killed and sent
-    to Yomi."
-  - "I\u2019ve sensed that the power that killed you was related to me. "
-  - 'Related to you? '
-  - 'The power that killed you was by the power of a Hannya mask, a dark mask that
-    was stolen from me by a human and only a Kitsune mask can stop him and his power. '
-  - Do you have the Kitsune mask?
-  - Sadly, it was taken by him too
-  - need your help to recover the mask for me.
-  - "Ok, but I can\u2019t stop an Oni."
-  - 'Here is a mask fragment from the Kitsune mask to give you power and help you
-    along the journey. '
-  - "I\u2019ll send you back to the Land of living. "
-  Dialoguespeed: 0.02
-  index: 0
-  dialog: {fileID: 756236015}
-  goddessicon: {fileID: 153111272}
-  mc: {fileID: 543672541}
-  upgrade: {fileID: 949144438}
-  DialogueAnimator: {fileID: 756236016}
-  currentsentence: 
---- !u!114 &2890085270688256728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2890085270688256726}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee27438c131f6e740be4185ded65e137, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DialogueText: {fileID: 407531226}
-  NameText: {fileID: 1975810777}
-  Sentences:
-  - 'Where am I? '
-  - 'You are in Yomi. '
-  - Hell?
-  - "No, it\u2019s the land of the dead. "
-  - 'Why am I here? '
-  - "Take the power on top and come find me and I\u2019ll tell you the rest. "
-  Dialoguespeed: 0.03
-  index: 0
-  dialog: {fileID: 182012244}
-  goddess: {fileID: 2062944763}
-  mc: {fileID: 224620486}
-  DialogueAnimator: {fileID: 182012245}
-  cameraanim: {fileID: 1978678735445303912}
-  currentsentence: 
 --- !u!4 &3031933632094536578
 Transform:
   m_ObjectHideFlags: 0
@@ -13687,6 +13705,7 @@ RectTransform:
   - {fileID: 3974929151572109562}
   - {fileID: 24651999469576926}
   - {fileID: 2890085270688256722}
+  - {fileID: 174600944}
   - {fileID: 368076075927499330}
   - {fileID: 152906216}
   m_Father: {fileID: 0}
@@ -20239,7 +20258,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7042599794515825875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20757,7 +20776,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &7042599794903214343
 MonoBehaviour:
   m_ObjectHideFlags: 0
