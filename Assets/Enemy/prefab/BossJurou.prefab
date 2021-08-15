@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 6799583988231422096}
   - component: {fileID: 6799583988231422097}
   - component: {fileID: 6799583988231422111}
-  - component: {fileID: 6799583988231422109}
+  - component: {fileID: 5330268918465003267}
   m_Layer: 8
   m_Name: BossJurou
   m_TagString: Boss
@@ -241,7 +241,8 @@ MonoBehaviour:
   DeathCd: 3
   JurouLvlOne: 1
   JurouPH: 0
---- !u!114 &6799583988231422109
+  TenguPH: 0
+--- !u!114 &5330268918465003267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,12 +251,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6799583988231422100}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a26e87888b6064784a932c895dc01e, type: 3}
+  m_Script: {fileID: 11500000, guid: ab4d61da4118c2946ba9510f6bfd9190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  box: {fileID: 0}
-  circle: {fileID: 0}
-  edge: {fileID: 0}
+  Bboss: {fileID: 0}
+  ActivatedBoss: 0
 --- !u!1 &8934680577406263400
 GameObject:
   m_ObjectHideFlags: 0

@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 8184230797975157532}
   - component: {fileID: 8184230797975157533}
   - component: {fileID: 8184230797975157523}
-  - component: {fileID: 8184230797975157521}
+  - component: {fileID: 5942269268537717301}
   m_Layer: 8
   m_Name: BossTengu
   m_TagString: Boss
@@ -297,7 +297,7 @@ MonoBehaviour:
   JurouLvlOne: 0
   JurouPH: 0
   TenguPH: 0
---- !u!114 &8184230797975157521
+--- !u!114 &5942269268537717301
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -306,9 +306,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8184230797975157528}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5a26e87888b6064784a932c895dc01e, type: 3}
+  m_Script: {fileID: 11500000, guid: 0759375f1faeac84584af55232278dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   box: {fileID: 0}
   circle: {fileID: 0}
   edge: {fileID: 0}
+  activate: {fileID: 0}
