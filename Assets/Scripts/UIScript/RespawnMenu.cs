@@ -14,6 +14,7 @@ public class RespawnMenu : MonoBehaviour
     private string lastScene;
     private string currScene;
     public bool panelActive = false;
+    public static bool nextLvl;
 
     private void Awake()
     {
@@ -74,14 +75,23 @@ public class RespawnMenu : MonoBehaviour
 
     public void RespawnButton()
     {
-        StartCoroutine("Respawn");
-        respawnPanel.SetActive(false);
-        DialogBegining.dialogcounter +=1;
+        if (SceneManager.GetActiveScene().name == "GameLevel1" && nextLvl == true)
+        {
+            FindObjectOfType<UpgradeMenu>().NextLevelButton();
+            nextLvl = false;
+            StartCoroutine("Respawn");
+            respawnPanel.SetActive(false);
+        }
+        else
+        {
+            StartCoroutine("Respawn");
+            respawnPanel.SetActive(false);
+            DialogBegining.dialogcounter += 1;
+        }
     }
 
     public IEnumerator Respawn()
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Animator animator = player.GetComponent<Animator>();
         animator.SetTrigger("respawn");
         PlayerController.isDead = false;
