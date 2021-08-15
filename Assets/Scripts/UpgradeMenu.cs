@@ -213,4 +213,9 @@ public class UpgradeMenu : MonoBehaviour
             player = GameObject.Find("Player");
         }
     }
+
+    public void Setupgradepaneltrue()
+    {
+        UpgradeMenuUI.SetActive(true);
+    }
 }

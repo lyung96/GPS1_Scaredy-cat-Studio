@@ -13,6 +13,7 @@ public class goddessmessage : MonoBehaviour
     public Animator DialogueAnimator;
     public static bool StartDialogue = true, endDialogue = true, firstlineup = false, iscutscene = true, quitcutscene = false, skip = false;
     bool mctrue = true, goddesstrue = false;
+    UpgradeMenu upgradepanel;
 
    
     private void Update()
@@ -123,14 +124,15 @@ public class goddessmessage : MonoBehaviour
             DialogueAnimator.SetTrigger("exit");
             index = 0;
             endDialogue = true;
-            Destroy(dialog);
+            dialog.SetActive(false);
             Invoke("setupgrade", 1f);
         }
     }
 
     void setupgrade()
     {
-        upgrade.SetActive(true);
+        upgradepanel = FindObjectOfType<UpgradeMenu>().GetComponent<UpgradeMenu>();
+        upgradepanel.Setupgradepaneltrue();
     }
     public void stopsentence()
     {
@@ -143,7 +145,7 @@ public class goddessmessage : MonoBehaviour
                 DialogueAnimator.SetTrigger("exit");
                 index = 0;
                 endDialogue = true;
-                Destroy(dialog);
+                dialog.SetActive(false);
                 //skip = false;
         }
 
