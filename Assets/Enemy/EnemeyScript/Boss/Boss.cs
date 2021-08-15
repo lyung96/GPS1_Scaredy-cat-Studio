@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Boss : MonoBehaviour
 {
+    public static bool killmc=false;
     public IBoss currentState;
     public Transform Target;
     public float Speed ;
@@ -13,7 +14,7 @@ public class Boss : MonoBehaviour
     public bool Attacking { get; set; }
     private float distance;
     [SerializeField]
-    public int health;
+    public static int health=5;
     public SpriteRenderer sprite;
     private ParticleSystem bloodEffect;
     [SerializeField] private BoxCollider2D JurouNormalAtk;
@@ -361,6 +362,8 @@ public class Boss : MonoBehaviour
                             {//yes
                              //give the most damage here
                                 other.gameObject.GetComponent<PlayerController>().CalHp(-100); //kill him
+                                killmc = true;
+                                
                             }
                             else
                             {//no

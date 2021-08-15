@@ -38,22 +38,29 @@ public class mothertrigger : MonoBehaviour
 
     }
 
-
+    private void Start()
+    {
+    }
     private void Update()
     {
-        if (triggerrange)
-        {
-            icon.SetActive(true);
-        }
-        else if (inrange)
-        {
-            icon.SetActive(true);
 
-        }
-        else if (triggerrange == false && inrange == false)
+        if (Boss.health<=0)
         {
-            icon.SetActive(false);
+            if (triggerrange)
+            {
+                icon.SetActive(true);
+            }
+            else if (inrange)
+            {
+                icon.SetActive(true);
+
+            }
+            else if (triggerrange == false && inrange == false)
+            {
+                icon.SetActive(false);
+            }
         }
+        
 
     }
 }

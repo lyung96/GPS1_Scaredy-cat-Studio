@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
         //    enddialogue = true;
         //}
 
-        if (PauseMenu.GamePause == false && DialogKey.endDialogue == true && DialogBegining.endDialogue == true && UpgradeMenu.uiActive == false && obtainedkey.endDialogue && isDead == false && Level2beginingdialogue.endDialogue==true && goddessmessage.endDialogue==true && obtainedkey1.endDialogue)
+        if (PauseMenu.GamePause == false && DialogKey.endDialogue == true && DialogBegining.endDialogue == true && UpgradeMenu.uiActive == false && obtainedkey.endDialogue && isDead == false && Level2beginingdialogue.endDialogue == true && goddessmessage.endDialogue == true && obtainedkey1.endDialogue && mothermessage.endDialogue && finaldialogue.endDialogue)
         { 
             PlayerControl(); 
         }

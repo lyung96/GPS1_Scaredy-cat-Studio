@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class mothermessage : MonoBehaviour
+public class boss1dialogue : MonoBehaviour
 {
     public TextMeshProUGUI DialogueText;
     public TextMeshProUGUI NameText;
@@ -15,71 +15,55 @@ public class mothermessage : MonoBehaviour
     public static bool StartDialogue = true, endDialogue = true, firstlineup = false, iscutscene = true, quitcutscene = false, skip = false;
     bool mctrue = true, goddesstrue = false;
     UpgradeMenu upgradepanel;
+   
 
-    private void Start()
-    {
 
-    }
     private void Update()
     {
-     
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Boss.killmc == true)
         {
-            if (mothertrigger.inrange)
+            if (StartDialogue)
             {
-                if (Boss.health<=0)
+                if (skip == false)
                 {
-                    if (StartDialogue)
-                    {
-                        if (skip == false)
-                        {
-                            endDialogue = false;
-                            DialogueText.text = string.Empty;
-                            DialogueAnimator.SetTrigger("enter");
-                            StartCoroutine(WriteSentence());
-                            StartDialogue = false;
-                            mctrue = false;
-                            goddesstrue = true;
-                        }
-                    }
-                    else
-                    {
-                        //DialogueAnimator.SetTrigger("enter");
-                        nextSentence();
-                    }
-
-                    if (index % 2 == 0)
-                    {
-                        Debug.Log("Index246");
-                        mctrue = true;
-                        goddesstrue = false;
-                        setmcactive();
-                        NameText.text = "Yuji";
-                        if (index == 8)
-                        {
-                            NameText.text = "Shinji";
-                        }
-                    }
-                    else
-                    {
-                        Debug.Log("Index135");
-                        mctrue = false;
-                        goddesstrue = true;
-                        setgoddessactive();
-                        NameText.text = "Women";
-                        if (index == 5 || index == 7)
-                        {
-                            NameText.text = "Mom";
-                        }
-                    }
+                    endDialogue = false;
+                    DialogueText.text = string.Empty;
+                    DialogueAnimator.SetTrigger("enter");
+                    StartCoroutine(WriteSentence());
+                    StartDialogue = false;
+                    mctrue = false;
+                    goddesstrue = true;
                 }
-
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    DialogueAnimator.SetTrigger("enter");
+                    nextSentence();
+                }
+            }
+            if (index == 0 || index == 3 || index == 5 || index == 8)
+            {
+                Debug.Log("Index246");
+                mctrue = true;
+                goddesstrue = false;
+                setmcactive();
+                NameText.text = "Yuji";
+            }
+            else
+            {
+                Debug.Log("Index135");
+                mctrue = false;
+                goddesstrue = true;
+                setgoddessactive();
+                NameText.text = "Izanami no Mikoto";
             }
         }
-               
 
 
     }
+
 
     public void setmcactive()
     {
@@ -151,7 +135,6 @@ public class mothermessage : MonoBehaviour
         upgradepanel = FindObjectOfType<UpgradeMenu>().GetComponent<UpgradeMenu>();
         upgradepanel.Setupgradepaneltrue();
     }
-
     public void stopsentence()
     {
         skip = true;
@@ -163,10 +146,11 @@ public class mothermessage : MonoBehaviour
             DialogueAnimator.SetTrigger("exit");
             index = 0;
             endDialogue = true;
-            Destroy(dialog);
+            dialog.SetActive(false);
             //skip = false;
         }
 
     }
+
 
 }

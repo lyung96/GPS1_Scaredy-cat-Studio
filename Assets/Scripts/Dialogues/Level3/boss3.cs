@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class mothermessage : MonoBehaviour
+public class boss3 : MonoBehaviour
 {
     public TextMeshProUGUI DialogueText;
     public TextMeshProUGUI NameText;
     public string[] Sentences;
     public float Dialoguespeed;
     public int index = 0;
-    public GameObject dialog, goddessicon, mc, upgrade;
+    public GameObject dialog, goddessicon, mc;
     public Animator DialogueAnimator;
     public static bool StartDialogue = true, endDialogue = true, firstlineup = false, iscutscene = true, quitcutscene = false, skip = false;
     bool mctrue = true, goddesstrue = false;
-    UpgradeMenu upgradepanel;
 
     private void Start()
     {
@@ -22,33 +21,29 @@ public class mothermessage : MonoBehaviour
     }
     private void Update()
     {
-     
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (mothertrigger.inrange)
-            {
-                if (Boss.health<=0)
-                {
-                    if (StartDialogue)
-                    {
-                        if (skip == false)
-                        {
-                            endDialogue = false;
-                            DialogueText.text = string.Empty;
-                            DialogueAnimator.SetTrigger("enter");
-                            StartCoroutine(WriteSentence());
-                            StartDialogue = false;
-                            mctrue = false;
-                            goddesstrue = true;
-                        }
-                    }
-                    else
-                    {
-                        //DialogueAnimator.SetTrigger("enter");
-                        nextSentence();
-                    }
 
-                    if (index % 2 == 0)
+            if (lvl3bosscut.startdialogue)
+            {
+                if (StartDialogue)
+                {
+                    if (skip == false)
+                    {
+                        endDialogue = false;
+                        DialogueText.text = string.Empty;
+                        DialogueAnimator.SetTrigger("enter");
+                        StartCoroutine(WriteSentence());
+                        StartDialogue = false;
+                        mctrue = false;
+                        goddesstrue = true;
+                    }
+                }
+                else
+                {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    //DialogueAnimator.SetTrigger("enter");
+                    nextSentence();
+                    if (index == 0)
                     {
                         Debug.Log("Index246");
                         mctrue = true;
@@ -60,7 +55,7 @@ public class mothermessage : MonoBehaviour
                             NameText.text = "Shinji";
                         }
                     }
-                    else
+                    else if (index == 1)
                     {
                         Debug.Log("Index135");
                         mctrue = false;
@@ -69,14 +64,17 @@ public class mothermessage : MonoBehaviour
                         NameText.text = "Women";
                         if (index == 5 || index == 7)
                         {
-                            NameText.text = "Mom";
+                            NameText.text = "Tengu";
                         }
                     }
                 }
 
+                
+
+
             }
         }
-               
+
 
 
     }
@@ -142,31 +140,9 @@ public class mothermessage : MonoBehaviour
             index = 0;
             endDialogue = true;
             dialog.SetActive(false);
-            Invoke("setupgrade", 1f);
+            lvl3bosscut.startdialogue = false;
         }
     }
 
-    void setupgrade()
-    {
-        upgradepanel = FindObjectOfType<UpgradeMenu>().GetComponent<UpgradeMenu>();
-        upgradepanel.Setupgradepaneltrue();
-    }
-
-    public void stopsentence()
-    {
-        skip = true;
-        Debug.Log("skip");
-        if (skip)
-        {
-
-            DialogueText.text = string.Empty;
-            DialogueAnimator.SetTrigger("exit");
-            index = 0;
-            endDialogue = true;
-            Destroy(dialog);
-            //skip = false;
-        }
-
-    }
 
 }
