@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class NextLevelTrigger : MonoBehaviour
 {
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
             RespawnMenu.nextLvl = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            RespawnMenu.nextLvl = false;
         }
     }
 }
