@@ -10,10 +10,10 @@ public class obtainedkey1 : MonoBehaviour
     public float Dialoguespeed;
     private int index = 0;
     private bool finishedtext;
-    public GameObject dialog, maskpopup;
+    public GameObject dialog, maskpopup, shieldpopup;
     public Animator DialogueAnimator;
     public static bool StartDialogue = true, firstlineup = false;
-    public static  bool endDialogue = true, skip=false, maskpop=false;
+    public static  bool endDialogue = true, skip=false, maskpop=false, shieldpop=false;
     private float texttimer;
     private float textCounter = 0.005f;
 
@@ -56,6 +56,11 @@ public class obtainedkey1 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             maskpopup.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            shieldpopup.SetActive(false);
         }
     }
 
@@ -105,6 +110,14 @@ public class obtainedkey1 : MonoBehaviour
             {
                 maskpop = true;
                 maskpopup.SetActive(true);
+                if (maskpop==true)
+                {
+                    if (shieldpop==false)
+                    {
+                        shieldpop = true;
+                        shieldpopup.SetActive(true);
+                    }
+                }
             }
            
 

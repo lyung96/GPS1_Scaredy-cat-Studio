@@ -133,15 +133,20 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerControl()
     {
+        
         if (Input.GetKey(KeyCode.Tab) && currScene != "GameLevel1")
         {
-            if (isBlocking == false)
+            if (chestopener1.obtainedkey)
             {
-                anim.SetTrigger("blocking");
-                anim.SetBool("isBlocking", true);
-                isBlocking = true;
+                if (isBlocking == false)
+                {
+                    anim.SetTrigger("blocking");
+                    anim.SetBool("isBlocking", true);
+                    isBlocking = true;
+                }
+                isBlock = true;
             }
-            isBlock = true;
+            
         }
         else if (Input.GetKey(KeyCode.A) && (isBlock == false))
         {
