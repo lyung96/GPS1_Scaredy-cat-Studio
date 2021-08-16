@@ -47,8 +47,8 @@ public class RespawnMenu : MonoBehaviour
             StartCoroutine("Respawn");
         }
 
-        if (Boss.killmc==false)
-        {
+        //if (Boss.killmc==false)
+       //{
             if (playerController != null)
             {
                 if ((playerController.currHealth <= 0) && (panelActive == false))
@@ -60,7 +60,7 @@ public class RespawnMenu : MonoBehaviour
                 {
                     panelActive = false;
                 }
-            }
+            //}
             else if (SceneManager.GetActiveScene().name != "Menu")
             {
                 UpdateRef();
