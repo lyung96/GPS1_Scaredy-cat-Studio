@@ -33,9 +33,9 @@ public class level4bossdefeat : MonoBehaviour
     {
         if (startsequence == false)
         {
-            //if (Boss.health==0)
-            //{
-                    if (StartDialogue)
+            if (Boss.health == 0)
+            {
+                if (StartDialogue)
                     {
                         if (skip == false)
                         {
@@ -91,7 +91,7 @@ public class level4bossdefeat : MonoBehaviour
 
             }
 
-            //}
+            }
         }
 
     }

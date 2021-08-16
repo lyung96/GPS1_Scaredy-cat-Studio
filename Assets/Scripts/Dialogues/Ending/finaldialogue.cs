@@ -14,6 +14,7 @@ public class finaldialogue : MonoBehaviour
     public Animator DialogueAnimator;
     public static bool StartDialogue = true, endDialogue = true, firstlineup = false, iscutscene = true, quitcutscene = false, skip = false;
     bool mctrue = true, goddesstrue = false;
+    public GameObject credit;
 
 
     private void Update()
@@ -125,7 +126,9 @@ public class finaldialogue : MonoBehaviour
             index = 0;
             endDialogue = true;
             Destroy(dialog);
+            credit.SetActive(true);
             //Invoke("setupgrade", 1f);
+
         }
     }
 
