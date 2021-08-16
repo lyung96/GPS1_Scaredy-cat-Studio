@@ -21,11 +21,13 @@ public class level2barrier : MonoBehaviour
         {
             startdialogue = true;
             icon.SetActive(true);
+            barrierlvl2.startsequence = false;
         }
         else
         {
             startdialogue = false;
             icon.SetActive(false);
+            barrierlvl2.startsequence = true;
         }
 
     }

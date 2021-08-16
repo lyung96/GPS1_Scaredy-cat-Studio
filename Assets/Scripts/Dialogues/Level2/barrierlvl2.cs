@@ -23,32 +23,35 @@ public class barrierlvl2 : MonoBehaviour
 
     void Update()
     {
-       
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (level2barrier.startdialogue)
+       if (startsequence==false)
+       {
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                if (StartDialogue)
+                if (level2barrier.startdialogue)
                 {
-                    if (skip == false)
+                    if (StartDialogue)
                     {
-                        endDialogue = false;
-                        DialogueText.text = string.Empty;
-                        DialogueAnimator.SetTrigger("enter");
-                        StartCoroutine(WriteSentence());
-                        StartDialogue = false;
+                        if (skip == false)
+                        {
+                            endDialogue = false;
+                            DialogueText.text = string.Empty;
+                            DialogueAnimator.SetTrigger("enter");
+                            StartCoroutine(WriteSentence());
+                            StartDialogue = false;
+                        }
                     }
-                }
-                else
-                {
-                    nextSentence();
+                    else
+                    {
+                        nextSentence();
+                    }
+
+                    //Debug.Log("sentence index: " + index);
                 }
 
-                //Debug.Log("sentence index: " + index);
+
             }
-
-
         }
+        
 
 
     }
@@ -105,6 +108,7 @@ public class barrierlvl2 : MonoBehaviour
             index = 0;
             StartDialogue = true;
             endDialogue = true;
+            startsequence = true;
         }
     }
 
