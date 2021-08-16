@@ -61,7 +61,7 @@ public class boss3 : MonoBehaviour
                         mctrue = false;
                         goddesstrue = true;
                         setgoddessactive();
-                        NameText.text = "Women";
+                        NameText.text = "Tengu";
                         if (index == 5 || index == 7)
                         {
                             NameText.text = "Tengu";

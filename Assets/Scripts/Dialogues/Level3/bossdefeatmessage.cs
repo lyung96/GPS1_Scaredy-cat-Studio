@@ -35,6 +35,18 @@ public class bossdefeatmessage : MonoBehaviour
                     StartDialogue = false;
                     mctrue = false;
                     goddesstrue = true;
+                    if (index == 0)
+                    {
+                        Debug.Log("Index246");
+                        mctrue = false;
+                        goddesstrue = true;
+                        setgoddessactive();
+                        NameText.text = "Yuji";
+                        if (index == 8)
+                        {
+                            NameText.text = "Tengu";
+                        }
+                    }
                 }
             }
             else
@@ -43,18 +55,7 @@ public class bossdefeatmessage : MonoBehaviour
                 {
                     //DialogueAnimator.SetTrigger("enter");
                     nextSentence();
-                    if (index == 0)
-                    {
-                        Debug.Log("Index246");
-                        mctrue = true;
-                        goddesstrue = false;
-                        setmcactive();
-                        NameText.text = "Yuji";
-                        if (index == 8)
-                        {
-                            NameText.text = "Tengu";
-                        }
-                    }
+                    
                 }
 
 
