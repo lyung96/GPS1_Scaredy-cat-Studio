@@ -492,11 +492,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3031933633158504412, guid: 0f66da52405842249ad68634f97fe8e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 61.488544
+      value: -21.811455
       objectReference: {fileID: 0}
     - target: {fileID: 3031933633158504412, guid: 0f66da52405842249ad68634f97fe8e1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.293938
+      value: -0.20606351
       objectReference: {fileID: 0}
     - target: {fileID: 3031933633158504413, guid: 0f66da52405842249ad68634f97fe8e1, type: 3}
       propertyPath: m_Follow
@@ -504,11 +504,11 @@ PrefabInstance:
       objectReference: {fileID: 946208662}
     - target: {fileID: 3031933633830202335, guid: 0f66da52405842249ad68634f97fe8e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 8.920756
       objectReference: {fileID: 0}
     - target: {fileID: 3031933633830202335, guid: 0f66da52405842249ad68634f97fe8e1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.023670673
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f66da52405842249ad68634f97fe8e1, type: 3}
@@ -6973,11 +6973,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2872317023652444539, guid: 302cbdd961109b9428b9953082fce1d3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 57.4
+      value: -25.9
       objectReference: {fileID: 0}
     - target: {fileID: 2872317023652444539, guid: 302cbdd961109b9428b9953082fce1d3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 21.6
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: 2872317023652444539, guid: 302cbdd961109b9428b9953082fce1d3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11754,11 +11754,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 28.754368, y: 19.935644}
   m_EdgeRadius: 0
---- !u!1 &2078812273 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9015307490020201161, guid: cd9d2579568471a4bbdedf3b0b3c3c6f, type: 3}
-  m_PrefabInstance: {fileID: 706337250}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2087806927
 GameObject:
   m_ObjectHideFlags: 0
@@ -20100,9 +20095,9 @@ MonoBehaviour:
   Dialoguespeed: 0.03
   index: 0
   dialog: {fileID: 4580765223927252753}
-  goddessicon: {fileID: 4580765225943775424}
-  mc: {fileID: 4580765224114680099}
-  upgrade: {fileID: 2078812273}
+  goddessicon: {fileID: 4580765224114680099}
+  mc: {fileID: 4580765224530277142}
+  upgrade: {fileID: 0}
   DialogueAnimator: {fileID: 4580765223927252750}
   currentsentence: 
 --- !u!222 &4580765225721433524

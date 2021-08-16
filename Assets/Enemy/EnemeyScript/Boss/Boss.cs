@@ -147,6 +147,7 @@ public class Boss : MonoBehaviour
                 //give the most damage here
                 anim.SetTrigger("Charge");
                 player.gameObject.GetComponent<PlayerController>().CalHp(-100); //kill him
+                killmc = true;
             }
             else
             {
@@ -386,6 +387,7 @@ public class Boss : MonoBehaviour
                             {//yes
                              //give the most damage here
                                 other.gameObject.GetComponent<PlayerController>().CalHp(-100); //kill him
+                                killmc = true;
                             }
                             else
                             {//no

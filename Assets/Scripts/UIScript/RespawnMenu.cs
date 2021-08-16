@@ -47,22 +47,26 @@ public class RespawnMenu : MonoBehaviour
             StartCoroutine("Respawn");
         }
 
-        if (playerController != null)
+        if (Boss.killmc==false)
         {
-            if ((playerController.currHealth <= 0) && (panelActive == false))
+            if (playerController != null)
             {
-                respawnPanel.SetActive(true);
-                panelActive = true;
+                if ((playerController.currHealth <= 0) && (panelActive == false))
+                {
+                    respawnPanel.SetActive(true);
+                    panelActive = true;
+                }
+                else if (playerController.currHealth > 0)
+                {
+                    panelActive = false;
+                }
             }
-            else if(playerController.currHealth > 0)
+            else if (SceneManager.GetActiveScene().name != "Menu")
             {
-                panelActive = false;
+                UpdateRef();
             }
         }
-        else if(SceneManager.GetActiveScene().name != "Menu")
-        {
-            UpdateRef();
-        }
+        
     }
 
     public void ReturnTitle()
@@ -73,6 +77,10 @@ public class RespawnMenu : MonoBehaviour
         FindObjectOfType<AudioManager>().StopPlaying("LevelMusic");
     }
 
+    public void setrespawnactive()
+    {
+        respawnPanel.SetActive(true);
+    }
     public void RespawnButton()
     {
         if (SceneManager.GetActiveScene().name == "GameLevel1" && nextLvl == true)

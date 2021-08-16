@@ -15,6 +15,7 @@ public class boss1dialogue : MonoBehaviour
     public static bool StartDialogue = true, endDialogue = true, firstlineup = false, iscutscene = true, quitcutscene = false, skip = false;
     bool mctrue = true, goddesstrue = false;
     UpgradeMenu upgradepanel;
+    RespawnMenu respawnmenu;
    
 
 
@@ -22,49 +23,53 @@ public class boss1dialogue : MonoBehaviour
     {
         if (Boss.killmc == true)
         {
-            if (StartDialogue)
-            {
-                if (skip == false)
-                {
-                    endDialogue = false;
-                    DialogueText.text = string.Empty;
-                    DialogueAnimator.SetTrigger("enter");
-                    StartCoroutine(WriteSentence());
-                    StartDialogue = false;
-                    mctrue = false;
-                    goddesstrue = true;
-                }
-            }
-            else
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    DialogueAnimator.SetTrigger("enter");
-                    nextSentence();
-                }
-            }
-            if (index == 0 || index == 3 || index == 5 || index == 8)
-            {
-                Debug.Log("Index246");
-                mctrue = true;
-                goddesstrue = false;
-                setmcactive();
-                NameText.text = "Yuji";
-            }
-            else
-            {
-                Debug.Log("Index135");
-                mctrue = false;
-                goddesstrue = true;
-                setgoddessactive();
-                NameText.text = "Izanami no Mikoto";
-            }
+            Invoke("startdialogue", 1f);
         }
+           
+
 
 
     }
 
+    public void startdialogue()
+    {
+        if (StartDialogue)
+        {
 
+            endDialogue = false;
+            DialogueText.text = string.Empty;
+            DialogueAnimator.SetTrigger("enter");
+            StartCoroutine(WriteSentence());
+            StartDialogue = false;
+            mctrue = false;
+            goddesstrue = true;
+            if (index == 0)
+            {
+                mctrue = true;
+                goddesstrue = false;
+                setmcactive();
+                NameText.text = "Jurou";
+            }
+
+
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                nextSentence();
+                if (index == 1)
+                {
+                    mctrue = false;
+                    goddesstrue = true;
+                    setgoddessactive();
+                    NameText.text = "Yuji";
+                }
+
+            }
+
+        }
+    }
     public void setmcactive()
     {
         mc.SetActive(true);
@@ -126,14 +131,14 @@ public class boss1dialogue : MonoBehaviour
             index = 0;
             endDialogue = true;
             dialog.SetActive(false);
-            Invoke("setupgrade", 1f);
+            Invoke("setdeathpanel", 1f);
         }
     }
 
-    void setupgrade()
+    void setdeathpanel()
     {
-        upgradepanel = FindObjectOfType<UpgradeMenu>().GetComponent<UpgradeMenu>();
-        upgradepanel.Setupgradepaneltrue();
+        respawnmenu = FindObjectOfType<RespawnMenu>().GetComponent<RespawnMenu>();
+        respawnmenu.setrespawnactive();
     }
     public void stopsentence()
     {
