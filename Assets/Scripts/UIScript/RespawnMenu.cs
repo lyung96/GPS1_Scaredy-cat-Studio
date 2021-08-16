@@ -47,8 +47,31 @@ public class RespawnMenu : MonoBehaviour
             StartCoroutine("Respawn");
         }
 
-        //if (Boss.killmc==false)
-       //{
+        if (SceneManager.GetActiveScene().name == "GameLevel1")
+        {
+
+            if (Boss.killmc == false)
+            {
+                if (playerController != null)
+                {
+                    if ((playerController.currHealth <= 0) && (panelActive == false))
+                    {
+                        respawnPanel.SetActive(true);
+                        panelActive = true;
+                    }
+                    else if (playerController.currHealth > 0)
+                    {
+                        panelActive = false;
+                    }
+                }
+                else if (SceneManager.GetActiveScene().name != "Menu")
+                {
+                    UpdateRef();
+                }
+            }
+        }
+        else
+        {
             if (playerController != null)
             {
                 if ((playerController.currHealth <= 0) && (panelActive == false))
@@ -60,7 +83,7 @@ public class RespawnMenu : MonoBehaviour
                 {
                     panelActive = false;
                 }
-            //}
+            }
             else if (SceneManager.GetActiveScene().name != "Menu")
             {
                 UpdateRef();
