@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -47,7 +48,12 @@ public class PauseMenu : MonoBehaviour
     {
         PauseMenuUI.SetActive(false);
         GameObject optionMenu = GameObject.Find("Options Menu").gameObject.transform.GetChild(0).gameObject;
-        optionMenu.SetActive(false);
+        if(SceneManager.GetActiveScene().name != "GameLevel1")
+        {
+            GameObject controlMenu = GameObject.Find("Controls").gameObject.transform.GetChild(0).gameObject;
+            controlMenu.SetActive(false);
+        }
+        optionMenu.SetActive(false);        
         Time.timeScale = 1f;
         GamePause = false;
         FindObjectOfType<AudioManager>().SetVolume("LevelMusic", 1f);

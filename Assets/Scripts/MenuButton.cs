@@ -55,6 +55,7 @@ public class MenuButton : MonoBehaviour
         {
             GameObject mainMenuUI = GameObject.Find("Pause Menu");
             mainMenuUI.transform.GetChild(0).gameObject.SetActive(false);
+            optionsPanel = GameObject.Find("Options Menu").transform.GetChild(0).gameObject;
             optionsPanel.SetActive(true);
         }
         else if (SceneManager.GetActiveScene().name == "Menu")
@@ -77,6 +78,7 @@ public class MenuButton : MonoBehaviour
     {
         PauseMenu pauseMenu = FindObjectOfType<PauseMenu>();
         pauseMenu.PauseMenuUI.SetActive(false);
+        GameObject controlpanel = GameObject.Find("Controls").transform.GetChild(0).transform.gameObject;
         controlpanel.SetActive(true);
 
     }
@@ -84,9 +86,11 @@ public class MenuButton : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name != "Menu")
         {
-            GameObject mainMenuUI = GameObject.Find("Pause Menu (1)");
+            GameObject mainMenuUI = GameObject.Find("Pause Menu");
             //mainMenuUI.transform.GetChild(0).gameObject.SetActive(true);
+            GameObject controlpanel = GameObject.Find("Controls").transform.GetChild(0).transform.gameObject;
             controlpanel.SetActive(false);
+            mainMenuUI.gameObject.transform.GetChild(0).gameObject.SetActive(true);
         }
         else
         {
@@ -102,15 +106,17 @@ public class MenuButton : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name != "Menu")
         {
-            GameObject mainMenuUI = GameObject.Find("Pause Menu (1)");
+            GameObject mainMenuUI = GameObject.Find("Pause Menu");
             mainMenuUI.transform.GetChild(0).gameObject.SetActive(true);
             optionsPanel.SetActive(false);
         }
         else
         {
             GameObject mainMenuUI = GameObject.Find("MainMenu");
-            mainMenuUI.transform.GetChild(0).gameObject.SetActive(false);
-            optionsPanel.SetActive(false);
+            mainMenuUI.transform.GetChild(0).gameObject.SetActive(true);
+            GameObject optionMenu = GameObject.Find("Options Menu").transform.GetChild(0).transform.gameObject;
+            optionMenu.SetActive(false);
+            //optionsPanel.SetActive(false);
             //GameObject mainMenuUI = FindObjectOfType<MainMenuControl>().mainMenuUI;
             //mainMenuUI.SetActive(true);
             //optionsPanel.SetActive(false);

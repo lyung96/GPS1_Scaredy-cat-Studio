@@ -2745,6 +2745,7 @@ GameObject:
   - component: {fileID: 8007634988311992021}
   - component: {fileID: 8007634988311992022}
   - component: {fileID: 8007634988311992023}
+  - component: {fileID: 1642496420771149987}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -2854,9 +2855,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MenuButton, Assembly-CSharp
-        m_MethodName: optionBack
+      - m_Target: {fileID: 1642496420771149987}
+        m_TargetAssemblyTypeName: OptionButtonBack, Assembly-CSharp
+        m_MethodName: OptionBackButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2866,6 +2867,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1642496420771149987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8007634988311992017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 861cbc2263e840840903d5e1fdb213d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8007634988331366876
 GameObject:
   m_ObjectHideFlags: 0

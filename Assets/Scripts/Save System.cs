@@ -8,7 +8,7 @@ public static class SaveSystem
     public static void SavePlayer(PlayerController player)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        //Debug.Log(Application.persistentDataPath);
+        Debug.Log(Application.persistentDataPath);
         string path = Application.persistentDataPath + "/playerdata.txt";
         FileStream stream = new FileStream(path, FileMode.Create);
 

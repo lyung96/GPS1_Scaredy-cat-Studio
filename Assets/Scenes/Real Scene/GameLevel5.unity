@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -858,6 +858,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5195504227015508729, guid: e5fe4a4ea66509847876cb623c99bbff, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5195504227015508731, guid: e5fe4a4ea66509847876cb623c99bbff, type: 3}
       propertyPath: m_Name
       value: Controls
@@ -1238,7 +1242,6 @@ GameObject:
   - component: {fileID: 832500402}
   - component: {fileID: 832500404}
   - component: {fileID: 832500403}
-  - component: {fileID: 832500405}
   m_Layer: 0
   m_Name: Barrier Down
   m_TagString: Untagged
@@ -1338,18 +1341,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &832500405
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832500401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a1bb080d99109643aeb18b0b51c7c9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &863960986
 GameObject:
   m_ObjectHideFlags: 0
@@ -2626,7 +2617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4103616698613764183, guid: 3ec023d3a6211084db7ee198698aab67, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.94
+      value: -0.86
       objectReference: {fileID: 0}
     - target: {fileID: 4103616698613764183, guid: 3ec023d3a6211084db7ee198698aab67, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4071,7 +4062,7 @@ GameObject:
   - component: {fileID: 368076075736900751}
   - component: {fileID: 368076075736900739}
   m_Layer: 5
-  m_Name: Pause Menu (1)
+  m_Name: Pause Menu old (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17836,7 +17827,7 @@ GameObject:
   - component: {fileID: 8307471641112394711}
   - component: {fileID: 8307471641112394715}
   m_Layer: 5
-  m_Name: Pause Menu
+  m_Name: Pause Menu old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19349,7 +19340,7 @@ GameObject:
   - component: {fileID: 8878040983053311507}
   - component: {fileID: 8878040983053311519}
   m_Layer: 5
-  m_Name: Pause Menu (2)
+  m_Name: Pause Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

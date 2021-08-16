@@ -55,10 +55,10 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
+        changeScene();
         UpdateVolume();
         SetSfx();
         SetBGMusic();
-        changeScene();
     }
 
     public void PlayMusic()
@@ -170,6 +170,7 @@ public class AudioManager : MonoBehaviour
     }
     public void UpdateVolume()
     {
+        
         bgVolume = bgSlider.value;
         sfxVolume = sfxSlider.value;
         if(startVol == true)
@@ -218,9 +219,13 @@ public class AudioManager : MonoBehaviour
         currScene = SceneManager.GetActiveScene().name;
         if (lastScene != currScene)
         {
-            bgSlider = optionMenu.GetComponent<OptionMenu>().oBgSlider;
-            sfxSlider = optionMenu.GetComponent<OptionMenu>().oSfxSlider;
-            PlayMusic();
+            //if (currScene != "Menu")
+            //{
+                optionMenu = GameObject.Find("Options Menu");
+                bgSlider = optionMenu.GetComponent<OptionMenu>().oBgSlider;
+                sfxSlider = optionMenu.GetComponent<OptionMenu>().oSfxSlider;
+                PlayMusic();
+            //}
             lastScene = currScene;
         } 
     }

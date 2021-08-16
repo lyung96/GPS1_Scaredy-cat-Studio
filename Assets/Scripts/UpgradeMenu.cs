@@ -174,7 +174,7 @@ public class UpgradeMenu : MonoBehaviour
         Debug.Log("Next Level Save");
         levelChanger.FadeToNextLevel();
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1.5f);
         UpdateComponent();
         FindObjectOfType<Checkpoint>().Invoke("LoadandUpdate", 0f);
         Debug.Log("Next Level Load");

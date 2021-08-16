@@ -33,6 +33,11 @@ public class SwitchMask : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(maskUI == null)
+        {
+            maskUI = GameObject.Find("MaskUI").gameObject;
+        }
+
         //if 1 is pressed
         /*if (Input.GetKeyDown(KeyCode.Alpha1))
         {
