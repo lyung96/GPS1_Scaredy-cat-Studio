@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class lvl3bosscut : MonoBehaviour
 {
-    public static bool triggerdialogue, enterdialogue, exitdialogue, startdialogue;
+    public static bool triggerdialogue, enterdialogue, exitdialogue, startdialogue, startsequence=false;
     public Animator cameraanim;
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -51,7 +51,12 @@ public class lvl3bosscut : MonoBehaviour
     {
         if (enterdialogue == true || triggerdialogue == true)
         {
-            startcutscene();
+            if (startsequence==false)
+            {
+                startcutscene();
+                startsequence = true;
+            }
+
 
         }
         else if (exitdialogue == true)

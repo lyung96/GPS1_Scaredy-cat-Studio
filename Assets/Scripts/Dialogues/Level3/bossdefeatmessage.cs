@@ -129,6 +129,7 @@ public class bossdefeatmessage : MonoBehaviour
             index = 0;
             endDialogue = true;
             dialog.SetActive(false);
+            Obtainedmask3.bossdefeat = true;
         }
     }
 
