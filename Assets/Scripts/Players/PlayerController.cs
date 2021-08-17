@@ -356,6 +356,8 @@ public class PlayerController : MonoBehaviour
             }
             if (enemy.CompareTag("Boss"))
             {
+                maskGauge += 1;
+                finalBlowBar.SetBar(maskGauge);
                 StartCoroutine(enemy.GetComponent<Boss>().BossTakeDamage(-atkDmg));
             }
 
@@ -620,4 +622,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 #endregion
+
+    public void getFinalMask()
+    {
+        finalBlowUi.SetActive(true);
+        maskCollected = 3;
+        gameObject.GetComponent<SwitchMask>().SetMask(maskCollected);
+    }
 }

@@ -36,6 +36,7 @@ public class Obtainedmask3 : MonoBehaviour
                     Debug.Log("start dialogue");
                     chestopener.dialoguestart = false;
                     StartDialogue = false;
+                    FindObjectOfType<PlayerController>().getFinalMask();
                 }
                 else
                 {
