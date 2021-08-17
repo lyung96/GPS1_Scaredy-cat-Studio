@@ -1,0 +1,708 @@
+fileFormatVersion: 2
+guid: a101f626017953843b38166239063912
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_0
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 3170
+        width: 378
+        height: 284
+      alignment: 9
+      pivot: {x: 0.502691, y: 0.5000017}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b186398d6d6cb95b0800000000000000
+      internalID: -5360472305395603429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_1
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 3168
+        width: 385
+        height: 288
+      alignment: 9
+      pivot: {x: 0.48679024, y: 0.5070648}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03908ea9d94394910800000000000000
+      internalID: 1822045375761484080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_2
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 3159
+        width: 370
+        height: 266
+      alignment: 9
+      pivot: {x: 0.47137237, y: 0.54496044}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 869b0c129ea3a22b0800000000000000
+      internalID: -5608605612968461976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_3
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 3163
+        width: 385
+        height: 258
+      alignment: 9
+      pivot: {x: 0.48224843, y: 0.58410835}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f93d8c0bbde0b1260800000000000000
+      internalID: 7069260376814703519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_4
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 3163
+        width: 329
+        height: 255
+      alignment: 9
+      pivot: {x: 0.39179152, y: 0.5917452}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd8c26c053c967e70800000000000000
+      internalID: 9112642647685777627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_5
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 3163
+        width: 368
+        height: 265
+      alignment: 9
+      pivot: {x: 0.46683204, y: 0.55757666}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff870b1fc812df30800000000000000
+      internalID: 4598765447289475069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_6
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 2810
+        width: 384
+        height: 286
+      alignment: 9
+      pivot: {x: 0.48145798, y: 0.52134013}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 407f54612f9b34ba0800000000000000
+      internalID: -6105832220377352444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_7
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 2449
+        width: 356
+        height: 270
+      alignment: 9
+      pivot: {x: 0.4371417, y: 0.5452094}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 307a1d21a1879c650800000000000000
+      internalID: 6253661610960856835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_8
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 2449
+        width: 359
+        height: 270
+      alignment: 9
+      pivot: {x: 0.5170006, y: 0.56028014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e3a471952bc44f0800000000000000
+      internalID: -843102934512550325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_9
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 2449
+        width: 295
+        height: 257
+      alignment: 9
+      pivot: {x: 0.49655223, y: 0.5989463}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74d49ef0b72a0f1b0800000000000000
+      internalID: -5624817285154124473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_10
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 2450
+        width: 389
+        height: 279
+      alignment: 9
+      pivot: {x: 0.48692623, y: 0.56562394}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 488fc457f788e41b0800000000000000
+      internalID: -5670444799802673020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_11
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 2450
+        width: 414
+        height: 302
+      alignment: 9
+      pivot: {x: 0.453319, y: 0.5303131}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a331e13a4e5ac61f0800000000000000
+      internalID: -1050282211676384454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_40
+      rect:
+        serializedVersion: 2
+        x: 1385
+        y: 2070
+        width: 431
+        height: 322
+      alignment: 9
+      pivot: {x: 0.44572008, y: 0.5284302}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f4752e6afb2afe40800000000000000
+      internalID: 5690909433725809910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_44
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 2063
+        width: 378
+        height: 326
+      alignment: 9
+      pivot: {x: 0.46770948, y: 0.46567878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dccb73050d36e540800000000000000
+      internalID: 5036780325003054296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_54
+      rect:
+        serializedVersion: 2
+        x: 1827
+        y: 2053
+        width: 381
+        height: 317
+      alignment: 9
+      pivot: {x: 0.40122077, y: 0.5481311}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aac7c553625ac6f40800000000000000
+      internalID: 5723130810003651754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_58
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 2038
+        width: 389
+        height: 321
+      alignment: 9
+      pivot: {x: 0.4947704, y: 0.54436284}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f65bd2adad597c090800000000000000
+      internalID: -8014272244686670481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_59
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 2051
+        width: 383
+        height: 310
+      alignment: 9
+      pivot: {x: 0.4814098, y: 0.5262498}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27b76456e9b39630800000000000000
+      internalID: 3932691298534274859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_108
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 1701
+        width: 363
+        height: 326
+      alignment: 9
+      pivot: {x: 0.5056042, y: 0.39391604}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75187b5a4ff98d3a0800000000000000
+      internalID: -6640381777456692905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_132
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 1669
+        width: 385
+        height: 315
+      alignment: 9
+      pivot: {x: 0.43659273, y: 0.43218973}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0870f6b572b3c7d40800000000000000
+      internalID: 5583402678256338816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_143
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 1656
+        width: 264
+        height: 266
+      alignment: 9
+      pivot: {x: 0.51541185, y: 0.45411348}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3788b8255c55a2180800000000000000
+      internalID: -9139398187813205901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_215
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 1140
+        width: 392
+        height: 313
+      alignment: 9
+      pivot: {x: 0.4922156, y: 0.50649977}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: defc7c451c04d90d0800000000000000
+      internalID: -3414501743381721107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_216
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 1140
+        width: 392
+        height: 315
+      alignment: 9
+      pivot: {x: 0.49221584, y: 0.50322926}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a448b3ccfd4f59c0800000000000000
+      internalID: -3936341801287793495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_217
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 1140
+        width: 393
+        height: 315
+      alignment: 9
+      pivot: {x: 0.49482396, y: 0.50322926}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a7f2b73383dbcc90800000000000000
+      internalID: -7148387422991878234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_218
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 1140
+        width: 451
+        height: 301
+      alignment: 9
+      pivot: {x: 0.3534025, y: 0.5777235}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f854f3f1a85c30b60800000000000000
+      internalID: 7711224184008820111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_219
+      rect:
+        serializedVersion: 2
+        x: 1924
+        y: 1145
+        width: 510
+        height: 308
+      alignment: 9
+      pivot: {x: 0.39429525, y: 0.5957721}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a56964314f24a6b0800000000000000
+      internalID: -5286048105527417431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_222
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 727
+        width: 364
+        height: 262
+      alignment: 9
+      pivot: {x: 0.40984884, y: 0.60567796}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3b1a9055b5d437d0800000000000000
+      internalID: -2939489682048017602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_223
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 727
+        width: 408
+        height: 286
+      alignment: 9
+      pivot: {x: 0.47486594, y: 0.54302657}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2550b5a9fca60140800000000000000
+      internalID: 4685622650552210734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TenguSpriteSheetpng_224
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 727
+        width: 432
+        height: 312
+      alignment: 9
+      pivot: {x: 0.45015067, y: 0.5032867}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1634567b19bfb4d10800000000000000
+      internalID: 2111057453618905953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: bcb6cc35e457e9c4980ab4a3eb73af42
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

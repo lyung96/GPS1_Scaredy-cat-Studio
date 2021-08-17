@@ -16,9 +16,9 @@ public class ActivateWhenContact : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D Hit)
     {
         Debug.Log("Collide with the :" + Hit.gameObject.name + "now the bool is :" + ActivatedBoss);
-        if (Hit.gameObject.tag == "Player")
+        if (Hit.gameObject.tag == "activate")
         {
-            if (Hit is BoxCollider2D)
+            if (Hit is CircleCollider2D)
             {
                 ActivatedBoss = true;
                 Bboss.enabled = true;

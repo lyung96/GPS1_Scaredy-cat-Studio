@@ -1,0 +1,1044 @@
+fileFormatVersion: 2
+guid: e1032c596a756034a956db0e1779e681
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: JurouSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 3173
+        width: 190
+        height: 262
+      alignment: 9
+      pivot: {x: 0.54926276, y: 0.50446445}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 958f2d12ec0a21210800000000000000
+      internalID: 1302280049454676057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 3171
+        width: 189
+        height: 264
+      alignment: 9
+      pivot: {x: 0.53714246, y: 0.5132946}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0244f2c3997b2ba0800000000000000
+      internalID: -6112658393687375350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 3171
+        width: 195
+        height: 278
+      alignment: 9
+      pivot: {x: 0.5359995, y: 0.5168334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f1dcfa0865951b90800000000000000
+      internalID: -7271741749226319374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 3171
+        width: 197
+        height: 278
+      alignment: 9
+      pivot: {x: 0.547512, y: 0.5126242}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f095edf31fcb4660800000000000000
+      internalID: 7371212899892957424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 3173
+        width: 189
+        height: 262
+      alignment: 9
+      pivot: {x: 0.5371417, y: 0.49999908}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f1c757227479d6b0800000000000000
+      internalID: -5271053855225298448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 2757
+        width: 234
+        height: 325
+      alignment: 9
+      pivot: {x: 0.1550023, y: 0.4063995}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4ce76c998aef0380800000000000000
+      internalID: -9002719253334856626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 2757
+        width: 226
+        height: 330
+      alignment: 9
+      pivot: {x: 0.15832074, y: 0.39718127}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0982687267b6848e0800000000000000
+      internalID: -1708997903373686640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 2757
+        width: 247
+        height: 387
+      alignment: 9
+      pivot: {x: 0.31526414, y: 0.34581417}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c3fd72f6a7bc02a0800000000000000
+      internalID: -6769834212183903293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 2757
+        width: 252
+        height: 397
+      alignment: 9
+      pivot: {x: 0.38392904, y: 0.3379097}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 711e3551a47111110800000000000000
+      internalID: 1229789780201693463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 2757
+        width: 260
+        height: 392
+      alignment: 9
+      pivot: {x: 0.66199857, y: 0.33882672}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b8b078c29a19a3d0800000000000000
+      internalID: -3194993242912278347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 2757
+        width: 284
+        height: 371
+      alignment: 9
+      pivot: {x: 0.6977449, y: 0.35493308}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b486c1fcefa4e000800000000000000
+      internalID: 64369726893491382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 2439
+        width: 299
+        height: 288
+      alignment: 9
+      pivot: {x: 0.70738983, y: 0.4674996}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad3671304400de620800000000000000
+      internalID: 2804898435031327706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 537
+        y: 2438
+        width: 201
+        height: 264
+      alignment: 9
+      pivot: {x: 0.32537416, y: 0.49113512}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 519addec94e6d89d0800000000000000
+      internalID: -2770436932480685803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 2438
+        width: 201
+        height: 267
+      alignment: 9
+      pivot: {x: 0.33701548, y: 0.48685297}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40299aa2a5746fbd0800000000000000
+      internalID: -2596809682544127484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 2108
+        width: 245
+        height: 316
+      alignment: 9
+      pivot: {x: 0.52865267, y: 0.46667635}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b93bca55c177a1360800000000000000
+      internalID: 7141151122729513883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 2084
+        width: 272
+        height: 325
+      alignment: 9
+      pivot: {x: 0.525808, y: 0.5287988}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 175514413b2988c00800000000000000
+      internalID: 903133023124411761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 2086
+        width: 282
+        height: 323
+      alignment: 9
+      pivot: {x: 0.533191, y: 0.5144882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3304ba2f65e30a4d0800000000000000
+      internalID: -3125429598235705293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_28
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 2089
+        width: 207
+        height: 296
+      alignment: 9
+      pivot: {x: 0.49434775, y: 0.5632423}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be5983891e0ed710800000000000000
+      internalID: 1719827610445897400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_30
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 2106
+        width: 210
+        height: 279
+      alignment: 9
+      pivot: {x: 0.48885688, y: 0.54193354}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c1ccab2e5437e600800000000000000
+      internalID: 497423862912041409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_33
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 2093
+        width: 289
+        height: 302
+      alignment: 9
+      pivot: {x: 0.55262876, y: 0.49612528}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f78280a96c27b10800000000000000
+      internalID: 1977861551233203995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_69
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 1822
+        width: 287
+        height: 233
+      alignment: 9
+      pivot: {x: 0.5842285, y: 0.26137665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2e908649d77b0340800000000000000
+      internalID: 4831086800359431725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_70
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1795
+        width: 288
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5812494, y: 0.3549982}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f45c24df518f8740800000000000000
+      internalID: 5156482346944058616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_74
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 1865
+        width: 209
+        height: 159
+      alignment: 9
+      pivot: {x: 0.48265025, y: 0.097106546}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1de4455b09b175d30800000000000000
+      internalID: 4420031867618873041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_75
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 1871
+        width: 136
+        height: 132
+      alignment: 9
+      pivot: {x: 0.5088869, y: 0.08795074}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec8b07118f85ff080800000000000000
+      internalID: -9151498095325824818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_77
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 1870
+        width: 119
+        height: 123
+      alignment: 9
+      pivot: {x: 0.51015645, y: 0.08728027}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a2e2b9d88dc0bf0800000000000000
+      internalID: -356672167763629421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_98
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1339
+        width: 248
+        height: 323
+      alignment: 9
+      pivot: {x: 0.15396672, y: 0.40644878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce11d2ff23802f4d0800000000000000
+      internalID: -3102408178182319636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_99
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 1339
+        width: 243
+        height: 330
+      alignment: 9
+      pivot: {x: 0.14684656, y: 0.3974454}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c09e23cc3c146e0800000000000000
+      internalID: -1854986289705055212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_100
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1339
+        width: 260
+        height: 342
+      alignment: 9
+      pivot: {x: 0.1513423, y: 0.3798389}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6733f1ff42835a10800000000000000
+      internalID: 1897003147926386538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_101
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1339
+        width: 256
+        height: 358
+      alignment: 9
+      pivot: {x: 0.15061569, y: 0.36832842}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f00c55604935f0990800000000000000
+      internalID: -7417618166029369329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_102
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 1339
+        width: 247
+        height: 402
+      alignment: 9
+      pivot: {x: 0.31894255, y: 0.33162677}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c5c6785908203080800000000000000
+      internalID: -9209817217368668736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_103
+      rect:
+        serializedVersion: 2
+        x: 1676
+        y: 1316
+        width: 254
+        height: 424
+      alignment: 9
+      pivot: {x: 0.39055243, y: 0.31470734}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2610eb06b3a0ddb20800000000000000
+      internalID: 3160693763626369378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_104
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 854
+        width: 274
+        height: 392
+      alignment: 9
+      pivot: {x: 0.67644966, y: 0.34274837}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b07fdada3f09ba8c0800000000000000
+      internalID: -3986933668841130229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_105
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 854
+        width: 315
+        height: 368
+      alignment: 9
+      pivot: {x: 0.72638756, y: 0.35876864}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b970ba6b0e9df58f0800000000000000
+      internalID: -549481070355347557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_106
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 854
+        width: 299
+        height: 287
+      alignment: 9
+      pivot: {x: 0.7102051, y: 0.4663088}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c7826b398c13ef30800000000000000
+      internalID: 4603554619835189189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_108
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 854
+        width: 228
+        height: 264
+      alignment: 9
+      pivot: {x: 0.29855293, y: 0.4908438}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4868415509537d760800000000000000
+      internalID: 7482508199918339716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_109
+      rect:
+        serializedVersion: 2
+        x: 1585
+        y: 854
+        width: 228
+        height: 265
+      alignment: 9
+      pivot: {x: 0.29855293, y: 0.5045613}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2fd8a47f0c3de0a0800000000000000
+      internalID: -6850753421081256145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_110
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 434
+        width: 198
+        height: 274
+      alignment: 9
+      pivot: {x: 0.5732533, y: 0.5000004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27745c4030c257330800000000000000
+      internalID: 3707918259686033266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_111
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 430
+        width: 197
+        height: 278
+      alignment: 9
+      pivot: {x: 0.53681254, y: 0.51304376}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3de197a124734d900800000000000000
+      internalID: 708251798455525075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_112
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 428
+        width: 186
+        height: 279
+      alignment: 9
+      pivot: {x: 0.5, y: 0.52166116}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0556d24ef1d52de00800000000000000
+      internalID: 1068018453193778512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_113
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 430
+        width: 190
+        height: 266
+      alignment: 9
+      pivot: {x: 0.59530866, y: 0.50016105}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11ae31c7744940760800000000000000
+      internalID: 7423221120558688785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_115
+      rect:
+        serializedVersion: 2
+        x: 1193
+        y: 439
+        width: 183
+        height: 257
+      alignment: 9
+      pivot: {x: 0.77032906, y: 0.49513}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60bfffb04f6b19300800000000000000
+      internalID: 257187813026429702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_116
+      rect:
+        serializedVersion: 2
+        x: 1426
+        y: 429
+        width: 193
+        height: 260
+      alignment: 9
+      pivot: {x: 0.7952919, y: 0.50456613}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2a8da65f425a6670800000000000000
+      internalID: 8532722944716933677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_117
+      rect:
+        serializedVersion: 2
+        x: 1705
+        y: 433
+        width: 195
+        height: 304
+      alignment: 9
+      pivot: {x: 0.60350937, y: 0.42969775}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ab4a884600e6e680800000000000000
+      internalID: -8726040910392308825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JurouSpriteSheet_119
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 422
+        width: 218
+        height: 274
+      alignment: 9
+      pivot: {x: 0.6470533, y: 0.48699972}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb236671e2df93d20800000000000000
+      internalID: 3258914179782161083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a3ab8f53ce156334690d733a6fa9059e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

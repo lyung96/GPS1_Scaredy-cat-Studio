@@ -18,9 +18,9 @@ public class Boss : MonoBehaviour
     public SpriteRenderer sprite;
     private ParticleSystem bloodEffect;
     [SerializeField] private BoxCollider2D JurouNormalAtk;
-    [SerializeField] private BoxCollider2D JurouChargedAtk;
+    [SerializeField] public BoxCollider2D JurouChargedAtk;
     [SerializeField] private EdgeCollider2D TenguNormalAtk;
-    [SerializeField] private BoxCollider2D TenguChargedAtk;
+    [SerializeField] public BoxCollider2D TenguChargedAtk;
     [SerializeField]private PlayerController player;
 
     public int ChargePoints;
@@ -113,22 +113,22 @@ public class Boss : MonoBehaviour
         {
             if (distance >= 0.01f)
             {
-                transform.localScale = new Vector3(-5f, 5f, 0f);
+                transform.localScale = new Vector3(3f, 3f, 0f);
             }
             else if (distance <= 0.01f)
             {
-                transform.localScale = new Vector3(5f, 5f, 0f);
+                transform.localScale = new Vector3(-3f, 3f, 0f);
             }
         }
         else
         {
             if (distance >= 0.01f)
             {
-                transform.localScale = new Vector3(-0.3f, 0.3f, 0f);
+                transform.localScale = new Vector3(-3f, 3f, 0f);
             }
             else if (distance <= 0.01f)
             {
-                transform.localScale = new Vector3(0.3f, 0.3f, 0f);
+                transform.localScale = new Vector3(3f, 3f, 0f);
             }
         }
 
