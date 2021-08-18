@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4046,11 +4046,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2550864946072106556, guid: ce3033bd1d9148c4a9c6e2350b89359e, type: 3}
   m_PrefabInstance: {fileID: 583227196}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &587549625 stripped
+--- !u!4 &587549625
 Transform:
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 7637329969627745425, guid: 17c2d602f6b235145af58fa1beeb58d0, type: 3}
   m_PrefabInstance: {fileID: 7637329969141385000}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795221705}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1485530904}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &592614990
 GameObject:
   m_ObjectHideFlags: 0
@@ -13670,7 +13679,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1485530904}
-  m_RootOrder: 41
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1124892701
 PrefabInstance:
@@ -15118,6 +15127,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3006581355981786265, guid: 5992087ec9dbd6b419fe788d924c366a, type: 3}
   m_PrefabInstance: {fileID: 1333424432}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1343319562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1343319563}
+  m_Layer: 0
+  m_Name: WoodenStep5 (Missing Prefab)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1343319563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343319562}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1485530904}
+  m_RootOrder: 41
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1347556292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16228,6 +16267,7 @@ Transform:
   - {fileID: 1554972300}
   - {fileID: 1158018767}
   - {fileID: 570452254}
+  - {fileID: 1343319563}
   - {fileID: 1102436639}
   m_Father: {fileID: 1351480874}
   m_RootOrder: 3
@@ -18367,6 +18407,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7721288712889257783, guid: 97847654f78d2064ba09669fc53ea3a9, type: 3}
   m_PrefabInstance: {fileID: 1787923739}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1795221705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 587549625}
+  m_Layer: 0
+  m_Name: Missing Prefab (Dummy)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &1797592943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46961,7 +47017,7 @@ MonoBehaviour:
   - "Your father did this to protect you. He hid your true identity just so you won\u2019t
     get hurt and your true name is Izumi Shinji, heir to the Izumi clan. "
   - 'I will avenge my clan and father.  '
-  Dialoguespeed: 0.02
+  Dialoguespeed: 0.01
   index: 0
   dialog: {fileID: 8786093016554750159}
   goddessicon: {fileID: 8786093015953978568}

@@ -30,6 +30,7 @@ public class Boss : MonoBehaviour
     [SerializeField]
     private float DeathCd;
 
+    
     //check if the boss is dead, if yes return true
     public bool IsDead
     {
@@ -57,6 +58,7 @@ public class Boss : MonoBehaviour
         ChangeState(new BossIdle());
         anim = gameObject.GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
+        health = 5;
         
     }
     

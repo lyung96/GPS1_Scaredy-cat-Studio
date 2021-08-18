@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1774,7 +1774,7 @@ MonoBehaviour:
   Sentences:
   - 'That damn izanami  '
   - Just die and go to hell
-  - "don\u2019t think it's over kid , I will find a way to return\u2026.."
+  - "Don\u2019t think it's over kid , I will find a way to return\u2026.."
   - 'Keep dreaming, it''s finally over. I did it. Now I need to return this. '
   Dialoguespeed: 0.03
   index: 0
@@ -2836,6 +2836,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossJurou
       objectReference: {fileID: 0}
+    - target: {fileID: 4471612072800388097, guid: 2a10c7b9598df2f409e858432dc716ac, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4471612072800388102, guid: 2a10c7b9598df2f409e858432dc716ac, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2888,6 +2892,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 2075056378}
+    - target: {fileID: 4471612072800388106, guid: 2a10c7b9598df2f409e858432dc716ac, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6940789065366988212, guid: 2a10c7b9598df2f409e858432dc716ac, type: 3}
       propertyPath: box
       value: 

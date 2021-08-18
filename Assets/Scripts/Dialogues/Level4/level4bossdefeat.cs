@@ -33,37 +33,37 @@ public class level4bossdefeat : MonoBehaviour
     {
         if (startsequence == false)
         {
-            if (Boss.health == 0)
+            if (Boss.health <= 0)
             {
                 if (StartDialogue)
+                {
+                    if (skip == false)
                     {
-                        if (skip == false)
-                        {
-                            endDialogue = false;
-                            DialogueText.text = string.Empty;
-                            DialogueAnimator.SetTrigger("enter");
-                            StartCoroutine(WriteSentence());
-                            StartDialogue = false;
-                            mctrue = false;
-                            goddesstrue = true;
-                    if (index == 0)
-                    {
-                        Debug.Log("Index246");
+                        endDialogue = false;
+                        DialogueText.text = string.Empty;
+                        DialogueAnimator.SetTrigger("enter");
+                        StartCoroutine(WriteSentence());
+                        StartDialogue = false;
                         mctrue = false;
                         goddesstrue = true;
-                        setgoddessactive();
-                        NameText.text = "Jurou";
-                    }
-                }
-                    }
-                    else
-                    {
-                        DialogueAnimator.SetTrigger("enter");
-                        if (Input.GetKeyDown(KeyCode.E))
+                        if (index == 0)
                         {
-                            nextSentence();
+                            Debug.Log("Index246");
+                            mctrue = false;
+                            goddesstrue = true;
+                            setgoddessactive();
+                            NameText.text = "Jurou";
                         }
                     }
+                }
+                else
+                {
+                    //DialogueAnimator.SetTrigger("enter");
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                        nextSentence();
+                    }
+                }
 
                 
                 
