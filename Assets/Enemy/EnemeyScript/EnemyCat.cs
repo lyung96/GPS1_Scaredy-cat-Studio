@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyCat : Characther
 {
@@ -142,8 +143,11 @@ public class EnemyCat : Characther
             //gameObject.GetComponentInChildren<EdgeCollider2D>().enabled = false;
             gameObject.layer = 9;
 
-            var go = Instantiate(expPrefab, transform.position + new Vector3(1,5), Quaternion.identity);
-            go.GetComponent<FollowPlyr>().Target = expTarget.transform ;
+            if(SceneManager.GetActiveScene().name != "GameLevel1")
+            {
+                var go = Instantiate(expPrefab, transform.position + new Vector3(1, 5), Quaternion.identity);
+                go.GetComponent<FollowPlyr>().Target = expTarget.transform;
+            }
             //create bool for exp spawn here
 
 
