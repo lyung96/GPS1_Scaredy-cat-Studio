@@ -20,6 +20,7 @@ public class ActivateWhenContact : MonoBehaviour
         {
             if (Hit is CircleCollider2D)
             {
+                
                 ActivatedBoss = true;
                 Bboss.enabled = true;
                 Debug.Log("Collide the im in :" + Hit.gameObject.name + "now the bool is :" + ActivatedBoss);

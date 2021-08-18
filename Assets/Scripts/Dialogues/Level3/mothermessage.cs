@@ -14,6 +14,13 @@ public class mothermessage : MonoBehaviour
     public Animator DialogueAnimator;
     public static bool StartDialogue = true, endDialogue = true, firstlineup = false, iscutscene = true, quitcutscene = false, skip = false;
     bool mctrue = true, goddesstrue = false;
+    bool TenguDied
+    {
+        get
+        {
+            return Boss.health <= 0;
+        }
+    }
     UpgradeMenu upgradepanel;
 
     private void Start()
@@ -22,13 +29,14 @@ public class mothermessage : MonoBehaviour
     }
     private void Update()
     {
-     
+        Debug.Log("tengu dieedddd " + TenguDied);
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (mothertrigger.inrange)
             {
-                if (Boss.health<=0)
+                if (TenguDied)
                 {
+                    
                     if (StartDialogue)
                     {
                         if (skip == false)
@@ -143,6 +151,7 @@ public class mothermessage : MonoBehaviour
             endDialogue = true;
             dialog.SetActive(false);
             Invoke("setupgrade", 1f);
+            Boss.health = 10;
         }
     }
 

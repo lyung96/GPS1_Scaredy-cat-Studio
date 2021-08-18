@@ -24,6 +24,7 @@ public class boss1dialogue : MonoBehaviour
         if (Boss.killmc == true)
         {
             Invoke("startdialogue", 1f);
+            Boss.health = 10;
         }
            
 
@@ -80,7 +81,7 @@ public class boss1dialogue : MonoBehaviour
     {
         mc.SetActive(false);
         goddessicon.SetActive(true);
-        Debug.Log("goddess 2");
+        //Debug.Log("goddess 2");
     }
 
     private bool iswriting = false;

@@ -64,6 +64,7 @@ public class Boss : MonoBehaviour
     
     void Update()
     {
+        Debug.Log("bossss healthhhhh isss: " + health);
         if (!IsDead)
         {
             if (!PlayerAttacking)

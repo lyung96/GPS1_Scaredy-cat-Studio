@@ -18,7 +18,7 @@ public class bossdefeatmessage : MonoBehaviour
 
     private void Start()
     {
-
+        
     }
     private void Update()
     {
@@ -130,6 +130,7 @@ public class bossdefeatmessage : MonoBehaviour
             endDialogue = true;
             dialog.SetActive(false);
             Obtainedmask3.bossdefeat = true;
+            
         }
     }
 
