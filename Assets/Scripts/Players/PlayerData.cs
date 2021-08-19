@@ -17,7 +17,7 @@ public class PlayerData
     {
         maxHp = player.maxCurseBar;
         maxMp = player.maxMana;
-        maskPieces = player.maskCollected;
+        maskPieces = PlayerController.maskCollected;
         exp = PlayerController.exp;
         playerLevel = PlayerController.playerLevel;
 

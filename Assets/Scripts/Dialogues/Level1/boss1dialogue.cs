@@ -24,7 +24,7 @@ public class boss1dialogue : MonoBehaviour
         if (Boss.killmc == true)
         {
             Invoke("startdialogue", 1f);
-            Boss.health = 10;
+            Boss.health = 20;
         }
            
 

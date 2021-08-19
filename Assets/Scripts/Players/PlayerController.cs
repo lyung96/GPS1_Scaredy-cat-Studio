@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
     public obtainedkey key;
 
     //mask
-    public int maskCollected = 1;
+    public static int maskCollected;
     public float maskGauge = 0;
     public static float playerLevel = 1;
     public static float exp = 0;
@@ -102,6 +102,7 @@ public class PlayerController : MonoBehaviour
         normalGravity = rb.gravityScale;
         mask = GetComponent<SwitchMask>();//Icon
         currScene = SceneManager.GetActiveScene().name;
+        maskCollected = 1;
     }
 
     void Update()
@@ -125,11 +126,6 @@ public class PlayerController : MonoBehaviour
             InvokeRepeating("RegenShuriken", 3f, 3f);
         }
     }
-
-    //public void dialogueset()
-    //{
-
-    //}
 
     public void PlayerControl()
     {
@@ -296,6 +292,11 @@ public class PlayerController : MonoBehaviour
                 GrapplePoint.isGrap = false;
             }
         }
+        if(SceneManager.GetActiveScene().name == "GameLevel5" && maskCollected != 3)
+        {
+            getFinalMask();
+        }
+
         TestingControl();
 
 
@@ -544,7 +545,7 @@ public class PlayerController : MonoBehaviour
     {
         manaController.numOfMana = maxMana;
         manaController.maxMana = maxMana;
-        currHealth = maxCurseBar;
+        currHealth = maxCurseBar;        
         curseBar.SetMaxHealth(maxCurseBar, currHealth);//bar
         curseBar.SetHealth(maxCurseBar);
         shurikenController.shuriken = 3;

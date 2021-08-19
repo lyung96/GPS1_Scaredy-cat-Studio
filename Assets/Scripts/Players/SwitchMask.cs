@@ -25,7 +25,7 @@ public class SwitchMask : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetMask(gameObject.GetComponent<PlayerController>().maskCollected);
+        SetMask(PlayerController.maskCollected);
 
         //Activatemask1();
     }

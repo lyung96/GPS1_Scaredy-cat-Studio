@@ -151,7 +151,7 @@ public class mothermessage : MonoBehaviour
             endDialogue = true;
             dialog.SetActive(false);
             Invoke("setupgrade", 1f);
-            Boss.health = 10;
+            Boss.health = 50;
         }
     }
 
